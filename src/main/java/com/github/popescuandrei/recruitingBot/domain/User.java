@@ -1,11 +1,9 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.AGE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRST_NAME;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.GENDER;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PHONE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PASSWORD;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,12 +14,14 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 import com.github.popescuandrei.recruitingBot.domain.support.Email;
 
 @Entity
-@Table(name = CANDIDATE)
-public class Candidate extends BaseEntity{
+@Table(name = USER)
+public class User extends BaseEntity{
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,35 +30,27 @@ public class Candidate extends BaseEntity{
 	private Long id;
 	
 	@NotNull
-	@Size(max = 50)
+	@Size(max = 100)
 	@Column(name = FIRST_NAME, length = 59)
 	private String firstName;
 
 	@NotNull
-	@Size(max = 50)
+	@Size(max = 100)
 	@Column(name = LAST_NAME, length = 50)
 	private String lastName;
-	
+
 	@Column(unique = true)
 	private Email email;
 	
-	@Size(min = 10, max = 10)
-	@Column(name = PHONE, unique = true)
-	private String phone;
+	@NotEmpty
+	@Size(min = 4, max = 100)
+	@Column(name = PASSWORD, nullable = false, length = 100)
+	private String password;
 	
-	@Column(name = GENDER)
-	private String gender;
-	
-	@Column(name = AGE)
-	private int age;
-	
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@Override
+	public Long getId() {
+		return id;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -84,44 +76,29 @@ public class Candidate extends BaseEntity{
 		this.email = email;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getGender() {
-		return gender;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	
 	@Override
 	public void update(BaseEntity entity) {
-		if (!(entity instanceof Candidate)) {
-			throw new IllegalArgumentException("Entity should be of type Candidate");
+		if (!(entity instanceof User)) {
+			throw new IllegalArgumentException("Entity should be of type User");
 		}
-		Candidate candidate = (Candidate) entity;
+		User user = (User) entity;
 		
-		setFirstName(candidate.getFirstName());
-		setLastName(candidate.getLastName());
-		setEmail(candidate.getEmail());
-		setPhone(candidate.getPhone());
-		setGender(candidate.getGender());
-		setAge(candidate.getAge());
+		setFirstName(user.getFirstName());
+		setLastName(user.getLastName());
+		setEmail(user.getEmail());
+		setPassword(user.getPassword());
 	}
-
+	
 }
