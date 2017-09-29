@@ -1,5 +1,6 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.POSITION;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.QUERY;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.QUESTION;
 
@@ -33,6 +34,10 @@ public class Question extends BaseEntity {
 	@Column(name = QUERY, length = 50)
 	private String query;
 	
+	@NotNull
+	@Column(name = POSITION)
+	private Long position;
+	
 	@OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
 	private Set<QuestionReply> replies;
 	
@@ -53,6 +58,14 @@ public class Question extends BaseEntity {
 		this.query = query;
 	}
 
+	public Long getPosition() {
+		return position;
+	}
+
+	public void setPosition(Long position) {
+		this.position = position;
+	}
+
 	public Set<QuestionReply> getReplies() {
 		return replies;
 	}
@@ -69,6 +82,7 @@ public class Question extends BaseEntity {
 		
 		Question question = (Question) entity;
 		setQuery(question.getQuery());
+		setPosition(question.getPosition());
 		setReplies(question.getReplies());
 	}
 }

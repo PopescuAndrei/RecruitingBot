@@ -21,7 +21,7 @@ import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 
 @Entity
 @Table(name = CANDIDATE_SKILL)
-public class CandidateSkill  extends BaseEntity {
+public class CandidateSkill extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 

@@ -77,6 +77,11 @@ public final class DbNames {
 	// Position Skill
 	public static final String POSITION_SKILL = "PositionSkill";
 	
+	// Chat
+	public static final String CHAT_MESSAGE = "ChatMessage";
+	public static final String FROM_ROBOT = "FromRobot";
+	public static final String MESSAGE = "Message";
+	
 	// Question
 	public static final String QUESTION = "Question";
 	public static final String QUESTION_ID = "QuestionId";
