@@ -4,6 +4,9 @@ import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.QUES
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.REPLY;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.REPLY_MESSAGE;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -70,5 +73,10 @@ public class QuestionReply extends BaseEntity{
 		
 		QuestionReply qr = (QuestionReply) entity;
 		setReplyMessage(qr.getReplyMessage());
+	}
+	
+	public static QuestionReply any(ArrayList<QuestionReply> replyList) {
+		int index = new Random().nextInt(replyList.size());
+		return replyList.get(index);
 	}
 }
