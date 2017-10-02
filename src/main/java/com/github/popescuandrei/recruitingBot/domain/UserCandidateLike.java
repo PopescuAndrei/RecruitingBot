@@ -1,15 +1,18 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LIKE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_CANDIDATE_LIKE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_ID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
@@ -24,9 +27,13 @@ public class UserCandidateLike extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@OneToOne
-	@Column(name = USER_ID, nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = USER_ID, nullable = false)
 	private User user;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = CANDIDATE_ID, nullable = false)
+	private Candidate candidate;
 	
 	@Column(name = LIKE, length = 1, nullable = false)
 	private Boolean like;

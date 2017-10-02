@@ -3,6 +3,7 @@ package com.github.popescuandrei.recruitingBot.domain;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.RATING;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_CANDIDATE_RATING;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_ID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,9 +30,13 @@ public class UserCandidateRating extends BaseEntity {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = CANDIDATE_ID, nullable = false)
+	@JoinColumn(name = USER_ID, nullable = false)
 	private User user;
-
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = CANDIDATE_ID, nullable = false)
+	private Candidate candidate;
+	
 	@Column(name = RATING)
 	@Digits(integer = 1, fraction = 2)
 	@Size(min = 0, max = 10)
