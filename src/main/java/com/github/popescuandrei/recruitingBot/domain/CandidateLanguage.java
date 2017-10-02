@@ -2,6 +2,7 @@ package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LANGUAGE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SPEAKING;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.UNDERSTANDING;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.WRITING;
@@ -35,7 +36,7 @@ public class CandidateLanguage extends BaseEntity {
 	private Candidate candidate;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = CANDIDATE_ID, nullable = false)
+	@JoinColumn(name = LANGUAGE_ID, nullable = false)
 	private Language language;
 	
 	@NotNull
