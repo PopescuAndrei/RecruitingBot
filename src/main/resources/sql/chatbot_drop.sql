@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS user_candidate_rating;
 DROP TABLE IF EXISTS user_candidate_like;
 DROP TABLE IF EXISTS user_candidate_comment;
+DROP TABLE IF EXISTS chat_message;
 DROP TABLE IF EXISTS interview_progress;
 DROP TABLE IF EXISTS candidate_education;
 DROP TABLE IF EXISTS candidate_experience;
