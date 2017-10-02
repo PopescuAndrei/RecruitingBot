@@ -1,7 +1,7 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LIKE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LIKED;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_CANDIDATE_LIKE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_ID;
 
@@ -35,7 +35,7 @@ public class UserCandidateLike extends BaseEntity {
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
 	private Candidate candidate;
 	
-	@Column(name = LIKE, length = 1, nullable = false)
+	@Column(name = LIKED, length = 1, nullable = false)
 	private Boolean like;
 	
 	@Override

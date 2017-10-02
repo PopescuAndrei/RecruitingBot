@@ -21,7 +21,7 @@ public final class DbNames {
 	
 	// User candidate like
 	public static final String USER_CANDIDATE_LIKE = "UserCandidateLike";
-	public static final String LIKE = "Like";
+	public static final String LIKED = "Liked";
 	
 	// User candidate rating
 	public static final String USER_CANDIDATE_RATING = "UserCandidateRating";
