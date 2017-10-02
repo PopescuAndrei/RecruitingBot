@@ -2805,7 +2805,9 @@ var QUESTIONS = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RouterUtils; });
+
 var RouterUtils = (function () {
     function RouterUtils() {
     }
@@ -3004,7 +3006,7 @@ var RouterUtils = (function () {
     return RouterUtils;
 }());
 
-RouterUtils.baseUrl = "http://localhost:8080/RecruitingBot/api";
+RouterUtils.baseUrl = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].herokuUrl ? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/RecruitingBot/api";
 /** URLs finishing in / need additional id parameter
 
  * URLS:
@@ -3064,7 +3066,8 @@ RouterUtils.replies = "/replies";
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 // The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false
+    production: false,
+    herokuUrl: true
 };
 //# sourceMappingURL=environment.js.map
 
