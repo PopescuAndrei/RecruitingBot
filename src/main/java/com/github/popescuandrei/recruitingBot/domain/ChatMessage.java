@@ -1,6 +1,7 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CHAT_MESSAGE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CREATION_DATE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FROM_ROBOT;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.MESSAGE;
@@ -9,12 +10,14 @@ import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.POSI
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -22,6 +25,8 @@ import javax.validation.constraints.Size;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 
+@Entity
+@Table(name = CHAT_MESSAGE)
 public class ChatMessage extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
