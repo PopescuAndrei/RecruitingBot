@@ -17,5 +17,8 @@ public final class Entities {
 	
 	// skills
 	public static final String SKILL = "skill";
+	public static final String INTEREST = "interest";
+	public static final String LANGUAGE = "language";
+	
 	
 }
