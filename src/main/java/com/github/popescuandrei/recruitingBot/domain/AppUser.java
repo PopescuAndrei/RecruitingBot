@@ -21,7 +21,7 @@ import com.github.popescuandrei.recruitingBot.domain.support.Email;
 
 @Entity
 @Table(name = USER)
-public class User extends BaseEntity{
+public class AppUser extends BaseEntity{
 
 	private static final long serialVersionUID = 1L;
 
@@ -90,10 +90,10 @@ public class User extends BaseEntity{
 
 	@Override
 	public void update(BaseEntity entity) {
-		if (!(entity instanceof User)) {
+		if (!(entity instanceof AppUser)) {
 			throw new IllegalArgumentException("Entity should be of type User");
 		}
-		User user = (User) entity;
+		AppUser user = (AppUser) entity;
 		
 		setFirstName(user.getFirstName());
 		setLastName(user.getLastName());

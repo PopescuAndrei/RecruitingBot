@@ -31,7 +31,7 @@ public class UserCandidateRating extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = USER_ID, nullable = false)
-	private User user;
+	private AppUser user;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
@@ -47,7 +47,7 @@ public class UserCandidateRating extends BaseEntity {
 		return id;
 	}
 	
-	public User getUser() {
+	public AppUser getUser() {
 		return user;
 	}
 
@@ -59,7 +59,7 @@ public class UserCandidateRating extends BaseEntity {
 		this.id = id;
 	}
 
-	public void setUser(User user) {
+	public void setUser(AppUser user) {
 		this.user = user;
 	}
 
