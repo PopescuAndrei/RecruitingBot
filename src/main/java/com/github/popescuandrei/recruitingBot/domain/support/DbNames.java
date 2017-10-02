@@ -4,7 +4,7 @@ public final class DbNames {
 
 	// User
 	public static final String USER = "User";
-	public static final String USER_ID = "User";
+	public static final String USER_ID = "UserId";
 	public static final String NAME = "Name";
 	public static final String EMAIL = "Email";
 	public static final String PASSWORD = "Password";
