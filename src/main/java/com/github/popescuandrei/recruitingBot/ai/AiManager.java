@@ -41,7 +41,7 @@ public class AiManager {
 			LOGGER.info("before null?");
 			AIRequest request = new AIRequest(statement);
 
-			LOGGER.info("#######REQUEST: " + request.getLocation().toString());
+			LOGGER.info("#######REQUEST: " + request.toString());
 			AIResponse response = dataService.request(request);
 
 			if (response.getStatus().getCode() == 200) {
