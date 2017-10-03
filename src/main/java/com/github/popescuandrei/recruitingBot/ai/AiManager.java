@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-import com.github.popescuandrei.recruitingBot.ai.util.Entities;
 import com.github.popescuandrei.recruitingBot.util.AiDecisionService;
 
 import ai.api.AIConfiguration;
@@ -51,7 +50,6 @@ public class AiManager {
 			request.setResetContexts(true);
 			request.setLanguage("English");
 			
-			LOGGER.info("#######REQUEST SESSION ID: " + request.getSessionId());
 			LOGGER.info("#######REQUEST: " + request.toString());
 			AIResponse response = dataService.request(request);
 			LOGGER.info("#######RESPONSE: " + response.getResult().getStringParameter(LANGUAGE));
