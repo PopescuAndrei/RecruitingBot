@@ -15,7 +15,7 @@ import com.github.popescuandrei.recruitingBot.repository.AppUserRepository;
 public class AppUserServiceImpl extends EntityServiceImpl<AppUser> implements AppUserService {
 
 	@Autowired
-	@Qualifier("userRepository")
+	@Qualifier("appUserRepository")
 	private AppUserRepository userRepository;
 
 	public AppUserServiceImpl(BaseRepository<AppUser, Long> repository) {
