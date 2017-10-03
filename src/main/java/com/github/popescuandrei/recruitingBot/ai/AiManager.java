@@ -45,6 +45,7 @@ public class AiManager {
 			AIResponse response = dataService.request(request);
 
 			if (response.getStatus().getCode() == 200) {
+				LOGGER.info("###########RESPONSE :" + response.getResult().toString());
 				responseText = response.getResult().getFulfillment().getSpeech();
 			}
 		} catch (Exception e) {
