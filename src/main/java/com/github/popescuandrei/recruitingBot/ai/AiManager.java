@@ -38,6 +38,7 @@ public class AiManager {
 		String responseText = "Hmm, I need to think on that. Ask again later.";
 		LOGGER.info("#######STATEMENT: " + statement);
 		try {
+			LOGGER.info("before null?");
 			AIRequest request = new AIRequest(statement);
 
 			LOGGER.info("#######REQUEST: " + request.getLocation().toString());
@@ -47,6 +48,7 @@ public class AiManager {
 				responseText = response.getResult().getFulfillment().getSpeech();
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			LOGGER.error(e.getMessage());
 		}
 

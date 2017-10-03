@@ -136,7 +136,7 @@ public class MessengerCallbackController {
 
             LOG.info("#######################################");
             String aiResponse = aiManager.sendRequest(messageText);
-            LOG.info(aiResponse);
+            LOG.info("AI RESPONSE " + aiResponse);
             LOG.info("#######################################");
             facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, messageText);
         };
