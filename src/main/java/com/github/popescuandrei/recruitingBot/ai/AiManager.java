@@ -43,6 +43,9 @@ public class AiManager {
 		LOGGER.info("#######STATEMENT: " + statement);
 		try {
 			AIRequest request = new AIRequest(statement);
+			request.setResetContexts(true);
+			request.setLanguage("English");
+			
 			LOGGER.info("#######REQUEST SESSION ID: " + request.getSessionId());
 			LOGGER.info("#######REQUEST: " + request.toString());
 			AIResponse response = dataService.request(request);
