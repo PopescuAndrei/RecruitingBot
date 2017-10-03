@@ -36,9 +36,11 @@ public class AiManager {
 	 */
 	public String sendRequest(String statement) {
 		String responseText = "Hmm, I need to think on that. Ask again later.";
-
+		LOGGER.info("#######STATEMENT: " + statement);
 		try {
 			AIRequest request = new AIRequest(statement);
+
+			LOGGER.info("#######REQUEST: " + request.getLocation().toString());
 			AIResponse response = dataService.request(request);
 
 			if (response.getStatus().getCode() == 200) {
