@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.github.popescuandrei.recruitingBot.domain.Candidate;
+import com.github.popescuandrei.recruitingBot.domain.ChatMessage;
 import com.github.popescuandrei.recruitingBot.repository.BaseRepository;
-import com.github.popescuandrei.recruitingBot.repository.CandidateRepository;
+import com.github.popescuandrei.recruitingBot.repository.ChatMessageRepository;
 
 @Service
-@Qualifier("candidateService")
-public class CandidateServiceImpl extends EntityServiceImpl<Candidate> implements CandidateService {
+@Qualifier("chatMessageService")
+public class ChatMessageServiceImpl extends EntityServiceImpl<ChatMessage> implements ChatMessageService {
 
 	@Autowired
-	@Qualifier("candidateRepository")
-	private CandidateRepository candidateRepository;
+	@Qualifier("chatMessageRepository")
+	private ChatMessageRepository chatMessageRepository;
 	
-	public CandidateServiceImpl(BaseRepository<Candidate, Long> repository) {
+	public ChatMessageServiceImpl(BaseRepository<ChatMessage, Long> repository) {
 		super(repository);
 	}
 	

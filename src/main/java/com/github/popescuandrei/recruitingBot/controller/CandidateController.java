@@ -14,21 +14,22 @@ import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.service.CandidateService;
 
 @RestController
-@RequestMapping("api/candidates")
+@RequestMapping("/candidates")
 public class CandidateController {
 
 	@Autowired
 	@Qualifier("candidateService")
 	private CandidateService candidateService;
 	
-	@RequestMapping(method = RequestMethod.GET) 
-	public @ResponseBody String findAll() {
-		List<Candidate> candidates = candidateService.findAll();
-		return "Works and retrieves " + candidates.size() + " candidates";
+	@RequestMapping(value="/{id}", method = RequestMethod.GET) 
+	public @ResponseBody Candidate findOne(@PathVariable("id") Long id) {
+		Candidate candidate = candidateService.find(id);
+		return candidate;
 	}
 	
-	@RequestMapping(value="/{id}", method = RequestMethod.GET)
-	public @ResponseBody String findOne(@PathVariable("id") String id) {
-		return "It's working " + id;
+	@RequestMapping(method = RequestMethod.GET) 
+	public @ResponseBody List<Candidate> findAll() {
+		List<Candidate> candidates = candidateService.findAll();
+		return candidates;
 	}
 }

@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.github.popescuandrei.recruitingBot.domain.Candidate;
+import com.github.popescuandrei.recruitingBot.domain.PositionSkill;
 import com.github.popescuandrei.recruitingBot.repository.BaseRepository;
-import com.github.popescuandrei.recruitingBot.repository.CandidateRepository;
+import com.github.popescuandrei.recruitingBot.repository.PositionSkillRepository;
 
 @Service
-@Qualifier("candidateService")
-public class CandidateServiceImpl extends EntityServiceImpl<Candidate> implements CandidateService {
+@Qualifier("positionSkillService")
+public class PositionSkillServiceImpl extends EntityServiceImpl<PositionSkill> implements PositionSkillService {
 
 	@Autowired
-	@Qualifier("candidateRepository")
-	private CandidateRepository candidateRepository;
+	@Qualifier("positionSkillRepository")
+	private PositionSkillRepository positionSkillRepository;
 	
-	public CandidateServiceImpl(BaseRepository<Candidate, Long> repository) {
+	public PositionSkillServiceImpl(BaseRepository<PositionSkill, Long> repository) {
 		super(repository);
 	}
 	
