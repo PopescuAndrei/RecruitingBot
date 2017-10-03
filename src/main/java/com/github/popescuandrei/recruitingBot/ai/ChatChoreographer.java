@@ -16,28 +16,38 @@
 //import com.github.popescuandrei.recruitingBot.domain.Question;
 //import com.github.popescuandrei.recruitingBot.domain.QuestionReply;
 //import com.github.popescuandrei.recruitingBot.domain.support.Const;
+//import com.github.popescuandrei.recruitingBot.service.CandidateService;
+//import com.github.popescuandrei.recruitingBot.service.ChatMessageService;
+//import com.github.popescuandrei.recruitingBot.service.InterviewProgressService;
+//import com.github.popescuandrei.recruitingBot.service.QuestionReplyService;
+//import com.github.popescuandrei.recruitingBot.service.QuestionService;
 //
 //@Component
 //@Qualifier("chatChoreographer")
 //public class ChatChoreographer {
 //
 //	@Autowired
+//	@Qualifier("interviewProgressService")
 //	private InterviewProgressService interviewProgressService;
 //
 //	@Autowired
+//	@Qualifier("candidateService")
 //	private CandidateService candidateService;
 //	
 //	@Autowired
+//	@Qualifier("chatMessageService")
 //	private ChatMessageService chatMessageService;
 //	
 //	@Autowired
+//	@Qualifier("questionService")
 //	private QuestionService questionService;
 //	
 //	@Autowired
+//	@Qualifier("questionReplyService")
 //	private QuestionReplyService questionReplyService;
 //	
-//	@Autowired
-//	private MessageBuilder messageBuilder;
+////	@Autowired
+////	private MessageBuilder messageBuilder;
 //	
 //	private Question currentQuestion;
 //	private Question nextQuestion;

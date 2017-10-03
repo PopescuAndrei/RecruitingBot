@@ -115,5 +115,9 @@ public class Position extends BaseEntity{
 		setImage(position.getImage());
 		setLastUpdate(new Date());
 	}
+	
+	public String buildUrl() {
+		return "https://recruitingmessbot.herokuapp.com/api/positionurls/" + this.getName();
+	}
 
 }

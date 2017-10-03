@@ -1,5 +1,5 @@
-//package com.github.popescuandrei.recruitingBot.ai;
-//
-//public class AiMessageModel {
-//
-//}
+package com.github.popescuandrei.recruitingBot.ai;
+
+public class AiMessageModel {
+
+}
