@@ -49,7 +49,7 @@ public class AiManager {
 			LOGGER.info("#######RESPONSE: " + response.getResult().getStringParameter(LANGUAGE));
 			if (response.getStatus().getCode() == 200) {
 				LOGGER.info("###########RESPONSE :" + response.getResult().toString());
-				responseText = response.getResult().getFulfillment().getSpeech();
+				responseText = response.getResult().getParameters().toString();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
