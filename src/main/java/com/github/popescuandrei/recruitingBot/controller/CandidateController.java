@@ -14,7 +14,7 @@ import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.service.CandidateService;
 
 @RestController
-@RequestMapping("/candidates")
+@RequestMapping("/api/candidates")
 public class CandidateController {
 
 	@Autowired

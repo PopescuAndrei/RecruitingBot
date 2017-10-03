@@ -15,7 +15,7 @@ import com.github.popescuandrei.recruitingBot.service.PositionService;
 
 
 @RestController
-@RequestMapping("/positions")
+@RequestMapping("/api/positions")
 public class PositionController {
 
 	@Autowired
