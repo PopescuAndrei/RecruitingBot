@@ -6,11 +6,13 @@ import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import com.github.popescuandrei.recruitingBot.ai.util.Entities;
+import com.github.popescuandrei.recruitingBot.util.AiDecisionService;
 
 import ai.api.AIConfiguration;
 import ai.api.AIDataService;
@@ -26,6 +28,9 @@ public class AiManager {
 	@Value("${api.ai.apikey}")
 	private String apiKey;
 
+	@Autowired
+	private AiDecisionService aiDecisionService;
+	
 	AIConfiguration config;
 	AIDataService dataService;
 
@@ -51,8 +56,8 @@ public class AiManager {
 			AIResponse response = dataService.request(request);
 			LOGGER.info("#######RESPONSE: " + response.getResult().getStringParameter(LANGUAGE));
 			if (response.getStatus().getCode() == 200) {
-				LOGGER.info("###########RESPONSE :" + response.getResult().toString());
-				responseText = response.getResult().getParameters().toString();
+				// PARSE THE RESPONSE
+				responseText = aiDecisionService.parseAiResponse(response);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
