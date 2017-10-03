@@ -23,6 +23,7 @@ import com.github.popescuandrei.recruitingBot.service.PositionService;
 @Qualifier("facebookMessageBuilder")
 public class FacebookMessageBuilder {
 	
+
     private final String RESOURCE_URL = "https://raw.githubusercontent.com/fbsamples/messenger-platform-samples/master/node/public";
 
     @Autowired

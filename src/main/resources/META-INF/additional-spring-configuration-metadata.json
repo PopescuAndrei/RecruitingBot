@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "recruitingBot.appSecret",
+    "type": "java.lang.String",
+    "description": "FaceBook messenger application secret"
+  },
+  {
+    "name": "recruitingBot.verifyToken",
+    "type": "java.lang.String",
+    "description": "FaceBook messenger verify token"
+  },
+  {
+    "name": "recruitingBot.pageAccessToken",
+    "type": "java.lang.String",
+    "description": "FaceBook messenger page access token"
+  },
+  {
+    "name": "api.ai.apikey",
+    "type": "java.lang.String",
+    "description": "Api.ai API access key"
+  }
+]}

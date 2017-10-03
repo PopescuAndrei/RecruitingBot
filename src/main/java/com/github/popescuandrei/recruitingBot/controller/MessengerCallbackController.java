@@ -37,6 +37,7 @@ import com.github.messenger4j.receive.handlers.PostbackEventHandler;
 import com.github.messenger4j.receive.handlers.QuickReplyMessageEventHandler;
 import com.github.messenger4j.receive.handlers.TextMessageEventHandler;
 import com.github.messenger4j.send.MessengerSendClient;
+import com.github.popescuandrei.recruitingBot.ai.AiManager;
 import com.github.popescuandrei.recruitingBot.util.FacebookMessageBuilder;
 
 /**
@@ -58,6 +59,8 @@ public class MessengerCallbackController {
     @Autowired
     private FacebookMessageBuilder facebookMessageBuilder;
     
+    @Autowired
+    private AiManager aiManager;
     
     /**
      * Constructs the {@code MessengerPlatformCallbackHandler} and initializes the {@code MessengerReceiveClient}.
@@ -131,6 +134,10 @@ public class MessengerCallbackController {
             LOG.info("Received message '{}' with text '{}' from user '{}' at '{}'",
                     messageId, messageText, senderId, timestamp);
 
+            LOG.info("#######################################");
+            String aiResponse = aiManager.sendRequest(messageText);
+            LOG.info(aiResponse);
+            LOG.info("#######################################");
             facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, messageText);
         };
     }
