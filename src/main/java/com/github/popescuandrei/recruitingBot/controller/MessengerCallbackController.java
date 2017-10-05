@@ -132,7 +132,7 @@ public class MessengerCallbackController {
 
             String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
             
-            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, messageText);
+            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, aiResponse);
         };
     }
 
