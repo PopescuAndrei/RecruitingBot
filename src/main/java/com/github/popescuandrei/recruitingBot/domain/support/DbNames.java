@@ -14,6 +14,7 @@ public final class DbNames {
 	// Candidate
 	public static final String CANDIDATE = "Candidate";
 	public static final String CANDIDATE_ID = "CandidateId";
+	public static final String FACEBOOK_UUID = "FacebookUUID";
 	public static final String AGE = "Age";
 	public static final String GENDER = "Gender";
 	public static final String PHONE = "Phone";

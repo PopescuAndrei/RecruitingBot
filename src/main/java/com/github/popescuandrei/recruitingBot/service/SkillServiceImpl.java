@@ -22,6 +22,10 @@ public class SkillServiceImpl extends EntityServiceImpl<Skill> implements SkillS
 		super(repository);
 	}
 	
+	public Skill findByName(String name) {
+		return skillRepository.findByName(name);
+	}
+	
     @PostConstruct
     @Override
     protected void init() {

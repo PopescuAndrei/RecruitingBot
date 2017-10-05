@@ -2,6 +2,7 @@ package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.AGE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FACEBOOK_UUID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.GENDER;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
@@ -28,6 +29,9 @@ public class Candidate extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(name = FACEBOOK_UUID, unique = true)
+	private String facebookUuid;
 	
 	@NotNull
 	@Size(max = 50)
@@ -59,6 +63,14 @@ public class Candidate extends BaseEntity{
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public String getFacebookUuid() {
+        return facebookUuid;
+    }
+
+    public void setFacebookUuid(String facebookUuid) {
+        this.facebookUuid = facebookUuid;
+    }    
 
 	public String getFirstName() {
 		return firstName;

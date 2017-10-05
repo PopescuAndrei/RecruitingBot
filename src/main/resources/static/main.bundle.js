@@ -145,25 +145,24 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__candidates_experience_timeline_experience_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/experience-timeline/experience-timeline.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_store_service__ = __webpack_require__("../../../../../src/app/app-store.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__candidates_comment_view_comment_view_component__ = __webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__candidates_language_table_language_table_component__ = __webpack_require__("../../../../../src/app/candidates/language-table/language-table.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__candidates_education_timeline_education_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/education-timeline/education-timeline.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__candidates_candidate_card_candidate_card_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-card/candidate-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__interview_interview_component__ = __webpack_require__("../../../../../src/app/interview/interview.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__positions_positions_component__ = __webpack_require__("../../../../../src/app/positions/positions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__candidates_candidate_view_candidate_view_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__candidates_candidates_component__ = __webpack_require__("../../../../../src/app/candidates/candidates.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__sidebar_sidebar_module__ = __webpack_require__("../../../../../src/app/sidebar/sidebar.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_footer_footer_module__ = __webpack_require__("../../../../../src/app/shared/footer/footer.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__shared_navbar_navbar_module__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__candidates_education_timeline_education_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/education-timeline/education-timeline.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__candidates_candidate_card_candidate_card_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-card/candidate-card.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__interview_interview_component__ = __webpack_require__("../../../../../src/app/interview/interview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__positions_positions_component__ = __webpack_require__("../../../../../src/app/positions/positions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__candidates_candidate_view_candidate_view_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__candidates_candidates_component__ = __webpack_require__("../../../../../src/app/candidates/candidates.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__sidebar_sidebar_module__ = __webpack_require__("../../../../../src/app/sidebar/sidebar.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__shared_footer_footer_module__ = __webpack_require__("../../../../../src/app/shared/footer/footer.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_navbar_navbar_module__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -206,36 +205,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_28__angular_core__["NgModule"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_27__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_30__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_35__dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__candidates_candidates_component__["a" /* CandidatesComponent */], __WEBPACK_IMPORTED_MODULE_19__candidates_candidate_card_candidate_card_component__["a" /* CandidateCardComponent */], __WEBPACK_IMPORTED_MODULE_17__candidates_language_table_language_table_component__["a" /* LanguageTableComponent */], __WEBPACK_IMPORTED_MODULE_16__candidates_comment_view_comment_view_component__["a" /* CommentViewComponent */], __WEBPACK_IMPORTED_MODULE_8__candidates_chat_view_chat_view_component__["a" /* ChatViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__candidates_experience_timeline_experience_timeline_component__["a" /* ExperienceTimelineComponent */], __WEBPACK_IMPORTED_MODULE_18__candidates_education_timeline_education_timeline_component__["a" /* EducationTimelineComponent */], __WEBPACK_IMPORTED_MODULE_23__candidates_candidate_view_candidate_view_component__["a" /* CandidateViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__positions_positions_component__["a" /* PositionsComponent */], __WEBPACK_IMPORTED_MODULE_12__positions_position_card_position_card_component__["a" /* PositionCardComponent */], __WEBPACK_IMPORTED_MODULE_11__positions_position_view_position_view_component__["a" /* PositionViewComponent */], __WEBPACK_IMPORTED_MODULE_13__positions_candidate_list_item_candidate_list_item_component__["a" /* CandidateListItemComponent */], __WEBPACK_IMPORTED_MODULE_3__positions_create_position_create_position_component__["a" /* CreatePositionComponent */], __WEBPACK_IMPORTED_MODULE_1__positions_edit_position_edit_position_component__["a" /* EditPositionComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__interview_interview_component__["a" /* InterviewComponent */], __WEBPACK_IMPORTED_MODULE_2__interview_edit_question_edit_question_component__["a" /* EditQuestionComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__settings_settings_component__["a" /* SettingsComponent */]
+            __WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_34__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__candidates_candidates_component__["a" /* CandidatesComponent */], __WEBPACK_IMPORTED_MODULE_18__candidates_candidate_card_candidate_card_component__["a" /* CandidateCardComponent */], __WEBPACK_IMPORTED_MODULE_16__candidates_comment_view_comment_view_component__["a" /* CommentViewComponent */], __WEBPACK_IMPORTED_MODULE_8__candidates_chat_view_chat_view_component__["a" /* ChatViewComponent */], __WEBPACK_IMPORTED_MODULE_14__candidates_experience_timeline_experience_timeline_component__["a" /* ExperienceTimelineComponent */], __WEBPACK_IMPORTED_MODULE_17__candidates_education_timeline_education_timeline_component__["a" /* EducationTimelineComponent */], __WEBPACK_IMPORTED_MODULE_22__candidates_candidate_view_candidate_view_component__["a" /* CandidateViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__positions_positions_component__["a" /* PositionsComponent */], __WEBPACK_IMPORTED_MODULE_12__positions_position_card_position_card_component__["a" /* PositionCardComponent */], __WEBPACK_IMPORTED_MODULE_11__positions_position_view_position_view_component__["a" /* PositionViewComponent */], __WEBPACK_IMPORTED_MODULE_13__positions_candidate_list_item_candidate_list_item_component__["a" /* CandidateListItemComponent */], __WEBPACK_IMPORTED_MODULE_3__positions_create_position_create_position_component__["a" /* CreatePositionComponent */], __WEBPACK_IMPORTED_MODULE_1__positions_edit_position_edit_position_component__["a" /* EditPositionComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__interview_interview_component__["a" /* InterviewComponent */], __WEBPACK_IMPORTED_MODULE_2__interview_edit_question_edit_question_component__["a" /* EditQuestionComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__settings_settings_component__["a" /* SettingsComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_25__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_25__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_26__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_29__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_31__app_routing__["a" /* AppRoutes */]),
-            __WEBPACK_IMPORTED_MODULE_32__sidebar_sidebar_module__["a" /* SidebarModule */],
-            __WEBPACK_IMPORTED_MODULE_34__shared_navbar_navbar_module__["a" /* NavbarModule */],
-            __WEBPACK_IMPORTED_MODULE_33__shared_footer_footer_module__["a" /* FooterModule */],
+            __WEBPACK_IMPORTED_MODULE_26__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_24__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_24__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_25__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_28__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_30__app_routing__["a" /* AppRoutes */]),
+            __WEBPACK_IMPORTED_MODULE_31__sidebar_sidebar_module__["a" /* SidebarModule */],
+            __WEBPACK_IMPORTED_MODULE_33__shared_navbar_navbar_module__["a" /* NavbarModule */],
+            __WEBPACK_IMPORTED_MODULE_32__shared_footer_footer_module__["a" /* FooterModule */],
             __WEBPACK_IMPORTED_MODULE_7_ng2_dragula_components_dragular_module__["DragulaModule"]
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_10__services_candidates_service__["a" /* CandidatesService */], __WEBPACK_IMPORTED_MODULE_5__services_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_9__services_positions_service__["a" /* PositionsService */], __WEBPACK_IMPORTED_MODULE_6__services_questions_service__["a" /* QuestionsService */], __WEBPACK_IMPORTED_MODULE_0__services_skill_service__["a" /* SkillService */],
             __WEBPACK_IMPORTED_MODULE_15__app_store_service__["a" /* AppStoreService */], __WEBPACK_IMPORTED_MODULE_4__services_notification_service__["a" /* NotificationService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_30__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -409,7 +406,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/candidates/candidate-view/candidate-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\"><!-- ROW -->\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user\">\n                <div class=\"image cyan\"></div>\n                <div class=\"content\">\n                    <div class=\"author\">\n                        <img class=\"avatar border-white\" [src]=\"candidate?.avatar || ''\" alt=\"...\"/>\n                        <h4 class=\"title\">\n                            <span class=\"cyan-text\">{{candidate?.firstName}} {{candidate?.lastName}}</span>\n                            <br />\n                            <a href=\"#\"><small><span class=\"black-text\">{{candidate?.email}}</span></small></a>\n                        </h4>\n                    </div>\n                    <p class=\"description text-center\">{{candidate?.description}}</p>\n                </div>\n                <hr>\n                <div class=\"text-center\">\n                    <div class=\"row\">\n                        <div class=\"col-md-3 col-md-offset-1\">\n                            <a [routerLink]=\"['/candidates', candidateId, 'comments']\">\n                                <h5>\n                                    <span class=\"cyan-text\">{{candidate?.comments}}</span>\n                                    <br /><small>Comments</small>\n                                </h5>\n                            </a>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <a [routerLink]=\"['/candidates', candidateId, 'chat']\">\n                                <h5>\n                                <span class=\"candidate-rating\">{{candidate?.likes}}</span><br />\n                                <small>Likes</small>\n                                </h5>\n                            </a>\n                        </div>\n                        <div class=\"col-md-3\">\n                            <h5>\n                            <span class=\"candidate-rating\">{{candidate?.rating}}</span>\n                            <br /><small>/5</small>\n                            </h5>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image blue\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Skills</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <ul class=\"bean-skillset\">\n                        <li *ngFor=\"let skill of candidateSkills\" class=\"skill-bar\" [ngStyle]=\"{'background-color':skill.getColor(), 'width': (skill.level + '%') }\">\n                            <span>{{skill.name}}</span>\n                            <span class=\"skill-percent\">{{(skill.level/100) | percent}}</span>\n                        </li>      \n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image green\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Interests</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <dl>\n                        <dd *ngFor=\"let interest of candidateInterests\">\n                            <span>{{interest.name}}</span>\n                        </dd>      \n                    </dl>\n                </div>\n            </div>\n        </div>    \n    </div><!-- END ROW -->\n\n    <div class=\"row\">\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-background\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Experience</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <experience-timeline [candidateExperience]=\"candidateExperience\"></experience-timeline>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Education</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <education-timeline [candidateEducation]=\"candidateEducation\"></education-timeline>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-8\">\n            <language-table [candidateLanguages]=\"candidateLanguages\"></language-table>\n        </div>\n    </div>\n\n</div>"
+module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\"><!-- ROW -->\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user\">\n                <div class=\"image cyan\"></div>\n                <div class=\"content\">\n                    <div class=\"author\">\n                        <img class=\"avatar border-white\" [src]=\"candidate?.avatar || ''\" alt=\"...\"/>\n                        <h4 class=\"title\">\n                            <span class=\"cyan-text\">{{candidate?.firstName}} {{candidate?.lastName}}</span>\n                            <br />\n                            <a href=\"#\"><small><span class=\"black-text\">{{candidate?.email}}</span></small></a>\n                        </h4>\n                    </div>\n                    <p class=\"description text-center\">{{candidate?.description}}</p>\n                </div>\n                <hr>\n                <div class=\"text-center\">\n                    <div class=\"row\">\n                        <div class=\"col-md-3 col-md-offset-1\">\n                            <a [routerLink]=\"['/candidates', candidateId, 'comments']\">\n                                <h5>\n                                    <span class=\"cyan-text\">{{candidate?.comments}}</span>\n                                    <br /><small>Comments</small>\n                                </h5>\n                            </a>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <a [routerLink]=\"['/candidates', candidateId, 'chat']\">\n                                <h5>\n                                <span class=\"candidate-rating\">{{candidate?.likes}}</span><br />\n                                <small>Likes</small>\n                                </h5>\n                            </a>\n                        </div>\n                        <div class=\"col-md-3\">\n                            <h5>\n                            <span class=\"candidate-rating\">{{candidate?.rating}}</span>\n                            <br /><small>/5</small>\n                            </h5>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image blue\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Skills</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <ul class=\"bean-skillset\">\n                        <li *ngFor=\"let skill of candidateSkills\" class=\"skill-bar\" [ngStyle]=\"{'background-color':skill.getColor(), 'width': (skill.level + '%') }\">\n                            <span>{{skill.name}}</span>\n                            <span class=\"skill-percent\">{{(skill.level/100) | percent}}</span>\n                        </li>      \n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image green\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Interests</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <dl>\n                        <dd *ngFor=\"let interest of candidateInterests\">\n                            <span>{{interest.name}}</span>\n                        </dd>      \n                    </dl>\n                </div>\n            </div>\n        </div>    \n    </div><!-- END ROW -->\n\n    <div class=\"row\">\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-background\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Experience</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <experience-timeline [candidateExperience]=\"candidateExperience\"></experience-timeline>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Education</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <education-timeline [candidateEducation]=\"candidateEducation\"></education-timeline>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-8\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"header\">\n                    <h4 class=\"title text-center\"><strong>Languages</strong></h4>\n                </div>\n                <div class=\"content table-responsive table-full-width\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th>Language</th>\n                                <th>Writing</th>\n                                <th>Understanding</th>\n                                <th>Speaking</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let language of candidateLanguages\">\n                                <td>{{language.name}}</td>\n                                <td>{{language.writing}}</td>\n                                <td>{{language.understanding}}</td>\n                                <td>{{language.speaking}}</td>\n                            </tr>\n                        </tbody>\n                    </table>\n\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>"
 
 /***/ }),
 
@@ -735,7 +732,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".timeline ul {\r\n  padding: 1em 0 0 2em;\r\n  margin: 0;\r\n  list-style: none;\r\n  position: relative;\r\n}\r\n\r\n.timeline ul::before {\r\n  content: ' ';\r\n  height: 100%;\r\n  width: 1px;\r\n  background-color: #d9d9d9;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 14.55em;\r\n  z-index: -ț1;\r\n}\r\n\r\n.timeline li div {\r\n  display: inline-block;\r\n  margin: 1em 0;\r\n  vertical-align: top;\r\n}\r\n\r\n.timeline .bullet {\r\n  width: 1em;\r\n  height: 1em;\r\n  box-sizing: border-box;\r\n  border-radius: 50%;\r\n  background: #fff;\r\n  z-index: 1;\r\n  margin-right: 1em;\r\n  border: 2px solid #3868A6;\r\n}\r\n\r\n.timeline .time {\r\n  float:left;\r\n  width: 40%;\r\n  font-size: 0.75em;\r\n  padding-top: 0.25em;\r\n}\r\n\r\n.timeline .desc {\r\n  padding-left:20px;\r\n  width: 50%;\r\n}\r\n\r\n.timeline h3 {\r\n  font-size: 0.9em;\r\n  font-weight: 400;\r\n  margin: 0;\r\n}\r\n\r\n.timeline h4 {\r\n  margin: 0;\r\n  font-size: 0.7em;\r\n  font-weight: 400;\r\n}", ""]);
+exports.push([module.i, ".timeline ul {\r\n  padding: 1em 0 0 2em;\r\n  margin: 0;\r\n  list-style: none;\r\n  position: relative;\r\n}\r\n\r\n.timeline ul::before {\r\n  content: ' ';\r\n  height: 100%;\r\n  width: 1px;\r\n  background-color: #d9d9d9;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 2.5em;\r\n  z-index: -ț1;\r\n}\r\n\r\n.timeline li div {\r\n  display: inline-block;\r\n  margin: 1em 0;\r\n  vertical-align: top;\r\n}\r\n\r\n.timeline .bullet {\r\n  width: 1em;\r\n  height: 1em;\r\n  box-sizing: border-box;\r\n  border-radius: 50%;\r\n  background: #fff;\r\n  z-index: 1;\r\n  margin-right: 1em;\r\n  border: 2px solid #3868A6;\r\n}\r\n\r\n.timeline .time {\r\n  width: 20%;\r\n  font-size: 0.75em;\r\n  padding-top: 0.25em;\r\n}\r\n\r\n.timeline .desc {\r\n  width: 70%;\r\n}\r\n\r\n.timeline h3 {\r\n  font-size: 0.9em;\r\n  font-weight: 400;\r\n  margin: 0;\r\n}\r\n\r\n.timeline h4 {\r\n  margin: 0;\r\n  font-size: 0.7em;\r\n  font-weight: 400;\r\n}\r\n\r\n.timeline .people img {\r\n  width: 30px;\r\n  height: 30px;\r\n  border-radius: 50%;\r\n}\r\n\r\n.credits,\r\n.video {\r\n  position: absolute;\r\n  bottom: 10px;\r\n  color: #808080;\r\n  font-size: 100%;\r\n  text-decoration: underline;\r\n}\r\n\r\n.credits {\r\n  left: 10px;\r\n}\r\n\r\n.video {\r\n  right: 10px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -748,7 +745,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/candidates/education-timeline/education-timeline.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"timeline\">\n  <ul>\n    <li *ngFor=\"let item of candidateEducation\">\n      <div class=\"bullet\"></div>\n      <div class=\"time cyan-text\" style=\"font-size:1em;\">{{item.fromDate | date:short}} - {{item.toDate | date: short}}</div>\n      <div class=\"desc\">\n        <h3 style=\"font-size:1.2em; font-weight: bolder;\" class=\"blue-text\">{{item.major}}</h3>\n        <h4 style=\"font-size:1.0em; font-weight: bold; margin-bottom:10px; margin-top:10px;\" class=\"red-text\">@ {{item.institution}}</h4>\n        <p style=\"font-size:1.1em;\">\n          <strong class=\"blue-text\">Grade: </strong><span class=\"red-text\">{{item.grade}}</span>\n        </p>\n      </div>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"timeline\">\n  <ul>\n    <li *ngFor=\"let item of candidateEducation\">\n      <div class=\"bullet\"></div>\n      <div class=\"time cyan-text\" style=\"font-size:1em;\">{{item.fromDate | date: 'MMM, yyyy'}} - {{item.toDate | date: 'MMM, yyyy'}}</div>\n      <div class=\"desc\">\n        <h3 class=\"blue-text\" style=\"font-size:1.2em; font-weight: bolder; margin-bottom:2px;\">{{item.major}}</h3>\n        <h4 class=\"red-text\" style=\"font-size:1.0em; font-weight: bold; margin-bottom:8px;\" >@ {{item.institution}}</h4>\n        <p style=\"font-size:1.1em;\">\n          <strong class=\"blue-text\">Grade: </strong><span class=\"red-text\">{{item.grade}}</span>\n        </p>\n      </div>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -813,7 +810,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/candidates/experience-timeline/experience-timeline.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"timeline\">\n  <ul>\n    <li *ngFor=\"let experience of candidateExperience\">\n      <div class=\"bullet\"></div>\n      <div class=\"time cyan-text\" style=\"font-size:1em;\">{{experience.period}}</div>\n      <div class=\"desc\">\n        <h3 class=\"blue-text\" style=\"font-size:1.2em; font-weight: bolder; margin-bottom:2px;\">{{experience.title}}</h3>\n        <h4 class=\"red-text\" style=\"font-size:1.0em; font-weight: bold; margin-bottom:8px;\" >@ {{experience.company}}</h4>\n        <p style=\"font-size:0.8em;\">{{experience.description}}</p>\n      </div>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"timeline\">\n  <ul>\n    <li *ngFor=\"let experience of candidateExperience\">\n      <div class=\"bullet\"></div>\n      <div class=\"time cyan-text\" style=\"font-size:1em;\">{{experience.periodFrom | date: 'MMM, yyyy'}} - {{experience.periodTo | date: 'MMM, yyyy'}}</div>\n      <div class=\"desc\">\n        <h3 class=\"blue-text\" style=\"font-size:1.2em; font-weight: bolder; margin-bottom:2px;\">{{experience.title}}</h3>\n        <h4 class=\"red-text\" style=\"font-size:1.0em; font-weight: bold; margin-bottom:8px;\" >@ {{experience.company}}</h4>\n        <p style=\"font-size:0.8em;\">{{experience.description}}</p>\n      </div>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -854,75 +851,6 @@ ExperienceTimelineComponent = __decorate([
 ], ExperienceTimelineComponent);
 
 //# sourceMappingURL=experience-timeline.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/candidates/language-table/language-table.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".card-user {\r\n\tbox-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);\r\n  }", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/candidates/language-table/language-table.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "\n<div class=\"card card-user white-backgound\">\n    <div class=\"header\">\n        <h4 class=\"title text-center\"><strong>Languages</strong></h4>\n    </div>\n    <div class=\"content table-responsive table-full-width\">\n        <table class=\"table table-striped\">\n            <thead>\n                <tr>\n                    <th *ngFor=\"let cell of languages.headerRow\">{{ cell }}</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr *ngFor=\"let language of languages.dataRows\">\n                    <td>{{language.name}}</td>\n                    <td>{{language.writing}}</td>\n                    <td>{{language.understanding}}</td>\n                    <td>{{language.speaking}}</td>\n                </tr>\n            </tbody>\n        </table>\n\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/candidates/language-table/language-table.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguageTableComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var LanguageTableComponent = (function () {
-    function LanguageTableComponent() {
-    }
-    LanguageTableComponent.prototype.ngOnInit = function () {
-        this.languages = {
-            headerRow: ['Name', 'Writing', 'Understanding', 'Speaking'],
-            dataRows: this.candidateLanguages
-        };
-    };
-    return LanguageTableComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], LanguageTableComponent.prototype, "candidateLanguages", void 0);
-LanguageTableComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'language-table',
-        template: __webpack_require__("../../../../../src/app/candidates/language-table/language-table.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/candidates/language-table/language-table.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], LanguageTableComponent);
-
-//# sourceMappingURL=language-table.component.js.map
 
 /***/ }),
 
@@ -1150,11 +1078,12 @@ var Education = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Experience; });
 var Experience = (function () {
-    function Experience(title, company, description, period) {
+    function Experience(title, company, description, periodFrom, periodTo) {
         this.title = title;
         this.company = company;
         this.description = description;
-        this.period = period;
+        this.periodFrom = periodFrom;
+        this.periodTo = periodTo;
     }
     return Experience;
 }());
@@ -2531,7 +2460,7 @@ NavbarModule = __decorate([
 /***/ "../../../../../src/app/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"sidebar-wrapper\">\n    <div class=\"logo\">\n        <a href=\"https://www.creative-tim.com\" class=\"simple-text\">\n            <div class=\"logo-img\">\n                <img src=\"../../assets/img/angular2-logo.png\" alt=\"\">\n            </div>\n            HR-Ninja\n        </a>\n    </div>\n    <ul class=\"nav\">\n        <li *ngFor=\"let menuItem of menuItems\" routerLinkActive=\"active\" class=\"{{menuItem.class}}\">\n            <a [routerLink]=\"[menuItem.path]\">\n                <i class=\"{{menuItem.icon}}\"></i>\n                <p>{{menuItem.title}}</p>\n            </a>\n        </li>\n    </ul>\n</div>\n"
+module.exports = "\n<div class=\"sidebar-wrapper\">\n    <div class=\"logo\">\n        <a href=\"https://www.creative-tim.com\" class=\"simple-text\">\n            <div class=\"logo-img\">\n                <img src=\"../../assets/img/angular.png\" alt=\"\">\n            </div>\n            HR-Ninja\n        </a>\n    </div>\n    <ul class=\"nav\">\n        <li *ngFor=\"let menuItem of menuItems\" routerLinkActive=\"active\" class=\"{{menuItem.class}}\">\n            <a [routerLink]=\"[menuItem.path]\">\n                <i class=\"{{menuItem.icon}}\"></i>\n                <p>{{menuItem.title}}</p>\n            </a>\n        </li>\n    </ul>\n</div>\n"
 
 /***/ }),
 
@@ -2733,46 +2662,46 @@ var LANGUAGES = [
     new __WEBPACK_IMPORTED_MODULE_2__domain_language__["a" /* Language */]("German", 70, 20, 20)
 ];
 var EDUCATION = [
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("UPB - FILS", "MBAE", new Date("12.12.2016"), new Date("12.12.2018"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("UPB - FILS", "Computer Science", new Date("12.12.2012"), new Date("12.12.2016"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("CNDG - FILS", "Mate-Info", new Date("12.12.2008"), new Date("12.12.2012"), 9.3),
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("Blocuri", "Scoala Vietii", new Date("12.12.2000"), new Date("12.12.2008"), 9.3)
+    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
+    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
+    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
+    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
 ];
 var COMMENTS = [
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016-01-01T23:28:56.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016-01-02T23:28:56.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016-01-03T23:28:56.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016-01-04T23:28:56.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016-01-05T23:28:56.782Z"))
+    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
 ];
 var EXPERIENCES = [
-    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Software Engineer", "Ericsson", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "January 2016 - present"),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2015 - October 2015"),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2014 - October 2014"),
+    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Software Engineer", "Ericsson", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 var POSITIONS = [
     [
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](1, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016-01-01T23:28:56.782Z")),
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](2, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016-01-01T23:28:56.782Z"))
+        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](1, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016/01/01 23:28:56")),
+        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](2, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016/01/01 23:28:56"))
     ], [
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](3, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016-01-01T23:28:56.782Z")),
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](4, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016-01-01T23:28:56.782Z"))
+        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](3, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016/01/01 23:28:56")),
+        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](4, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016/01/01 23:28:56"))
     ]
 ];
 var CONVERSATION = [
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](1, GENERIC_CANDIDATE, "Hello", new Date("2016-01-01T22:00:08.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016-01-01T22:00:33.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016-01-01T22:01:02.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016-01-01T22:01:08.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016-01-01T22:02:14.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016-01-01T22:02:15.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016-01-01T22:03:01.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](8, CHAT_BOT, "What's your education?", new Date("2016-01-01T22:04:04.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016-01-01T22:05:08.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](10, CHAT_BOT, "That's great. Anything else?", new Date("2016-01-01T22:06:08.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016-01-01T22:07:08.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016-01-01T22:08:08.782Z")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016-01-01T22:09:08.782Z"))
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](1, GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](8, CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](10, CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
 ];
 var INTERESTS = [
     {
@@ -3067,7 +2996,7 @@ RouterUtils.replies = "/replies";
 // The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    herokuUrl: true
+    herokuUrl: false
 };
 //# sourceMappingURL=environment.js.map
 

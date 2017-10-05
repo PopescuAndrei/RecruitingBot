@@ -2,6 +2,8 @@ package com.github.popescuandrei.recruitingBot.ai;
 
 import static com.github.popescuandrei.recruitingBot.ai.util.Entities.LANGUAGE;
 
+import java.util.Date;
+
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
@@ -42,20 +44,17 @@ public class AiManager {
 	/**
 	 * Calls the API.AI service using user input from the UI.
 	 */
-	public String sendRequest(String statement) {
+	public String sendRequest(String statement, String facebookUuid, Date timestamp) {
 		String responseText = "Hmm, I need to think on that. Ask again later.";
-		LOGGER.info("#######STATEMENT: " + statement);
 		try {
 			AIRequest request = new AIRequest(statement);
 			request.setResetContexts(true);
 			request.setLanguage("English");
 			
-			LOGGER.info("#######REQUEST: " + request.toString());
 			AIResponse response = dataService.request(request);
-			LOGGER.info("#######RESPONSE: " + response.getResult().getStringParameter(LANGUAGE));
 			if (response.getStatus().getCode() == 200) {
 				// PARSE THE RESPONSE
-				responseText = aiDecisionService.parseAiResponse(response);
+				responseText = aiDecisionService.parseAiResponse(response, facebookUuid, timestamp);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -130,14 +130,8 @@ public class MessengerCallbackController {
             final String senderId = event.getSender().getId();
             final Date timestamp = event.getTimestamp();
 
-            // TODO: parse facebook message through api.ai
-            LOG.info("Received message '{}' with text '{}' from user '{}' at '{}'",
-                    messageId, messageText, senderId, timestamp);
-
-            LOG.info("#######################################");
-            String aiResponse = aiManager.sendRequest(messageText);
-            LOG.info("AI RESPONSE " + aiResponse);
-            LOG.info("#######################################");
+            String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
+            
             facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, messageText);
         };
     }

@@ -9,4 +9,5 @@ import com.github.popescuandrei.recruitingBot.domain.Candidate;
 @Qualifier("candidateRepository")
 public interface CandidateRepository extends BaseRepository<Candidate, Long> {
 
+	Candidate findByFacebookUuid(String facebookUuid);
 }

@@ -4,4 +4,5 @@ import com.github.popescuandrei.recruitingBot.domain.Candidate;
 
 public interface CandidateService extends EntityService<Candidate> {
 
+	Candidate findByFacebookUuid(String facebookUuid);
 }

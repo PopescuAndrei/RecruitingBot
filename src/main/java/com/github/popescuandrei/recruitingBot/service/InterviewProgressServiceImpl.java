@@ -22,6 +22,10 @@ public class InterviewProgressServiceImpl extends EntityServiceImpl<InterviewPro
 		super(repository);
 	}
 	
+	public InterviewProgress findByCandidateId(Long candidateId) {
+		return interviewProgressRepository.findByCandidateId(candidateId);
+	}
+	
     @PostConstruct
     @Override
     protected void init() {

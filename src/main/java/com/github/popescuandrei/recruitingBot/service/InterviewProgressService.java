@@ -4,4 +4,5 @@ import com.github.popescuandrei.recruitingBot.domain.InterviewProgress;
 
 public interface InterviewProgressService extends EntityService<InterviewProgress> {
 
+	InterviewProgress findByCandidateId(Long candidateId);
 }

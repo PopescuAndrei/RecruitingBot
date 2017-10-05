@@ -21,11 +21,15 @@ public class CandidateServiceImpl extends EntityServiceImpl<Candidate> implement
 	public CandidateServiceImpl(BaseRepository<Candidate, Long> repository) {
 		super(repository);
 	}
+
+	@Override
+	public Candidate findByFacebookUuid(String facebookUuid) {
+		return candidateRepository.findByFacebookUuid(facebookUuid);
+	}
 	
     @PostConstruct
     @Override
     protected void init() {
         super.init();
     }
-
 }

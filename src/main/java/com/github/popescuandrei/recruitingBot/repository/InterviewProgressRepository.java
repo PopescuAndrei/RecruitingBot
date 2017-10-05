@@ -9,4 +9,5 @@ import com.github.popescuandrei.recruitingBot.domain.InterviewProgress;
 @Qualifier("interviewProgressRepository")
 public interface InterviewProgressRepository extends BaseRepository<InterviewProgress, Long> {
 
+	InterviewProgress findByCandidateId(Long candidateId);
 }
