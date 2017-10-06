@@ -65,11 +65,11 @@ public class FacebookMessageBuilder {
         }
         
         if(availablePositions.isEmpty()) {
-        	buttonListBuilder.addUrlButton("There are no open positions right now", "https://www.google.com");
+        	buttonListBuilder.addUrlButton("Nothing here", "https://www.google.com");
         }
         
         final List<Button> buttons = buttonListBuilder.build();
-        final ButtonTemplate buttonTemplate = ButtonTemplate.newBuilder("These are the available positions", buttons).build();
+        final ButtonTemplate buttonTemplate = ButtonTemplate.newBuilder("We have those: ", buttons).build();
         sendClient.sendTemplate(recipientId, buttonTemplate);
     }
 
