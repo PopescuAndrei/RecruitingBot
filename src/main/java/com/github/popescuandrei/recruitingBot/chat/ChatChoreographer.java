@@ -10,6 +10,9 @@ import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTIO
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_LANGUAGE;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_SKILL;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.domain.support.Const.AT_EMAIL;
+import static com.github.popescuandrei.recruitingBot.domain.support.Const.MALE;
+import static com.github.popescuandrei.recruitingBot.domain.support.Const.UNAVAILABLE;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -29,6 +32,7 @@ import com.github.popescuandrei.recruitingBot.domain.InterviewProgress;
 import com.github.popescuandrei.recruitingBot.domain.QuestionReply;
 import com.github.popescuandrei.recruitingBot.domain.Skill;
 import com.github.popescuandrei.recruitingBot.domain.support.Const;
+import com.github.popescuandrei.recruitingBot.domain.support.Email;
 import com.github.popescuandrei.recruitingBot.service.CandidateService;
 import com.github.popescuandrei.recruitingBot.service.InterviewProgressService;
 import com.github.popescuandrei.recruitingBot.service.PositionService;
@@ -77,7 +81,7 @@ public class ChatChoreographer {
 		switch (aiResponse.getResult().getAction()) {
 		case ACTION_GREETING:
 			log.debug("## Resolved to greeting");
-			response = handleGreetingAction(aiResponse, candidate);
+			response = handleGreetingAction(aiResponse, candidateId);
 			break;
 		case ACTION_ACCEPTANCE:
 			log.debug("## Resolved to acceptance");
@@ -121,8 +125,17 @@ public class ChatChoreographer {
 		return response;
 	}
 	
-	private String handleGreetingAction(AIResponse aiResponse, Candidate candidate) {
-		return Const.getRandomFallbackAnswer();
+	private String handleGreetingAction(AIResponse aiResponse, String facebookUuid) {
+		Candidate candidate = new Candidate();
+		candidate.setFirstName(UNAVAILABLE);
+		candidate.setLastName(UNAVAILABLE);
+		candidate.setEmail(new Email(UNAVAILABLE + AT_EMAIL));
+		candidate.setGender(MALE);
+		candidate.setAge(20);
+		candidate.setFacebookUuid(facebookUuid);
+		candidate = candidateService.create(candidate);
+		
+		return getReply(candidate);
 	}
 
 	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
