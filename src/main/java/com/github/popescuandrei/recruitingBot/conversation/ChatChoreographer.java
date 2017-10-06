@@ -74,36 +74,47 @@ public class ChatChoreographer {
 	public String parseAiResponse(AIResponse aiResponse, String candidateId, Date timestamp) {
 		String response = Const.getRandomFallbackAnswer();
 		Candidate candidate = candidateService.findByFacebookUuid(candidateId);
+		LOGGER.debug("## Action is :" + aiResponse.getResult().getAction());
 		
 		switch (aiResponse.getResult().getAction()) {
 		case GREETING:
+			LOGGER.debug("## Resolved to greeting");
 			response = handleGreetingAction(aiResponse, candidate);
 			break;
 		case ACCEPTANCE_STATEMENT:
+			LOGGER.debug("## Resolved to acceptance");
 			response = handleYesNoAction(aiResponse, candidate);
 			break;
 		case SAVE_GENDER:
+			LOGGER.debug("## Resolved to save.gender");
 			response = handleGenderAction(aiResponse, candidate);
 			break;
 		case SAVE_EMAIL:
+			LOGGER.debug("## Resolved to save.email");
 			response = handleEmailAction(aiResponse, candidate);
 			break;
 		case SAVE_EDUCATION:
+			LOGGER.debug("## Resolved to save.education");
 			response = handleEducationAction(aiResponse, candidate);
 			break;
 		case SAVE_EXPERIENCE:
+			LOGGER.debug("## Resolved to save.experience");
 			response = handleExperienceAction(aiResponse, candidate);
 			break;
 		case SAVE_INTEREST:
+			LOGGER.debug("## Resolved to save.interest");
 			response = handleInterestAction(aiResponse, candidate);
 			break;
 		case SAVE_LANGUAGE:
+			LOGGER.debug("## Resolved to save.language");
 			response = handleLanguageAction(aiResponse, candidate);
 			break;
 		case SAVE_SKILL:
+			LOGGER.debug("## Resolved to save.skill");
 			response = handleSkillAction(aiResponse, candidate);
 			break;
 		case SEARCH_POSITION:
+			LOGGER.debug("## Resolved to search.position");
 			response = handleSearchPositionAction(aiResponse, candidate);
 			break;
 		}

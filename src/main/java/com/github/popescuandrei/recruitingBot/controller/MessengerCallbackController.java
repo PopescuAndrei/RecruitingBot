@@ -88,7 +88,6 @@ public class MessengerCallbackController {
                 .onPostbackEvent(newPostbackEventHandler())
                 .onOptInEvent(newOptInEventHandler())
                 .onEchoMessageEvent(newEchoMessageEventHandler())
-                .onMessageDeliveredEvent(newMessageDeliveredEventHandler())
                 .onMessageReadEvent(newMessageReadEventHandler())
                 .fallbackEventHandler(newFallbackEventHandler())
                 .build();
@@ -207,24 +206,6 @@ public class MessengerCallbackController {
 
             LOG.info("Received echo for message '{}' that has been sent to recipient '{}' by sender '{}' at '{}'",
                     messageId, recipientId, senderId, timestamp);
-        };
-    }
-
-    private MessageDeliveredEventHandler newMessageDeliveredEventHandler() {
-        return event -> {
-            LOG.debug("Received MessageDeliveredEvent: {}", event);
-
-            final List<String> messageIds = event.getMids();
-            final Date watermark = event.getWatermark();
-            final String senderId = event.getSender().getId();
-
-            if (messageIds != null) {
-                messageIds.forEach(messageId -> {
-                    LOG.info("Received delivery confirmation for message '{}'", messageId);
-                });
-            }
-
-            LOG.info("All messages before '{}' were delivered to user '{}'", watermark, senderId);
         };
     }
 
