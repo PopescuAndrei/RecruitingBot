@@ -106,6 +106,30 @@ public class AppUser extends BaseEntity{
 		this.id = id;
 	}
 
+	public List<UserCandidateLike> getUserCandidateLikes() {
+		return userCandidateLikes;
+	}
+
+	public void setUserCandidateLikes(List<UserCandidateLike> userCandidateLikes) {
+		this.userCandidateLikes = userCandidateLikes;
+	}
+
+	public List<UserCandidateRating> getUserCandidateRatings() {
+		return userCandidateRatings;
+	}
+
+	public void setUserCandidateRatings(List<UserCandidateRating> userCandidateRatings) {
+		this.userCandidateRatings = userCandidateRatings;
+	}
+
+	public List<UserCandidateComment> getUserCandidateComments() {
+		return userCandidateComments;
+	}
+
+	public void setUserCandidateComments(List<UserCandidateComment> userCandidateComments) {
+		this.userCandidateComments = userCandidateComments;
+	}
+
 	@Override
 	public void update(BaseEntity entity) {
 		if (!(entity instanceof AppUser)) {

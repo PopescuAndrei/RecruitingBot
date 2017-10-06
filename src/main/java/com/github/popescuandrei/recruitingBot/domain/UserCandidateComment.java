@@ -39,7 +39,7 @@ public class UserCandidateComment extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = APP_USER_ID, nullable = false)
-	private AppUser user;
+	private AppUser appUser;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
@@ -61,12 +61,12 @@ public class UserCandidateComment extends BaseEntity {
 		this.id = id;
 	}
 
-	public AppUser getUser() {
-		return user;
+	public AppUser getAppUser() {
+		return appUser;
 	}
 
-	public void setUser(AppUser user) {
-		this.user = user;
+	public void setAppUser(AppUser appUser) {
+		this.appUser = appUser;
 	}
 
 	public Candidate getCandidate() {

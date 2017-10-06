@@ -159,8 +159,87 @@ public class Candidate extends BaseEntity{
 	public void setAge(int age) {
 		this.age = age;
 	}
-
 	
+	public List<CandidateEducation> getCandidateEducations() {
+		return candidateEducations;
+	}
+
+	public void setCandidateEducations(List<CandidateEducation> candidateEducations) {
+		this.candidateEducations = candidateEducations;
+	}
+
+	public List<CandidateExperience> getCandidateExperiences() {
+		return candidateExperiences;
+	}
+
+	public void setCandidateExperiences(List<CandidateExperience> candidateExperiences) {
+		this.candidateExperiences = candidateExperiences;
+	}
+
+	public List<CandidateInterest> getCandidateInterests() {
+		return candidateInterests;
+	}
+
+	public void setCandidateInterests(List<CandidateInterest> candidateInterests) {
+		this.candidateInterests = candidateInterests;
+	}
+
+	public List<CandidateLanguage> getCandidateLanguages() {
+		return candidateLanguages;
+	}
+
+	public void setCandidateLanguages(List<CandidateLanguage> candidateLanguages) {
+		this.candidateLanguages = candidateLanguages;
+	}
+
+	public List<CandidateSkill> getCandidateSkills() {
+		return candidateSkills;
+	}
+
+	public void setCandidateSkills(List<CandidateSkill> candidateSkills) {
+		this.candidateSkills = candidateSkills;
+	}
+
+	public List<ChatMessage> getChatMessages() {
+		return chatMessages;
+	}
+
+	public void setChatMessages(List<ChatMessage> chatMessages) {
+		this.chatMessages = chatMessages;
+	}
+
+	public InterviewProgress getInterviewProgress() {
+		return interviewProgress;
+	}
+
+	public void setInterviewProgress(InterviewProgress interviewProgress) {
+		this.interviewProgress = interviewProgress;
+	}
+
+	public List<UserCandidateLike> getUserCandidateLikes() {
+		return userCandidateLikes;
+	}
+
+	public void setUserCandidateLikes(List<UserCandidateLike> userCandidateLikes) {
+		this.userCandidateLikes = userCandidateLikes;
+	}
+
+	public List<UserCandidateRating> getUserCandidateRatings() {
+		return userCandidateRatings;
+	}
+
+	public void setUserCandidateRatings(List<UserCandidateRating> userCandidateRatings) {
+		this.userCandidateRatings = userCandidateRatings;
+	}
+
+	public List<UserCandidateComment> getUserCandidateComments() {
+		return userCandidateComments;
+	}
+
+	public void setUserCandidateComments(List<UserCandidateComment> userCandidateComments) {
+		this.userCandidateComments = userCandidateComments;
+	}
+
 	@Override
 	public void update(BaseEntity entity) {
 		if (!(entity instanceof Candidate)) {

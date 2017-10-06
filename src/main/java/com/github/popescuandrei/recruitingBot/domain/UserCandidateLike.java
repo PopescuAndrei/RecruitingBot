@@ -33,7 +33,7 @@ public class UserCandidateLike extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = APP_USER_ID, nullable = false)
-	private AppUser user;
+	private AppUser appUser;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
@@ -47,8 +47,8 @@ public class UserCandidateLike extends BaseEntity {
 		return id;
 	}
 	
-	public AppUser getUser() {
-		return user;
+	public AppUser getAppUser() {
+		return appUser;
 	}
 
 	public Boolean getLike() {
@@ -59,10 +59,10 @@ public class UserCandidateLike extends BaseEntity {
 		this.id = id;
 	}
 
-	public void setUser(AppUser user) {
-		this.user = user;
+	public void setAppUser(AppUser appUser) {
+		this.appUser = appUser;
 	}
-
+	
 	public void setLike(Boolean like) {
 		this.like = like;
 	}
