@@ -1,4 +1,4 @@
-package com.github.popescuandrei.recruitingBot.conversation;
+package com.github.popescuandrei.recruitingBot.chat;
 
 public class FacebookMessageModel {
 

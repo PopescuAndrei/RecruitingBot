@@ -1,4 +1,4 @@
-package com.github.popescuandrei.recruitingBot.conversation.util;
+package com.github.popescuandrei.recruitingBot.chat.util;
 
 public class AiGenericRequest {
 

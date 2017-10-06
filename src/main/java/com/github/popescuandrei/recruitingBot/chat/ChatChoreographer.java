@@ -1,17 +1,17 @@
-package com.github.popescuandrei.recruitingBot.conversation;
+package com.github.popescuandrei.recruitingBot.chat;
 
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.ACCEPTANCE_STATEMENT;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.GREETING;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_EDUCATION;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_EMAIL;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_EXPERIENCE;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_GENDER;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_INTEREST;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_SKILL;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SEARCH_POSITION;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Entities.LEVEL;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Entities.SKILL;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.ACCEPTANCE_STATEMENT;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.GREETING;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_EDUCATION;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_EMAIL;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_EXPERIENCE;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_GENDER;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_INTEREST;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_SKILL;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.util.Entities.LEVEL;
+import static com.github.popescuandrei.recruitingBot.chat.util.Entities.SKILL;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -74,7 +74,6 @@ public class ChatChoreographer {
 	public String parseAiResponse(AIResponse aiResponse, String candidateId, Date timestamp) {
 		String response = Const.getRandomFallbackAnswer();
 		Candidate candidate = candidateService.findByFacebookUuid(candidateId);
-		LOGGER.debug("## Action is :" + aiResponse.getResult().getAction());
 		
 		switch (aiResponse.getResult().getAction()) {
 		case GREETING:
@@ -118,7 +117,7 @@ public class ChatChoreographer {
 			response = handleSearchPositionAction(aiResponse, candidate);
 			break;
 		}
-		LOGGER.debug("Statement resolved to : " + aiResponse.getResult().getAction());
+		LOGGER.debug("## Action is :" + aiResponse.getResult().getAction());
 		
 		return response;
 	}

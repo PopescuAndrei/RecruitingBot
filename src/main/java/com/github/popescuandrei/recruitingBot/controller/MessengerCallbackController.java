@@ -4,11 +4,10 @@ import static com.github.messenger4j.MessengerPlatform.CHALLENGE_REQUEST_PARAM_N
 import static com.github.messenger4j.MessengerPlatform.MODE_REQUEST_PARAM_NAME;
 import static com.github.messenger4j.MessengerPlatform.SIGNATURE_HEADER_NAME;
 import static com.github.messenger4j.MessengerPlatform.VERIFY_TOKEN_REQUEST_PARAM_NAME;
-import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SEARCH_POSITION;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.getRandomFallbackAnswer;
 
 import java.util.Date;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,23 +27,11 @@ import com.github.messenger4j.exceptions.MessengerApiException;
 import com.github.messenger4j.exceptions.MessengerIOException;
 import com.github.messenger4j.exceptions.MessengerVerificationException;
 import com.github.messenger4j.receive.MessengerReceiveClient;
-import com.github.messenger4j.receive.events.AttachmentMessageEvent.Attachment;
-import com.github.messenger4j.receive.events.AttachmentMessageEvent.AttachmentType;
-import com.github.messenger4j.receive.events.AttachmentMessageEvent.Payload;
-import com.github.messenger4j.receive.handlers.AttachmentMessageEventHandler;
-import com.github.messenger4j.receive.handlers.EchoMessageEventHandler;
 import com.github.messenger4j.receive.handlers.FallbackEventHandler;
-import com.github.messenger4j.receive.handlers.MessageDeliveredEventHandler;
-import com.github.messenger4j.receive.handlers.MessageReadEventHandler;
-import com.github.messenger4j.receive.handlers.OptInEventHandler;
-import com.github.messenger4j.receive.handlers.PostbackEventHandler;
-import com.github.messenger4j.receive.handlers.QuickReplyMessageEventHandler;
 import com.github.messenger4j.receive.handlers.TextMessageEventHandler;
 import com.github.messenger4j.send.MessengerSendClient;
-import com.github.popescuandrei.recruitingBot.conversation.AiManager;
-import com.github.popescuandrei.recruitingBot.conversation.FacebookMessageBuilder;
-import com.github.popescuandrei.recruitingBot.conversation.util.Actions;
-import com.github.popescuandrei.recruitingBot.domain.support.Const;
+import com.github.popescuandrei.recruitingBot.chat.AiManager;
+import com.github.popescuandrei.recruitingBot.chat.FacebookMessageBuilder;
 
 /**
  * This is the main class for inbound and outbound communication with the Facebook Messenger Platform.
@@ -57,7 +44,7 @@ import com.github.popescuandrei.recruitingBot.domain.support.Const;
 @RequestMapping("/callback")
 public class MessengerCallbackController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MessengerCallbackController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MessengerCallbackController.class);
     
     private final MessengerReceiveClient receiveClient;
     private final MessengerSendClient sendClient;
@@ -81,14 +68,9 @@ public class MessengerCallbackController {
                                             @Value("${recruitingBot.verifyToken}") final String verifyToken,
                                             final MessengerSendClient sendClient) {
 
-        LOG.debug("Initializing MessengerReceiveClient - appSecret: {} | verifyToken: {}", appSecret, verifyToken);
+    	LOGGER.debug("Initializing MessengerReceiveClient - appSecret: {} | verifyToken: {}", appSecret, verifyToken);
         this.receiveClient = MessengerPlatform.newReceiveClientBuilder(appSecret, verifyToken)
                 .onTextMessageEvent(newTextMessageEventHandler())
-                .onQuickReplyMessageEvent(newQuickReplyMessageEventHandler())
-                .onPostbackEvent(newPostbackEventHandler())
-                .onOptInEvent(newOptInEventHandler())
-                .onEchoMessageEvent(newEchoMessageEventHandler())
-                .onMessageReadEvent(newMessageReadEventHandler())
                 .fallbackEventHandler(newFallbackEventHandler())
                 .build();
         this.sendClient = sendClient;
@@ -107,7 +89,7 @@ public class MessengerCallbackController {
         try {
             return ResponseEntity.ok(this.receiveClient.verifyWebhook(mode, verifyToken, challenge));
         } catch (MessengerVerificationException e) {
-            LOG.warn("Webhook verification failed: {}", e.getMessage());
+            LOGGER.warn("Webhook verification failed: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
         }
     }
@@ -133,9 +115,10 @@ public class MessengerCallbackController {
             final String messageText = event.getText();
             final String senderId = event.getSender().getId();
             final Date timestamp = event.getTimestamp();
+            LOGGER.info("Received message '{}' with text '{}' from user '{}' at '{}'", messageId, messageText, senderId, timestamp);
+
 
             String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
-            
             if(aiResponse.equals(SEARCH_POSITION)) {
             	try {
 					facebookMessageBuilder.sendOpenPositionsMessage(this.sendClient, senderId);
@@ -149,77 +132,6 @@ public class MessengerCallbackController {
         };
     }
 
-    private QuickReplyMessageEventHandler newQuickReplyMessageEventHandler() {
-        return event -> {
-            LOG.debug("Received QuickReplyMessageEvent: {}", event);
-
-            final String senderId = event.getSender().getId();
-            final String messageId = event.getMid();
-            final String quickReplyPayload = event.getQuickReply().getPayload();
-
-            LOG.info("Received quick reply for message '{}' with payload '{}'", messageId, quickReplyPayload);
-
-            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, "Quick reply tapped");
-        };
-    }
-
-    private PostbackEventHandler newPostbackEventHandler() {
-        return event -> {
-            LOG.debug("Received PostbackEvent: {}", event);
-
-            final String senderId = event.getSender().getId();
-            final String recipientId = event.getRecipient().getId();
-            final String payload = event.getPayload();
-            final Date timestamp = event.getTimestamp();
-
-            LOG.info("Received postback for user '{}' and page '{}' with payload '{}' at '{}'",
-                    senderId, recipientId, payload, timestamp);
-
-            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, "Postback called");
-        };
-    }
-
-    private OptInEventHandler newOptInEventHandler() {
-        return event -> {
-            LOG.debug("Received OptInEvent: {}", event);
-
-            final String senderId = event.getSender().getId();
-            final String recipientId = event.getRecipient().getId();
-            final String passThroughParam = event.getRef();
-            final Date timestamp = event.getTimestamp();
-
-            LOG.info("Received authentication for user '{}' and page '{}' with pass through param '{}' at '{}'",
-                    senderId, recipientId, passThroughParam, timestamp);
-
-            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, "Authentication successful");
-        };
-    }
-
-    private EchoMessageEventHandler newEchoMessageEventHandler() {
-        return event -> {
-            LOG.debug("Received EchoMessageEvent: {}", event);
-
-            final String messageId = event.getMid();
-            final String recipientId = event.getRecipient().getId();
-            final String senderId = event.getSender().getId();
-            final Date timestamp = event.getTimestamp();
-
-            LOG.info("Received echo for message '{}' that has been sent to recipient '{}' by sender '{}' at '{}'",
-                    messageId, recipientId, senderId, timestamp);
-        };
-    }
-
-    private MessageReadEventHandler newMessageReadEventHandler() {
-        return event -> {
-            LOG.debug("Received MessageReadEvent: {}", event);
-
-            final Date watermark = event.getWatermark();
-            final String senderId = event.getSender().getId();
-
-            LOG.info("All messages before '{}' were read by user '{}'", watermark, senderId);
-        };
-    }
-
     /**
      * This handler is called when either the message is unsupported or when the event handler for the actual event type
      * is not registered. In this showcase all event handlers are registered. Hence only in case of an
@@ -228,7 +140,7 @@ public class MessengerCallbackController {
     private FallbackEventHandler newFallbackEventHandler() {
         return event -> {
             final String senderId = event.getSender().getId();
-            LOG.info("Received unsupported message from user '{}'", senderId);
+            LOGGER.info("Received unsupported message from user '{}'", senderId);
         };
     }
 }

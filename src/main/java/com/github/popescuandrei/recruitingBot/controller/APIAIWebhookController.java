@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.popescuandrei.recruitingBot.conversation.AiManager;
-import com.github.popescuandrei.recruitingBot.conversation.util.AiGenericRequest;
-import com.github.popescuandrei.recruitingBot.conversation.util.AiRequestObject;
-import com.github.popescuandrei.recruitingBot.conversation.util.AiResponseObject;
-import com.github.popescuandrei.recruitingBot.conversation.util.Intents;
-import com.github.popescuandrei.recruitingBot.conversation.util.Metadata;
+import com.github.popescuandrei.recruitingBot.chat.AiManager;
+import com.github.popescuandrei.recruitingBot.chat.util.AiGenericRequest;
+import com.github.popescuandrei.recruitingBot.chat.util.AiRequestObject;
+import com.github.popescuandrei.recruitingBot.chat.util.AiResponseObject;
+import com.github.popescuandrei.recruitingBot.chat.util.Intents;
+import com.github.popescuandrei.recruitingBot.chat.util.Metadata;
 
 
 @RestController
