@@ -18,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
@@ -32,11 +33,13 @@ public class UserCandidateRating extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = SEQ_GEN, sequenceName = USER_CANDIDATE_RATING_SEQ)
 	private Long id;
-
+	
+    @NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = APP_USER_ID, nullable = false)
 	private AppUser appUser;
-	
+    
+    @NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
 	private Candidate candidate;

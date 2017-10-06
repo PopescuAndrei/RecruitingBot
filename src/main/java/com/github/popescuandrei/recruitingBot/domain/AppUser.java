@@ -56,13 +56,13 @@ public class AppUser extends BaseEntity{
 	@Column(name = PASSWORD, nullable = false, length = 100)
 	private String password;
 	
-	@OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "app_user", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 	private List<UserCandidateLike> userCandidateLikes;
 	
-	@OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "app_user", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 	private List<UserCandidateRating> userCandidateRatings;
 	
-	@OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "app_user", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 	private List<UserCandidateComment> userCandidateComments;
 	
 	@Override

@@ -24,6 +24,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
@@ -39,6 +40,7 @@ public class CandidateExperience extends BaseEntity {
 	@SequenceGenerator(name = SEQ_GEN, sequenceName = CANDIDATE_EXPERIENCE_SEQ)
 	private Long id;
 	
+	@NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
 	private Candidate candidate;

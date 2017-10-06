@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 
@@ -30,11 +31,13 @@ public class UserCandidateLike extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = SEQ_GEN, sequenceName = USER_CANDIDATE_LIKE_SEQ)
 	private Long id;
-
+	
+    @NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = APP_USER_ID, nullable = false)
 	private AppUser appUser;
-	
+    
+    @NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
 	private Candidate candidate;

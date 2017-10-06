@@ -38,7 +38,8 @@ public class ChatMessage extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = SEQ_GEN, sequenceName = CHAT_MESSAGE_SEQ)
 	private Long id;
-	
+
+	@NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)	
 	private Candidate candidate;

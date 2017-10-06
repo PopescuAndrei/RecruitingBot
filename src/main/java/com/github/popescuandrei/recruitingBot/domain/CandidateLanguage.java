@@ -35,7 +35,8 @@ public class CandidateLanguage extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = SEQ_GEN, sequenceName = CANDIDATE_LANGUAGE_SEQ)
 	private Long id;
-	
+
+	@NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
 	private Candidate candidate;

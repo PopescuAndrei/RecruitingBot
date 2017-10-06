@@ -36,7 +36,8 @@ public class CandidateSkill extends BaseEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = SKILL_ID, nullable = false)
 	private Skill skill;
-	
+
+	@NotNull
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = CANDIDATE_ID, nullable = false)
 	private Candidate candidate;
