@@ -4,7 +4,7 @@ import static com.github.messenger4j.MessengerPlatform.CHALLENGE_REQUEST_PARAM_N
 import static com.github.messenger4j.MessengerPlatform.MODE_REQUEST_PARAM_NAME;
 import static com.github.messenger4j.MessengerPlatform.SIGNATURE_HEADER_NAME;
 import static com.github.messenger4j.MessengerPlatform.VERIFY_TOKEN_REQUEST_PARAM_NAME;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.getRandomFallbackAnswer;
 
 import java.util.Date;
@@ -44,7 +44,7 @@ import com.github.popescuandrei.recruitingBot.chat.FacebookMessageBuilder;
 @RequestMapping("/callback")
 public class MessengerCallbackController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MessengerCallbackController.class);
+    private static final Logger log = LoggerFactory.getLogger(MessengerCallbackController.class);
     
     private final MessengerReceiveClient receiveClient;
     private final MessengerSendClient sendClient;
@@ -68,7 +68,7 @@ public class MessengerCallbackController {
                                             @Value("${recruitingBot.verifyToken}") final String verifyToken,
                                             final MessengerSendClient sendClient) {
 
-    	LOGGER.debug("Initializing MessengerReceiveClient - appSecret: {} | verifyToken: {}", appSecret, verifyToken);
+    	log.debug("Initializing MessengerReceiveClient - appSecret: {} | verifyToken: {}", appSecret, verifyToken);
         this.receiveClient = MessengerPlatform.newReceiveClientBuilder(appSecret, verifyToken)
                 .onTextMessageEvent(newTextMessageEventHandler())
                 .fallbackEventHandler(newFallbackEventHandler())
@@ -89,7 +89,7 @@ public class MessengerCallbackController {
         try {
             return ResponseEntity.ok(this.receiveClient.verifyWebhook(mode, verifyToken, challenge));
         } catch (MessengerVerificationException e) {
-            LOGGER.warn("Webhook verification failed: {}", e.getMessage());
+            log.warn("Webhook verification failed: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
         }
     }
@@ -115,11 +115,11 @@ public class MessengerCallbackController {
             final String messageText = event.getText();
             final String senderId = event.getSender().getId();
             final Date timestamp = event.getTimestamp();
-            LOGGER.info("Received message '{}' with text '{}' from user '{}' at '{}'", messageId, messageText, senderId, timestamp);
+            log.info("Received message '{}' with text '{}' from user '{}' at '{}'", messageId, messageText, senderId, timestamp);
 
 
             String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
-            if(aiResponse.equals(SEARCH_POSITION)) {
+            if(aiResponse.equals(ACTION_SEARCH_POSITION)) {
             	try {
 					facebookMessageBuilder.sendOpenPositionsMessage(this.sendClient, senderId);
 				} catch (MessengerApiException | MessengerIOException e) {
@@ -140,7 +140,7 @@ public class MessengerCallbackController {
     private FallbackEventHandler newFallbackEventHandler() {
         return event -> {
             final String senderId = event.getSender().getId();
-            LOGGER.info("Received unsupported message from user '{}'", senderId);
+            log.info("Received unsupported message from user '{}'", senderId);
         };
     }
 }

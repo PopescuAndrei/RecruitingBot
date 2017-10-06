@@ -16,7 +16,7 @@ import com.github.popescuandrei.recruitingBot.repository.BaseRepository;
 
 public abstract class EntityServiceImpl<T extends BaseEntity> implements EntityService<T> {
 
-	private static final Logger LOG = LoggerFactory.getLogger(EntityServiceImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(EntityServiceImpl.class);
 	
 	private BaseRepository<T, Long> repository;
 	
@@ -29,7 +29,7 @@ public abstract class EntityServiceImpl<T extends BaseEntity> implements EntityS
 	public T find(Long id) {
 		T entity = repository.findOne(id);
         if (entity == null) {
-            LOG.error("Entity with id " + id + " does not exist.");
+            log.error("Entity with id " + id + " does not exist.");
             throw new EntityNotFoundException("Entity with id " + id + " does not exist.");
         }
         return entity;
@@ -39,7 +39,7 @@ public abstract class EntityServiceImpl<T extends BaseEntity> implements EntityS
 	@Override
 	public T create(T entity) {		
 		T newEntity = repository.save(entity);
-		LOG.debug("Added " + entity.getClass().getSimpleName() + " with id " + newEntity.getId() + ".");
+		log.debug("Added " + entity.getClass().getSimpleName() + " with id " + newEntity.getId() + ".");
 		return newEntity;		
 	}
 	
@@ -58,7 +58,7 @@ public abstract class EntityServiceImpl<T extends BaseEntity> implements EntityS
 	public T delete(Long id) {
 		T entity = find(id);
 		repository.delete(id);
-		LOG.debug("Deleted " + entity.getClass().getSimpleName() + " with id " + id + ".");
+		log.debug("Deleted " + entity.getClass().getSimpleName() + " with id " + id + ".");
 		return entity;
 	}
 	

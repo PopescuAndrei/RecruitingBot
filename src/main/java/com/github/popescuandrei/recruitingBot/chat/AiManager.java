@@ -20,7 +20,7 @@ import ai.api.model.AIResponse;
 @PropertySource("classpath:application.properties")
 public class AiManager {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AiManager.class);
+	private static final Logger log = LoggerFactory.getLogger(AiManager.class);
 
 	@Value("${api.ai.apikey}")
 	private String apiKey;
@@ -53,7 +53,7 @@ public class AiManager {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			LOGGER.error(e.getMessage());
+			log.error(e.getMessage());
 		}
 
 		return responseText;

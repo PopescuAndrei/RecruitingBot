@@ -13,7 +13,7 @@ import com.github.messenger4j.send.MessengerSendClient;
 @SpringBootApplication
 public class RecruitingBotApplication {
 
-	private static final Logger LOG = LoggerFactory.getLogger(RecruitingBotApplication.class);
+	private static final Logger log = LoggerFactory.getLogger(RecruitingBotApplication.class);
 
 	/**
 	 * Initializes the {@code MessengerSendClient}.
@@ -23,7 +23,7 @@ public class RecruitingBotApplication {
 	 */
 	@Bean
 	public MessengerSendClient messengerSendClient(@Value("${recruitingBot.pageAccessToken}") String pageAccessToken) {
-		LOG.debug("Initializing MessengerSendClient - pageAccessToken: {}", pageAccessToken);
+		log.debug("Initializing MessengerSendClient - pageAccessToken: {}", pageAccessToken);
 		return MessengerPlatform.newSendClientBuilder(pageAccessToken).build();
 	}
 

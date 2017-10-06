@@ -2,6 +2,8 @@ package com.github.popescuandrei.recruitingBot.chat;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -22,9 +24,11 @@ import com.github.popescuandrei.recruitingBot.service.PositionService;
 @Component
 @Qualifier("facebookMessageBuilder")
 public class FacebookMessageBuilder {
-	
 
     private final String RESOURCE_URL = "https://raw.githubusercontent.com/fbsamples/messenger-platform-samples/master/node/public";
+
+	private static final Logger log = LoggerFactory.getLogger(FacebookMessageBuilder.class);
+	
 
     @Autowired
     private PositionService positionService;
@@ -60,6 +64,8 @@ public class FacebookMessageBuilder {
     public void sendOpenPositionsMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         ListBuilder buttonListBuilder = Button.newListBuilder();
         List<Position> availablePositions = positionService.findAll();
+        log.info(availablePositions.size() + " positions found.");
+        
         for(Position p: availablePositions) {
         	buttonListBuilder.addUrlButton(p.getName(), p.buildUrl());
         }

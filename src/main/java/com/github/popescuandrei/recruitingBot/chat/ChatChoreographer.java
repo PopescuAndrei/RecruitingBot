@@ -1,17 +1,15 @@
 package com.github.popescuandrei.recruitingBot.chat;
 
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.ACCEPTANCE_STATEMENT;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.GREETING;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_EDUCATION;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_EMAIL;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_EXPERIENCE;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_GENDER;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_INTEREST;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SAVE_SKILL;
-import static com.github.popescuandrei.recruitingBot.chat.util.Actions.SEARCH_POSITION;
-import static com.github.popescuandrei.recruitingBot.chat.util.Entities.LEVEL;
-import static com.github.popescuandrei.recruitingBot.chat.util.Entities.SKILL;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_ACCEPTANCE;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_GREETING;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_EDUCATION;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_EMAIL;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_EXPERIENCE;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_GENDER;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_INTEREST;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_SKILL;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -24,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.github.popescuandrei.recruitingBot.chat.util.AiConstants;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.domain.CandidateSkill;
 import com.github.popescuandrei.recruitingBot.domain.InterviewProgress;
@@ -44,7 +43,7 @@ import ai.api.model.AIResponse;
 @Qualifier("chatChoreographer")
 public class ChatChoreographer {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(ChatChoreographer.class);
+	private static final Logger log = LoggerFactory.getLogger(ChatChoreographer.class);
 	
 	@Autowired
 	private PositionService positionService;
@@ -76,48 +75,48 @@ public class ChatChoreographer {
 		Candidate candidate = candidateService.findByFacebookUuid(candidateId);
 		
 		switch (aiResponse.getResult().getAction()) {
-		case GREETING:
-			LOGGER.debug("## Resolved to greeting");
+		case ACTION_GREETING:
+			log.debug("## Resolved to greeting");
 			response = handleGreetingAction(aiResponse, candidate);
 			break;
-		case ACCEPTANCE_STATEMENT:
-			LOGGER.debug("## Resolved to acceptance");
+		case ACTION_ACCEPTANCE:
+			log.debug("## Resolved to acceptance");
 			response = handleYesNoAction(aiResponse, candidate);
 			break;
-		case SAVE_GENDER:
-			LOGGER.debug("## Resolved to save.gender");
+		case ACTION_SAVE_GENDER:
+			log.debug("## Resolved to save.gender");
 			response = handleGenderAction(aiResponse, candidate);
 			break;
-		case SAVE_EMAIL:
-			LOGGER.debug("## Resolved to save.email");
+		case ACTION_SAVE_EMAIL:
+			log.debug("## Resolved to save.email");
 			response = handleEmailAction(aiResponse, candidate);
 			break;
-		case SAVE_EDUCATION:
-			LOGGER.debug("## Resolved to save.education");
+		case ACTION_SAVE_EDUCATION:
+			log.debug("## Resolved to save.education");
 			response = handleEducationAction(aiResponse, candidate);
 			break;
-		case SAVE_EXPERIENCE:
-			LOGGER.debug("## Resolved to save.experience");
+		case ACTION_SAVE_EXPERIENCE:
+			log.debug("## Resolved to save.experience");
 			response = handleExperienceAction(aiResponse, candidate);
 			break;
-		case SAVE_INTEREST:
-			LOGGER.debug("## Resolved to save.interest");
+		case ACTION_SAVE_INTEREST:
+			log.debug("## Resolved to save.interest");
 			response = handleInterestAction(aiResponse, candidate);
 			break;
-		case SAVE_LANGUAGE:
-			LOGGER.debug("## Resolved to save.language");
+		case ACTION_SAVE_LANGUAGE:
+			log.debug("## Resolved to save.language");
 			response = handleLanguageAction(aiResponse, candidate);
 			break;
-		case SAVE_SKILL:
-			LOGGER.debug("## Resolved to save.skill");
+		case ACTION_SAVE_SKILL:
+			log.debug("## Resolved to save.skill");
 			response = handleSkillAction(aiResponse, candidate);
 			break;
-		case SEARCH_POSITION:
-			LOGGER.debug("## Resolved to search.position");
+		case ACTION_SEARCH_POSITION:
+			log.debug("## Resolved to search.position");
 			response = handleSearchPositionAction(aiResponse, candidate);
 			break;
 		}
-		LOGGER.debug("## Action is :" + aiResponse.getResult().getAction());
+		log.debug("## Action is :" + aiResponse.getResult().getAction());
 		
 		return response;
 	}
@@ -140,7 +139,7 @@ public class ChatChoreographer {
 	
 	private String handleEducationAction(AIResponse aiResponse, Candidate candidate) {
 		HashMap<String, JsonElement> parameters = aiResponse.getResult().getParameters();
-		parameters.forEach((k,v) -> LOGGER.debug("PARAM:  " + k + ",VALUE:  " + v.toString()));
+		parameters.forEach((k,v) -> log.debug("PARAM:  " + k + ",VALUE:  " + v.toString()));
 		return Const.getRandomFallbackAnswer();
 	}
 	
@@ -158,8 +157,8 @@ public class ChatChoreographer {
 	
 	private String handleSkillAction(AIResponse aiResponse, Candidate candidate) {
 		HashMap<String, JsonElement> parameters = aiResponse.getResult().getParameters();
-		String skillName = parameters.get(SKILL).getAsString();
-		Long level = resolveLevelToNumber(parameters.get(LEVEL).getAsString());
+		String skillName = parameters.get(AiConstants.ENTITY_SKILL).getAsString();
+		Long level = resolveLevelToNumber(parameters.get(AiConstants.ENTITY_LEVEL).getAsString());
 		
 		Skill existing = skillService.findByName(skillName);
 		if(existing == null) {
@@ -193,7 +192,7 @@ public class ChatChoreographer {
 	}
 	
 	private String handleSearchPositionAction(AIResponse aiResponse, Candidate candidate) {
-		return SEARCH_POSITION;
+		return ACTION_SEARCH_POSITION;
 	}
 	
 	private String getReply(Candidate candidate) {
