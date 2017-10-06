@@ -6,8 +6,6 @@ import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.IMAG
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_UPDATE_DATE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.POSITION;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.POSITION_SEQ;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 
 import java.util.Date;
 
@@ -16,7 +14,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,8 +29,7 @@ public class Position extends BaseEntity{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = SEQ_GEN, sequenceName = POSITION_SEQ)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotNull

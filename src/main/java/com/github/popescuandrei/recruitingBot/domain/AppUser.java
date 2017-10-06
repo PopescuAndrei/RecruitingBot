@@ -1,11 +1,9 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.APP_USER;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.APP_USER_SEQ;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PASSWORD;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 
 import java.util.List;
 
@@ -17,7 +15,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -34,8 +31,7 @@ public class AppUser extends BaseEntity{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = SEQ_GEN, sequenceName = APP_USER_SEQ)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotNull

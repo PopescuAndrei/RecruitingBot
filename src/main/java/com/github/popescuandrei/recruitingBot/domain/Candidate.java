@@ -2,13 +2,11 @@ package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.AGE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_SEQ;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FACEBOOK_UUID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.GENDER;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PHONE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 
 import java.util.List;
 
@@ -21,7 +19,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -36,8 +33,7 @@ public class Candidate extends BaseEntity{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = SEQ_GEN, sequenceName = CANDIDATE_SEQ)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = FACEBOOK_UUID, unique = true)

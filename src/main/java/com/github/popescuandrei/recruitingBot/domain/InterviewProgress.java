@@ -1,9 +1,7 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.INTERVIEW_PROGRESS_SEQ;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PROGRESS;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
@@ -26,8 +23,7 @@ public class InterviewProgress extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = SEQ_GEN, sequenceName = INTERVIEW_PROGRESS_SEQ)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@ManyToOne(fetch = FetchType.EAGER)

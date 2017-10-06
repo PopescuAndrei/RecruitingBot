@@ -1,13 +1,11 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_EXPERIENCE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_EXPERIENCE_SEQ;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.COMPANY;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.DESCRIPTION;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PERIOD_FROM;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PERIOD_TO;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.TITLE;
 
 import java.util.Date;
@@ -20,7 +18,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,8 +33,7 @@ public class CandidateExperience extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = SEQ_GEN, sequenceName = CANDIDATE_EXPERIENCE_SEQ)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotNull

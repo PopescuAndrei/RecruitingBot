@@ -2,9 +2,7 @@ package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_LANGUAGE_SEQ;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LANGUAGE_ID;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SPEAKING;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.UNDERSTANDING;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.WRITING;
@@ -18,7 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -32,8 +29,7 @@ public class CandidateLanguage extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(name = SEQ_GEN, sequenceName = CANDIDATE_LANGUAGE_SEQ)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull
