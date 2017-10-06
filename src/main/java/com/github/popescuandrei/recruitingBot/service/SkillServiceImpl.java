@@ -23,7 +23,7 @@ public class SkillServiceImpl extends EntityServiceImpl<Skill> implements SkillS
 	}
 	
 	public Skill findByName(String name) {
-		return skillRepository.findByName(name);
+		return skillRepository.findByNameIgnoreCase(name);
 	}
 	
     @PostConstruct

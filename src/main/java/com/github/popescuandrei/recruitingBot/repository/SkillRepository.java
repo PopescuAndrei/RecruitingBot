@@ -9,5 +9,5 @@ import com.github.popescuandrei.recruitingBot.domain.Skill;
 @Qualifier("skillRepository")
 public interface SkillRepository extends BaseRepository<Skill, Long> {
 
-	Skill findByName(String name);
+	Skill findByNameIgnoreCase(String name);
 }

@@ -1,9 +1,11 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.APP_USER_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LIKED;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_CANDIDATE_LIKE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_ID;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER_CANDIDATE_LIKE_SEQ;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
@@ -24,11 +27,12 @@ public class UserCandidateLike extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = SEQ_GEN, sequenceName = USER_CANDIDATE_LIKE_SEQ)
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = USER_ID, nullable = false)
+	@JoinColumn(name = APP_USER_ID, nullable = false)
 	private AppUser user;
 	
 	@ManyToOne(fetch = FetchType.EAGER)

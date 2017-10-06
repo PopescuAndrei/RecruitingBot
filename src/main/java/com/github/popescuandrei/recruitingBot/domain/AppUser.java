@@ -1,15 +1,23 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.APP_USER;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.APP_USER_SEQ;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PASSWORD;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.USER;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,13 +28,14 @@ import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 import com.github.popescuandrei.recruitingBot.domain.support.Email;
 
 @Entity
-@Table(name = USER)
+@Table(name = APP_USER)
 public class AppUser extends BaseEntity{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = SEQ_GEN, sequenceName = APP_USER_SEQ)
 	private Long id;
 	
 	@NotNull
@@ -46,6 +55,15 @@ public class AppUser extends BaseEntity{
 	@Size(min = 4, max = 100)
 	@Column(name = PASSWORD, nullable = false, length = 100)
 	private String password;
+	
+	@OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<UserCandidateLike> userCandidateLikes;
+	
+	@OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<UserCandidateRating> userCandidateRatings;
+	
+	@OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<UserCandidateComment> userCandidateComments;
 	
 	@Override
 	public Long getId() {

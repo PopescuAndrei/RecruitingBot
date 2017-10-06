@@ -1,13 +1,16 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.NAME;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SEQ_GEN;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SKILL;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SKILL_SEQ;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -20,7 +23,8 @@ public class Skill extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = SEQ_GEN, sequenceName = SKILL_SEQ)
 	private Long id;
 	
 	@Size(max = 50)
