@@ -2996,7 +2996,7 @@ RouterUtils.replies = "/replies";
 // The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    herokuUrl: false
+    herokuUrl: true
 };
 //# sourceMappingURL=environment.js.map
 

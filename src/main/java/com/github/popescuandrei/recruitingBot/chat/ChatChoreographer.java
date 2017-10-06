@@ -135,6 +135,11 @@ public class ChatChoreographer {
 		candidate.setFacebookUuid(facebookUuid);
 		candidate = candidateService.create(candidate);
 		
+		InterviewProgress progress = new InterviewProgress();
+		progress.setCandidate(candidate);
+		progress.setProgress(1L);
+		progress = interviewProgressService.create(progress);
+		
 		return getReply(candidate);
 	}
 
