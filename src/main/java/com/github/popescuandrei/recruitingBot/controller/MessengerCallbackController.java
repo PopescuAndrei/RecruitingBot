@@ -4,6 +4,8 @@ import static com.github.messenger4j.MessengerPlatform.CHALLENGE_REQUEST_PARAM_N
 import static com.github.messenger4j.MessengerPlatform.MODE_REQUEST_PARAM_NAME;
 import static com.github.messenger4j.MessengerPlatform.SIGNATURE_HEADER_NAME;
 import static com.github.messenger4j.MessengerPlatform.VERIFY_TOKEN_REQUEST_PARAM_NAME;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.domain.support.Const.getRandomFallbackAnswer;
 
 import java.util.Date;
 import java.util.List;
@@ -22,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.messenger4j.MessengerPlatform;
+import com.github.messenger4j.exceptions.MessengerApiException;
+import com.github.messenger4j.exceptions.MessengerIOException;
 import com.github.messenger4j.exceptions.MessengerVerificationException;
 import com.github.messenger4j.receive.MessengerReceiveClient;
 import com.github.messenger4j.receive.events.AttachmentMessageEvent.Attachment;
@@ -37,8 +41,10 @@ import com.github.messenger4j.receive.handlers.PostbackEventHandler;
 import com.github.messenger4j.receive.handlers.QuickReplyMessageEventHandler;
 import com.github.messenger4j.receive.handlers.TextMessageEventHandler;
 import com.github.messenger4j.send.MessengerSendClient;
-import com.github.popescuandrei.recruitingBot.ai.AiManager;
-import com.github.popescuandrei.recruitingBot.util.FacebookMessageBuilder;
+import com.github.popescuandrei.recruitingBot.conversation.AiManager;
+import com.github.popescuandrei.recruitingBot.conversation.FacebookMessageBuilder;
+import com.github.popescuandrei.recruitingBot.conversation.util.Actions;
+import com.github.popescuandrei.recruitingBot.domain.support.Const;
 
 /**
  * This is the main class for inbound and outbound communication with the Facebook Messenger Platform.
@@ -78,7 +84,6 @@ public class MessengerCallbackController {
         LOG.debug("Initializing MessengerReceiveClient - appSecret: {} | verifyToken: {}", appSecret, verifyToken);
         this.receiveClient = MessengerPlatform.newReceiveClientBuilder(appSecret, verifyToken)
                 .onTextMessageEvent(newTextMessageEventHandler())
-                .onAttachmentMessageEvent(newAttachmentMessageEventHandler())
                 .onQuickReplyMessageEvent(newQuickReplyMessageEventHandler())
                 .onPostbackEvent(newPostbackEventHandler())
                 .onOptInEvent(newOptInEventHandler())
@@ -132,40 +137,16 @@ public class MessengerCallbackController {
 
             String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
             
-            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, aiResponse);
-        };
-    }
-
-    
-
-    private AttachmentMessageEventHandler newAttachmentMessageEventHandler() {
-        return event -> {
-            LOG.debug("Received AttachmentMessageEvent: {}", event);
-
-            final String messageId = event.getMid();
-            final List<Attachment> attachments = event.getAttachments();
-            final String senderId = event.getSender().getId();
-            final Date timestamp = event.getTimestamp();
-
-            LOG.info("Received message '{}' with attachments from user '{}' at '{}':",
-                    messageId, senderId, timestamp);
-
-            attachments.forEach(attachment -> {
-                final AttachmentType attachmentType = attachment.getType();
-                final Payload payload = attachment.getPayload();
-
-                String payloadAsString = null;
-                if (payload.isBinaryPayload()) {
-                    payloadAsString = payload.asBinaryPayload().getUrl();
-                }
-                if (payload.isLocationPayload()) {
-                    payloadAsString = payload.asLocationPayload().getCoordinates().toString();
-                }
-
-                LOG.info("Attachment of type '{}' with payload '{}'", attachmentType, payloadAsString);
-            });
-
-            facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, "Message with attachment received");
+            if(aiResponse.equals(SEARCH_POSITION)) {
+            	try {
+					facebookMessageBuilder.sendOpenPositionsMessage(this.sendClient, senderId);
+				} catch (MessengerApiException | MessengerIOException e) {
+					e.printStackTrace();
+					facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, getRandomFallbackAnswer());
+				}
+            } else {
+                facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, aiResponse);
+            }
         };
     }
 

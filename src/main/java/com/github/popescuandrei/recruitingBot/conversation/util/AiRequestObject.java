@@ -1,4 +1,4 @@
-package com.github.popescuandrei.recruitingBot.ai.util;
+package com.github.popescuandrei.recruitingBot.conversation.util;
 
 import java.util.Map;
 

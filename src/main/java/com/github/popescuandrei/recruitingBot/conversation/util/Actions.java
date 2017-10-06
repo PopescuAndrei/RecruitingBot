@@ -1,10 +1,9 @@
-package com.github.popescuandrei.recruitingBot.ai.util;
+package com.github.popescuandrei.recruitingBot.conversation.util;
 
 public final class Actions {
 	
 	public static final String GREETING = "greeting";
-	public static final String YES_STATEMENT = "yes";
-	public static final String NO_STATEMENT = "no";
+	public static final String ACCEPTANCE_STATEMENT = "statement.acceptance";
 	
 	public static final String SAVE_EDUCATION = "save.education";
 	public static final String SAVE_EXPERIENCE = "save.experience";

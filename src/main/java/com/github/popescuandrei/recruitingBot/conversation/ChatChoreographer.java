@@ -1,18 +1,17 @@
-package com.github.popescuandrei.recruitingBot.util;
+package com.github.popescuandrei.recruitingBot.conversation;
 
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.GREETING;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.NO_STATEMENT;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_EDUCATION;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_EMAIL;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_EXPERIENCE;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_GENDER;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_INTEREST;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SAVE_SKILL;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.SEARCH_POSITION;
-import static com.github.popescuandrei.recruitingBot.ai.util.Actions.YES_STATEMENT;
-import static com.github.popescuandrei.recruitingBot.ai.util.Entities.LEVEL;
-import static com.github.popescuandrei.recruitingBot.ai.util.Entities.SKILL;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.ACCEPTANCE_STATEMENT;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.GREETING;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_EDUCATION;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_EMAIL;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_EXPERIENCE;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_GENDER;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_INTEREST;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SAVE_SKILL;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Actions.SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Entities.LEVEL;
+import static com.github.popescuandrei.recruitingBot.conversation.util.Entities.SKILL;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -33,6 +32,7 @@ import com.github.popescuandrei.recruitingBot.domain.Skill;
 import com.github.popescuandrei.recruitingBot.domain.support.Const;
 import com.github.popescuandrei.recruitingBot.service.CandidateService;
 import com.github.popescuandrei.recruitingBot.service.InterviewProgressService;
+import com.github.popescuandrei.recruitingBot.service.PositionService;
 import com.github.popescuandrei.recruitingBot.service.QuestionReplyService;
 import com.github.popescuandrei.recruitingBot.service.QuestionService;
 import com.github.popescuandrei.recruitingBot.service.SkillService;
@@ -41,10 +41,13 @@ import com.google.gson.JsonElement;
 import ai.api.model.AIResponse;
 
 @Component
-@Qualifier("aiDecisionService")
-public class AiDecisionService {
+@Qualifier("chatChoreographer")
+public class ChatChoreographer {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(AiDecisionService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ChatChoreographer.class);
+	
+	@Autowired
+	private PositionService positionService;
 	
 	@Autowired
 	private CandidateService candidateService;
@@ -76,11 +79,8 @@ public class AiDecisionService {
 		case GREETING:
 			response = handleGreetingAction(aiResponse, candidate);
 			break;
-		case YES_STATEMENT:
-			response = handleYesAction(aiResponse, candidate);
-			break;
-		case NO_STATEMENT:
-			response = handleNoAction(aiResponse, candidate);
+		case ACCEPTANCE_STATEMENT:
+			response = handleYesNoAction(aiResponse, candidate);
 			break;
 		case SAVE_GENDER:
 			response = handleGenderAction(aiResponse, candidate);
@@ -116,11 +116,7 @@ public class AiDecisionService {
 		return Const.getRandomFallbackAnswer();
 	}
 
-	private String handleYesAction(AIResponse aiResponse, Candidate candidate) {
-		return Const.getRandomFallbackAnswer();
-	}
-	
-	private String handleNoAction(AIResponse aiResponse, Candidate candidate) {
+	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
 		return Const.getRandomFallbackAnswer();
 	}
 
@@ -187,7 +183,7 @@ public class AiDecisionService {
 	}
 	
 	private String handleSearchPositionAction(AIResponse aiResponse, Candidate candidate) {
-		return Const.getRandomFallbackAnswer();
+		return SEARCH_POSITION;
 	}
 	
 	private String getReply(Candidate candidate) {

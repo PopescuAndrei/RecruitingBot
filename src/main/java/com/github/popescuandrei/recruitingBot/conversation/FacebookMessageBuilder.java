@@ -1,4 +1,4 @@
-package com.github.popescuandrei.recruitingBot.util;
+package com.github.popescuandrei.recruitingBot.conversation;
 
 import java.util.List;
 
@@ -57,11 +57,15 @@ public class FacebookMessageBuilder {
         sendClient.sendFileAttachment(recipientId, RESOURCE_URL + "/assets/test.txt");
     }
 
-    public void sendButtonMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
+    public void sendOpenPositionsMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         ListBuilder buttonListBuilder = Button.newListBuilder();
         List<Position> availablePositions = positionService.findAll();
         for(Position p: availablePositions) {
         	buttonListBuilder.addUrlButton(p.getName(), p.buildUrl());
+        }
+        
+        if(availablePositions.isEmpty()) {
+        	buttonListBuilder.addUrlButton("There are no open positions right now", "https://www.google.com");
         }
         
         final List<Button> buttons = buttonListBuilder.build();

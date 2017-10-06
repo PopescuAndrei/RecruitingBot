@@ -1,6 +1,4 @@
-package com.github.popescuandrei.recruitingBot.ai;
-
-import static com.github.popescuandrei.recruitingBot.ai.util.Entities.LANGUAGE;
+package com.github.popescuandrei.recruitingBot.conversation;
 
 import java.util.Date;
 
@@ -12,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-
-import com.github.popescuandrei.recruitingBot.util.AiDecisionService;
 
 import ai.api.AIConfiguration;
 import ai.api.AIDataService;
@@ -30,7 +26,7 @@ public class AiManager {
 	private String apiKey;
 
 	@Autowired
-	private AiDecisionService aiDecisionService;
+	private ChatChoreographer chatChoreographer;
 	
 	AIConfiguration config;
 	AIDataService dataService;
@@ -53,8 +49,7 @@ public class AiManager {
 			
 			AIResponse response = dataService.request(request);
 			if (response.getStatus().getCode() == 200) {
-				// PARSE THE RESPONSE
-				responseText = aiDecisionService.parseAiResponse(response, facebookUuid, timestamp);
+				responseText = chatChoreographer.parseAiResponse(response, facebookUuid, timestamp);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

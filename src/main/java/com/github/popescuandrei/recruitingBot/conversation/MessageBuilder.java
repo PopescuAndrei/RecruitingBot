@@ -1,3 +1,4 @@
+package com.github.popescuandrei.recruitingBot.conversation;
 //package com.github.popescuandrei.recruitingBot.ai;
 //
 //import org.springframework.beans.factory.annotation.Qualifier;
