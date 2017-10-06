@@ -67,11 +67,11 @@ public class FacebookMessageBuilder {
         log.info(availablePositions.size() + " positions found.");
         
         for(Position p: availablePositions) {
-        	buttonListBuilder.addUrlButton(p.getName(), p.buildUrl());
+        	buttonListBuilder.addUrlButton(p.getName(), p.buildUrl()).toList();
         }
         
         if(availablePositions.isEmpty()) {
-        	buttonListBuilder.addUrlButton("Nothing here", "https://www.google.com");
+        	buttonListBuilder.addUrlButton("Nothing here", "https://www.google.com").toList();
         }
         
         final List<Button> buttons = buttonListBuilder.build();
