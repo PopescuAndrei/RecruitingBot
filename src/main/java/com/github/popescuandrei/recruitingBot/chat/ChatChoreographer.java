@@ -10,6 +10,11 @@ import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTIO
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_LANGUAGE;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_SKILL;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_ACCEPTANCE;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_ACCEPTANCE_NO;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_EMAIL;
+import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_GENDER;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.AT_EMAIL;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.MALE;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.UNAVAILABLE;
@@ -35,7 +40,6 @@ import com.github.popescuandrei.recruitingBot.domain.support.Const;
 import com.github.popescuandrei.recruitingBot.domain.support.Email;
 import com.github.popescuandrei.recruitingBot.service.CandidateService;
 import com.github.popescuandrei.recruitingBot.service.InterviewProgressService;
-import com.github.popescuandrei.recruitingBot.service.PositionService;
 import com.github.popescuandrei.recruitingBot.service.QuestionReplyService;
 import com.github.popescuandrei.recruitingBot.service.QuestionService;
 import com.github.popescuandrei.recruitingBot.service.SkillService;
@@ -48,9 +52,6 @@ import ai.api.model.AIResponse;
 public class ChatChoreographer {
 	
 	private static final Logger log = LoggerFactory.getLogger(ChatChoreographer.class);
-	
-	@Autowired
-	private PositionService positionService;
 	
 	@Autowired
 	private CandidateService candidateService;
@@ -137,22 +138,31 @@ public class ChatChoreographer {
 		
 		InterviewProgress progress = new InterviewProgress();
 		progress.setCandidate(candidate);
-		progress.setProgress(1L);
+		progress.setProgress(0L);
 		progress = interviewProgressService.create(progress);
 		
 		return getReply(candidate);
 	}
 
 	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
-		return Const.getRandomFallbackAnswer();
+		if(aiResponse.getResult().getParameters().get(ENTITY_ACCEPTANCE).getAsString().equalsIgnoreCase(ENTITY_ACCEPTANCE_NO)) {
+			return getNextQuestion(candidate);
+		}
+		return getReply(candidate);
 	}
 
 	private String handleGenderAction(AIResponse aiResponse, Candidate candidate) {
-		return Const.getRandomFallbackAnswer();
+		candidate.setGender(aiResponse.getResult().getParameters().get(ENTITY_SYS_GENDER).getAsString());
+		candidate = candidateService.update(candidate);
+		
+		return getReply(candidate);
 	}
 	
 	private String handleEmailAction(AIResponse aiResponse, Candidate candidate) {
-		return Const.getRandomFallbackAnswer();
+		candidate.setEmail(new Email(aiResponse.getResult().getParameters().get(ENTITY_SYS_EMAIL).getAsString()));
+		candidate = candidateService.update(candidate);
+		
+		return getReply(candidate);
 	}
 	
 	private String handleEducationAction(AIResponse aiResponse, Candidate candidate) {
@@ -192,6 +202,28 @@ public class ChatChoreographer {
 		
 		return getReply(candidate);
 	}
+	
+	private String handleSearchPositionAction(AIResponse aiResponse, Candidate candidate) {
+		return ACTION_SEARCH_POSITION;
+	}
+	
+	private String getReply(Candidate candidate) {
+		InterviewProgress interviewProgress = interviewProgressService.findByCandidateId(candidate.getId());
+
+		if(interviewProgress.getProgress() == 0L) {
+			return getNextQuestion(candidate);
+		}
+		
+		List<QuestionReply> questionReplies = questionReplyService.findAllByQuestionId(interviewProgress.getProgress());	
+		
+		return questionReplies.get(new Random().nextInt(questionReplies.size())).getReplyMessage();
+	}
+	
+	private String getNextQuestion(Candidate candidate) {
+		InterviewProgress interviewProgress = interviewProgressService.findByCandidateId(candidate.getId());
+		
+		return questionService.findByPosition(interviewProgress.getProgress() + 1).getQuery();
+	}
 
 	private Long resolveLevelToNumber(String level) {
 		if (level.equals("internship")) {
@@ -207,16 +239,5 @@ public class ChatChoreographer {
 		} else {
 			return 0L;
 		}
-	}
-	
-	private String handleSearchPositionAction(AIResponse aiResponse, Candidate candidate) {
-		return ACTION_SEARCH_POSITION;
-	}
-	
-	private String getReply(Candidate candidate) {
-		InterviewProgress interviewProgress = interviewProgressService.findByCandidateId(candidate.getId());
-		List<QuestionReply> questionReplies = questionReplyService.findAllByQuestionId(interviewProgress.getProgress());
-		
-		return questionReplies.get(new Random().nextInt(questionReplies.size())).getReplyMessage();
 	}
 }

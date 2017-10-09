@@ -8,17 +8,11 @@ import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.GEND
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PHONE;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -61,36 +55,6 @@ public class Candidate extends BaseEntity{
 	
 	@Column(name = AGE)
 	private int age;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<CandidateEducation> candidateEducations;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<CandidateExperience> candidateExperiences;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<CandidateInterest> candidateInterests;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<CandidateLanguage> candidateLanguages;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<CandidateSkill> candidateSkills;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<ChatMessage> chatMessages;
-	
-	@OneToOne(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private InterviewProgress interviewProgress;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<UserCandidateLike> userCandidateLikes;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<UserCandidateRating> userCandidateRatings;
-	
-	@OneToMany(mappedBy = "candidate", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<UserCandidateComment> userCandidateComments;
 	
     public Long getId() {
         return id;
@@ -154,86 +118,6 @@ public class Candidate extends BaseEntity{
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-	
-	public List<CandidateEducation> getCandidateEducations() {
-		return candidateEducations;
-	}
-
-	public void setCandidateEducations(List<CandidateEducation> candidateEducations) {
-		this.candidateEducations = candidateEducations;
-	}
-
-	public List<CandidateExperience> getCandidateExperiences() {
-		return candidateExperiences;
-	}
-
-	public void setCandidateExperiences(List<CandidateExperience> candidateExperiences) {
-		this.candidateExperiences = candidateExperiences;
-	}
-
-	public List<CandidateInterest> getCandidateInterests() {
-		return candidateInterests;
-	}
-
-	public void setCandidateInterests(List<CandidateInterest> candidateInterests) {
-		this.candidateInterests = candidateInterests;
-	}
-
-	public List<CandidateLanguage> getCandidateLanguages() {
-		return candidateLanguages;
-	}
-
-	public void setCandidateLanguages(List<CandidateLanguage> candidateLanguages) {
-		this.candidateLanguages = candidateLanguages;
-	}
-
-	public List<CandidateSkill> getCandidateSkills() {
-		return candidateSkills;
-	}
-
-	public void setCandidateSkills(List<CandidateSkill> candidateSkills) {
-		this.candidateSkills = candidateSkills;
-	}
-
-	public List<ChatMessage> getChatMessages() {
-		return chatMessages;
-	}
-
-	public void setChatMessages(List<ChatMessage> chatMessages) {
-		this.chatMessages = chatMessages;
-	}
-
-	public InterviewProgress getInterviewProgress() {
-		return interviewProgress;
-	}
-
-	public void setInterviewProgress(InterviewProgress interviewProgress) {
-		this.interviewProgress = interviewProgress;
-	}
-
-	public List<UserCandidateLike> getUserCandidateLikes() {
-		return userCandidateLikes;
-	}
-
-	public void setUserCandidateLikes(List<UserCandidateLike> userCandidateLikes) {
-		this.userCandidateLikes = userCandidateLikes;
-	}
-
-	public List<UserCandidateRating> getUserCandidateRatings() {
-		return userCandidateRatings;
-	}
-
-	public void setUserCandidateRatings(List<UserCandidateRating> userCandidateRatings) {
-		this.userCandidateRatings = userCandidateRatings;
-	}
-
-	public List<UserCandidateComment> getUserCandidateComments() {
-		return userCandidateComments;
-	}
-
-	public void setUserCandidateComments(List<UserCandidateComment> userCandidateComments) {
-		this.userCandidateComments = userCandidateComments;
 	}
 
 	@Override

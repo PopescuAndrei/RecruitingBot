@@ -4,15 +4,11 @@ import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.POSI
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.QUERY;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.QUESTION;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,9 +34,6 @@ public class Question extends BaseEntity {
 	@Column(name = POSITION)
 	private Long position;
 	
-	@OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
-	private Set<QuestionReply> replies;
-	
 	@Override
 	public Long getId() {
 		return id;
@@ -65,15 +58,7 @@ public class Question extends BaseEntity {
 	public void setPosition(Long position) {
 		this.position = position;
 	}
-
-	public Set<QuestionReply> getReplies() {
-		return replies;
-	}
-
-	public void setReplies(Set<QuestionReply> replies) {
-		this.replies = replies;
-	}
-
+	
 	@Override
 	public void update(BaseEntity entity) {
 		if (!(entity instanceof Question)) {
@@ -83,6 +68,5 @@ public class Question extends BaseEntity {
 		Question question = (Question) entity;
 		setQuery(question.getQuery());
 		setPosition(question.getPosition());
-		setReplies(question.getReplies());
 	}
 }

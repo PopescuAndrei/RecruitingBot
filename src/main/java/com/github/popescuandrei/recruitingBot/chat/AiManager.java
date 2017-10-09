@@ -28,8 +28,8 @@ public class AiManager {
 	@Autowired
 	private ChatChoreographer chatChoreographer;
 	
-	AIConfiguration config;
-	AIDataService dataService;
+	private AIConfiguration config;
+	private AIDataService dataService;
 
 	@PostConstruct
 	public void init() {

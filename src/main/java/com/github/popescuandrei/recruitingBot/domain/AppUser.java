@@ -5,16 +5,11 @@ import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRS
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LAST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PASSWORD;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -51,15 +46,6 @@ public class AppUser extends BaseEntity{
 	@Size(min = 4, max = 100)
 	@Column(name = PASSWORD, nullable = false, length = 100)
 	private String password;
-	
-	@OneToMany(mappedBy = "appUser", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<UserCandidateLike> userCandidateLikes;
-	
-	@OneToMany(mappedBy = "appUser", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<UserCandidateRating> userCandidateRatings;
-	
-	@OneToMany(mappedBy = "appUser", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-	private List<UserCandidateComment> userCandidateComments;
 	
 	@Override
 	public Long getId() {
@@ -101,31 +87,7 @@ public class AppUser extends BaseEntity{
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public List<UserCandidateLike> getUserCandidateLikes() {
-		return userCandidateLikes;
-	}
-
-	public void setUserCandidateLikes(List<UserCandidateLike> userCandidateLikes) {
-		this.userCandidateLikes = userCandidateLikes;
-	}
-
-	public List<UserCandidateRating> getUserCandidateRatings() {
-		return userCandidateRatings;
-	}
-
-	public void setUserCandidateRatings(List<UserCandidateRating> userCandidateRatings) {
-		this.userCandidateRatings = userCandidateRatings;
-	}
-
-	public List<UserCandidateComment> getUserCandidateComments() {
-		return userCandidateComments;
-	}
-
-	public void setUserCandidateComments(List<UserCandidateComment> userCandidateComments) {
-		this.userCandidateComments = userCandidateComments;
-	}
-
+	
 	@Override
 	public void update(BaseEntity entity) {
 		if (!(entity instanceof AppUser)) {

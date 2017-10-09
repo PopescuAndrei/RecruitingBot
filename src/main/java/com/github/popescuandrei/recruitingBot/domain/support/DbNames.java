@@ -4,7 +4,7 @@ public final class DbNames {
 
 	// Generic
 	public static final String SEQ_GEN = "sequence_generator";
-	public static final String SEQ = "SEQ";
+	public static final String SEQ = "seq";
 	
 	// User
 	public static final String APP_USER = "app_user";

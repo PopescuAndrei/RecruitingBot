@@ -22,6 +22,10 @@ public class QuestionServiceImpl extends EntityServiceImpl<Question> implements 
 		super(repository);
 	}
 	
+	public Question findByPosition(Long position) {
+		return questionRepository.findByPosition(position);
+	}
+	
     @PostConstruct
     @Override
     protected void init() {

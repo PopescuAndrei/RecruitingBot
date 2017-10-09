@@ -4,4 +4,5 @@ import com.github.popescuandrei.recruitingBot.domain.Question;
 
 public interface QuestionService extends EntityService<Question> {
 	
+	Question findByPosition(Long position);
 }

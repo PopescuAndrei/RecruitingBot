@@ -1,7 +1,7 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.MESSAGE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.NAME;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +23,7 @@ public class Language extends BaseEntity {
 	private Long id;
 	
 	@Size(max = 50)
-	@Column(name = MESSAGE, length = 50)
+	@Column(name = NAME, length = 50)
 	private String name;
 	
 	public Long getId() {

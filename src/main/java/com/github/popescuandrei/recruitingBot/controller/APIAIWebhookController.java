@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.popescuandrei.recruitingBot.chat.AiManager;
-import com.github.popescuandrei.recruitingBot.chat.util.AiConstants;
 import com.github.popescuandrei.recruitingBot.chat.util.AiGenericRequest;
 import com.github.popescuandrei.recruitingBot.chat.util.AiRequestObject;
 import com.github.popescuandrei.recruitingBot.chat.util.AiResponseObject;
@@ -36,17 +35,8 @@ public class APIAIWebhookController {
 		AiRequestObject reqObj = request.getResult();
 		Metadata metadata = reqObj.getMetadata();
 		String intentName = metadata.getIntentName();
-
-		if (intentName != null) {
-			switch (intentName) {
-			case AiConstants.INTENT_ADD_EDUCATION:
-				respObj.setSpeech("IT's EDUCATION");
-				break;
-			default:
-				respObj.setSpeech("IT's" + intentName);
-				break;
-			}
-		}
+		respObj.setSpeech("AiWebhook's Response resolved to: " + intentName);
+		
 
 		return respObj;
 	}

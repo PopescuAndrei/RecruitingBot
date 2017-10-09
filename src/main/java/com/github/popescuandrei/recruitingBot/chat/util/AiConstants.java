@@ -43,4 +43,9 @@ public final class AiConstants {
 	public static final String ENTITY_PERIOD = "period";
 	public static final String ENTITY_LEVEL = "level";
 	public static final String ENTITY_SKILL = "skill";
+	public static final String ENTITY_ACCEPTANCE = "acceptance";
+	
+	// ENTITY VALUES
+	public static final String ENTITY_ACCEPTANCE_YES = "Yes";
+	public static final String ENTITY_ACCEPTANCE_NO = "No";
 }
