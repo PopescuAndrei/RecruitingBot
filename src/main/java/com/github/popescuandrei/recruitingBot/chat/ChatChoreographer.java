@@ -12,7 +12,6 @@ import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTIO
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_ACCEPTANCE;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_ACCEPTANCE_NO;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_LANGUAGE;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_EMAIL;
 import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_GENDER;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.AT_EMAIL;

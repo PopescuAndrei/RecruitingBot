@@ -27,7 +27,7 @@ public final class DbNames {
 	public static final String COLOR = "color";
 
 	// User candidate like
-	public static final String USER_CANDIDATE_LIKE = "user_candidate_lie";
+	public static final String USER_CANDIDATE_LIKE = "user_candidate_like";
 	public static final String USER_CANDIDATE_LIKE_SEQ = USER_CANDIDATE_LIKE + "_" + SEQ;
 	public static final String LIKED = "liked";
 
