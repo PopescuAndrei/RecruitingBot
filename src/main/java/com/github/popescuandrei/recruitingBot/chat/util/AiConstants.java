@@ -28,11 +28,11 @@ public final class AiConstants {
 	public static final String ACTION_SEARCH_POSITION = "search.position";
 	
 	// ENTITIES
-	public static final String ENTITY_SYS_DATE = "sys.date";
-	public static final String ENTITY_SYS_EMAIL = "sys.email";
-	public static final String ENTITY_SYS_DATE_PERIOD = "sys.date-period";
-	public static final String ENTITY_SYS_DURATION = "sys.duration";
-	public static final String ENTITY_SYS_NUMBER = "sys.number";
+	public static final String ENTITY_SYS_DATE = "date";
+	public static final String ENTITY_SYS_EMAIL = "email";
+	public static final String ENTITY_SYS_DATE_PERIOD = "date-period";
+	public static final String ENTITY_SYS_DURATION = "duration";
+	public static final String ENTITY_SYS_NUMBER = "number";
 	public static final String ENTITY_SYS_GENDER = "gender";
 	public static final String ENTITY_EXPERIENCE_COMPANY = "company";
 	public static final String ENTITY_EXPERIENCE_POSITION = "position";
