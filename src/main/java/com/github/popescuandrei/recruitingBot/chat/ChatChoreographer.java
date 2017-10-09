@@ -220,6 +220,8 @@ public class ChatChoreographer {
 	
 	private String getNextQuestion(Candidate candidate) {
 		InterviewProgress interviewProgress = interviewProgressService.findByCandidateId(candidate.getId());
+		interviewProgress.setProgress(interviewProgress.getProgress() + 1);
+		interviewProgress = interviewProgressService.create(interviewProgress);
 		
 		return questionService.findByPosition(interviewProgress.getProgress() + 1).getQuery();
 	}
