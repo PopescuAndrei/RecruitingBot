@@ -22,6 +22,10 @@ public class LanguageServiceImpl extends EntityServiceImpl<Language> implements 
 		super(repository);
 	}
 	
+	public Language findByName(String name) {
+		return languageRepository.findByName(name);
+	}
+	
     @PostConstruct
     @Override
     protected void init() {

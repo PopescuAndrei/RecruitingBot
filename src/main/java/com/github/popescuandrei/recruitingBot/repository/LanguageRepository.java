@@ -9,4 +9,5 @@ import com.github.popescuandrei.recruitingBot.domain.Language;
 @Qualifier("languageRepository")
 public interface LanguageRepository extends BaseRepository<Language, Long> {
 
+	Language findByName(String name);
 }

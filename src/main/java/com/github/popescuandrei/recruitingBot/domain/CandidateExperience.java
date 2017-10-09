@@ -3,7 +3,6 @@ package com.github.popescuandrei.recruitingBot.domain;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_EXPERIENCE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.COMPANY;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.DESCRIPTION;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PERIOD_FROM;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.PERIOD_TO;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.TITLE;
@@ -49,10 +48,6 @@ public class CandidateExperience extends BaseEntity {
 	@Column(name = COMPANY, length = 100)
 	private String company;
 	
-	@Size(max = 255)
-	@Column(name = DESCRIPTION, length = 255)
-	private String description;
-	
 	@Column(name = PERIOD_FROM)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date periodFrom;
@@ -93,14 +88,6 @@ public class CandidateExperience extends BaseEntity {
 		this.company = company;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public Date getPeriodFrom() {
 		return periodFrom;
 	}
@@ -127,7 +114,6 @@ public class CandidateExperience extends BaseEntity {
 		setCandidate(ce.getCandidate());
 		setTitle(ce.getTitle());
 		setCompany(ce.getCompany());
-		setDescription(ce.getDescription());
 		setPeriodFrom(ce.getPeriodFrom());
 		setPeriodTo(ce.getPeriodTo());
 	}

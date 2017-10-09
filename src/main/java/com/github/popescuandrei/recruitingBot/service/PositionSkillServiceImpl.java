@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.service;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,10 @@ public class PositionSkillServiceImpl extends EntityServiceImpl<PositionSkill> i
 	
 	public PositionSkillServiceImpl(BaseRepository<PositionSkill, Long> repository) {
 		super(repository);
+	}
+	
+	public List<PositionSkill> findAllByPositionId(Long positionId) {
+		return positionSkillRepository.findAllByPositionId(positionId);
 	}
 	
     @PostConstruct
