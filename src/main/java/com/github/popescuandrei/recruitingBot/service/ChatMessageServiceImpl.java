@@ -21,6 +21,13 @@ public class ChatMessageServiceImpl extends EntityServiceImpl<ChatMessage> imple
 	public ChatMessageServiceImpl(BaseRepository<ChatMessage, Long> repository) {
 		super(repository);
 	}
+
+	@Override
+	public Long getNextMessagePositionByCandidateId(Long candidateId) {
+		Long currentPosition = chatMessageRepository.getMaxPositionByCandidateId(candidateId);
+		
+		return currentPosition == null? 1L : (currentPosition + 1); 
+	}
 	
     @PostConstruct
     @Override

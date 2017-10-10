@@ -4,4 +4,5 @@ import com.github.popescuandrei.recruitingBot.domain.ChatMessage;
 
 public interface ChatMessageService extends EntityService<ChatMessage> {
 
+	Long getNextMessagePositionByCandidateId(Long candidateId);
 }

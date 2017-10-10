@@ -11,6 +11,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import com.github.popescuandrei.recruitingBot.domain.Candidate;
+import com.github.popescuandrei.recruitingBot.domain.ChatMessage;
+import com.github.popescuandrei.recruitingBot.service.CandidateService;
+import com.github.popescuandrei.recruitingBot.service.ChatMessageService;
+
 import ai.api.AIConfiguration;
 import ai.api.AIDataService;
 import ai.api.model.AIRequest;
@@ -28,7 +33,14 @@ public class AiManager {
 	@Autowired
 	private ChatChoreographer chatChoreographer;
 	
+	@Autowired
+	private CandidateService candidateService;
+	
+	@Autowired
+	private ChatMessageService chatMessageService;
+	
 	private AIConfiguration config;
+	
 	private AIDataService dataService;
 
 	@PostConstruct
@@ -56,6 +68,27 @@ public class AiManager {
 			log.error(e.getMessage());
 		}
 
+		Candidate candidate = candidateService.findByFacebookUuid(facebookUuid);
+		saveChatMessage(candidate, statement, Boolean.FALSE);
+		saveChatMessage(candidate, responseText, Boolean.TRUE);
+		
 		return responseText;
+	}
+	
+	/**
+	 * Method that saves a chat message coming from a candidate/bot on the next available position.
+	 * @param candidate
+	 * @param message
+	 * @param fromBot
+	 */
+	private void saveChatMessage(Candidate candidate, String message, Boolean fromBot) {
+		ChatMessage chatMessage = new ChatMessage();
+		chatMessage.setCandidate(candidate);
+		chatMessage.setFromRobot(fromBot);
+		chatMessage.setMessage(message);
+		chatMessage.setPosition(chatMessageService.getNextMessagePositionByCandidateId(candidate.getId()));
+		chatMessage.setCreationDate(new Date());
+		
+		chatMessageService.create(chatMessage);
 	}
 }

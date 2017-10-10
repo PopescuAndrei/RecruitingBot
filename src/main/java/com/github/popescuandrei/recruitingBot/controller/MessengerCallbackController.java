@@ -4,7 +4,7 @@ import static com.github.messenger4j.MessengerPlatform.CHALLENGE_REQUEST_PARAM_N
 import static com.github.messenger4j.MessengerPlatform.MODE_REQUEST_PARAM_NAME;
 import static com.github.messenger4j.MessengerPlatform.SIGNATURE_HEADER_NAME;
 import static com.github.messenger4j.MessengerPlatform.VERIFY_TOKEN_REQUEST_PARAM_NAME;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SEARCH_POSITION;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.getRandomFallbackAnswer;
 
 import java.util.Date;
@@ -111,12 +111,9 @@ public class MessengerCallbackController {
     private TextMessageEventHandler newTextMessageEventHandler() {
         return event -> {
 
-            final String messageId = event.getMid();
             final String messageText = event.getText();
             final String senderId = event.getSender().getId();
             final Date timestamp = event.getTimestamp();
-            log.info("Received message '{}' with text '{}' from user '{}' at '{}'", messageId, messageText, senderId, timestamp);
-
 
             String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
             if(aiResponse.equals(ACTION_SEARCH_POSITION)) {

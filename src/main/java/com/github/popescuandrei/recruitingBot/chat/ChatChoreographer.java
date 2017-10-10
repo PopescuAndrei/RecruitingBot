@@ -1,27 +1,27 @@
 package com.github.popescuandrei.recruitingBot.chat;
 
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_ACCEPTANCE;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_GREETING;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_EDUCATION;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_EMAIL;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_EXPERIENCE;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_GENDER;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_INTEREST;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SAVE_SKILL;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ACTION_SEARCH_POSITION;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_ACCEPTANCE;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_ACCEPTANCE_YES;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_EDUCATION_INSTITUTION;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_EDUCATION_MAJOR;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_EXPERIENCE_COMPANY;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_EXPERIENCE_POSITION;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_INTEREST;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_LANGUAGE;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_DATE_PERIOD;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_EMAIL;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_GENDER;
-import static com.github.popescuandrei.recruitingBot.chat.util.AiConstants.ENTITY_SYS_NUMBER;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_ACCEPTANCE;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_GREETING;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_EDUCATION;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_EMAIL;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_EXPERIENCE;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_GENDER;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_INTEREST;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_SKILL;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SEARCH_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_ACCEPTANCE;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_ACCEPTANCE_YES;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EDUCATION_INSTITUTION;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EDUCATION_MAJOR;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EXPERIENCE_COMPANY;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EXPERIENCE_POSITION;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_INTEREST;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_LANGUAGE;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_DATE_PERIOD;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_EMAIL;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_GENDER;
+import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_NUMBER;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.AT_EMAIL;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.MALE;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.UNAVAILABLE;
@@ -39,7 +39,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.github.popescuandrei.recruitingBot.chat.util.AiConstants;
+import com.github.popescuandrei.recruitingBot.chat.support.AiConstants;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.domain.CandidateEducation;
 import com.github.popescuandrei.recruitingBot.domain.CandidateExperience;
@@ -156,7 +156,7 @@ public class ChatChoreographer {
 			break;
 		}
 		log.debug("## Action is :" + aiResponse.getResult().getAction());
-		
+
 		return response;
 	}
 	

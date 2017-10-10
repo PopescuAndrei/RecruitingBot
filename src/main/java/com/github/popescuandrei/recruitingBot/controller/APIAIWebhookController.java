@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.popescuandrei.recruitingBot.chat.AiManager;
-import com.github.popescuandrei.recruitingBot.chat.util.AiGenericRequest;
-import com.github.popescuandrei.recruitingBot.chat.util.AiRequestObject;
-import com.github.popescuandrei.recruitingBot.chat.util.AiResponseObject;
-import com.github.popescuandrei.recruitingBot.chat.util.Metadata;
+import com.github.popescuandrei.recruitingBot.chat.support.AiGenericRequest;
+import com.github.popescuandrei.recruitingBot.chat.support.AiRequestObject;
+import com.github.popescuandrei.recruitingBot.chat.support.AiResponseObject;
+import com.github.popescuandrei.recruitingBot.chat.support.Metadata;
 
 
 @RestController

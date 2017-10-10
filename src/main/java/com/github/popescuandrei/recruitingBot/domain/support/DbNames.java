@@ -117,4 +117,8 @@ public final class DbNames {
 	public static final String INTERVIEW_PROGRESS = "interview_progress";
 	public static final String INTERVIEW_PROGRESS_SEQ = INTERVIEW_PROGRESS + "_" + SEQ;
 	public static final String PROGRESS = "progress";
+
+	// CandidatePositionScore
+	public static final String CANDIDATE_POSITION_SCORE = "candidate_position_score";
+	public static final String SCORE = "score";
 }
