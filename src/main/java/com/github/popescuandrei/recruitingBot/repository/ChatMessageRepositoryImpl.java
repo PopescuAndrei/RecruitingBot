@@ -29,7 +29,7 @@ public class ChatMessageRepositoryImpl implements ChatMessageRepositoryCustom{
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT max(position)")
 			.append(" FROM chat_message")
-			.append(" WHERE chat_message.candidateId =?0");
+			.append(" WHERE chat_message.candidate_id =?0");
 		
 		Query query = em.createNativeQuery(sql.toString());
 		query.setParameter(0, candidateId);
