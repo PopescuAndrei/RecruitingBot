@@ -26,7 +26,6 @@ public class ChatMessageRepositoryImpl implements ChatMessageRepositoryCustom{
 		this.em = em;
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public Long getMaxPositionByCandidateId(Long candidateId) {
 		StringBuilder sql = new StringBuilder();
@@ -36,9 +35,9 @@ public class ChatMessageRepositoryImpl implements ChatMessageRepositoryCustom{
 		
 		Query query = em.createNativeQuery(sql.toString());
 		query.setParameter(0, candidateId);
-		Long position = ((BigInteger) query.getSingleResult()).longValue();
+		BigInteger position = (BigInteger) query.getSingleResult();
 		
-		return position == null ? 0L: position;
+		return position == null ? 0L: position.longValue();
 	}
 
 	@PostConstruct
