@@ -185,7 +185,9 @@ public class ChatChoreographer {
 		try {
 			jsonResponse = Unirest.get(BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken).asObject(FacebookProfileJson.class);
 		} catch (UnirestException e) {
-			log.info("Facebook graph api get profile call failed");
+			log.info("Request info at: ", BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken);
+			log.info("Facebook Graph API - Failure in retrieving profile info. Message: ", e.getMessage());
+			log.info(" Caused By: ", e.getCause());
 		}
 		
 		if (jsonResponse != null) {
