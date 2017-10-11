@@ -337,7 +337,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/candidates/candidate-card/candidate-card.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-3 col-sm-6 col-xs-12\">\n    <div class=\"panel panel-default\">\n        <a [routerLink]=\"['/candidates', candidate.id]\" >\n            <div class=\"panel-body\">\n                <img [src]=\"candidate.avatar\" class=\"img-responsive img-responsive infinite pulse img-center img-rounded\" alt=\"Responsive image\">\n                <h3 class=\"candidate-name text-center\">{{candidate.firstName}} {{candidate.lastName}}</h3>\n                <p class=\"candidate-description text-center\">{{candidate.description}}</p>\n                \n                <hr [style.backgroundColor]=\"candidate.color\" style=\"height:2px;\">\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                        <button type=\"button\" class=\"btn\"><i class=\"fa fa-comment\" aria-hidden=\"true\" [routerLink]=\"['/candidates', candidate.id, 'comments']\"></i> {{candidate.comments}}</button>\n                    </div>\n                    <div class=\"col-md-6\">\n                        <button type=\"button\" class=\"btn\"><i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> {{candidate.likes}}</button>\n                    </div>\n                </div>\n            </div>\n        </a>\n    </div>\n</div>"
+module.exports = "<div class=\"col-md-3 col-sm-6 col-xs-12\">\n    <div class=\"panel panel-default\">\n        <a [routerLink]=\"['/candidates', candidate.id]\" >\n            <div class=\"panel-body\">\n                <img [src]=\"candidate.avatar\" class=\"img-responsive img-responsive infinite pulse img-center img-rounded\" alt=\"Responsive image\">\n                <h3 class=\"candidate-name text-center\">{{candidate.firstName}} {{candidate.lastName}}</h3>\n                <p class=\"candidate-description text-center\">Lorem Ipsum</p>\n                \n                <hr [style.backgroundColor]=\"candidate.color\" style=\"height:2px;\">\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                        <button type=\"button\" class=\"btn\"><i class=\"fa fa-comment\" aria-hidden=\"true\" [routerLink]=\"['/candidates', candidate.id, 'comments']\"></i> {{candidate.comments}}</button>\n                    </div>\n                    <div class=\"col-md-6\">\n                        <button type=\"button\" class=\"btn\"><i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> {{candidate.likes}}</button>\n                    </div>\n                </div>\n            </div>\n        </a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -985,17 +985,12 @@ DashboardComponent = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Candidate; });
 
 var Candidate = (function () {
-    function Candidate(id, firstName, lastName, email, gender, description, likes, comments, rating, color) {
+    function Candidate(id, firstName, lastName, email, gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.description = description;
-        this.likes = likes;
-        this.comments = comments;
-        this.rating = rating;
-        this.color = color;
         this.setAvatar();
         this.score = Math.floor(Math.random() * 100) + 1;
     }
@@ -1119,12 +1114,13 @@ var Language = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Position; });
 
 var Position = (function () {
-    function Position(id, name, description, requirements, creationDate) {
+    function Position(id, name, description, requirements, creationDate, lastUpdate) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.requirements = requirements;
         this.creationDate = creationDate;
+        this.lastUpdate = lastUpdate;
         this.setRandomImage();
     }
     Position.prototype.setRandomImage = function () {
@@ -1173,6 +1169,22 @@ var Skill = (function () {
 }());
 
 //# sourceMappingURL=skill.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/domain/support.email.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Email; });
+var Email = (function () {
+    function Email(address) {
+        this.address = address;
+    }
+    return Email;
+}());
+
+//# sourceMappingURL=support.email.js.map
 
 /***/ }),
 
@@ -1454,7 +1466,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\n  <li *ngFor=\"let candidate of candidates\" class=\"list-dashboard\">\n    <div class=\"col-avatar\">\n      <img [src]=\"candidate.avatar\">\n    </div>\n    <div class=\"col-text\">\n      <h2>{{candidate.firstName}} {{candidate.lastName}}</h2>\n      <p>{{candidate.description}}</p>\n    </div>\n    <div class=\"col-menu\">\n      <!-- HERE GOES THE RATING -->\n    </div>\n    <div class=\"border\"></div>\n    <div class=\"type\">\n      <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\n    </div>\n    <a [routerLink]=\"['/candidates', candidate.id]\">\n      <div class=\"type2\">View Profile</div>\n    </a>\n  </li>\n</ul>\n"
+module.exports = "<ul>\n  <li *ngFor=\"let candidate of candidates\" class=\"list-dashboard\">\n    <div class=\"col-avatar\">\n      <img [src]=\"candidate.avatar\">\n    </div>\n    <div class=\"col-text\">\n      <h2>{{candidate.firstName}} {{candidate.lastName}}</h2>\n      <p>Lorem Ipsum</p>\n    </div>\n    <div class=\"col-menu\">\n      <!-- HERE GOES THE RATING -->\n    </div>\n    <div class=\"border\"></div>\n    <div class=\"type\">\n      <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\n    </div>\n    <a [routerLink]=\"['/candidates', candidate.id]\">\n      <div class=\"type2\">View Profile</div>\n    </a>\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -2603,15 +2615,16 @@ var COMMENT_NOT_SAVED = "The comment was not saved. Please try again!";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__domain_skill__ = __webpack_require__("../../../../../src/app/domain/skill.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__domain_candidate__ = __webpack_require__("../../../../../src/app/domain/candidate.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__domain_language__ = __webpack_require__("../../../../../src/app/domain/language.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__domain_education__ = __webpack_require__("../../../../../src/app/domain/education.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__domain_experience__ = __webpack_require__("../../../../../src/app/domain/experience.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__ = __webpack_require__("../../../../../src/app/domain/chat-message.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__domain_question__ = __webpack_require__("../../../../../src/app/domain/question.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__domain_position__ = __webpack_require__("../../../../../src/app/domain/position.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__domain_support_email__ = __webpack_require__("../../../../../src/app/domain/support.email.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__domain_skill__ = __webpack_require__("../../../../../src/app/domain/skill.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__domain_candidate__ = __webpack_require__("../../../../../src/app/domain/candidate.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__domain_language__ = __webpack_require__("../../../../../src/app/domain/language.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__domain_education__ = __webpack_require__("../../../../../src/app/domain/education.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__domain_experience__ = __webpack_require__("../../../../../src/app/domain/experience.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__ = __webpack_require__("../../../../../src/app/domain/chat-message.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__domain_question__ = __webpack_require__("../../../../../src/app/domain/question.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__domain_position__ = __webpack_require__("../../../../../src/app/domain/position.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return GENERIC_CANDIDATE; });
 /* unused harmony export CHAT_BOT */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CANDIDATES; });
@@ -2633,75 +2646,76 @@ var COMMENT_NOT_SAVED = "The comment was not saved. Please try again!";
 
 
 
-var GENERIC_CANDIDATE = new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](1, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#EDB63F');
-var CHAT_BOT = new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](0, 'HR', 'Ninja', 'hr@ninja.com', 'male');
+
+var GENERIC_CANDIDATE = new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](1, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male');
+var CHAT_BOT = new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](0, 'HR', 'Ninja', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('hr@ninja.com'), 'male');
 var CANDIDATES = [
     [
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](1, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#EDB63F'),
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](2, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#DD8335'),
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](3, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'female', 'Awesome description', 23, 45, 9, '#D03A43'),
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](4, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#A6315D')
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](1, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male'),
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](2, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male'),
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](3, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'female'),
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](4, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male')
     ], [
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](5, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'female', 'Awesome description', 23, 45, 9, '#734488'),
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](6, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'female', 'Awesome description', 23, 45, 9, '#3868A6'),
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](7, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#449C76'),
-        new __WEBPACK_IMPORTED_MODULE_1__domain_candidate__["a" /* Candidate */](8, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#88B25C')
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](5, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'female'),
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](6, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'female'),
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](7, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male'),
+        new __WEBPACK_IMPORTED_MODULE_2__domain_candidate__["a" /* Candidate */](8, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male')
     ]
 ];
 var SKILLS = [
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 100),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("CSharp", 50),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Python", 30),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Sql", 77),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Typescript", 46),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Spring", 80),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Hibernate", 70)
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Java", 100),
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("CSharp", 50),
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Python", 30),
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Sql", 77),
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Typescript", 46),
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Spring", 80),
+    new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Hibernate", 70)
 ];
 var LANGUAGES = [
-    new __WEBPACK_IMPORTED_MODULE_2__domain_language__["a" /* Language */]("English", 100, 100, 90),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_language__["a" /* Language */]("German", 70, 20, 20)
+    new __WEBPACK_IMPORTED_MODULE_3__domain_language__["a" /* Language */]("English", 100, 100, 90),
+    new __WEBPACK_IMPORTED_MODULE_3__domain_language__["a" /* Language */]("German", 70, 20, 20)
 ];
 var EDUCATION = [
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
-    new __WEBPACK_IMPORTED_MODULE_3__domain_education__["a" /* Education */]("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
+    new __WEBPACK_IMPORTED_MODULE_4__domain_education__["a" /* Education */]("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
+    new __WEBPACK_IMPORTED_MODULE_4__domain_education__["a" /* Education */]("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
+    new __WEBPACK_IMPORTED_MODULE_4__domain_education__["a" /* Education */]("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
+    new __WEBPACK_IMPORTED_MODULE_4__domain_education__["a" /* Education */]("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
 ];
 var COMMENTS = [
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
+    new __WEBPACK_IMPORTED_MODULE_9__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
 ];
 var EXPERIENCES = [
-    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Software Engineer", "Ericsson", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_experience__["a" /* Experience */]("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_experience__["a" /* Experience */]("Software Engineer", "Ericsson", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_experience__["a" /* Experience */]("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_5__domain_experience__["a" /* Experience */]("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 var POSITIONS = [
     [
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](1, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016/01/01 23:28:56")),
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](2, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016/01/01 23:28:56"))
+        new __WEBPACK_IMPORTED_MODULE_8__domain_position__["a" /* Position */](1, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016/01/01 23:28:56")),
+        new __WEBPACK_IMPORTED_MODULE_8__domain_position__["a" /* Position */](2, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016/01/01 23:28:56"))
     ], [
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](3, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016/01/01 23:28:56")),
-        new __WEBPACK_IMPORTED_MODULE_7__domain_position__["a" /* Position */](4, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_0__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016/01/01 23:28:56"))
+        new __WEBPACK_IMPORTED_MODULE_8__domain_position__["a" /* Position */](3, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", [new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Java", 78), new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Angular", 50)], new Date("2016/01/01 23:28:56")),
+        new __WEBPACK_IMPORTED_MODULE_8__domain_position__["a" /* Position */](4, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", [new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Java", 90), new __WEBPACK_IMPORTED_MODULE_1__domain_skill__["a" /* Skill */]("Angular", 70)], new Date("2016/01/01 23:28:56"))
     ]
 ];
 var CONVERSATION = [
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](1, GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](8, CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](10, CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
-    new __WEBPACK_IMPORTED_MODULE_5__domain_chat_message__["a" /* ChatMessage */](13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](1, GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](8, CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](10, CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
+    new __WEBPACK_IMPORTED_MODULE_6__domain_chat_message__["a" /* ChatMessage */](13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
 ];
 var INTERESTS = [
     {
@@ -2717,14 +2731,14 @@ var INTERESTS = [
     }
 ];
 var QUESTIONS = [
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](1, 1, "Intrebarea UNU?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](2, 2, "Intrebarea DOI?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](3, 3, "Intrebarea TREI?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](4, 4, "Intrebarea PATRU?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](5, 5, "Intrebarea CINCI?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](6, 6, "Intrebarea SASE?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](7, 7, "Intrebarea SAPTE?", new Array()),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_question__["a" /* Question */](8, 8, "Intrebarea OPT?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](1, 1, "Intrebarea UNU?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](2, 2, "Intrebarea DOI?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](3, 3, "Intrebarea TREI?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](4, 4, "Intrebarea PATRU?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](5, 5, "Intrebarea CINCI?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](6, 6, "Intrebarea SASE?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](7, 7, "Intrebarea SAPTE?", new Array()),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_question__["a" /* Question */](8, 8, "Intrebarea OPT?", new Array()),
 ];
 //# sourceMappingURL=mocks.js.map
 
@@ -2989,14 +3003,9 @@ RouterUtils.replies = "/replies";
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    herokuUrl: true
+    herokuUrl: false
 };
 //# sourceMappingURL=environment.js.map
 

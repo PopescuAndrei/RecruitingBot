@@ -9,8 +9,8 @@ public class Const {
 	public static final String BOT_NAME = "HR-Ninja";
 	public static final String UNAVAILABLE = "Unavailable";
 	public static final String AT_EMAIL = "@unavailalble.com"; 
-	public static final String MALE = "male";
 	public static final String FEMALE = "female";
+	public static final String MALE = "male";
 	
 	private static final List<String> DEFAULT_FALLBACK_MESSAGES = Arrays.asList("I didn't catch that. Can you repeat?", 
 															  "Doesn't look like anything to me! Can you rephrase?",

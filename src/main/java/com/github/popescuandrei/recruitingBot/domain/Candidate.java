@@ -1,7 +1,9 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.AGE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.AVATAR;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.COLOR;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FACEBOOK_UUID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.FIRST_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.GENDER;
@@ -52,6 +54,14 @@ public class Candidate extends BaseEntity{
 	
 	@Column(name = GENDER)
 	private String gender;
+	
+	@Size(max = 200)
+	@Column(name = AVATAR)
+	private String avatar;
+	
+	@Size(max = 7)
+	@Column(name = COLOR)
+	private String color;
 	
 	@Column(name = AGE)
 	private int age;
@@ -112,6 +122,22 @@ public class Candidate extends BaseEntity{
 		this.gender = gender;
 	}
 
+	public String getAvatar() {
+		return avatar;
+	}
+	
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
 	public int getAge() {
 		return age;
 	}
@@ -133,11 +159,13 @@ public class Candidate extends BaseEntity{
 		setPhone(candidate.getPhone());
 		setGender(candidate.getGender());
 		setAge(candidate.getAge());
+		setAvatar(candidate.getAvatar());
+		setColor(candidate.getColor());
 	}
 
 	@Override
 	public String toString() {
 		return "Candidate [id=" + id + ", facebookUuid=" + facebookUuid + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phone=" + phone + ", gender=" + gender + ", age=" + age + "]";
+				+ ", phone=" + phone + ", gender=" + gender + ", avatar=" + avatar + ", color=" + color + ", age=" + age + "]";
 	}
 }

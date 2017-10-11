@@ -24,6 +24,7 @@ public final class DbNames {
 	public static final String AGE = "age";
 	public static final String GENDER = "gender";
 	public static final String PHONE = "phone";
+	public static final String AVATAR = "avatar";
 	public static final String COLOR = "color";
 
 	// User candidate like

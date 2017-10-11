@@ -10,8 +10,6 @@ import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.AC
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_LANGUAGE;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SAVE_SKILL;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ACTION_SEARCH_POSITION;
-import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_ACCEPTANCE;
-import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_ACCEPTANCE_YES;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EDUCATION_INSTITUTION;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EDUCATION_MAJOR;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_EXPERIENCE_COMPANY;
@@ -37,9 +35,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import com.github.popescuandrei.recruitingBot.chat.support.AiConstants;
+import com.github.popescuandrei.recruitingBot.chat.support.FacebookProfileJson;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.domain.CandidateEducation;
 import com.github.popescuandrei.recruitingBot.domain.CandidateExperience;
@@ -62,15 +63,23 @@ import com.github.popescuandrei.recruitingBot.service.LanguageService;
 import com.github.popescuandrei.recruitingBot.service.QuestionReplyService;
 import com.github.popescuandrei.recruitingBot.service.QuestionService;
 import com.github.popescuandrei.recruitingBot.service.SkillService;
+import com.github.popescuandrei.recruitingBot.util.ImageColorPicker;
 import com.google.gson.JsonElement;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 
 import ai.api.model.AIResponse;
 
 @Component
 @Qualifier("chatChoreographer")
+@PropertySource("classpath:application.properties")
 public class ChatChoreographer {
 	
 	private static final Logger log = LoggerFactory.getLogger(ChatChoreographer.class);
+	
+	private static final String BASE_FACEBOOK_URL_START = "https://graph.facebook.com/v2.6/";
+	private static final String BASE_FACEBOOK_URL_END = "?access_token=";
 	
 	@Autowired
 	private CandidateService candidateService;
@@ -101,6 +110,9 @@ public class ChatChoreographer {
 	
 	@Autowired
 	private CandidateExperienceService experienceService;
+	
+	@Value("${MESSENGER_PAGE_ACCESS_TOKEN}")
+	private String pageAcessToken;
 	
 	/**
 	 * Method that resolves the appropriate reply for 
@@ -168,10 +180,30 @@ public class ChatChoreographer {
 	 */
 	private String handleGreetingAction(AIResponse aiResponse, String facebookUuid) {
 		Candidate candidate = new Candidate();
-		candidate.setFirstName(UNAVAILABLE);
-		candidate.setLastName(UNAVAILABLE);
-		candidate.setEmail(new Email(UNAVAILABLE + AT_EMAIL));
-		candidate.setGender(MALE);
+		
+		HttpResponse<FacebookProfileJson> jsonResponse = null;
+		try {
+			jsonResponse = Unirest.get(BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken).asObject(FacebookProfileJson.class);
+		} catch (UnirestException e) {
+			log.info("Facebook graph api get profile call failed");
+		}
+		
+		if (jsonResponse != null) {
+			FacebookProfileJson facebookProfile = jsonResponse.getBody();
+			candidate.setFirstName(facebookProfile.getFirst_name());
+			candidate.setLastName(facebookProfile.getLast_name());
+			candidate.setGender(facebookProfile.getGender());
+			candidate.setAvatar(facebookProfile.getProfile_pic());
+			candidate.setColor(ImageColorPicker.getRandomColor());
+			
+		} else {
+			candidate.setFirstName(UNAVAILABLE);
+			candidate.setLastName(UNAVAILABLE);
+			candidate.setGender(MALE);
+			candidate.setAvatar(ImageColorPicker.getRandomAvatar(MALE));
+			candidate.setColor(ImageColorPicker.getRandomColor());
+		}
+		candidate.setEmail(new Email(candidate.getFirstName() + "_" + candidate.getLastName() + candidate.getFacebookUuid() + AT_EMAIL));
 		candidate.setAge(20);
 		candidate.setFacebookUuid(facebookUuid);
 		candidate = candidateService.create(candidate);
