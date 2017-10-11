@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.repository;
 
+import java.math.BigInteger;
+
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,6 +26,7 @@ public class ChatMessageRepositoryImpl implements ChatMessageRepositoryCustom{
 		this.em = em;
 	}
 
+	@SuppressWarnings("null")
 	@Override
 	public Long getMaxPositionByCandidateId(Long candidateId) {
 		StringBuilder sql = new StringBuilder();
@@ -33,7 +36,7 @@ public class ChatMessageRepositoryImpl implements ChatMessageRepositoryCustom{
 		
 		Query query = em.createNativeQuery(sql.toString());
 		query.setParameter(0, candidateId);
-		Long position = (Long) query.getSingleResult();
+		Long position = ((BigInteger) query.getSingleResult()).longValue();
 		
 		return position == null ? 0L: position;
 	}
