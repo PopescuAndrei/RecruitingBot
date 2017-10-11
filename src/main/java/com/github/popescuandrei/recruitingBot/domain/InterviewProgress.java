@@ -68,4 +68,9 @@ public class InterviewProgress extends BaseEntity {
 		setCandidate(ip.getCandidate());
 		setProgress(ip.getProgress());
 	}
+
+	@Override
+	public String toString() {
+		return "InterviewProgress [id=" + id + ", candidate=" + candidate + ", progress=" + progress + "]";
+	}
 }

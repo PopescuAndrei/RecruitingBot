@@ -79,4 +79,9 @@ public class QuestionReply extends BaseEntity{
 		int index = new Random().nextInt(replyList.size());
 		return replyList.get(index);
 	}
+
+	@Override
+	public String toString() {
+		return "QuestionReply [id=" + id + ", replyMessage=" + replyMessage + ", question=" + question + "]";
+	}
 }

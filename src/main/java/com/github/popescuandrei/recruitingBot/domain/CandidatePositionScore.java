@@ -103,4 +103,9 @@ public class CandidatePositionScore extends BaseEntity {
 	public void update(BaseEntity entity) {
 		throw new UnsupportedOperationException("Entity should not be updated");
 	}
+
+	@Override
+	public String toString() {
+		return "CandidatePositionScore [id=" + id + ", candidate=" + candidate + ", position=" + position + ", score=" + score + "]";
+	}
 }

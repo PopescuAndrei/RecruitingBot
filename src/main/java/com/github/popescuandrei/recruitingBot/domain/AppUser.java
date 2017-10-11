@@ -100,5 +100,9 @@ public class AppUser extends BaseEntity{
 		setEmail(user.getEmail());
 		setPassword(user.getPassword());
 	}
-	
+
+	@Override
+	public String toString() {
+		return "AppUser [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + "]";
+	}
 }

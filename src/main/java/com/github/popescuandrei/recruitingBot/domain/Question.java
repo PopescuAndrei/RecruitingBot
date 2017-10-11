@@ -69,4 +69,9 @@ public class Question extends BaseEntity {
 		setQuery(question.getQuery());
 		setPosition(question.getPosition());
 	}
+
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", query=" + query + ", position=" + position + "]";
+	}
 }

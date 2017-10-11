@@ -62,7 +62,14 @@ public class UserCandidateRating extends BaseEntity {
 		this.id = id;
 	}
 
+	public Candidate getCandidate() {
+		return candidate;
+	}
 
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
+	
 	public void setAppUser(AppUser appUser) {
 		this.appUser = appUser;
 	}
@@ -79,5 +86,10 @@ public class UserCandidateRating extends BaseEntity {
 		UserCandidateRating rating = (UserCandidateRating) entity;
 		
 		setRating(rating.getRating());
+	}
+
+	@Override
+	public String toString() {
+		return "UserCandidateRating [id=" + id + ", appUser=" + appUser + ", candidate=" + candidate + ", rating=" + rating + "]";
 	}
 }

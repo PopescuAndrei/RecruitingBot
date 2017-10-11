@@ -85,7 +85,9 @@ public class PositionSkill extends BaseEntity {
 		setPosition(ps.getPosition());
 		setLevel(ps.getLevel());
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "PositionSkill [id=" + id + ", skill=" + skill + ", position=" + position + ", level=" + level + "]";
+	}
 }

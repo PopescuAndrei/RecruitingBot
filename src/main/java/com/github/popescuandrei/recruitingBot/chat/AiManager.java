@@ -69,6 +69,7 @@ public class AiManager {
 		}
 
 		Candidate candidate = candidateService.findByFacebookUuid(facebookUuid);
+		log.info("CANDIDATE IIIIIIIIIIS: " + candidate.toString() + " ###########");
 		saveChatMessage(candidate, statement, Boolean.FALSE);
 		saveChatMessage(candidate, responseText, Boolean.TRUE);
 		

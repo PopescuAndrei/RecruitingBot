@@ -75,4 +75,9 @@ public class UserCandidateLike extends BaseEntity {
 		// if unlike => like
 		setLike(!getLike());
 	}
+
+	@Override
+	public String toString() {
+		return "UserCandidateLike [id=" + id + ", appUser=" + appUser + ", candidate=" + candidate + ", like=" + like + "]";
+	}
 }

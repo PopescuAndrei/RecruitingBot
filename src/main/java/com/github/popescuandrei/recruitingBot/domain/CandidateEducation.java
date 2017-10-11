@@ -130,6 +130,10 @@ public class CandidateEducation extends BaseEntity {
 		setPeriodTo(ce.getPeriodTo());
 		setGrade(ce.getGrade());
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "CandidateEducation [id=" + id + ", candidate=" + candidate + ", institution=" + institution + ", major=" + major + ", periodFrom=" + periodFrom
+				+ ", periodTo=" + periodTo + ", grade=" + grade + "]";
+	}
 }

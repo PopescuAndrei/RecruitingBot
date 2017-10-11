@@ -96,4 +96,10 @@ public class UserCandidateComment extends BaseEntity {
 	public void update(BaseEntity entity) {
 		throw new UnsupportedOperationException("Comment cannot be updated");
 	}
+
+	@Override
+	public String toString() {
+		return "UserCandidateComment [id=" + id + ", appUser=" + appUser + ", candidate=" + candidate + ", comment=" + comment + ", creationDate="
+				+ creationDate + "]";
+	}
 }

@@ -107,6 +107,10 @@ public class ChatMessage extends BaseEntity {
 	public void update(BaseEntity entity) {
 		throw new UnsupportedOperationException("chat message cannot be updated");
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "ChatMessage [id=" + id + ", candidate=" + candidate + ", fromRobot=" + fromRobot + ", position=" + position + ", message=" + message
+				+ ", creationDate=" + creationDate + "]";
+	}
 }

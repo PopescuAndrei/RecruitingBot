@@ -135,4 +135,9 @@ public class Candidate extends BaseEntity{
 		setAge(candidate.getAge());
 	}
 
+	@Override
+	public String toString() {
+		return "Candidate [id=" + id + ", facebookUuid=" + facebookUuid + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", phone=" + phone + ", gender=" + gender + ", age=" + age + "]";
+	}
 }

@@ -117,4 +117,10 @@ public class CandidateLanguage extends BaseEntity {
 		setSpeaking(cl.getSpeaking());
 		setWriting(cl.getWriting());
 	}
+
+	@Override
+	public String toString() {
+		return "CandidateLanguage [id=" + id + ", candidate=" + candidate + ", language=" + language + ", understanding=" + understanding + ", speaking="
+				+ speaking + ", writing=" + writing + "]";
+	}
 }

@@ -46,4 +46,11 @@ public class Language extends BaseEntity {
 	public void update(BaseEntity entity) {
 		throw new UnsupportedOperationException("Language cannot be updated");
 	}
+
+	@Override
+	public String toString() {
+		return "Language [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 }

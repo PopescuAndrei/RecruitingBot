@@ -120,4 +120,9 @@ public class Position extends BaseEntity{
 		return "https://recruitingmessbot.herokuapp.com/api/positionurls/" + this.getName();
 	}
 
+	@Override
+	public String toString() {
+		return "Position [id=" + id + ", name=" + name + ", description=" + description + ", image=" + image + ", creationDate=" + creationDate
+				+ ", lastUpdate=" + lastUpdate + "]";
+	}
 }

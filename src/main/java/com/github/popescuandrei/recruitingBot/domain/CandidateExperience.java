@@ -117,4 +117,10 @@ public class CandidateExperience extends BaseEntity {
 		setPeriodFrom(ce.getPeriodFrom());
 		setPeriodTo(ce.getPeriodTo());
 	}
+
+	@Override
+	public String toString() {
+		return "CandidateExperience [id=" + id + ", candidate=" + candidate + ", title=" + title + ", company=" + company + ", periodFrom=" + periodFrom
+				+ ", periodTo=" + periodTo + "]";
+	}
 }

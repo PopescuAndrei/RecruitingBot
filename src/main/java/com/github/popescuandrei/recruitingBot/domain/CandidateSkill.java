@@ -86,4 +86,9 @@ public class CandidateSkill extends BaseEntity {
 		setCandidate(cs.getCandidate());
 		setLevel(cs.getLevel());
 	}
+
+	@Override
+	public String toString() {
+		return "CandidateSkill [id=" + id + ", skill=" + skill + ", candidate=" + candidate + ", level=" + level + "]";
+	}
 }

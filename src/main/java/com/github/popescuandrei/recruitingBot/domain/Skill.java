@@ -48,4 +48,9 @@ public class Skill extends BaseEntity {
 	public void update(BaseEntity entity) {
 		throw new UnsupportedOperationException("Skills cannot be updated");
 	}
+
+	@Override
+	public String toString() {
+		return "Skill [id=" + id + ", name=" + name + "]";
+	}
 }

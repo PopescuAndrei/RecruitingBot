@@ -71,4 +71,9 @@ public class CandidateInterest extends BaseEntity {
 		setCandidate(ci.getCandidate());
 		setName(ci.getName());
 	}
+
+	@Override
+	public String toString() {
+		return "CandidateInterest [id=" + id + ", candidate=" + candidate + ", name=" + name + "]";
+	}
 }
