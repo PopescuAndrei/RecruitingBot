@@ -44,6 +44,10 @@ public class CandidatePositionScore extends BaseEntity {
 	@Column(name = SCORE)
 	private Double score;
 	
+	public CandidatePositionScore() {
+		this(null);
+	}
+	
 	public CandidatePositionScore(Long id) {
 		super();
 		this.id = id;
