@@ -21,7 +21,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -59,8 +58,6 @@ public class CandidateEducation extends BaseEntity {
 	private Date periodTo;
 	
 	@Column(name = GRADE)
-	@Digits(integer = 1, fraction = 2)
-	@Size(min = 0, max = 10)
 	private Double grade;
 
 	public Long getId() {

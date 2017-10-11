@@ -181,7 +181,7 @@ public class ChatChoreographer {
 		progress.setProgress(0L);
 		progress = interviewProgressService.create(progress);
 		
-		return getReply(candidate);
+		return getNextQuestion(candidate);
 	}
 
 	/**
@@ -191,10 +191,7 @@ public class ChatChoreographer {
 	 * @return
 	 */
 	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
-		if(aiResponse.getResult().getParameters().get(ENTITY_ACCEPTANCE).getAsString().equalsIgnoreCase(ENTITY_ACCEPTANCE_YES)) {
-			return getNextQuestion(candidate);
-		}
-		return getReply(candidate);
+		return getNextQuestion(candidate);
 	}
 	
 	/**

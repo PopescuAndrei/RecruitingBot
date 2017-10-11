@@ -68,9 +68,9 @@ public class AiManager {
 			log.error(e.getMessage());
 		}
 
-//		Candidate candidate = candidateService.findByFacebookUuid(facebookUuid);
-//		saveChatMessage(candidate, statement, Boolean.FALSE);
-//		saveChatMessage(candidate, responseText, Boolean.TRUE);
+		Candidate candidate = candidateService.findByFacebookUuid(facebookUuid);
+		saveChatMessage(candidate, statement, Boolean.FALSE);
+		saveChatMessage(candidate, responseText, Boolean.TRUE);
 		
 		return responseText;
 	}
