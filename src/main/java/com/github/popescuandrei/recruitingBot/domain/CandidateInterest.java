@@ -2,7 +2,7 @@ package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_INTEREST;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.INSTITUTION;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.NAME;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,7 +34,7 @@ public class CandidateInterest extends BaseEntity {
 	private Candidate candidate;
 	
 	@Size(max = 100)
-	@Column(name = INSTITUTION, length = 100)
+	@Column(name = NAME, length = 100)
 	private String name;
 
 	public Long getId() {
