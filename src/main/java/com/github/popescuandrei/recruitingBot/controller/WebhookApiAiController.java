@@ -17,7 +17,7 @@ import com.github.popescuandrei.recruitingBot.chat.support.Metadata;
 
 
 @RestController
-public class APIAIWebhookController {
+public class WebhookApiAiController {
 
 	private static final String DEFAULT_RESPONSE = "Hmm, I don't know what you mean.";
 

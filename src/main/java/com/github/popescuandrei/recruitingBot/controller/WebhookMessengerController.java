@@ -42,9 +42,9 @@ import com.github.popescuandrei.recruitingBot.chat.FacebookMessageBuilder;
  */
 @RestController
 @RequestMapping("/callback")
-public class MessengerCallbackController {
+public class WebhookMessengerController {
 
-    private static final Logger log = LoggerFactory.getLogger(MessengerCallbackController.class);
+    private static final Logger log = LoggerFactory.getLogger(WebhookMessengerController.class);
     
     private final MessengerReceiveClient receiveClient;
     private final MessengerSendClient sendClient;
@@ -64,7 +64,7 @@ public class MessengerCallbackController {
      * @param sendClient  the initialized {@code MessengerSendClient}
      */
     @Autowired
-    public MessengerCallbackController(@Value("${recruitingBot.appSecret}") final String appSecret,
+    public WebhookMessengerController(@Value("${recruitingBot.appSecret}") final String appSecret,
                                             @Value("${recruitingBot.verifyToken}") final String verifyToken,
                                             final MessengerSendClient sendClient) {
 

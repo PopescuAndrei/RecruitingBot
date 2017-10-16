@@ -117,7 +117,7 @@ public class Position extends BaseEntity{
 	}
 	
 	public String buildUrl() {
-		return "https://recruitingmessbot.herokuapp.com/api/positionurls/" + this.getName();
+		return "https://recruitingmessbot.herokuapp.com/api/positionurls/" + this.getId();
 	}
 
 	@Override

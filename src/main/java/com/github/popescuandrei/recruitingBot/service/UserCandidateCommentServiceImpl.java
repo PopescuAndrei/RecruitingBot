@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.service;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,10 @@ public class UserCandidateCommentServiceImpl extends EntityServiceImpl<UserCandi
 	
 	public UserCandidateCommentServiceImpl(BaseRepository<UserCandidateComment, Long> repository) {
 		super(repository);
+	}
+	
+	public List<UserCandidateComment> findAllByCandidateId(Long candidateId) {
+		return userCandidateCommentRepository.findAllByCandidateId(candidateId);
 	}
 	
     @PostConstruct
