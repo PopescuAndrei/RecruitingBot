@@ -24,6 +24,7 @@ import static com.github.popescuandrei.recruitingBot.domain.support.Const.AT_EMA
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.MALE;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.UNAVAILABLE;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -39,6 +40,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.popescuandrei.recruitingBot.chat.support.AiConstants;
 import com.github.popescuandrei.recruitingBot.chat.support.FacebookProfileJson;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
@@ -66,6 +68,7 @@ import com.github.popescuandrei.recruitingBot.service.SkillService;
 import com.github.popescuandrei.recruitingBot.util.ImageColorPicker;
 import com.google.gson.JsonElement;
 import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
@@ -183,6 +186,29 @@ public class ChatChoreographer {
 		
 		HttpResponse<FacebookProfileJson> jsonResponse = null;
 		try {
+			Unirest.setObjectMapper(new ObjectMapper() {
+			    private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper
+			                = new com.fasterxml.jackson.databind.ObjectMapper();
+			    
+				@Override
+			    public String writeValue(Object value) {
+			        try {
+			            return jacksonObjectMapper.writeValueAsString(value);
+			        } catch (JsonProcessingException e) {
+			            throw new RuntimeException(e);
+			        }
+			    }
+				
+				@Override
+				public <T> T readValue(String value, Class<T> valueType) {
+					try {
+						return jacksonObjectMapper.readValue(value, valueType);
+					} catch (IOException e) {
+			            throw new RuntimeException(e);
+					}
+				}
+			});
+			
 			jsonResponse = Unirest.get(BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken).asObject(FacebookProfileJson.class);
 		} catch (UnirestException e) {
 			log.info("Request info at: ", BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken);
