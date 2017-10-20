@@ -48,12 +48,12 @@ public class Candidate extends BaseEntity{
 	@Column(unique = true)
 	private Email email;
 	
+	@Column(name = GENDER)
+	private String gender;
+	
 	@Size(min = 10, max = 10)
 	@Column(name = PHONE, unique = true)
 	private String phone;
-	
-	@Column(name = GENDER)
-	private String gender;
 	
 	@Size(max = 200)
 	@Column(name = AVATAR)

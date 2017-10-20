@@ -20,6 +20,13 @@ import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.EN
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_EMAIL;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_GENDER;
 import static com.github.popescuandrei.recruitingBot.chat.support.AiConstants.ENTITY_SYS_NUMBER;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.LEVEL_ENTRY;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.LEVEL_INEXPERIENCED;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.LEVEL_JUNIOR;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.LEVEL_MIDDLE;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.LEVEL_SENIOR;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.PARAM_CANDIDATE_NAME;
+import static com.github.popescuandrei.recruitingBot.chat.support.FrontParams.PARAM_INSTITUTION_NAME;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.AT_EMAIL;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.MALE;
 import static com.github.popescuandrei.recruitingBot.domain.support.Const.UNAVAILABLE;
@@ -43,6 +50,7 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.popescuandrei.recruitingBot.chat.support.AiConstants;
 import com.github.popescuandrei.recruitingBot.chat.support.FacebookProfileJson;
+import com.github.popescuandrei.recruitingBot.chat.support.FrontParams;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.domain.CandidateEducation;
 import com.github.popescuandrei.recruitingBot.domain.CandidateExperience;
@@ -443,8 +451,13 @@ public class ChatChoreographer {
 		}
 		
 		List<QuestionReply> questionReplies = questionReplyService.findAllByQuestionId(interviewProgress.getProgress());	
+		String nextReply = questionReplies.get(new Random().nextInt(questionReplies.size())).getReplyMessage();
 		
-		return questionReplies.get(new Random().nextInt(questionReplies.size())).getReplyMessage();
+		if(nextReply.contains(PARAM_INSTITUTION_NAME)) {
+			nextReply = nextReply.replaceAll(PARAM_INSTITUTION_NAME, candidate.getFirstName());
+		}
+		
+		return nextReply;
 	}
 	
 	/**
@@ -456,8 +469,13 @@ public class ChatChoreographer {
 		InterviewProgress interviewProgress = interviewProgressService.findByCandidateId(candidate.getId());
 		interviewProgress.setProgress(interviewProgress.getProgress() + 1);
 		interviewProgress = interviewProgressService.update(interviewProgress);
+		String nextQuestion = questionService.findByPosition(interviewProgress.getProgress() + 1).getQuery();
 		
-		return questionService.findByPosition(interviewProgress.getProgress() + 1).getQuery();
+		if(nextQuestion.contains(PARAM_CANDIDATE_NAME)) {
+			nextQuestion = nextQuestion.replaceAll(PARAM_CANDIDATE_NAME, candidate.getFirstName());
+		}
+		
+		return nextQuestion;
 	}
 
 	/**
@@ -470,19 +488,19 @@ public class ChatChoreographer {
 		int score = 0;
 		
 		switch (level) {
-		case "inexperienced":
+		case LEVEL_INEXPERIENCED:
 			score = randomGenerator.nextInt(5);
 			break;
-		case "internship":
+		case LEVEL_ENTRY:
 			score = 5 + randomGenerator.nextInt(15);
 			break;
-		case "junior":
+		case LEVEL_JUNIOR:
 			score = 20 + randomGenerator.nextInt(20);
 			break;
-		case "middle":
+		case LEVEL_MIDDLE:
 			score = 40 + randomGenerator.nextInt(25);
 			break;
-		case "senior":
+		case LEVEL_SENIOR:
 			score = 65 + randomGenerator.nextInt(35);
 			break;
 		}

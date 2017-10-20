@@ -37,6 +37,7 @@ public class CandidateEvaluator {
 	private CandidatePositionScoreService candidatePositionScoreService;
 	
 	private final Double[] weights = {0.6, 0.2, 0.2};
+	
 	/**
 	 * Method that computes the scoring for a list of candidates
 	 * @param candidates

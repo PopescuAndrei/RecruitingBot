@@ -17,6 +17,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
+import com.github.popescuandrei.recruitingBot.domain.support.DbNames;
 import com.github.popescuandrei.recruitingBot.domain.support.Email;
 
 @Entity
@@ -46,6 +47,9 @@ public class AppUser extends BaseEntity{
 	@Size(min = 4, max = 100)
 	@Column(name = PASSWORD, nullable = false, length = 100)
 	private String password;
+	
+	@Column(name = DbNames.AVATAR, length = 255)
+	private String avatar;
 	
 	@Override
 	public Long getId() {
@@ -88,6 +92,14 @@ public class AppUser extends BaseEntity{
 		this.id = id;
 	}
 	
+	public String getAvatar() {
+		return avatar;
+	}
+	
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
 	@Override
 	public void update(BaseEntity entity) {
 		if (!(entity instanceof AppUser)) {
@@ -99,6 +111,7 @@ public class AppUser extends BaseEntity{
 		setLastName(user.getLastName());
 		setEmail(user.getEmail());
 		setPassword(user.getPassword());
+		setAvatar(user.getAvatar());
 	}
 
 	@Override

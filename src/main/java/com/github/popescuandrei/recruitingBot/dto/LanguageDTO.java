@@ -6,6 +6,7 @@ import com.github.popescuandrei.recruitingBot.domain.Language;
 
 public class LanguageDTO {
 	
+	//candidate language without candidate
 	private String name;
 	private Long understanding;
 	private Long speaking;

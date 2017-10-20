@@ -18,7 +18,7 @@ insert into language (name) values ('Spanish');
 insert into language (name) values ('German');
 insert into language (name) values ('Japanese');
 
-INSERT INTO question(query, position) VALUES ('Hello! I am here to ask you some questions. What is your email?', 1);
+INSERT INTO question(query, position) VALUES ('Hello :candidate.name! Nice to meet you. I am here to ask you some questions. What is your email?', 1);
 INSERT INTO question_reply(reply, question_id) VALUES ('Thanks', 1);
 
 INSERT INTO question(query, position) VALUES ('That is awesome. And now...are you a man or a woman?', 2);
@@ -27,6 +27,7 @@ INSERT INTO question_reply(reply, question_id) VALUES ('Ok. Noted', 2);
 INSERT INTO question(query, position) VALUES ('Let us talk about education. Were you a student? Where and what did you study?', 3);
 INSERT INTO question_reply(reply, question_id) VALUES ('That is great! Anywhere else?', 3);
 INSERT INTO question_reply(reply, question_id) VALUES ('Well, that is awesome. Do you have anything else?', 3);
+INSERT INTO question_reply(reply, question_id) VALUES ('Cool. Aaaand...:institution.name is the only you studied?', 3);
 
 INSERT INTO question(query, position) VALUES ('Next on the list is experience. Where and when did you work? What position did you held over there?', 4);
 INSERT INTO question_reply(reply, question_id) VALUES ('Great company. Anything else?', 4);
