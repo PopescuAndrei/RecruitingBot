@@ -28,8 +28,8 @@ public class PositionController {
 	private PositionService positionService;
 
 	@Autowired
-	@Qualifier("positionSkillsService")
-	private PositionSkillService positionSkillsService;
+	@Qualifier("positionSkillService")
+	private PositionSkillService positionSkillService;
 
 	@Autowired
 	@Qualifier("candidatePositionScoreService")
@@ -60,19 +60,19 @@ public class PositionController {
 
 	@RequestMapping(value = "/{id}/skills", method = RequestMethod.GET)
 	public @ResponseBody List<PositionSkill> findAllSkillsForPosition(@PathVariable("id") Long id) {
-		List<PositionSkill> skills = positionSkillsService.findAllByPositionId(id);
+		List<PositionSkill> skills = positionSkillService.findAllByPositionId(id);
 		return skills;
 	}
 
 	@RequestMapping(value = "/{id}/skills", method = RequestMethod.POST)
 	public @ResponseBody PositionSkill createSkill(@PathVariable("id") Long positionId, @RequestBody PositionSkill positionSkill) {
-		positionSkill = positionSkillsService.create(positionSkill);
+		positionSkill = positionSkillService.create(positionSkill);
 		return positionSkill;
 	}
 
 	@RequestMapping(value = "/{positionId}/skills/{skillId}", method = RequestMethod.DELETE)
 	public @ResponseBody PositionSkill deleteSkill(@PathVariable("positionId") Long positionId, @PathVariable("skillId") Long skillId) {
-		return positionSkillsService.delete(skillId);
+		return positionSkillService.delete(skillId);
 	}
 
 	@RequestMapping(value = "/{id}/candidates", method = RequestMethod.GET)

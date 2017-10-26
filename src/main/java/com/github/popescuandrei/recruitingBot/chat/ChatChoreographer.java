@@ -50,7 +50,6 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.popescuandrei.recruitingBot.chat.support.AiConstants;
 import com.github.popescuandrei.recruitingBot.chat.support.FacebookProfileJson;
-import com.github.popescuandrei.recruitingBot.chat.support.FrontParams;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.domain.CandidateEducation;
 import com.github.popescuandrei.recruitingBot.domain.CandidateExperience;
@@ -122,7 +121,7 @@ public class ChatChoreographer {
 	@Autowired
 	private CandidateExperienceService experienceService;
 	
-	@Value("${MESSENGER_PAGE_ACCESS_TOKEN}")
+	@Value("${recruitingBot.pageAccessToken}")
 	private String pageAcessToken;
 	
 	/**

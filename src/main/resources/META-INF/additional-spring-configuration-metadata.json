@@ -13,5 +13,10 @@
     "name": "recruitingBot.pageAccessToken",
     "type": "java.lang.String",
     "description": "FaceBook messenger page access token"
+  },
+  {
+    "name": "api.ai.apikey",
+    "type": "java.lang.String",
+    "description": "Dialogflow's access token"
   }
 ]}
