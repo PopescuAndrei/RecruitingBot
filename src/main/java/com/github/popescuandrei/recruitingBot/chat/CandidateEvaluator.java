@@ -36,6 +36,7 @@ public class CandidateEvaluator {
 	@Autowired
 	private CandidatePositionScoreService candidatePositionScoreService;
 	
+	// {skills weight, languages weight, experience weight}
 	private final Double[] weights = {0.6, 0.2, 0.2};
 	
 	/**

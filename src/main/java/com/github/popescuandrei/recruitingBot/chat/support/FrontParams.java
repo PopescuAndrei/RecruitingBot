@@ -1,5 +1,12 @@
 package com.github.popescuandrei.recruitingBot.chat.support;
 
+/**
+ * Parameters corresponding to specific markers found inside the questions.
+ * Markers are identified by ":" preceding them. :candidate.name
+ * Markers will be replaced with values from the database.
+ * @author epopean
+ *
+ */
 public final class FrontParams {
 
 	public static final String PARAM_IDENTIFIER = ":";

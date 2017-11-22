@@ -13,10 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
+import com.github.popescuandrei.recruitingBot.domain.CandidateEducation;
+import com.github.popescuandrei.recruitingBot.domain.CandidateExperience;
 import com.github.popescuandrei.recruitingBot.domain.CandidateInterest;
 import com.github.popescuandrei.recruitingBot.domain.CandidateSkill;
 import com.github.popescuandrei.recruitingBot.domain.UserCandidateComment;
+import com.github.popescuandrei.recruitingBot.service.CandidateEducationService;
+import com.github.popescuandrei.recruitingBot.service.CandidateExperienceService;
 import com.github.popescuandrei.recruitingBot.service.CandidateInterestService;
+import com.github.popescuandrei.recruitingBot.service.CandidateLanguageService;
 import com.github.popescuandrei.recruitingBot.service.CandidateService;
 import com.github.popescuandrei.recruitingBot.service.CandidateSkillService;
 import com.github.popescuandrei.recruitingBot.service.UserCandidateCommentService;
@@ -36,6 +41,18 @@ public class CandidateController {
 	@Autowired
 	@Qualifier("candidateInterestService")
 	private CandidateInterestService candidateInterestService;
+
+	@Autowired
+	@Qualifier("candidateExperienceService")
+	private CandidateExperienceService candidateExperienceService;
+	
+	@Autowired
+	@Qualifier("candidateEducationService")
+	private CandidateEducationService candidateEducationService;
+	
+	@Autowired
+	@Qualifier("candidateLanguageService")
+	private CandidateLanguageService candidateLanguageService;
 	
 	@Autowired
 	@Qualifier("userCandidateCommentService")
@@ -82,6 +99,26 @@ public class CandidateController {
 	@RequestMapping(value="/{id}/interests", method = RequestMethod.GET)
 	public @ResponseBody List<CandidateInterest> findAllInterestsForCandidate(@PathVariable("id") Long id) {
 		return candidateInterestService.findAllByCandidateId(id);
+	}
+	
+	/**
+	 * Mapping for retrieving a {@link Candidate}'s experience
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="/{id}/experience", method = RequestMethod.GET)
+	public @ResponseBody List<CandidateExperience> findAllExperienceForCandidate(@PathVariable("id") Long id) {
+		return candidateExperienceService.findAllByCandidateId(id);
+	}
+	
+	/**
+	 * Mapping for retrieving a {@link Candidate}'s education
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="/{id}/education", method = RequestMethod.GET)
+	public @ResponseBody List<CandidateEducation> findAllEducationForCandidate(@PathVariable("id") Long id) {
+		return candidateEducationService.findAllByCandidateId(id);
 	}
 	
 	/**

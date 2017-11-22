@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.service;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,14 @@ public class CandidateLanguageServiceImpl extends EntityServiceImpl<CandidateLan
 		super(repository);
 	}
 	
+	@Override
+	public List<CandidateLanguage> findAllByCandidateId(Long candidateId) {
+		return candidateLanguageRepository.findAllByCandidateId(candidateId);
+	}
+
     @PostConstruct
     @Override
     protected void init() {
         super.init();
     }
-
 }

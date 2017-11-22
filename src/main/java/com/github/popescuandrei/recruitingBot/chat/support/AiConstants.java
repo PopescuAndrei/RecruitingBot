@@ -1,5 +1,10 @@
 package com.github.popescuandrei.recruitingBot.chat.support;
-
+/**
+ * Constants corresponding to the intents, actions and entities
+ * defined on API.AI platform
+ * @author epopean
+ *
+ */
 public final class AiConstants {
 
 	// INTENTS

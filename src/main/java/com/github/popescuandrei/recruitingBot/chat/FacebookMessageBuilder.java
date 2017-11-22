@@ -33,6 +33,13 @@ public class FacebookMessageBuilder {
     @Autowired
     private PositionService positionService;
     
+    /**
+     * Method use to send a text message in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @param text
+     */
     public void sendTextMessage(MessengerSendClient sendClient, String recipientId, String text) {
         try {
             final Recipient recipient = Recipient.newBuilder().recipientId(recipientId).build();
@@ -45,22 +52,62 @@ public class FacebookMessageBuilder {
         }
     }
     
+    /**
+     * Method used to send an image message in a chat identified by a {@code recipientId}
+     * with the {@code text} content 
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendImageMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendImageAttachment(recipientId, RESOURCE_URL + "/assets/rift.png");
     }
     
+    /**
+     * Method used to send a GIF message in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendGifMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendImageAttachment(recipientId, "https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif");
     }
     
+    /**
+     * Method used to send a video message in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendVideoMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendVideoAttachment(recipientId, RESOURCE_URL + "/assets/allofus480.mov");
     }
 
+    /**
+     * Method used to send a file attachment message in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendFileMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendFileAttachment(recipientId, RESOURCE_URL + "/assets/test.txt");
     }
 
+    /**
+     * Method used to send a list of available {@code Position}s in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendOpenPositionsMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         ListBuilder buttonListBuilder = Button.newListBuilder();
         List<Position> availablePositions = positionService.findAll();
@@ -79,6 +126,14 @@ public class FacebookMessageBuilder {
         sendClient.sendTemplate(recipientId, buttonTemplate);
     }
 
+    /**
+     * Method used to send a quick reply list of buttons in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendQuickReply(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         final List<QuickReply> quickReplies = QuickReply.newListBuilder()
                 .addTextQuickReply("Action", "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION").toList()
@@ -90,14 +145,38 @@ public class FacebookMessageBuilder {
         sendClient.sendTextMessage(recipientId, "What's your favorite movie genre?", quickReplies);
     }
 
+    /**
+     * Method used to send a "read" signal in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendReadReceipt(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendSenderAction(recipientId, SenderAction.MARK_SEEN);
     }
 
+    /**
+     * Method used to send "..." to indicate the bot is "typing" in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendTypingOn(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendSenderAction(recipientId, SenderAction.TYPING_ON);
     }
 
+    /**
+     * Method used to remove the "..." when the bot has finished "typing" in a chat identified by a {@code recipientId}
+     * with the {@code text} content
+     * @param sendClient
+     * @param recipientId
+     * @throws MessengerApiException
+     * @throws MessengerIOException
+     */
     public void sendTypingOff(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
         sendClient.sendSenderAction(recipientId, SenderAction.TYPING_OFF);
     }
