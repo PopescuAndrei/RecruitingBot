@@ -1,12 +1,19 @@
 package com.github.popescuandrei.recruitingBot.dto;
 
+import java.io.Serializable;
+
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
 import com.github.popescuandrei.recruitingBot.domain.CandidateLanguage;
 import com.github.popescuandrei.recruitingBot.domain.Language;
 
-public class LanguageDTO {
+/**
+ * {@code CandidateLanguage}'s DTO
+ * @author epopean
+ */
+public class LanguageDTO implements Serializable {
 	
-	//candidate language without candidate
+	private static final long serialVersionUID = 1L;
+	
 	private String name;
 	private Long understanding;
 	private Long speaking;
@@ -74,5 +81,37 @@ public class LanguageDTO {
 		result = prime * result + ((understanding == null) ? 0 : understanding.hashCode());
 		result = prime * result + ((writing == null) ? 0 : writing.hashCode());
 		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LanguageDTO other = (LanguageDTO) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (speaking == null) {
+			if (other.speaking != null)
+				return false;
+		} else if (!speaking.equals(other.speaking))
+			return false;
+		if (understanding == null) {
+			if (other.understanding != null)
+				return false;
+		} else if (!understanding.equals(other.understanding))
+			return false;
+		if (writing == null) {
+			if (other.writing != null)
+				return false;
+		} else if (!writing.equals(other.writing))
+			return false;
+		return true;
 	}
 }

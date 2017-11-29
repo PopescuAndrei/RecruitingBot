@@ -99,6 +99,10 @@ public class AppUser extends BaseEntity{
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
+	
+	public String getFullName() {
+		return this.firstName + " " + this.lastName;
+	}
 
 	@Override
 	public void update(BaseEntity entity) {
