@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ import com.github.popescuandrei.recruitingBot.service.CandidateSkillService;
 import com.github.popescuandrei.recruitingBot.service.UserCandidateCommentService;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"}, maxAge = 3600)
 @RequestMapping("/api/candidates")
 public class CandidateController {
 
@@ -161,7 +163,7 @@ public class CandidateController {
 			candidatesInRows.get(candidatesInRows.size() - 1).add(candidate);
 			
 			index = index + 1;
-			if (index == 3) {
+			if (index == 4) {
 				index = 0;
 			}
 		}

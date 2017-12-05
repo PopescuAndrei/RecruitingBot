@@ -1,9 +1,11 @@
 package com.github.popescuandrei.recruitingBot.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ import com.github.popescuandrei.recruitingBot.service.PositionSkillService;
 
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"}, maxAge = 3600)
 @RequestMapping("/api/positions")
 public class PositionController {
 
@@ -42,8 +45,10 @@ public class PositionController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody List<Position> findAll() {
-		List<Position> positions = positionService.findAll();
+	public @ResponseBody List<List<Position>> findAll() {
+		List<Position> positionsList = positionService.findAll();
+		List<List<Position>> positions = mapListToRows(positionsList);
+		
 		return positions;
 	}
 
@@ -79,5 +84,29 @@ public class PositionController {
 	public @ResponseBody List<CandidatePositionScore> findAllCandidatesForPosition(@PathVariable("id") Long id) {
 		List<CandidatePositionScore> candidates = candidatePositionScoreService.findAllByPositionId(id);
 		return candidates;
+	}
+	
+	/**
+	 * Method that maps the list of @{link Candidate}s to a List of rows of @{link Candidate}s
+	 * 
+	 * @param candidates
+	 * @return
+	 */
+	private List<List<Position>> mapListToRows(List<Position> positions) {
+		List<List<Position>> positionsInRows = new ArrayList<List<Position>>();
+		int index = 0;
+		for(Position position: positions) {
+			if(index == 0) {
+				positionsInRows.add(new ArrayList<Position>());
+			}
+			
+			positionsInRows.get(positionsInRows.size() - 1).add(position);
+			
+			index = index + 1;
+			if (index == 2) {
+				index = 0;
+			}
+		}
+		return positionsInRows;
 	}
 }
