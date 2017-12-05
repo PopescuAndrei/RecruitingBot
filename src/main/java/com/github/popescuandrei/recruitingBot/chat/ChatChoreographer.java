@@ -72,7 +72,6 @@ import com.github.popescuandrei.recruitingBot.service.LanguageService;
 import com.github.popescuandrei.recruitingBot.service.QuestionReplyService;
 import com.github.popescuandrei.recruitingBot.service.QuestionService;
 import com.github.popescuandrei.recruitingBot.service.SkillService;
-import com.github.popescuandrei.recruitingBot.util.ImageColorPicker;
 import com.google.gson.JsonElement;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.ObjectMapper;
@@ -229,14 +228,14 @@ public class ChatChoreographer {
 			candidate.setLastName(facebookProfile.getLast_name());
 			candidate.setGender(facebookProfile.getGender());
 			candidate.setAvatar(facebookProfile.getProfile_pic());
-			candidate.setColor(ImageColorPicker.getRandomColor());
+			candidate.setColor(Const.getRandomColor());
 			
 		} else {
 			candidate.setFirstName(UNAVAILABLE);
 			candidate.setLastName(UNAVAILABLE);
 			candidate.setGender(MALE);
-			candidate.setAvatar(ImageColorPicker.getRandomAvatar(MALE));
-			candidate.setColor(ImageColorPicker.getRandomColor());
+			candidate.setAvatar(Const.getRandomAvatar(MALE));
+			candidate.setColor(Const.getRandomColor());
 		}
 		candidate.setEmail(new Email(candidate.getFirstName() + "_" + candidate.getLastName() + candidate.getFacebookUuid() + AT_EMAIL));
 		candidate.setAge(20);

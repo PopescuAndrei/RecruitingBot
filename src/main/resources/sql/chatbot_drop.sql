@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS app_user;
+DROP TABLE IF EXISTS candidate_position_score;
+DROP TABLE IF EXISTS position_skill;
+DROP TABLE IF EXISTS position;
 DROP TABLE IF EXISTS user_candidate_rating;
 DROP TABLE IF EXISTS user_candidate_like;
 DROP TABLE IF EXISTS user_candidate_comment;
