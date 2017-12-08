@@ -103,9 +103,7 @@ public class CandidateEvaluator {
 	 */
 	private Map<Skill, Long> extractCandidateSkills(List<CandidateSkill> candidateSkills) {
 		Map<Skill, Long> candidateSkillsMap = new HashMap<Skill, Long>();
-		for(CandidateSkill candidateSkill: candidateSkills) {
-			candidateSkillsMap.put(candidateSkill.getSkill(), candidateSkill.getLevel());
-		}
+		candidateSkills.stream().forEach(cs -> candidateSkillsMap.put(cs.getSkill(), cs.getLevel()));
 		
 		return candidateSkillsMap;
 	}

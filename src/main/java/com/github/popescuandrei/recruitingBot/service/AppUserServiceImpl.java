@@ -16,16 +16,23 @@ public class AppUserServiceImpl extends EntityServiceImpl<AppUser> implements Ap
 
 	@Autowired
 	@Qualifier("appUserRepository")
-	private AppUserRepository userRepository;
+	private AppUserRepository appUserRepository;
 
 	public AppUserServiceImpl(BaseRepository<AppUser, Long> repository) {
 		super(repository);
 	}
 
+
+	@Override
+	public AppUser findByName(String fullName) {
+		String[] nameParts = fullName.split(" ");
+		
+		return appUserRepository.findByFirstNameAndLastName(nameParts[0], nameParts[1]);
+	}
+	
 	@PostConstruct
 	@Override
 	protected void init() {
 		super.init();
 	}
-
 }

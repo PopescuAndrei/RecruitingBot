@@ -9,4 +9,5 @@ import com.github.popescuandrei.recruitingBot.domain.AppUser;
 @Qualifier("appUserRepository")
 public interface AppUserRepository extends BaseRepository<AppUser, Long>{
 
+	AppUser findByFirstNameAndLastName(String firstName, String lastName);
 }

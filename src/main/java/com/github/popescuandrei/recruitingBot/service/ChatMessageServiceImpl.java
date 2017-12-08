@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.service;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,11 @@ public class ChatMessageServiceImpl extends EntityServiceImpl<ChatMessage> imple
 		super(repository);
 	}
 
+	@Override
+	public List<ChatMessage> findAllChatMessagesByCandidateId(Long candidateId) {
+		return chatMessageRepository.findAllByCandidateId(candidateId);
+	}
+	
 	@Override
 	public Long getNextMessagePositionByCandidateId(Long candidateId) {
 		Long currentPosition = chatMessageRepository.getMaxPositionByCandidateId(candidateId);

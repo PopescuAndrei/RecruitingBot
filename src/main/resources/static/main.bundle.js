@@ -408,7 +408,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/candidates/candidate-view/candidate-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\"><!-- ROW -->\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user\">\n                <div class=\"image cyan\"></div>\n                <div class=\"content\">\n                    <div class=\"author\">\n                        <img class=\"avatar border-white\" [src]=\"candidate?.avatar || ''\" alt=\"...\"/>\n                        <h4 class=\"title\">\n                            <span class=\"cyan-text\">{{candidate?.firstName}} {{candidate?.lastName}}</span>\n                            <br />\n                            <a href=\"#\"><small><span class=\"black-text\">{{candidate?.email.address}}</span></small></a>\n                        </h4>\n                    </div>\n                    <p class=\"description text-center\">{{candidate?.description}}</p>\n                    \n                    <div class=\"text-center\">\n                        <a [routerLink]=\"['/candidates', candidateId, 'chat']\"><button class=\"btn btn-round dark-primary-color\">Chat Thread</button></a>\n                    </div>\n                </div>\n                <hr>\n                <div class=\"text-center\">\n                    <div class=\"row\">\n                        <div class=\"col-md-3 col-md-offset-1\">\n                            <a [routerLink]=\"['/candidates', candidateId, 'comments']\">\n                                <h5>\n                                    <span class=\"cyan-text\">{{candidateCommentsNumber}}</span>\n                                    <br /><small>Comments</small>\n                                </h5>\n                            </a>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <h5>\n                            <span class=\"candidate-rating\">{{candidateLikesNumber}}</span><br />\n                            <small>Likes</small>\n                            </h5>\n                        </div>\n                        <div class=\"col-md-3\">\n                            <h5>\n                            <span class=\"candidate-rating\">{{candidateRating}}</span>\n                            <br /><small>/5</small>\n                            </h5>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image blue\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Skills</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <ul class=\"bean-skillset\">\n                        <li *ngFor=\"let skill of candidateSkills\" class=\"skill-bar\" [ngStyle]=\"{'background-color':skill.getColor(), 'width': (skill.level + '%') }\">\n                            <span>{{skill.name}}</span>\n                            <span class=\"skill-percent\">{{(skill.level/100) | percent}}</span>\n                        </li>      \n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image green\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Interests</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <dl>\n                        <dd *ngFor=\"let interest of candidateInterests\">\n                            <span>{{interest.name}}</span>\n                        </dd>      \n                    </dl>\n                </div>\n            </div>\n        </div>    \n    </div><!-- END ROW -->\n\n    <div class=\"row\">\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-background\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Experience</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <experience-timeline [candidateExperience]=\"candidateExperience\"></experience-timeline>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Education</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <education-timeline [candidateEducation]=\"candidateEducation\"></education-timeline>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-8\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"header\">\n                    <h4 class=\"title text-center\"><strong>Languages</strong></h4>\n                </div>\n                <div class=\"content table-responsive table-full-width\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th>Language</th>\n                                <th>Writing</th>\n                                <th>Understanding</th>\n                                <th>Speaking</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let language of candidateLanguages\">\n                                <td>{{language.name}}</td>\n                                <td>{{language.writing}}</td>\n                                <td>{{language.understanding}}</td>\n                                <td>{{language.speaking}}</td>\n                            </tr>\n                        </tbody>\n                    </table>\n\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>"
+module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\"><!-- ROW -->\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user\">\n                <div class=\"image cyan\"></div>\n                <div class=\"content\">\n                    <div class=\"author\">\n                        <img class=\"avatar border-white\" [src]=\"candidate?.avatar || ''\" alt=\"...\"/>\n                        <h4 class=\"title\">\n                            <span class=\"cyan-text\">{{candidate?.firstName}} {{candidate?.lastName}}</span>\n                            <br />\n                            <a href=\"#\"><small><span class=\"black-text\">{{candidate?.email.address}}</span></small></a>\n                        </h4>\n                    </div>\n                    <p class=\"description text-center\">{{candidate?.description}}</p>\n                    \n                    <div class=\"text-center\">\n                        <a [routerLink]=\"['/candidates', candidateId, 'chat']\"><button class=\"btn btn-round dark-primary-color\">Chat Thread</button></a>\n                    </div>\n                </div>\n                <hr>\n                <div class=\"text-center\">\n                    <div class=\"row\">\n                        <div class=\"col-md-3 col-md-offset-1\">\n                            <a [routerLink]=\"['/candidates', candidateId, 'comments']\">\n                                <h5>\n                                    <span class=\"cyan-text\">{{candidateCommentsNumber}}</span>\n                                    <br /><small>Comments</small>\n                                </h5>\n                            </a>\n                        </div>\n                        <div class=\"col-md-4\">\n                            <h5>\n                            <span class=\"candidate-rating\">{{candidateLikesNumber}}</span><br />\n                            <small>Likes</small>\n                            </h5>\n                        </div>\n                        <div class=\"col-md-3\">\n                            <h5>\n                            <span class=\"candidate-rating\">{{candidateRating}}</span>\n                            <br /><small>/5</small>\n                            </h5>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        \n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image blue\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Skills</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <ul class=\"bean-skillset\">\n                        <li *ngFor=\"let skill of candidateSkills\" class=\"skill-bar\" style=\"background-color:#449C76;\" [ngStyle]=\"{'width': (skill.level + '%') }\">\n                            <span>{{skill.name}}</span>\n                            <span class=\"skill-percent\">{{(skill.level/100) | percent}}</span>\n                        </li>      \n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-4 col-md-5\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image green\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Interests</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <dl>\n                        <dd *ngFor=\"let interest of candidateInterests\">\n                            <span>{{interest.name}}</span>\n                        </dd>      \n                    </dl>\n                </div>\n            </div>\n        </div>    \n    </div><!-- END ROW -->\n\n    <div class=\"row\">\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-background\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Experience</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <experience-timeline [candidateExperience]=\"candidateExperience\"></experience-timeline>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-6 col-md-6\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image white\">\n                    <h2 class=\"text-center indigo-text\" style=\"vertical-align: middle;\"><strong>Education</strong></h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <education-timeline [candidateEducation]=\"candidateEducation\"></education-timeline>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-8\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"header\">\n                    <h4 class=\"title text-center\"><strong>Languages</strong></h4>\n                </div>\n                <div class=\"content table-responsive table-full-width\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th>Language</th>\n                                <th>Writing</th>\n                                <th>Understanding</th>\n                                <th>Speaking</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let language of candidateLanguages\">\n                                <td>{{language.name}}</td>\n                                <td>{{language.writing}}</td>\n                                <td>{{language.understanding}}</td>\n                                <td>{{language.speaking}}</td>\n                            </tr>\n                        </tbody>\n                    </table>\n\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>"
 
 /***/ }),
 
@@ -443,17 +443,17 @@ var CandidateViewComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) { return _this.candidateId = params['id']; });
         this.candidateService.getCandidate(this.candidateId)
-            .subscribe(function (data) { return _this.candidate = data; }, function (error) { return _this.candidate = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["f" /* GENERIC_CANDIDATE */]; });
+            .subscribe(function (data) { return _this.candidate = data; }, function (error) { return _this.candidate = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["e" /* GENERIC_CANDIDATE */]; });
         this.candidateService.getCandidateEducation(this.candidateId)
-            .subscribe(function (data) { return _this.candidateEducation = data; }, function (error) { return _this.candidateEducation = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["g" /* EDUCATION */]; });
+            .subscribe(function (data) { return _this.candidateEducation = data; }, function (error) { return _this.candidateEducation = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["f" /* EDUCATION */]; });
         this.candidateService.getCandidateExperience(this.candidateId)
-            .subscribe(function (data) { return _this.candidateExperience = data; }, function (error) { return _this.candidateExperience = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["h" /* EXPERIENCES */]; });
+            .subscribe(function (data) { return _this.candidateExperience = data; }, function (error) { return _this.candidateExperience = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["g" /* EXPERIENCES */]; });
         this.candidateService.getCandidateSkills(this.candidateId)
-            .subscribe(function (data) { return _this.candidateSkills = data; }, function (error) { return _this.candidateSkills = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* SKILLS */]; });
+            .subscribe(function (data) { return _this.candidateSkills = data; }, function (error) { return _this.candidateSkills = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* SKILLS */]; });
         this.candidateService.getCandidateInterests(this.candidateId)
-            .subscribe(function (data) { return _this.candidateInterests = data; }, function (error) { return _this.candidateInterests = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["i" /* INTERESTS */]; });
+            .subscribe(function (data) { return _this.candidateInterests = data; }, function (error) { return _this.candidateInterests = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["h" /* INTERESTS */]; });
         this.candidateService.getCandidateLanguages(this.candidateId)
-            .subscribe(function (data) { return _this.candidateLanguages = data; }, function (error) { return _this.candidateLanguages = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["j" /* LANGUAGES */]; });
+            .subscribe(function (data) { return _this.candidateLanguages = data; }, function (error) { return _this.candidateLanguages = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["i" /* LANGUAGES */]; });
         this.candidateService.getCandidateLikesNumber(this.candidateId)
             .subscribe(function (data) { return _this.candidateLikesNumber = data; }, function (error) { return _this.candidateLikesNumber = 20; });
         this.candidateService.getCandidateRating(this.candidateId)
@@ -529,7 +529,7 @@ var CandidatesComponent = (function () {
     CandidatesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.candidateService.getCandidates()
-            .subscribe(function (data) { return _this.candidates = data; }, function (error) { return _this.candidates = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["e" /* CANDIDATES */]; });
+            .subscribe(function (data) { return _this.candidates = data; }, function (error) { return _this.candidates = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* CANDIDATES */]; });
     };
     return CandidatesComponent;
 }());
@@ -606,9 +606,9 @@ var ChatViewComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) { return _this.candidateId = params['id']; });
         this.candidateService.getCandidate(this.candidateId)
-            .subscribe(function (data) { return _this.candidate = data; }, function (error) { return _this.candidate = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["f" /* GENERIC_CANDIDATE */]; });
+            .subscribe(function (data) { return _this.candidate = data; }, function (error) { return _this.candidate = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["e" /* GENERIC_CANDIDATE */]; });
         this.chatService.getConversation(this.candidateId)
-            .subscribe(function (data) { return _this.candidateConversation = data; }, function (error) { return _this.candidateConversation = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["k" /* CONVERSATION */]; });
+            .subscribe(function (data) { return _this.candidateConversation = data; }, function (error) { return _this.candidateConversation = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["j" /* CONVERSATION */]; });
     };
     return ChatViewComponent;
 }());
@@ -695,7 +695,7 @@ var CommentViewComponent = (function () {
         //here we should have the api call
         this.route.params.forEach(function (params) { return _this.candidateId = params['id']; });
         this.candidateService.getCandidateComments(this.candidateId)
-            .subscribe(function (data) { return _this.comments = data; }, function (error) { return _this.comments = __WEBPACK_IMPORTED_MODULE_1__util_mocks__["l" /* COMMENTS */]; });
+            .subscribe(function (data) { return _this.comments = data; }, function (error) { return _this.comments = __WEBPACK_IMPORTED_MODULE_1__util_mocks__["k" /* COMMENTS */]; });
         this.initCommentForm();
         this.appStore.getLoggedInUser().subscribe(function (user) { return _this.user = user; });
     };
@@ -989,9 +989,7 @@ DashboardComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_constants__ = __webpack_require__("../../../../../src/app/util/constants.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Candidate; });
-
 var Candidate = (function () {
     function Candidate(id, firstName, lastName, email, gender, phone, avatar, color, facebookUuid) {
         this.id = id;
@@ -1002,16 +1000,8 @@ var Candidate = (function () {
         this.phone = phone;
         this.color = color;
         this.facebookUuid = facebookUuid;
-        this.setAvatar();
+        this.avatar = avatar;
     }
-    Candidate.prototype.setAvatar = function () {
-        if (this.gender === 'male') {
-            this.avatar = __WEBPACK_IMPORTED_MODULE_0__util_constants__["a" /* MALE_AVATARS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["a" /* MALE_AVATARS */].length)];
-        }
-        else {
-            this.avatar = __WEBPACK_IMPORTED_MODULE_0__util_constants__["b" /* FEMALE_AVATARS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["b" /* FEMALE_AVATARS */].length)];
-        }
-    };
     return Candidate;
 }());
 
@@ -1025,8 +1015,7 @@ var Candidate = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatMessage; });
 var ChatMessage = (function () {
-    function ChatMessage(id, from, message, time) {
-        this.id = id;
+    function ChatMessage(from, message, time) {
         this.from = from;
         this.message = message;
         this.time = time;
@@ -1063,8 +1052,7 @@ var Comment = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Education; });
 var Education = (function () {
-    function Education(id, institution, major, periodFrom, periodTo, grade) {
-        this.id = id;
+    function Education(institution, major, periodFrom, periodTo, grade) {
         this.institution = institution;
         this.major = major;
         this.periodFrom = periodFrom;
@@ -1084,8 +1072,7 @@ var Education = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Experience; });
 var Experience = (function () {
-    function Experience(id, title, company, periodFrom, periodTo) {
-        this.id = id;
+    function Experience(title, company, periodFrom, periodTo) {
         this.title = title;
         this.company = company;
         this.periodFrom = periodFrom;
@@ -1104,8 +1091,7 @@ var Experience = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Interest; });
 var Interest = (function () {
-    function Interest(id, name) {
-        this.id = id;
+    function Interest(name) {
         this.name = name;
     }
     return Interest;
@@ -1138,21 +1124,16 @@ var Language = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_constants__ = __webpack_require__("../../../../../src/app/util/constants.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Position; });
-
 var Position = (function () {
-    function Position(id, name, description, creationDate, lastUpdate) {
+    function Position(id, title, description, creationDate, image, lastUpdate) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.description = description;
         this.creationDate = creationDate;
         this.lastUpdate = lastUpdate;
-        this.setRandomImage();
+        this.image = image;
     }
-    Position.prototype.setRandomImage = function () {
-        this.image = __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* POSITION_BACKGROUNDS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* POSITION_BACKGROUNDS */].length)];
-    };
     return Position;
 }());
 
@@ -1206,9 +1187,6 @@ var Skill = (function () {
         this.name = name;
         this.level = level;
     }
-    Skill.prototype.getColor = function () {
-        return '#449C76';
-    };
     return Skill;
 }());
 
@@ -1738,7 +1716,6 @@ module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n    <div class=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPositionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1754,7 +1731,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var EditPositionComponent = (function () {
     function EditPositionComponent(route, positionsService, skillService) {
         this.route = route;
@@ -1765,9 +1741,9 @@ var EditPositionComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) { return _this.positionId = params['id']; });
         this.positionsService.getPosition(this.positionId)
-            .subscribe(function (data) { return _this.position = data; }, function (error) { return _this.position = __WEBPACK_IMPORTED_MODULE_5__util_mocks__["c" /* POSITIONS */][1][1]; });
+            .subscribe(function (data) { return _this.position = data; });
         this.skillService.getSkills()
-            .subscribe(function (data) { return _this.skillList = data; }, function (error) { return _this.skillList = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* SKILLS */]; });
+            .subscribe(function (data) { return _this.skillList = data; }, function (error) { return _this.skillList = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* SKILLS */]; });
     };
     return EditPositionComponent;
 }());
@@ -1887,9 +1863,8 @@ module.exports = "<div class=\"col-md-7 col-sm-7 col-xs-12\">\r\n\t<div class=\"
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__domain_position__ = __webpack_require__("../../../../../src/app/domain/position.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PositionViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1904,7 +1879,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var PositionViewComponent = (function () {
     function PositionViewComponent(route, positionsService) {
         this.route = route;
@@ -1914,20 +1888,19 @@ var PositionViewComponent = (function () {
         var _this = this;
         //api call
         this.route.params.forEach(function (params) { return _this.positionId = params['id']; });
-        this.position = new __WEBPACK_IMPORTED_MODULE_2__domain_position__["a" /* Position */](this.positionId, "General Position", "Our job descriptions highlight the primary responsibilities, requirements, qualifications and challenges of a given job. In short, a job description will tell you what your employer will expect from you, as well as what you can expect from your employer.\n    Whether you\u2019re looking for your first job or researching what you\u2019ll need to do to land your dream job in the future, our job descriptions will help point you in the right direction.", new Date("12.12.2017"));
-        this.positionCandidates = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["e" /* CANDIDATES */][0];
+        this.positionCandidates = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* CANDIDATES */][0];
         this.positionsService.getPositionRequirements(this.positionId)
-            .subscribe(function (data) { return _this.positionRequirements = data; }, function (error) { return _this.positionRequirements = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* SKILLS */]; });
+            .subscribe(function (data) { return _this.positionRequirements = data; }, function (error) { return _this.positionRequirements = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* SKILLS */]; });
     };
     return PositionViewComponent;
 }());
 PositionViewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
         selector: 'position-view',
         template: __webpack_require__("../../../../../src/app/positions/position-view/position-view.component.html"),
         styles: [__webpack_require__("../../../../../src/app/positions/position-view/position-view.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object])
 ], PositionViewComponent);
 
 var _a, _b;
@@ -1964,9 +1937,8 @@ module.exports = "<div class=\"container-fluid\">\n  <div *ngFor=\"let positionR
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PositionsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1979,7 +1951,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var PositionsComponent = (function () {
     function PositionsComponent(positionsService) {
         this.positionsService = positionsService;
@@ -1987,17 +1958,17 @@ var PositionsComponent = (function () {
     PositionsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.positionsService.getPositions()
-            .subscribe(function (data) { return _this.positions = data; }, function (error) { return _this.positions = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* POSITIONS */]; });
+            .subscribe(function (data) { return _this.positions = data; });
     };
     return PositionsComponent;
 }());
 PositionsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'positions',
         template: __webpack_require__("../../../../../src/app/positions/positions.component.html"),
         styles: [__webpack_require__("../../../../../src/app/positions/positions.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_positions_service__["a" /* PositionsService */]) === "function" && _a || Object])
 ], PositionsComponent);
 
 var _a;
@@ -2079,7 +2050,7 @@ var CandidatesService = (function () {
     };
     CandidatesService.prototype.getCandidateCommentsNumber = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateCommentsUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateCommentsNumberUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateRating = function (candidateId) {
@@ -2718,7 +2689,7 @@ SidebarModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MALE_AVATARS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FEMALE_AVATARS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return POSITION_BACKGROUNDS; });
+/* unused harmony export POSITION_BACKGROUNDS */
 var MALE_AVATARS = [
     'assets/img/faces/mCandidate1.png',
     'assets/img/faces/mCandidate2.png',
@@ -2776,22 +2747,19 @@ var COMMENT_NOT_SAVED = "The comment was not saved. Please try again!";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__domain_experience__ = __webpack_require__("../../../../../src/app/domain/experience.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__ = __webpack_require__("../../../../../src/app/domain/chat-message.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__domain_question__ = __webpack_require__("../../../../../src/app/domain/question.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__domain_position__ = __webpack_require__("../../../../../src/app/domain/position.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return GENERIC_CANDIDATE; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return GENERIC_CANDIDATE; });
 /* unused harmony export CHAT_BOT */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return CANDIDATES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SKILLS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return LANGUAGES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return EDUCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return COMMENTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return EXPERIENCES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return POSITIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return CONVERSATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return INTERESTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CANDIDATES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SKILLS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return LANGUAGES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return EDUCATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return COMMENTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return EXPERIENCES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return CONVERSATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return INTERESTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QUESTIONS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return REPLIES; });
-
 
 
 
@@ -2833,53 +2801,44 @@ var LANGUAGES = [
     new __WEBPACK_IMPORTED_MODULE_6__domain_language__["a" /* Language */]("German", 70, 20, 20)
 ];
 var EDUCATION = [
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */](1, "UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */](2, "UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */](3, "CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */](4, "Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
+    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
+    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
 ];
 var COMMENTS = [
-    new __WEBPACK_IMPORTED_MODULE_12__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_12__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_12__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_12__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_12__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
+    new __WEBPACK_IMPORTED_MODULE_11__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_11__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_11__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_11__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
+    new __WEBPACK_IMPORTED_MODULE_11__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
 ];
 var EXPERIENCES = [
-    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */](1, "Software Engineer", "Ericsson", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */](2, "Software Developer Intern", "Teamnet", new Date("12/12/2012 12:00:00"), new Date("12/12/2016 12:00:00")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */](3, "Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-];
-var POSITIONS = [
-    [
-        new __WEBPACK_IMPORTED_MODULE_11__domain_position__["a" /* Position */](1, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", new Date("2016/01/01 23:28:56")),
-        new __WEBPACK_IMPORTED_MODULE_11__domain_position__["a" /* Position */](2, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", new Date("2016/01/01 23:28:56"))
-    ], [
-        new __WEBPACK_IMPORTED_MODULE_11__domain_position__["a" /* Position */](3, "Senior Java Developer", "Work with the latest technologies, enhance and evolve together with the projects", new Date("2016/01/01 23:28:56")),
-        new __WEBPACK_IMPORTED_MODULE_11__domain_position__["a" /* Position */](4, "Senior Architect", "Work with Cloud Architectures, build and enhance existing ones.", new Date("2016/01/01 23:28:56"))
-    ]
+    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */]("Software Engineer", "Ericsson", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */]("Software Developer Intern", "Teamnet", new Date("12/12/2012 12:00:00"), new Date("12/12/2016 12:00:00")),
+    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */]("Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 var CONVERSATION = [
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](1, GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](8, CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](10, CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
+    new __WEBPACK_IMPORTED_MODULE_9__domain_chat_message__["a" /* ChatMessage */](GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
 ];
 var INTERESTS = [
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */](1, "Basketball"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */](1, "Programming"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */](1, "Swimming"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */](1, "Traveling"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */](1, "Rubbing the mint")
+    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Basketball"),
+    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Programming"),
+    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Swimming"),
+    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Traveling"),
+    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Rubbing the mint")
 ];
 var QUESTIONS = [
     new __WEBPACK_IMPORTED_MODULE_10__domain_question__["a" /* Question */](1, 1, "Intrebarea UNU?"),
@@ -2965,6 +2924,13 @@ var RouterUtils = (function () {
      */
     RouterUtils.candidateCommentsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.comments;
+    };
+    /**
+     * Url for retrieving the comments associated with the candidate with the provided id
+     * @param candidateId
+     */
+    RouterUtils.candidateCommentsNumberUrl = function (candidateId) {
+        return this.baseUrl + this.candidate + candidateId + this.commentsNumber;
     };
     /**
      * Url for creating a comment for the candidate with the provided candidate id
@@ -3141,6 +3107,7 @@ RouterUtils.experience = "/experience";
 RouterUtils.education = "/education";
 RouterUtils.languages = "/languages";
 RouterUtils.comments = "/comments";
+RouterUtils.commentsNumber = "/noComments";
 RouterUtils.likes = "/likes";
 RouterUtils.rating = "/rating";
 RouterUtils.chat = "/chat";

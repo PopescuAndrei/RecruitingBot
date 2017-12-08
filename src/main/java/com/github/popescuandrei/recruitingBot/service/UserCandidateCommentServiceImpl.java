@@ -34,4 +34,9 @@ public class UserCandidateCommentServiceImpl extends EntityServiceImpl<UserCandi
         super.init();
     }
 
+	@Override
+	public Long findNumberOfCommentsByCandidateId(Long candidateId) {
+		return (long) userCandidateCommentRepository.findAllByCandidateId(candidateId).size();
+	}
+
 }
