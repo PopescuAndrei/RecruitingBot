@@ -23,12 +23,14 @@ import com.github.popescuandrei.recruitingBot.domain.CandidateLanguage;
 import com.github.popescuandrei.recruitingBot.domain.CandidateSkill;
 import com.github.popescuandrei.recruitingBot.domain.ChatMessage;
 import com.github.popescuandrei.recruitingBot.domain.UserCandidateComment;
+import com.github.popescuandrei.recruitingBot.domain.UserCandidateRating;
 import com.github.popescuandrei.recruitingBot.dto.ChatMessageDTO;
 import com.github.popescuandrei.recruitingBot.dto.CommentDTO;
 import com.github.popescuandrei.recruitingBot.dto.EducationDTO;
 import com.github.popescuandrei.recruitingBot.dto.ExperienceDTO;
 import com.github.popescuandrei.recruitingBot.dto.InterestDTO;
 import com.github.popescuandrei.recruitingBot.dto.LanguageDTO;
+import com.github.popescuandrei.recruitingBot.dto.RatingDTO;
 import com.github.popescuandrei.recruitingBot.dto.SkillDTO;
 import com.github.popescuandrei.recruitingBot.repository.ChatMessageRepository;
 import com.github.popescuandrei.recruitingBot.service.AppUserService;
@@ -40,6 +42,7 @@ import com.github.popescuandrei.recruitingBot.service.CandidateService;
 import com.github.popescuandrei.recruitingBot.service.CandidateSkillService;
 import com.github.popescuandrei.recruitingBot.service.UserCandidateCommentService;
 import com.github.popescuandrei.recruitingBot.service.UserCandidateLikeService;
+import com.github.popescuandrei.recruitingBot.service.UserCandidateRatingService;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"}, maxAge = 3600)
@@ -81,6 +84,10 @@ public class CandidateController {
 	@Autowired
 	@Qualifier("userCandidateCommentService")
 	private UserCandidateCommentService userCandidateCommentService;
+	
+	@Autowired
+	@Qualifier("userCandidateRatingService")
+	private UserCandidateRatingService userCandidateRatingService;
 	
 	@Autowired
 	@Qualifier("chatMessageRepository")
@@ -214,6 +221,7 @@ public class CandidateController {
 				.map(m -> ChatMessageDTO.mapToDTO(m))
 				.collect(Collectors.toList());
 	}
+	
 	/**
 	 * Method for creating a new comment from a user to a candidate
 	 * @param comment
@@ -227,7 +235,27 @@ public class CandidateController {
 		
 		return CommentDTO.mapToDTO(userCandidateComment);
 	}
+
+	@RequestMapping(value="/{id}/rating", method = RequestMethod.GET)
+	public @ResponseBody Double findAllRatingsForCandidate(@PathVariable("id") Long id) {
+		return userCandidateRatingService.findCandidateRating(id);
+	}
 	
+	/**
+	 * Method for creating a new rating from a user to a candidate
+	 * @param comment
+	 * @return
+	 */
+	@RequestMapping(value="/{id}/rating", method = RequestMethod.POST)
+	public @ResponseBody UserCandidateRating createRating(@PathVariable("id") Long candidateId, @RequestBody RatingDTO dto) {
+		Candidate candidate = candidateService.find(candidateId);
+		AppUser user = appUserService.findByName(dto.getAuthor());
+		UserCandidateRating rating = userCandidateRatingService.create(RatingDTO.mapToObject(user, candidate, dto));
+		
+		return rating;
+	}
+	
+
 	/**
 	 * Method that maps the list of @{link Candidate}s to a List of rows of @{link Candidate}s
 	 * 

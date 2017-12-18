@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.dto;
 
+import static com.github.popescuandrei.recruitingBot.domain.support.Const.getChatBot;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,16 +12,17 @@ public class ChatMessageDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Candidate candidate;
+	private Candidate from;
 	private String message;
+	private Boolean fromRobot;
 	private Date time;
 	
-	public Candidate getCandidate() {
-		return candidate;
+	public Candidate getFrom() {
+		return from;
 	}
 	
-	public void setCandidate(Candidate candidate) {
-		this.candidate = candidate;
+	public void setFrom(Candidate from) {
+		this.from = from;
 	}
 	
 	public String getMessage() {
@@ -30,6 +33,14 @@ public class ChatMessageDTO implements Serializable {
 		this.message = message;
 	}
 	
+	public Boolean getFromRobot() {
+		return fromRobot;
+	}
+
+	public void setFromRobot(Boolean fromRobot) {
+		this.fromRobot = fromRobot;
+	}
+
 	public Date getTime() {
 		return time;
 	}
@@ -40,31 +51,38 @@ public class ChatMessageDTO implements Serializable {
 
 	public static ChatMessageDTO mapToDTO(ChatMessage message) {
 		ChatMessageDTO dto = new ChatMessageDTO();
-		dto.setCandidate(message.getCandidate());
 		dto.setMessage(message.getMessage());
 		dto.setTime(message.getCreationDate());
+		dto.setFromRobot(message.getFromRobot());
+		if(message.getFromRobot() == true) {
+			dto.setFrom(getChatBot());
+		} else {
+			dto.setFrom(message.getCandidate());
+		}
 		
 		return dto;
 	}
 	
 	public static ChatMessage mapToObject(Candidate c, ChatMessageDTO dto) {
 		ChatMessage message = new ChatMessage();
-		message.setCandidate(dto.getCandidate());
 		message.setMessage(dto.getMessage());
 		message.setPosition(1L); //TODO: may not need it at all
 		message.setCreationDate(new Date());
-		if (c==null) {
+		if (c == null) {
 			message.setFromRobot(true);
+		} else {
+			message.setFromRobot(false);
 		}
 		
 		return message;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((candidate == null) ? 0 : candidate.hashCode());
+		result = prime * result + ((from == null) ? 0 : from.hashCode());
+		result = prime * result + ((fromRobot == null) ? 0 : fromRobot.hashCode());
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
 		result = prime * result + ((time == null) ? 0 : time.hashCode());
 		return result;
@@ -79,10 +97,15 @@ public class ChatMessageDTO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		ChatMessageDTO other = (ChatMessageDTO) obj;
-		if (candidate == null) {
-			if (other.candidate != null)
+		if (from == null) {
+			if (other.from != null)
 				return false;
-		} else if (!candidate.equals(other.candidate))
+		} else if (!from.equals(other.from))
+			return false;
+		if (fromRobot == null) {
+			if (other.fromRobot != null)
+				return false;
+		} else if (!fromRobot.equals(other.fromRobot))
 			return false;
 		if (message == null) {
 			if (other.message != null)

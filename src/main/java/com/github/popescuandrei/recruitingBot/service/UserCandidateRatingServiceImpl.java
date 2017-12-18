@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.service;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,20 @@ public class UserCandidateRatingServiceImpl extends EntityServiceImpl<UserCandid
 	public UserCandidateRatingServiceImpl(BaseRepository<UserCandidateRating, Long> repository) {
 		super(repository);
 	}
+
+	@Override
+	public Double findCandidateRating(Long candidateId) {
+		List<UserCandidateRating> ratings = userCandidateRatingRepository.findAllByCandidateId(candidateId);
+		
+		return ratings.stream()
+						.mapToDouble(r -> r.getRating())
+						.average()
+						.orElse(0.0);
+	}
 	
     @PostConstruct
     @Override
     protected void init() {
         super.init();
     }
-
 }

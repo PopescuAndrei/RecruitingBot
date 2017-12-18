@@ -65,8 +65,8 @@ public class Candidate extends BaseEntity{
 	
 	@Column(name = AGE)
 	private int age;
-	
-    public Long getId() {
+
+	public Long getId() {
         return id;
     }
 
@@ -167,5 +167,21 @@ public class Candidate extends BaseEntity{
 	public String toString() {
 		return "Candidate [id=" + id + ", facebookUuid=" + facebookUuid + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", phone=" + phone + ", gender=" + gender + ", avatar=" + avatar + ", color=" + color + ", age=" + age + "]";
+	}
+	
+	public static Candidate CHAT_BOT() {
+		Candidate CHAT_BOT = new Candidate();
+		CHAT_BOT.setId(0l);
+		CHAT_BOT.setFacebookUuid("0888888888");
+		CHAT_BOT.setFirstName("HR");
+		CHAT_BOT.setLastName("Ninja");
+		CHAT_BOT.setEmail(new Email("hr.ninja@awesome.com"));
+		CHAT_BOT.setGender("male");
+		CHAT_BOT.setPhone("0745SUNAMA");
+		CHAT_BOT.setAvatar("assets/img/angular.png");
+		CHAT_BOT.setColor("#A6315D");
+		CHAT_BOT.setAge(99);
+		
+		return CHAT_BOT;
 	}
 }

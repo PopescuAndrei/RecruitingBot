@@ -1,6 +1,10 @@
 package com.github.popescuandrei.recruitingBot.domain.support;
 
+import static com.github.popescuandrei.recruitingBot.domain.Candidate.CHAT_BOT;
+
 import java.util.Random;
+
+import com.github.popescuandrei.recruitingBot.domain.Candidate;
 
 public class Const {
 
@@ -9,7 +13,7 @@ public class Const {
 	public static final String AT_EMAIL = "@unavailalble.com"; 
 	public static final String FEMALE = "female";
 	public static final String MALE = "male";
-	
+
 	private static String[] MALE_AVATARS = {
 			"assets/img/faces/mCandidate1.png", "assets/img/faces/mCandidate2.png",
 			"assets/img/faces/mCandidate3.png", "assets/img/faces/mCandidate4.png", 
@@ -77,5 +81,13 @@ public class Const {
 	 */
 	public static String getRandomColor() {
 		return COLORS[new Random().nextInt(COLORS.length)];
+	}
+	
+	/**
+	 * Method that returns the chatbot "candidate" for the messages thread
+	 * @return
+	 */
+	public static Candidate getChatBot() {
+		return CHAT_BOT();
 	}
 }
