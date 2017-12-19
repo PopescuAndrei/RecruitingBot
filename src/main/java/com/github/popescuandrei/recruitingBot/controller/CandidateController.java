@@ -199,15 +199,26 @@ public class CandidateController {
 				.collect(Collectors.toList());
 	}
 	
+	/**
+	 * Mapping for retrieving the number of comments for a {@link Candidate} by its id
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value="/{id}/noComments", method = RequestMethod.GET)
 	public @ResponseBody Long findNumberOfComments(@PathVariable("id") Long id) {
 		return userCandidateCommentService.findNumberOfCommentsByCandidateId(id);
 	}
 	
+	/**
+	 * Mapping for retrieving the number of likes for a {@link Candidate} by its id
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value="/{id}/likes", method = RequestMethod.GET)
 	public @ResponseBody Long findNumberOfCandidateLikes(@PathVariable("id") Long id) {
 		return userCandidateLikeService.findNumberOfLikesByCandidateId(id);
 	}
+	
 	/**
 	 * Method for retrieving the chat message thread between the candidate and the bot
 	 * @param id
@@ -255,7 +266,6 @@ public class CandidateController {
 		return rating;
 	}
 	
-
 	/**
 	 * Method that maps the list of @{link Candidate}s to a List of rows of @{link Candidate}s
 	 * 

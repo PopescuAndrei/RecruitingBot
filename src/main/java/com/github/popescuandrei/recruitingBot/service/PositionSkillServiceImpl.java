@@ -28,6 +28,10 @@ public class PositionSkillServiceImpl extends EntityServiceImpl<PositionSkill> i
 		return positionSkillRepository.findAllByPositionId(positionId);
 	}
 	
+	public PositionSkill findByPositionIdAndSkillId(Long positionId, Long skillId) {
+		return positionSkillRepository.findByPositionIdAndSkillId(positionId, skillId);
+	}
+	
     @PostConstruct
     @Override
     protected void init() {

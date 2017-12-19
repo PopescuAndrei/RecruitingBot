@@ -143,28 +143,27 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__positions_position_view_position_view_component__ = __webpack_require__("../../../../../src/app/positions/position-view/position-view.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__positions_position_card_position_card_component__ = __webpack_require__("../../../../../src/app/positions/position-card/position-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__positions_candidate_list_item_candidate_list_item_component__ = __webpack_require__("../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__candidates_experience_timeline_experience_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/experience-timeline/experience-timeline.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_store_service__ = __webpack_require__("../../../../../src/app/app-store.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__candidates_comment_view_comment_view_component__ = __webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__candidates_education_timeline_education_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/education-timeline/education-timeline.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__candidates_candidate_card_candidate_card_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-card/candidate-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__interview_interview_component__ = __webpack_require__("../../../../../src/app/interview/interview.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__positions_positions_component__ = __webpack_require__("../../../../../src/app/positions/positions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__candidates_candidate_view_candidate_view_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__candidates_candidates_component__ = __webpack_require__("../../../../../src/app/candidates/candidates.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__sidebar_sidebar_module__ = __webpack_require__("../../../../../src/app/sidebar/sidebar.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__shared_footer_footer_module__ = __webpack_require__("../../../../../src/app/shared/footer/footer.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_navbar_navbar_module__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__candidates_experience_timeline_experience_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/experience-timeline/experience-timeline.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_store_service__ = __webpack_require__("../../../../../src/app/app-store.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__candidates_comment_view_comment_view_component__ = __webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__candidates_education_timeline_education_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/education-timeline/education-timeline.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__candidates_candidate_card_candidate_card_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-card/candidate-card.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__interview_interview_component__ = __webpack_require__("../../../../../src/app/interview/interview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__positions_positions_component__ = __webpack_require__("../../../../../src/app/positions/positions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__candidates_candidate_view_candidate_view_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__candidates_candidates_component__ = __webpack_require__("../../../../../src/app/candidates/candidates.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__sidebar_sidebar_module__ = __webpack_require__("../../../../../src/app/sidebar/sidebar.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__shared_footer_footer_module__ = __webpack_require__("../../../../../src/app/shared/footer/footer.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__shared_navbar_navbar_module__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -206,35 +205,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_27__angular_core__["NgModule"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_26__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_34__dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__candidates_candidates_component__["a" /* CandidatesComponent */], __WEBPACK_IMPORTED_MODULE_18__candidates_candidate_card_candidate_card_component__["a" /* CandidateCardComponent */], __WEBPACK_IMPORTED_MODULE_16__candidates_comment_view_comment_view_component__["a" /* CommentViewComponent */], __WEBPACK_IMPORTED_MODULE_8__candidates_chat_view_chat_view_component__["a" /* ChatViewComponent */], __WEBPACK_IMPORTED_MODULE_14__candidates_experience_timeline_experience_timeline_component__["a" /* ExperienceTimelineComponent */], __WEBPACK_IMPORTED_MODULE_17__candidates_education_timeline_education_timeline_component__["a" /* EducationTimelineComponent */], __WEBPACK_IMPORTED_MODULE_22__candidates_candidate_view_candidate_view_component__["a" /* CandidateViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__positions_positions_component__["a" /* PositionsComponent */], __WEBPACK_IMPORTED_MODULE_12__positions_position_card_position_card_component__["a" /* PositionCardComponent */], __WEBPACK_IMPORTED_MODULE_11__positions_position_view_position_view_component__["a" /* PositionViewComponent */], __WEBPACK_IMPORTED_MODULE_13__positions_candidate_list_item_candidate_list_item_component__["a" /* CandidateListItemComponent */], __WEBPACK_IMPORTED_MODULE_3__positions_create_position_create_position_component__["a" /* CreatePositionComponent */], __WEBPACK_IMPORTED_MODULE_1__positions_edit_position_edit_position_component__["a" /* EditPositionComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__interview_interview_component__["a" /* InterviewComponent */], __WEBPACK_IMPORTED_MODULE_2__interview_edit_question_edit_question_component__["a" /* EditQuestionComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__settings_settings_component__["a" /* SettingsComponent */]
+            __WEBPACK_IMPORTED_MODULE_28__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_33__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__candidates_candidates_component__["a" /* CandidatesComponent */], __WEBPACK_IMPORTED_MODULE_17__candidates_candidate_card_candidate_card_component__["a" /* CandidateCardComponent */], __WEBPACK_IMPORTED_MODULE_15__candidates_comment_view_comment_view_component__["a" /* CommentViewComponent */], __WEBPACK_IMPORTED_MODULE_8__candidates_chat_view_chat_view_component__["a" /* ChatViewComponent */], __WEBPACK_IMPORTED_MODULE_13__candidates_experience_timeline_experience_timeline_component__["a" /* ExperienceTimelineComponent */], __WEBPACK_IMPORTED_MODULE_16__candidates_education_timeline_education_timeline_component__["a" /* EducationTimelineComponent */], __WEBPACK_IMPORTED_MODULE_21__candidates_candidate_view_candidate_view_component__["a" /* CandidateViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__positions_positions_component__["a" /* PositionsComponent */], __WEBPACK_IMPORTED_MODULE_12__positions_position_card_position_card_component__["a" /* PositionCardComponent */], __WEBPACK_IMPORTED_MODULE_11__positions_position_view_position_view_component__["a" /* PositionViewComponent */], __WEBPACK_IMPORTED_MODULE_3__positions_create_position_create_position_component__["a" /* CreatePositionComponent */], __WEBPACK_IMPORTED_MODULE_1__positions_edit_position_edit_position_component__["a" /* EditPositionComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__interview_interview_component__["a" /* InterviewComponent */], __WEBPACK_IMPORTED_MODULE_2__interview_edit_question_edit_question_component__["a" /* EditQuestionComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__settings_settings_component__["a" /* SettingsComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_26__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_24__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_24__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_25__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_28__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_30__app_routing__["a" /* AppRoutes */]),
-            __WEBPACK_IMPORTED_MODULE_31__sidebar_sidebar_module__["a" /* SidebarModule */],
-            __WEBPACK_IMPORTED_MODULE_33__shared_navbar_navbar_module__["a" /* NavbarModule */],
-            __WEBPACK_IMPORTED_MODULE_32__shared_footer_footer_module__["a" /* FooterModule */],
+            __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_23__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_23__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_24__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_27__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_29__app_routing__["a" /* AppRoutes */]),
+            __WEBPACK_IMPORTED_MODULE_30__sidebar_sidebar_module__["a" /* SidebarModule */],
+            __WEBPACK_IMPORTED_MODULE_32__shared_navbar_navbar_module__["a" /* NavbarModule */],
+            __WEBPACK_IMPORTED_MODULE_31__shared_footer_footer_module__["a" /* FooterModule */],
             __WEBPACK_IMPORTED_MODULE_7_ng2_dragula_components_dragular_module__["DragulaModule"]
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_10__services_candidates_service__["a" /* CandidatesService */], __WEBPACK_IMPORTED_MODULE_5__services_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_9__services_positions_service__["a" /* PositionsService */], __WEBPACK_IMPORTED_MODULE_6__services_questions_service__["a" /* QuestionsService */], __WEBPACK_IMPORTED_MODULE_0__services_skill_service__["a" /* SkillService */],
-            __WEBPACK_IMPORTED_MODULE_15__app_store_service__["a" /* AppStoreService */], __WEBPACK_IMPORTED_MODULE_4__services_notification_service__["a" /* NotificationService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_29__app_component__["a" /* AppComponent */]]
+            __WEBPACK_IMPORTED_MODULE_14__app_store_service__["a" /* AppStoreService */], __WEBPACK_IMPORTED_MODULE_4__services_notification_service__["a" /* NotificationService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_28__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -416,10 +414,9 @@ module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\"><!-- R
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CandidateViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -433,7 +430,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var CandidateViewComponent = (function () {
     function CandidateViewComponent(route, candidateService) {
         this.route = route;
@@ -443,17 +439,17 @@ var CandidateViewComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) { return _this.candidateId = params['id']; });
         this.candidateService.getCandidate(this.candidateId)
-            .subscribe(function (data) { return _this.candidate = data; }, function (error) { return _this.candidate = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["e" /* GENERIC_CANDIDATE */]; });
+            .subscribe(function (data) { return _this.candidate = data; });
         this.candidateService.getCandidateEducation(this.candidateId)
-            .subscribe(function (data) { return _this.candidateEducation = data; }, function (error) { return _this.candidateEducation = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["f" /* EDUCATION */]; });
+            .subscribe(function (data) { return _this.candidateEducation = data; });
         this.candidateService.getCandidateExperience(this.candidateId)
-            .subscribe(function (data) { return _this.candidateExperience = data; }, function (error) { return _this.candidateExperience = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["g" /* EXPERIENCES */]; });
+            .subscribe(function (data) { return _this.candidateExperience = data; });
         this.candidateService.getCandidateSkills(this.candidateId)
-            .subscribe(function (data) { return _this.candidateSkills = data; }, function (error) { return _this.candidateSkills = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* SKILLS */]; });
+            .subscribe(function (data) { return _this.candidateSkills = data; });
         this.candidateService.getCandidateInterests(this.candidateId)
-            .subscribe(function (data) { return _this.candidateInterests = data; }, function (error) { return _this.candidateInterests = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["h" /* INTERESTS */]; });
+            .subscribe(function (data) { return _this.candidateInterests = data; });
         this.candidateService.getCandidateLanguages(this.candidateId)
-            .subscribe(function (data) { return _this.candidateLanguages = data; }, function (error) { return _this.candidateLanguages = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["i" /* LANGUAGES */]; });
+            .subscribe(function (data) { return _this.candidateLanguages = data; });
         this.candidateService.getCandidateLikesNumber(this.candidateId)
             .subscribe(function (data) { return _this.candidateLikesNumber = data; }, function (error) { return _this.candidateLikesNumber = 20; });
         this.candidateService.getCandidateRating(this.candidateId)
@@ -464,12 +460,12 @@ var CandidateViewComponent = (function () {
     return CandidateViewComponent;
 }());
 CandidateViewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
         selector: 'candidate-view',
         template: __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.html"),
         styles: [__webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_candidates_service__["a" /* CandidatesService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__["a" /* CandidatesService */]) === "function" && _b || Object])
 ], CandidateViewComponent);
 
 var _a, _b;
@@ -506,9 +502,8 @@ module.exports = "<div class=\"container-fluid\">\n  <div *ngFor=\"let candidate
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CandidatesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -521,7 +516,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var CandidatesComponent = (function () {
     function CandidatesComponent(candidateService) {
         this.candidateService = candidateService;
@@ -529,17 +523,17 @@ var CandidatesComponent = (function () {
     CandidatesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.candidateService.getCandidates()
-            .subscribe(function (data) { return _this.candidates = data; }, function (error) { return _this.candidates = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* CANDIDATES */]; });
+            .subscribe(function (data) { return _this.candidates = data; });
     };
     return CandidatesComponent;
 }());
 CandidatesComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
         selector: 'candidates',
         template: __webpack_require__("../../../../../src/app/candidates/candidates.component.html"),
         styles: [__webpack_require__("../../../../../src/app/candidates/candidates.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_candidates_service__["a" /* CandidatesService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__["a" /* CandidatesService */]) === "function" && _a || Object])
 ], CandidatesComponent);
 
 var _a;
@@ -654,14 +648,13 @@ module.exports = "<div class=\"row row-custom\" style=\"padding-top:15px;\">\n  
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_messages__ = __webpack_require__("../../../../../src/app/util/messages.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_store_service__ = __webpack_require__("../../../../../src/app/app-store.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_store_service__ = __webpack_require__("../../../../../src/app/app-store.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommentViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -672,7 +665,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -693,36 +685,36 @@ var CommentViewComponent = (function () {
         //here we should have the api call
         this.route.params.forEach(function (params) { return _this.candidateId = params['id']; });
         this.candidateService.getCandidateComments(this.candidateId)
-            .subscribe(function (data) { return _this.comments = data; }, function (error) { return _this.comments = __WEBPACK_IMPORTED_MODULE_1__util_mocks__["j" /* COMMENTS */]; });
+            .subscribe(function (data) { return _this.comments = data; });
         this.initCommentForm();
         this.appStore.getLoggedInUser().subscribe(function (user) { return _this.user = user; });
     };
     CommentViewComponent.prototype.initCommentForm = function () {
-        this.commentForm = new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormGroup */]({
-            message: new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["d" /* FormControl */]()
+        this.commentForm = new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* FormGroup */]({
+            message: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["d" /* FormControl */]()
         });
     };
     ;
     CommentViewComponent.prototype.addComment = function () {
         if (this.commentForm.value.message) {
-            var newComment = new __WEBPACK_IMPORTED_MODULE_6__domain_comment__["a" /* Comment */](this.user.firstName + " " + this.user.lastName, this.user.avatar, this.commentForm.value.message, new Date());
-            this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_0__util_messages__["a" /* COMMENT_SAVED */]);
+            var newComment = new __WEBPACK_IMPORTED_MODULE_5__domain_comment__["a" /* Comment */](this.user.firstName + " " + this.user.lastName, this.user.avatar, this.commentForm.value.message, new Date());
+            this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_0__util_messages__["g" /* COMMENT_SAVED */]);
             this.comments.push(newComment);
             this.initCommentForm();
         }
         else {
-            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["b" /* COMMENT_NOT_SAVED */]);
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["h" /* COMMENT_NOT_SAVED */]);
         }
     };
     return CommentViewComponent;
 }());
 CommentViewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__angular_core__["Component"])({
         selector: 'comment-view',
         template: __webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.html"),
         styles: [__webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__app_store_service__["a" /* AppStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__app_store_service__["a" /* AppStoreService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_candidates_service__["a" /* CandidatesService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_notification_service__["a" /* NotificationService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__app_store_service__["a" /* AppStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__app_store_service__["a" /* AppStoreService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_candidates_service__["a" /* CandidatesService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */]) === "function" && _d || Object])
 ], CommentViewComponent);
 
 var _a, _b, _c, _d;
@@ -983,30 +975,6 @@ DashboardComponent = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/domain/candidate.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Candidate; });
-var Candidate = (function () {
-    function Candidate(id, firstName, lastName, email, gender, phone, avatar, color, facebookUuid) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.gender = gender;
-        this.phone = phone;
-        this.color = color;
-        this.facebookUuid = facebookUuid;
-        this.avatar = avatar;
-    }
-    return Candidate;
-}());
-
-//# sourceMappingURL=candidate.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/domain/comment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1026,93 +994,24 @@ var Comment = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/domain/education.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Education; });
-var Education = (function () {
-    function Education(institution, major, periodFrom, periodTo, grade) {
-        this.institution = institution;
-        this.major = major;
-        this.periodFrom = periodFrom;
-        this.periodTo = periodTo;
-        this.grade = grade;
-    }
-    return Education;
-}());
-
-//# sourceMappingURL=education.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/domain/experience.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Experience; });
-var Experience = (function () {
-    function Experience(title, company, periodFrom, periodTo) {
-        this.title = title;
-        this.company = company;
-        this.periodFrom = periodFrom;
-        this.periodTo = periodTo;
-    }
-    return Experience;
-}());
-
-//# sourceMappingURL=experience.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/domain/interest.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Interest; });
-var Interest = (function () {
-    function Interest(name) {
-        this.name = name;
-    }
-    return Interest;
-}());
-
-//# sourceMappingURL=interest.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/domain/language.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Language; });
-var Language = (function () {
-    function Language(name, understanding, writing, speaking) {
-        this.name = name;
-        this.understanding = understanding;
-        this.writing = writing;
-        this.speaking = speaking;
-    }
-    return Language;
-}());
-
-//# sourceMappingURL=language.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/domain/position.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_constants__ = __webpack_require__("../../../../../src/app/util/constants.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Position; });
+
 var Position = (function () {
-    function Position(id, title, description, creationDate, image, lastUpdate) {
+    function Position(id, name, description, creationDate, image, lastUpdate) {
         this.id = id;
-        this.title = title;
+        this.name = name;
         this.description = description;
         this.creationDate = creationDate;
         this.lastUpdate = lastUpdate;
         this.image = image;
+        if (image === null) {
+            this.image = __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* POSITION_BACKGROUNDS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* POSITION_BACKGROUNDS */].length)];
+        }
     }
     return Position;
 }());
@@ -1254,10 +1153,9 @@ module.exports = "<div class=\"container-fluid\" >\r\n\t<div class=\"row\">\r\n\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__domain_reply__ = __webpack_require__("../../../../../src/app/domain/reply.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_questions_service__ = __webpack_require__("../../../../../src/app/services/questions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_questions_service__ = __webpack_require__("../../../../../src/app/services/questions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditQuestionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1274,7 +1172,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var EditQuestionComponent = (function () {
     function EditQuestionComponent(route, notificationService, questionService) {
         this.route = route;
@@ -1285,9 +1182,9 @@ var EditQuestionComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) { return _this.questionId = params['id']; });
         this.questionService.getQuestion(this.questionId)
-            .subscribe(function (data) { return _this.question = data; }, function (error) { return _this.question = __WEBPACK_IMPORTED_MODULE_3__util_mocks__["a" /* QUESTIONS */][_this.questionId]; });
+            .subscribe(function (data) { return _this.question = data; });
         this.questionService.getQuestionReplies(this.questionId)
-            .subscribe(function (data) { return _this.questionReplies = data; }, function (error) { return _this.questionReplies = __WEBPACK_IMPORTED_MODULE_3__util_mocks__["b" /* REPLIES */]; });
+            .subscribe(function (data) { return _this.questionReplies = data; });
     };
     /**
      * Init the form for adding a reply
@@ -1333,12 +1230,12 @@ var EditQuestionComponent = (function () {
     return EditQuestionComponent;
 }());
 EditQuestionComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
         selector: 'edit-question',
         template: __webpack_require__("../../../../../src/app/interview/edit-question/edit-question.component.html"),
         styles: [__webpack_require__("../../../../../src/app/interview/edit-question/edit-question.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__services_questions_service__["a" /* QuestionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_questions_service__["a" /* QuestionsService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_questions_service__["a" /* QuestionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_questions_service__["a" /* QuestionsService */]) === "function" && _c || Object])
 ], EditQuestionComponent);
 
 var _a, _b, _c;
@@ -1375,14 +1272,13 @@ module.exports = "<div class=\"container-fluid\" >\n  <div class=\"row\">\n     
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_components_dragula_provider__ = __webpack_require__("../../../../ng2-dragula/components/dragula.provider.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_components_dragula_provider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng2_dragula_components_dragula_provider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_questions_service__ = __webpack_require__("../../../../../src/app/services/questions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__domain_question__ = __webpack_require__("../../../../../src/app/domain/question.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_dragula_components_dragula_provider__ = __webpack_require__("../../../../ng2-dragula/components/dragula.provider.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_dragula_components_dragula_provider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_dragula_components_dragula_provider__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_questions_service__ = __webpack_require__("../../../../../src/app/services/questions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__domain_question__ = __webpack_require__("../../../../../src/app/domain/question.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InterviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1393,7 +1289,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1412,7 +1307,7 @@ var InterviewComponent = (function () {
     InterviewComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.questionService.getQuestions()
-            .subscribe(function (data) { return _this.questions = data; }, function (error) { return _this.questions = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["a" /* QUESTIONS */]; });
+            .subscribe(function (data) { return _this.questions = data; });
         this.dragulaService
             .drop
             .subscribe(function (value) {
@@ -1426,8 +1321,8 @@ var InterviewComponent = (function () {
         this.initAddQuestionForm();
     };
     InterviewComponent.prototype.initAddQuestionForm = function () {
-        this.addQuestionForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormGroup */]({
-            question: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormControl */]()
+        this.addQuestionForm = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormGroup */]({
+            question: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormControl */]()
         });
     };
     /**
@@ -1442,7 +1337,7 @@ var InterviewComponent = (function () {
      */
     InterviewComponent.prototype.addQuestion = function () {
         if (this.addQuestionForm.value.question) {
-            var newQuestion = new __WEBPACK_IMPORTED_MODULE_5__domain_question__["a" /* Question */](null, this.questions.length + 1, this.addQuestionForm.value.question);
+            var newQuestion = new __WEBPACK_IMPORTED_MODULE_4__domain_question__["a" /* Question */](null, this.questions.length + 1, this.addQuestionForm.value.question);
             this.questions.push(newQuestion);
             this.initAddQuestionForm();
         }
@@ -1523,81 +1418,16 @@ var InterviewComponent = (function () {
     return InterviewComponent;
 }());
 InterviewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
         selector: 'interview',
         template: __webpack_require__("../../../../../src/app/interview/interview.component.html"),
         styles: [__webpack_require__("../../../../../src/app/interview/interview.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services_questions_service__["a" /* QuestionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_questions_service__["a" /* QuestionsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_components_dragula_provider__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_components_dragula_provider__["DragulaService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_notification_service__["a" /* NotificationService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_questions_service__["a" /* QuestionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_questions_service__["a" /* QuestionsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_dragula_components_dragula_provider__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_dragula_components_dragula_provider__["DragulaService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_notification_service__["a" /* NotificationService */]) === "function" && _c || Object])
 ], InterviewComponent);
 
 var _a, _b, _c;
 //# sourceMappingURL=interview.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "ul {\r\n    list-style: none;\r\n  }\r\n  \r\n  * {\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  .screen{\r\n    height: 530px;\r\n    margin: 30px auto;\r\n    width: 320px;\r\n    background: #F7F7F7;\r\n    box-shadow: 0px 0px 6px rgba(0,0,0,0.3);\r\n    border-radius: 5px;\r\n    transition: box-shadow 0.3s;\r\n  }\r\n  \r\n  .screen:hover{\r\n    box-shadow: 0px 0px 12px rgba(0,0,0,0.5);\r\n  }\r\n  \r\n  .top-nav{ \r\n    position: relative;\r\n    width: 100%;\r\n    background: #BD10E0;\r\n    height: 150px;\r\n    border-radius: 5px 5px 0 0;\r\n    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);\r\n  }\r\n  \r\n  .add-button{\r\n    display: inline-block;\r\n    width: 45px;\r\n    height: 45px;\r\n    border-radius: 50%;\r\n    background: #50D2C2;\r\n    outline: none;\r\n    position: absolute;\r\n    bottom: -22.5px;\r\n    left: 20px;\r\n    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);\r\n    cursor: pointer;\r\n    line-height: 45px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    font-weight:100;\r\n    color: #fff;\r\n  }\r\n  \r\n  .add-button:active{\r\n    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);\r\n    font-weight:200;\r\n  }\r\n  \r\n  .add-button:hover{\r\n    background: #50D2C2;\r\n    color:#fff;\r\n    transition: all 0.06s ease-in;\r\n    -webkit-animation: turn 1.1s .06s ease-out backwards;\r\n            animation: turn 1.1s .06s ease-out backwards;\r\n  }\r\n  \r\n  .menu-icon{\r\n    color:#fff;\r\n    margin-left: 20px;\r\n    margin-top:20px;\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  .bell-icon{\r\n    color:#fff;\r\n    margin-right: 20px;\r\n    margin-top:20px;\r\n    float: right;\r\n    clear: both;\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  .logo{\r\n    -webkit-transform: scale(0.5);\r\n            transform: scale(0.5);\r\n    margin: auto;\r\n    margin-top: -5px;\r\n    margin-bottom: -15px;\r\n    display: block;\r\n    width: 20%;\r\n    height: 45%;\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  .logo-text{\r\n    margin-top: -20px;\r\n    text-align: center;\r\n    margin: auto;\r\n    display:block;\r\n    color: #EB8AFF;\r\n    font-size: 18px;\r\n  /*   font-style: normal; */\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  .logo-text::after{\r\n    content:\"By\";\r\n    display: inline-block;\r\n    color: initial;\r\n    font-size: 18px;\r\n    color: #fff;\r\n    margin-left: 2px;\r\n  }\r\n  .container{\r\n    margin: auto;\r\n    display: table;\r\n    text-align: center;\r\n    height: 40px;\r\n  }\r\n  .list-title{\r\n    display: table-cell;\r\n    vertical-align: middle;\r\n    color: #AFAFAF;\r\n    font-size: 12px;\r\n    font-weight: 200;\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  .list-dashboard{\r\n    margin: auto;\r\n    margin-top: 5px;\r\n    width: 300px;\r\n    display: block;\r\n    background: #fff;\r\n    height: 100px;\r\n    border-radius: 3px;\r\n    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);\r\n  }\r\n  \r\n  .list-dashboard:hover{\r\n    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);\r\n  }\r\n  \r\n  .list-dashboard:nth-child(1){\r\n    margin-top: 0px;\r\n    height: 104px;\r\n  }\r\n  \r\n  .list-dashboard:nth-child(2){\r\n    height: 118px;\r\n  }\r\n  \r\n  .list-dashboard:nth-child(3){\r\n    height: 99px;\r\n  }\r\n  \r\n  .list-dashboard:hover{\r\n  /*   opacity: 0.6; */\r\n  }\r\n  \r\n  .avatar{\r\n    display: inline-block;\r\n    margin: 10px;\r\n    width: 45px;\r\n    height: 45px;\r\n    background: #BD10E0;\r\n    border-radius: 50%;\r\n  }\r\n  \r\n  .avatar1{\r\n    content:url(http://www.thesocial.com/wp-content/uploads/2016/04/Andy-Backhouse-Profile-Picture-300x300.jpg);\r\n  }\r\n  \r\n  .avatar2{\r\n    content:url(https://pbs.twimg.com/profile_images/726839881310285824/pq_NAAgp.jpg);\r\n  }\r\n  \r\n  .avatar3{\r\n    content:url(http://cdn.rivertheme.com/ri-maxazine/wp-content/uploads/2015/12/pretty-girl-400x400.jpg);\r\n  }\r\n  \r\n  .avatar4{\r\n    content:url(http://www.worldsnowboardtour.com/wp-content/uploads/2012/04/billyprofilepic-100x100.jpg);\r\n  }\r\n  \r\n  .avatar5{\r\n    content:url(http://www.womeninretailsummit.com/files/2014/10/Ivka-Adam-Profile-Photo-100x100.jpg);\r\n  }\r\n  \r\n  .avatar6{\r\n    content:url(https://www.gravatar.com/avatar/b2a6363f7cae860d0123150caf40e18c?s=100&r=g&d=mm);\r\n  }\r\n  \r\n  .avatar7{\r\n    content:url(https://media.licdn.com/mpr/mpr/shrink_100_100/p/2/005/095/1cf/1fd0854.jpg);\r\n  }\r\n  \r\n  .avatar8{\r\n    content:url(https://media.licdn.com/mpr/mpr/shrink_100_100/p/7/005/074/00a/3a7628e.jpg);\r\n  }\r\n  \r\n  .col-avatar {\r\n    float: left;\r\n    width: 25%;\r\n  }\r\n  \r\n  .col-text {\r\n    float: left;\r\n    width: 70%;\r\n  /*   border: 1px solid #73AD21; */\r\n  }\r\n  \r\n  .col-menu{\r\n    float: left;\r\n    width: 5%;\r\n  }\r\n  \r\n  .menu-dots{\r\n    margin-top: 10px;\r\n    color: #C9C9C9;\r\n    -webkit-transform: scale(0.8);\r\n            transform: scale(0.8);\r\n  }\r\n  \r\n  h2{\r\n    margin-top: 10px;\r\n    margin-bottom: 5px;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    color: #757577;\r\n  }\r\n  \r\n  p{\r\n    font-size: 12px;\r\n    font-weight: 200;\r\n    color: #848484;\r\n  }\r\n  \r\n  .border{\r\n    clear: both;\r\n    height: 10px;\r\n    margin: 7px;\r\n    display: block;\r\n    border-bottom: 1px solid #F7F7F7;\r\n  }\r\n  \r\n  .border3{\r\n    height: 5px;\r\n    clear: both;\r\n    margin: 7px;\r\n    display: block;\r\n    border-bottom: 1px solid #F7F7F7;\r\n  }\r\n  \r\n  .type{\r\n    float: left;\r\n    margin-left: 24px;\r\n    margin-top: -6px;\r\n    color: #C9C9C9;\r\n    -webkit-transform: scale(0.8);\r\n            transform: scale(0.8);\r\n  /*     border: 1px solid #73AD21; */\r\n  }\r\n  \r\n  .type2{\r\n    float: left;\r\n    margin-left: 35px;\r\n    margin-top: -3px;\r\n    font-size: 10px;\r\n    font-weight: 200;\r\n    color: #B2B2B2;\r\n  }\r\n  \r\n  .type3{\r\n    float: left;\r\n    margin-left: 25px;\r\n    margin-top: -6px;\r\n    color:#C9C9C9;\r\n    -webkit-transform: scale(0.8);\r\n            transform: scale(0.8);\r\n  }\r\n  \r\n  .type4{\r\n    float: left;\r\n    margin-left: 25px;\r\n    margin-top: -3px;\r\n    font-size: 10px;\r\n    font-weight: 200;\r\n    color: #B2B2B2;\r\n  }\r\n  \r\n  .vertical-border{\r\n    float: left;\r\n    margin-left: 35px;\r\n    margin-top: -5px;\r\n    width: 1px;\r\n    height: 16px;\r\n    background: #F7F7F7;\r\n  }\r\n  \r\n  .vertical-border2{\r\n    float: left;\r\n    margin-left: 18px;\r\n    margin-top: -5px;\r\n    width: 1px;\r\n    height: 16px;\r\n    background: #F7F7F7;\r\n  }\r\n  \r\n  .vertical-border3{\r\n    float: left;\r\n    margin-left: 40px;\r\n    margin-top: -5px;\r\n    width: 1px;\r\n    height: 16px;\r\n    background: #F7F7F7;\r\n  }\r\n  \r\n  @-webkit-keyframes turn {\r\n    0% {\r\n      -webkit-transform: rotate(0) scale(1);\r\n              transform: rotate(0) scale(1);\r\n    }\r\n    50% {\r\n      -webkit-transform: rotate(375deg) scale(1.1);\r\n              transform: rotate(375deg) scale(1.1);\r\n    }\r\n    100% {\r\n      -webkit-transform: rotate(0deg) scale(1);\r\n              transform: rotate(0deg) scale(1);\r\n    }\r\n  }\r\n  \r\n  @keyframes turn {\r\n    0% {\r\n      -webkit-transform: rotate(0) scale(1);\r\n              transform: rotate(0) scale(1);\r\n    }\r\n    50% {\r\n      -webkit-transform: rotate(375deg) scale(1.1);\r\n              transform: rotate(375deg) scale(1.1);\r\n    }\r\n    100% {\r\n      -webkit-transform: rotate(0deg) scale(1);\r\n              transform: rotate(0deg) scale(1);\r\n    }\r\n  }\r\n  \r\n  .screen-base {\r\n    width: 33.33%;\r\n    float: left;\r\n  }\r\n  \r\n  @media screen and (max-width: 1000px) {\r\n    .screen-base {\r\n      width: 100%;\r\n      float: none;\r\n    }\r\n  }\r\n  \r\n  /****************************************/\r\n  \r\n  .logo-text2{\r\n    margin-left: 85px;\r\n    text-align: center;\r\n    display:inline-block;\r\n    color: #fff;\r\n    font-size: 16px;\r\n    font-weight: 200;\r\n  /*   font-style: normal; */\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  .user-list{\r\n    margin: auto;\r\n    margin-top: 15px;\r\n    width: 300px;\r\n    display: block;\r\n    background: #fff;\r\n    height: 468px;\r\n    border-radius: 3px;\r\n    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);\r\n  }\r\n  \r\n  .user-list:hover{\r\n    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);\r\n  }\r\n  \r\n  .container{\r\n    width: 92%;\r\n    margin: auto;\r\n  }\r\n  #name{\r\n    margin-top: 10px;\r\n    display:block;\r\n    outline: 0;\r\n      border: none;\r\n    height: 40px;\r\n      padding-left: 62px;\r\n    font-size: 14px;\r\n    color: #222;\r\n    font-style: italic;\r\n    font-weight: 300; \r\n    width: 100%;\r\n    margin-bottom: 2px;\r\n      border-bottom: 1px solid rgba(0,0,0,0.05);\r\n  /*       border: 1px solid #73AD21; */\r\n  }\r\n  \r\n  #name:focus{\r\n    border-color:#50D2C2;\r\n  }\r\n  \r\n  .text-icon{\r\n    position: absolute;\r\n    left:35px;\r\n    top:73px;\r\n    -webkit-transform: scale(1.5);\r\n            transform: scale(1.5);\r\n    color: #C9C9C9;\r\n  }\r\n  \r\n  .avatar-user-list{\r\n    display: inline-block;\r\n    margin-left: 13px;\r\n    margin-top: 8px;\r\n    width: 38px;\r\n    height: 38px;\r\n    background: #BD10E0;\r\n    border-radius: 50%;\r\n  }\r\n  \r\n  .col-avatar2 {\r\n    float: left;\r\n    width: 25%;\r\n  }\r\n  \r\n  .col-text2 {\r\n    float: left;\r\n    margin-top: 8px;\r\n    width: 65%;\r\n  /*   border: 1px solid #73AD21; */\r\n  }\r\n  \r\n  .col-menu2{\r\n    float: left;\r\n    width: 10%;\r\n    margin-top: 22px;\r\n  }\r\n  \r\n  \r\n  .list-dashboard2{\r\n    display: block;\r\n    background: #fff;\r\n    color: #50D2C2;\r\n    clear: both;\r\n  }\r\n  \r\n  .list-dashboard2:hover .avatar-user-list{\r\n    -webkit-transform: scale(1.1);\r\n            transform: scale(1.1);\r\n  }\r\n  \r\n  .list-dashboard2:active{\r\n    background: #3B3B3B;\r\n  }\r\n  \r\n  \r\n  /***********************************************/\r\n  \r\n  .user-page{\r\n    margin: auto;\r\n    PADDING-TOP: 50PX;\r\n    margin-top: 60px;\r\n    width: 300px;\r\n    display: block;\r\n    background: #fff;\r\n    height: 423px;\r\n    border-radius: 3px;\r\n    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);\r\n  }\r\n  \r\n  .user-page:hover{\r\n    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);\r\n  }\r\n  \r\n  .avatar-user-page{\r\n    display: inline-block;\r\n    position: absolute;\r\n    bottom: 5px;\r\n    left: 115px;\r\n    width: 90px;\r\n    height: 90px;\r\n    background: #BD10E0;\r\n    border-radius: 50%;\r\n    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);\r\n    cursor: pointer;\r\n    transition: all .1s ease-in-out;\r\n  /*   border: 3px solid #fff; */\r\n  }\r\n  \r\n  .avatar-user-page:active{\r\n    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);\r\n    font-weight:200;\r\n  }\r\n  \r\n  .avatar-user-page:hover{\r\n    background: #50D2C2;\r\n    -webkit-transform: scale(1.1);\r\n            transform: scale(1.1);\r\n  }\r\n  \r\n  .container2{\r\n    margin: auto;\r\n    display: table;\r\n    text-align: center;\r\n    height: 40px;\r\n  }\r\n  .list-title2{\r\n    display: table-cell;\r\n    vertical-align: middle;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    color: #757577;\r\n  /*   border: 3px solid #73AD21; */\r\n  }\r\n  \r\n  #name2{\r\n    margin-top: 10px;\r\n    display:block;\r\n    outline: 0;\r\n    background: #F7F7F7;\r\n      border: none;\r\n    height: 100px;\r\n      padding: 10px;\r\n    font-size: 14px;\r\n    color: #222;\r\n    font-style: italic;\r\n    font-weight: 300; \r\n    width: 100%;\r\n    margin-bottom: 10px;\r\n    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);\r\n    border-radius: 2px;\r\n    resize: none;\r\n  }\r\n  \r\n  #name2:focus{\r\n    background: #EBEBEB;\r\n  /*   border-color:#50D2C2; */\r\n  }\r\n  \r\n  fieldset {\r\n    margin-left: 14px;\r\n    margin-top: 10px;\r\n    border: none;\r\n  }\r\n  \r\n  label {\r\n    display: block;\r\n    margin-bottom: 8px;\r\n    color: #9A9A9A;\r\n  }\r\n  \r\n  label.light {\r\n    font-weight: 300;\r\n    display: inline;\r\n  }\r\n  \r\n  input[type=\"radio\"]{\r\n    margin: 0 8px 8px 0;\r\n    box-sizing: border-box; /* 1 */\r\n  }\r\n  \r\n  .nudge{\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    color: #757577;\r\n    text-align: center;\r\n  }\r\n  \r\n  .buttons{\r\n    margin-top: 0px;\r\n    width: 100%;\r\n  /*   border: 1px solid #73AD21; */\r\n    padding: 10px 10px 10px 10px;\r\n    position: relative;\r\n  }\r\n  \r\n  button {\r\n    padding: 19px 39px 18px 39px;\r\n    width: 48%;\r\n    border: none;\r\n    outline: 0;\r\n    cursor: pointer;\r\n    border-radius: 2px;\r\n  }\r\n  \r\n  button:hover{\r\n    opacity: 0.7;\r\n  }\r\n  \r\n  .left{\r\n    float: left;\r\n    color: #FFF;\r\n    background-color: #CFCFCF;\r\n    font-size: 12px;\r\n    text-align: center;\r\n    font-style: normal;\r\n  }\r\n  \r\n  .right{\r\n    float: right;\r\n    color: #FFF;\r\n    background-color: #50D2C2;\r\n    font-size: 12px;\r\n    text-align: center;\r\n    font-style: normal;\r\n  }\r\n  \r\n  /*****************************/\r\n  \r\n  \r\n  input[type=radio]:checked + label{\r\n    color: #444444;\r\n  }\r\n  \r\n  /**********************************Footer*************************/\r\n  footer.closure {\r\n    text-align: center;\r\n    font-size: 12px;\r\n    color: #868686;\r\n  }\r\n  ", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<ul>\n  <li *ngFor=\"let candidate of candidates\" class=\"list-dashboard\">\n    <div class=\"col-avatar\">\n      <img [src]=\"candidate.avatar\">\n    </div>\n    <div class=\"col-text\">\n      <h2>{{candidate.firstName}} {{candidate.lastName}}</h2>\n      <p>Lorem Ipsum</p>\n    </div>\n    <div class=\"col-menu\">\n      <!-- HERE GOES THE RATING -->\n    </div>\n    <div class=\"border\"></div>\n    <div class=\"type\">\n      <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\n    </div>\n    <a [routerLink]=\"['/candidates', candidate.id]\">\n      <div class=\"type2\">View Profile</div>\n    </a>\n  </li>\n</ul>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CandidateListItemComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var CandidateListItemComponent = (function () {
-    function CandidateListItemComponent() {
-    }
-    CandidateListItemComponent.prototype.ngOnInit = function () {
-    };
-    return CandidateListItemComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], CandidateListItemComponent.prototype, "candidates", void 0);
-CandidateListItemComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'candidate-list-item',
-        template: __webpack_require__("../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/positions/candidate-list-item/candidate-list-item.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], CandidateListItemComponent);
-
-//# sourceMappingURL=candidate-list-item.component.js.map
 
 /***/ }),
 
@@ -1630,7 +1460,17 @@ module.exports = "<p>\n  create-position works!\n</p>\n"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_messages__ = __webpack_require__("../../../../../src/app/util/messages.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__domain_skill__ = __webpack_require__("../../../../../src/app/domain/skill.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_store_service__ = __webpack_require__("../../../../../src/app/app-store.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__domain_position__ = __webpack_require__("../../../../../src/app/domain/position.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__util_messages__ = __webpack_require__("../../../../../src/app/util/messages.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreatePositionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1642,22 +1482,95 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
+
+
+
+
+
 var CreatePositionComponent = (function () {
-    function CreatePositionComponent() {
+    function CreatePositionComponent(router, skillService, positionService, appStore, notificationService) {
+        this.router = router;
+        this.skillService = skillService;
+        this.positionService = positionService;
+        this.appStore = appStore;
+        this.notificationService = notificationService;
     }
     CreatePositionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.skillService.getAllSkills()
+            .subscribe(function (data) { return _this.existingSkills = data; });
+        this.positionRequirements = new Array();
+        this.initPositionForm();
+        this.initSkillForm();
+        this.appStore.getLoggedInUser().subscribe(function (user) { return _this.user = user; });
+    };
+    CreatePositionComponent.prototype.initPositionForm = function () {
+        this.positionForm = new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormGroup */]({
+            name: new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["d" /* FormControl */](),
+            description: new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["d" /* FormControl */]()
+        });
+    };
+    ;
+    CreatePositionComponent.prototype.initSkillForm = function () {
+        this.skillForm = new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormGroup */]({
+            skillName: new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["d" /* FormControl */](),
+            level: new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["d" /* FormControl */]()
+        });
+    };
+    ;
+    CreatePositionComponent.prototype.addPosition = function () {
+        var _this = this;
+        if (this.positionForm.value.name && this.positionForm.value.description) {
+            var newPosition = new __WEBPACK_IMPORTED_MODULE_9__domain_position__["a" /* Position */](null, this.positionForm.value.name, this.positionForm.value.description, new Date(), null, new Date());
+            this.positionService.createPosition(newPosition)
+                .subscribe(function (position) { return _this.position = position; });
+            this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_2__util_messages__["a" /* POSITION_SAVED */]);
+        }
+        else {
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_2__util_messages__["b" /* POSITION_NOT_SAVED */]);
+        }
+    };
+    ;
+    CreatePositionComponent.prototype.addSkill = function () {
+        if (this.skillForm.value.skillName && this.skillForm.value.level) {
+            var skill = new __WEBPACK_IMPORTED_MODULE_5__domain_skill__["a" /* Skill */](this.skillForm.value.skillName, this.skillForm.value.level);
+            this.positionRequirements.push(skill);
+            this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_10__util_messages__["c" /* SKILL_ADDED */]);
+            this.initSkillForm();
+        }
+        else {
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_2__util_messages__["d" /* SKILL_NOT_ADDED */]);
+        }
+    };
+    CreatePositionComponent.prototype.saveSkills = function () {
+        if (this.position.id != 0 || this.position.id != null) {
+            this.skillService.createSkillsForPosition(this.position.id, this.positionRequirements);
+            this.initSkillForm();
+            this.initPositionForm();
+            this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_2__util_messages__["e" /* SKILLS_SAVED */]);
+            this.router.navigate(["/positions"]);
+        }
+        else {
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_2__util_messages__["f" /* POSITION_NOT_EXISTING */]);
+        }
     };
     return CreatePositionComponent;
 }());
 CreatePositionComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
         selector: 'create-position',
         template: __webpack_require__("../../../../../src/app/positions/create-position/create-position.component.html"),
         styles: [__webpack_require__("../../../../../src/app/positions/create-position/create-position.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_skill_service__["a" /* SkillService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_skill_service__["a" /* SkillService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_8__app_store_service__["a" /* AppStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__app_store_service__["a" /* AppStoreService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_notification_service__["a" /* NotificationService */]) === "function" && _e || Object])
 ], CreatePositionComponent);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=create-position.component.js.map
 
 /***/ }),
@@ -1683,7 +1596,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/positions/edit-position/edit-position.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n    <div class=\"card\">\n      <div class=\"card-image\">\n        <img [src]=\"position.image\" alt=\"{{position.name}}\" class=\"image darken\">\n        <p class=\"overlay\">{{position.title}}</p>\n      </div>\n      <div class=\"card-content\">\n        <p class=\"card-content-job\">{{position.description}}</p>\n        <h4 class=\"red-text\">Requirements</h4>\n        <ul class=\"requirements-list list-no-bullets\">\n          <li *ngFor=\"let requirement of position.requirements\">\n            <i class=\"ti-check-box\"></i>\n              <span>\n                <span class=\"blue-text\">{{requirement.level}}</span>\n                @ \n                <span>{{requirement.name}}</span>\n              </span>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  \n  "
+module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n    <div class=\"card\">\n      <div class=\"card-image\">\n        <img [src]=\"position.image\" alt=\"{{position.name}}\" class=\"image darken\">\n        <p class=\"overlay\">{{position.name}}</p>\n      </div>\n      <div class=\"card-content\">\n        <p class=\"card-content-job\">{{position.description}}</p>\n        <h4 class=\"red-text\">Requirements</h4>\n        <ul class=\"requirements-list list-no-bullets\">\n          <li *ngFor=\"let requirement of position.requirements\">\n            <i class=\"ti-check-box\"></i>\n              <span>\n                <span class=\"blue-text\">{{requirement.level}}</span>\n                @ \n                <span>{{requirement.name}}</span>\n              </span>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  \n  "
 
 /***/ }),
 
@@ -1691,11 +1604,10 @@ module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n    <div class=
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPositionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1706,7 +1618,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1722,18 +1633,18 @@ var EditPositionComponent = (function () {
         this.route.params.forEach(function (params) { return _this.positionId = params['id']; });
         this.positionsService.getPosition(this.positionId)
             .subscribe(function (data) { return _this.position = data; });
-        this.skillService.getSkills()
-            .subscribe(function (data) { return _this.skillList = data; }, function (error) { return _this.skillList = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* SKILLS */]; });
+        this.skillService.getAllSkills()
+            .subscribe(function (data) { return _this.skillList = data; });
     };
     return EditPositionComponent;
 }());
 EditPositionComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
         selector: 'edit-position',
         template: __webpack_require__("../../../../../src/app/positions/edit-position/edit-position.component.html"),
         styles: [__webpack_require__("../../../../../src/app/positions/edit-position/edit-position.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_skill_service__["a" /* SkillService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_skill_service__["a" /* SkillService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_skill_service__["a" /* SkillService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_skill_service__["a" /* SkillService */]) === "function" && _c || Object])
 ], EditPositionComponent);
 
 var _a, _b, _c;
@@ -1749,7 +1660,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\r\n  margin: 0 auto;\r\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);\r\n  margin-bottom: 3em;\r\n}\r\n.card .card-content {\r\n  position: relative;\r\n  padding: 5%;\r\n  padding-top: 15%;\r\n  margin-top: -10%;\r\n  padding-bottom: 8%;\r\n  overflow: hidden;\r\n  min-height: 200px;\r\n}\r\n\r\n.card .card-content .card-content-button {\r\n  cursor: pointer;\r\n  border: none;\r\n  border-radius: 50%;\r\n  width: 60px;\r\n  height: 60px;\r\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);\r\n  color: white;\r\n  position: absolute;\r\n  right: 4%;\r\n  top: 17px;\r\n  z-index: 3;\r\n  transition-duration: 0.2s;\r\n}\r\n.card .card-content .card-content-button i {\r\n  transition-duration: 0.2s;\r\n}\r\n\r\n.card .card-content .card-content-name {\r\n  font-size: 25px;\r\n}\r\n.card .card-content .card-content-job {\r\n  color: #9575CD;\r\n  font-size: 15px;\r\n}\r\n.card .card-content p {\r\n  margin: 0;\r\n  z-index: 2;\r\n}\r\n.card .card-content .card-content-button:focus {\r\n  outline: none;\r\n}\r\n.card .card-image {\r\n  width: 100%;\r\n  position: relative;\r\n  margin-bottom: -1%;\r\n  z-index: 2;\r\n  transition: z-index 0s 0.2s;\r\n}\r\n.card .card-image i {\r\n  position: absolute;\r\n  top: 5%;\r\n  left: 5%;\r\n  color: white;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n.card .card-image img {\r\n  width: 100%;\r\n}\r\n\r\n.image {\r\n  max-height: 200px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;  \r\n}\r\n\r\n.button-first {\r\n  margin-right: 80px;\r\n}", ""]);
+exports.push([module.i, ".card {\r\n  margin: 0 auto;\r\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);\r\n  margin-bottom: 3em;\r\n}\r\n.card .card-content {\r\n  position: relative;\r\n  padding: 5%;\r\n  padding-top: 15%;\r\n  margin-top: -10%;\r\n  padding-bottom: 8%;\r\n  overflow: hidden;\r\n  min-height: 200px;\r\n}\r\n\r\n.card .card-content .card-content-button {\r\n  cursor: pointer;\r\n  border: none;\r\n  border-radius: 50%;\r\n  width: 60px;\r\n  height: 60px;\r\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);\r\n  color: white;\r\n  position: absolute;\r\n  right: 4%;\r\n  top: 17px;\r\n  z-index: 3;\r\n  transition-duration: 0.2s;\r\n}\r\n.card .card-content .card-content-button i {\r\n  transition-duration: 0.2s;\r\n}\r\n\r\n.card .card-content .card-content-name {\r\n  font-size: 25px;\r\n}\r\n.card .card-content .card-content-job {\r\n  color: #9575CD;\r\n  font-size: 15px;\r\n}\r\n.card .card-content p {\r\n  margin: 0;\r\n  z-index: 2;\r\n}\r\n.card .card-content .card-content-button:focus {\r\n  outline: none;\r\n}\r\n.card .card-image {\r\n  width: 100%;\r\n  position: relative;\r\n  margin-bottom: -1%;\r\n  z-index: 2;\r\n  transition: z-index 0s 0.2s;\r\n}\r\n.card .card-image i {\r\n  position: absolute;\r\n  top: 5%;\r\n  left: 5%;\r\n  color: white;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n.card .card-image img {\r\n  width: 100%;\r\n}\r\n\r\n.image {\r\n  max-height: 200px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  border-top-left-radius: 25px;\r\n  border-top-right-radius: 25px;\r\n}\r\n\r\n.button-first {\r\n  margin-right: 80px;\r\n}", ""]);
 
 // exports
 
@@ -1820,7 +1731,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\r\n  margin: 0 auto;\r\n  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);\r\n  margin-bottom: 3em;\r\n  max-height: 550px;\r\n}\r\n\r\n.card .card-content {\r\n  position: relative;\r\n  padding-left: 5%;\r\n  padding-right: 5%;\r\n  margin-top: 2%;\r\n  padding-bottom: 8%;\r\n  overflow: hidden;\r\n  min-height: 200px;\r\n  max-height: 370px;\r\n}\r\n\r\n.card .card-content .card-content-name {\r\n  font-size: 25px;\r\n}\r\n\r\n.card .card-content .card-content-job {\r\n  max-height: 150px;\r\n  color: #9575CD;\r\n  font-size: 15px;\r\n}\r\n\r\n.card .card-content p {\r\n  margin: 0;\r\n  z-index: 2;\r\n}\r\n\r\n.card .card-content .card-content-button:focus {\r\n  outline: none;\r\n}\r\n\r\n.card .card-image {\r\n  width: 100%;\r\n  position: relative;\r\n  margin-bottom: -1%;\r\n  z-index: 2;\r\n  transition: z-index 0s 0.2s;\r\n  background-color: #000000;\r\n}\r\n\r\n.card .card-image img {\r\n  width: 100%;\r\n  opacity: 0.5;\r\n}\r\n\r\n.image {\r\n  position: relative;\r\n  max-height: 120px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n.overlay {\r\n\tz-index: 999999;\r\n\tposition: absolute;\r\n\tcolor: yellow;\r\n\tfont-size: 24px;\r\n\tfont-weight: bold;\r\n\tleft: 150px;\r\n\ttop: 350px;\r\n\tdisplay: block;\r\n}\r\n\r\n.requirements-list {\r\n  max-height: 145px;\r\n}\r\n\r\n.contact-card {\r\n  max-width: 100%;\r\n  background: #fff;\r\n  padding: 8px;\r\n  border-radius: 5px;\r\n  box-shadow: 0 0 10px silver;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.contact-card-image {\r\n  width: 50px;\r\n  height: 50px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  margin-right: 15px;\r\n  overflow: hidden;\r\n}\r\n\r\n.contact-card-image img {\r\n  width: 100%;\r\n  height: auto;\r\n}\r\n\r\n.contact-card-name {\r\n  text-transform: capitalize;\r\n}", ""]);
+exports.push([module.i, ".card {\r\n  margin: 0 auto;\r\n  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);\r\n  margin-bottom: 3em;\r\n  max-height: 550px;\r\n}\r\n\r\n.card .card-content {\r\n  position: relative;\r\n  padding-left: 5%;\r\n  padding-right: 5%;\r\n  margin-top: 2%;\r\n  padding-bottom: 8%;\r\n  overflow: hidden;\r\n  min-height: 200px;\r\n  max-height: 370px;\r\n}\r\n\r\n.card .card-content .card-content-name {\r\n  font-size: 25px;\r\n}\r\n\r\n.card .card-content .card-content-job {\r\n  max-height: 150px;\r\n  color: #9575CD;\r\n  font-size: 15px;\r\n}\r\n\r\n.card .card-content p {\r\n  margin: 0;\r\n  z-index: 2;\r\n}\r\n\r\n.card .card-content .card-content-button:focus {\r\n  outline: none;\r\n}\r\n\r\n.card .card-image {\r\n  width: 100%;\r\n  position: relative;\r\n  margin-bottom: -1%;\r\n  z-index: 2;\r\n  transition: z-index 0s 0.2s;\r\n  background-color: #000000;\r\n}\r\n\r\n.card .card-image img {\r\n  width: 100%;\r\n  opacity: 0.5;\r\n}\r\n\r\n.image {\r\n  position: relative;\r\n  max-height: 120px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n/* Centered text */\r\n.centered {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n\tfont-size: 24px;\r\n\tfont-weight: bold;\r\n}\r\n\r\n.requirements-list {\r\n  max-height: 145px;\r\n}\r\n\r\n.contact-card {\r\n  max-width: 100%;\r\n  background: #fff;\r\n  padding: 8px;\r\n  margin-left:4px;\r\n  border-radius: 5px;\r\n  box-shadow: 0 0 10px silver;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.contact-card-image {\r\n  width: 50px;\r\n  height: 50px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  margin-right: 15px;\r\n  overflow: hidden;\r\n  border-radius: 25px;\r\n}\r\n\r\n.contact-card-image img {\r\n  width: 100%;\r\n  height: auto;\r\n}\r\n\r\n.contact-card-name {\r\n  text-transform: capitalize;\r\n}", ""]);
 
 // exports
 
@@ -1833,7 +1744,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/positions/position-view/position-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-7 col-sm-7 col-xs-12\">\r\n\t<div class=\"card\">\r\n\t\t<div class=\"card-image\">\r\n\t\t\t<img [src]=\"position.image\" alt=\"{{position.name}}\" class=\"image darken\">\r\n\t\t\t<p class=\"overlay\">{{position.title}}</p>\r\n\t\t</div>\r\n\t\t<div class=\"card-content\">\r\n\t\t\t<p class=\"card-content-job\">{{position.description}}</p>\r\n\t\t\t<h4 class=\"red-text\">Requirements</h4>\r\n\t\t\t<ul class=\"requirements-list list-no-bullets\">\r\n\t\t\t\t<li *ngFor=\"let requirement of positionRequirements\">\r\n\t\t\t\t\t<i class=\"ti-check-box\"></i>\r\n\t\t\t\t\t\t<span>\r\n\t\t\t\t\t\t\t<span class=\"blue-text\">{{requirement.level}}</span>\r\n\t\t\t\t\t\t\t@ \r\n\t\t\t\t\t\t\t<span>{{requirement.name}}</span>\r\n\t\t\t\t\t\t</span>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<div class=\"col-md-5 col-sm-5 col-xs-12\">\r\n\t<div class=\"card card-user white-backgound\">\r\n\t\t<div class=\"image red\">\r\n\t\t\t<h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Candidates</h2>\r\n\t\t</div>\r\n\t\t<div class=\"content\" style=\"height: 367px; overflow-y: scroll\">\r\n\t\t\t<div class=\"contact-card\" *ngFor=\"let candidate of positionCandidates\">\r\n\t\t\t\t<div class=\"contact-card-image\">\r\n\t\t\t\t\t<img [src]=\"candidate.avatar\">\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"contact-card-info\">\r\n\t\t\t\t\t<div class=\"contact-card-name\">\r\n\t\t\t\t\t\t<a [routerLink]=\"['/candidates', candidate.id]\">{{candidate.firstName}} {{candidate.lastName}}</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"contact-card-number\">{{candidate.email.address}}</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div style=\"max-height: 50px; margin-left:25px; float:right;\">\r\n\t\t\t\t\t<p class=\"blue-text\"><strong>Score:</strong></p>\r\n\t\t\t\t\t<p class=\"red-text\">{{candidate.score}}/100</p>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"col-md-7 col-sm-7 col-xs-12\">\r\n\t<div class=\"card\">\r\n\t\t<div class=\"card-image\">\r\n\t\t\t<img [src]=\"position?.image || ''\" alt=\"{{position?.name}}\" class=\"image darken\">\r\n\t\t\t<p class=\"centered\">{{position?.name}}</p>\r\n\t\t</div>\r\n\t\t<div class=\"card-content\">\r\n\t\t\t<p class=\"card-content-job\">{{position?.description}}</p>\r\n\t\t\t<h4 class=\"red-text\">Requirements</h4>\r\n\t\t\t<ul class=\"requirements-list list-no-bullets\">\r\n\t\t\t<li *ngFor=\"let requirement of positionRequirements\">\r\n\t\t\t\t<i class=\"ti-check-box\"></i>\r\n\t\t\t\t<span>\r\n\t\t\t\t\t<span class=\"blue-text\">{{requirement?.level}}</span>\r\n\t\t\t\t\t@ \r\n\t\t\t\t\t<span>{{requirement?.name}}</span>\r\n\t\t\t\t</span>\r\n\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n<div class=\"col-md-5 col-sm-5 col-xs-12\">\r\n\t<div class=\"card card-user white-backgound\">\r\n\t\t<div class=\"image red\">\r\n\t\t\t<h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Candidates</h2>\r\n\t\t</div>\r\n\t\t<div class=\"content\" style=\"height: 367px; overflow-y: scroll\">\r\n\t\t\t<div class=\"row contact-card\" *ngFor=\"let cs of candidateScores\">\r\n\t\t\t\t<div class=\"col-md-2\">\r\n\t\t\t\t\t<img [src]=\"cs.candidate.avatar\" class=\"contact-card-image\">\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-md-6 contact-card-info\">\r\n\t\t\t\t\t<div class=\"contact-card-name\">\r\n\t\t\t\t\t\t<a [routerLink]=\"['/candidates', cs.candidate.id]\">{{cs.candidate.firstName}} {{cs.candidate.lastName}}</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"contact-card-number\">{{cs.candidate.email.address}}</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-md-4\" style=\"max-height: 50px; margin-left:25px; float:right;\">\r\n\t\t\t\t\t<p class=\"blue-text\"><strong>Score:</strong></p>\r\n\t\t\t\t\t<p class=\"red-text\">{{cs.score}}/100</p>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -1841,10 +1752,9 @@ module.exports = "<div class=\"col-md-7 col-sm-7 col-xs-12\">\r\n\t<div class=\"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_mocks__ = __webpack_require__("../../../../../src/app/util/mocks.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PositionViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1858,7 +1768,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var PositionViewComponent = (function () {
     function PositionViewComponent(route, positionsService) {
         this.route = route;
@@ -1868,19 +1777,22 @@ var PositionViewComponent = (function () {
         var _this = this;
         //api call
         this.route.params.forEach(function (params) { return _this.positionId = params['id']; });
-        this.positionCandidates = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["d" /* CANDIDATES */][0];
+        this.positionsService.getPosition(this.positionId)
+            .subscribe(function (data) { return _this.position = data; });
+        this.positionsService.getPositionCandidates(this.positionId)
+            .subscribe(function (data) { return _this.candidateScores = data; });
         this.positionsService.getPositionRequirements(this.positionId)
-            .subscribe(function (data) { return _this.positionRequirements = data; }, function (error) { return _this.positionRequirements = __WEBPACK_IMPORTED_MODULE_0__util_mocks__["c" /* SKILLS */]; });
+            .subscribe(function (data) { return _this.positionRequirements = data; });
     };
     return PositionViewComponent;
 }());
 PositionViewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
         selector: 'position-view',
         template: __webpack_require__("../../../../../src/app/positions/position-view/position-view.component.html"),
         styles: [__webpack_require__("../../../../../src/app/positions/position-view/position-view.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object])
 ], PositionViewComponent);
 
 var _a, _b;
@@ -2110,6 +2022,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var NotificationService = (function () {
     function NotificationService() {
     }
+    NotificationService.prototype.showInfo = function (notificationMessage) {
+        $.notify({
+            icon: "ti-gift",
+            message: notificationMessage
+        }, {
+            type: 'info',
+            timer: 4000,
+            placement: {
+                from: 'top',
+                align: 'right'
+            }
+        });
+    };
     NotificationService.prototype.showSuccess = function (notificationMessage) {
         $.notify({
             icon: "ti-gift",
@@ -2290,11 +2215,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SkillService = (function () {
     function SkillService(http) {
         this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
     }
-    // TODO: add skill routings
-    SkillService.prototype.getSkills = function () {
+    SkillService.prototype.getAllSkills = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateSkillsUrl(1))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].allSkillsUrl())
+            .map(function (res) { return res.json(); });
+    };
+    // TODO: add skill routings
+    SkillService.prototype.getSkillsForCandidate = function (candidateId) {
+        return this.http
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateSkillsUrl(candidateId))
+            .map(function (res) { return res.json(); });
+    };
+    SkillService.prototype.createSkillsForPosition = function (positionId, skills) {
+        return this.http
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createPositionRequirementsBulkUrl(positionId), JSON.stringify(skills), this.options)
             .map(function (res) { return res.json(); });
     };
     return SkillService;
@@ -2669,7 +2606,7 @@ SidebarModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MALE_AVATARS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FEMALE_AVATARS; });
-/* unused harmony export POSITION_BACKGROUNDS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return POSITION_BACKGROUNDS; });
 var MALE_AVATARS = [
     'assets/img/faces/mCandidate1.png',
     'assets/img/faces/mCandidate2.png',
@@ -2704,121 +2641,25 @@ var POSITION_BACKGROUNDS = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return COMMENT_SAVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return COMMENT_NOT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return COMMENT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return COMMENT_NOT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return POSITION_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return POSITION_NOT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return POSITION_NOT_EXISTING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SKILL_ADDED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SKILL_NOT_ADDED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return SKILLS_SAVED; });
+/* unused harmony export SKILLS_NOT_SAVED */
 var COMMENT_SAVED = "The comment was saved";
 var COMMENT_NOT_SAVED = "The comment was not saved. Please try again!";
+var POSITION_SAVED = "The position was saved";
+var POSITION_NOT_SAVED = "Uuups. Something went terribly wrong. Please try again";
+var POSITION_NOT_EXISTING = "Please add the position first";
+var SKILL_ADDED = "The skill was added. Don't forget to save!!!";
+var SKILL_NOT_ADDED = "The skill was not added. Please try again!";
+var SKILLS_SAVED = "The skills were saved!";
+var SKILLS_NOT_SAVED = "The skills were not saved. Please try again!";
 //# sourceMappingURL=messages.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/util/mocks.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__domain_reply__ = __webpack_require__("../../../../../src/app/domain/reply.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__("../../../../../src/app/util/constants.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__domain_interest__ = __webpack_require__("../../../../../src/app/domain/interest.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__domain_support_email__ = __webpack_require__("../../../../../src/app/domain/support.email.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__domain_skill__ = __webpack_require__("../../../../../src/app/domain/skill.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__domain_candidate__ = __webpack_require__("../../../../../src/app/domain/candidate.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__domain_language__ = __webpack_require__("../../../../../src/app/domain/language.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__domain_education__ = __webpack_require__("../../../../../src/app/domain/education.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__domain_experience__ = __webpack_require__("../../../../../src/app/domain/experience.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__domain_question__ = __webpack_require__("../../../../../src/app/domain/question.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__domain_comment__ = __webpack_require__("../../../../../src/app/domain/comment.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return GENERIC_CANDIDATE; });
-/* unused harmony export CHAT_BOT */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CANDIDATES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SKILLS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return LANGUAGES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return EDUCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return COMMENTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return EXPERIENCES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return INTERESTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QUESTIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return REPLIES; });
-
-
-
-
-
-
-
-
-
-
-
-var GENERIC_CANDIDATE = new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](1, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][2]);
-var CHAT_BOT = new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](0, 'HR', 'Ninja', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('hr@ninja.com'), 'male', '0888888888', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][1]);
-var CANDIDATES = [
-    [
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](1, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][0]),
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](2, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][1]),
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](3, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'female', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* FEMALE_AVATARS */][0]),
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](4, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][2])
-    ], [
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](5, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'female', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* FEMALE_AVATARS */][1]),
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](6, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'female', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* FEMALE_AVATARS */][2]),
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](7, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][3]),
-        new __WEBPACK_IMPORTED_MODULE_5__domain_candidate__["a" /* Candidate */](8, 'Popescu', 'Andrei', new __WEBPACK_IMPORTED_MODULE_3__domain_support_email__["a" /* Email */]('andrei.popescu93@gmail.com'), 'male', '0745314873', __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* MALE_AVATARS */][4])
-    ]
-];
-var SKILLS = [
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("Java", 100),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("CSharp", 50),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("Python", 30),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("Sql", 77),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("Typescript", 46),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("Spring", 80),
-    new __WEBPACK_IMPORTED_MODULE_4__domain_skill__["a" /* Skill */]("Hibernate", 70)
-];
-var LANGUAGES = [
-    new __WEBPACK_IMPORTED_MODULE_6__domain_language__["a" /* Language */]("English", 100, 100, 90),
-    new __WEBPACK_IMPORTED_MODULE_6__domain_language__["a" /* Language */]("German", 70, 20, 20)
-];
-var EDUCATION = [
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
-    new __WEBPACK_IMPORTED_MODULE_7__domain_education__["a" /* Education */]("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
-];
-var COMMENTS = [
-    new __WEBPACK_IMPORTED_MODULE_10__domain_comment__["a" /* Comment */]("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_10__domain_comment__["a" /* Comment */]("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_10__domain_comment__["a" /* Comment */]("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_10__domain_comment__["a" /* Comment */]("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
-    new __WEBPACK_IMPORTED_MODULE_10__domain_comment__["a" /* Comment */]("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
-];
-var EXPERIENCES = [
-    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */]("Software Engineer", "Ericsson", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */]("Software Developer Intern", "Teamnet", new Date("12/12/2012 12:00:00"), new Date("12/12/2016 12:00:00")),
-    new __WEBPACK_IMPORTED_MODULE_8__domain_experience__["a" /* Experience */]("Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-];
-var INTERESTS = [
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Basketball"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Programming"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Swimming"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Traveling"),
-    new __WEBPACK_IMPORTED_MODULE_2__domain_interest__["a" /* Interest */]("Rubbing the mint")
-];
-var QUESTIONS = [
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](1, 1, "Intrebarea UNU?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](2, 2, "Intrebarea DOI?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](3, 3, "Intrebarea TREI?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](4, 4, "Intrebarea PATRU?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](5, 5, "Intrebarea CINCI?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](6, 6, "Intrebarea SASE?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](7, 7, "Intrebarea SAPTE?"),
-    new __WEBPACK_IMPORTED_MODULE_9__domain_question__["a" /* Question */](8, 8, "Intrebarea OPT?")
-];
-var REPLIES = [
-    new __WEBPACK_IMPORTED_MODULE_0__domain_reply__["a" /* Reply */](1, QUESTIONS[0], "Reply 1-1"),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_reply__["a" /* Reply */](2, QUESTIONS[0], "Reply 1-2"),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_reply__["a" /* Reply */](3, QUESTIONS[1], "Reply 2-1"),
-    new __WEBPACK_IMPORTED_MODULE_0__domain_reply__["a" /* Reply */](4, QUESTIONS[2], 'Reply 3-1')
-];
-//# sourceMappingURL=mocks.js.map
 
 /***/ }),
 
@@ -2832,202 +2673,99 @@ var REPLIES = [
 var RouterUtils = (function () {
     function RouterUtils() {
     }
-    /**
-     * Url for retrieving all the candidates
-     */
     RouterUtils.candidatesUrl = function () {
         return this.baseUrl + this.candidates;
     };
-    /**
-     * Url for retrieving the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId;
     };
-    /**
-     * Url for retrieving the skills associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateSkillsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.skills;
     };
-    /**
-     * Url for retrieving the interests associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateInterestsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.interests;
     };
-    /**
-     * Url for retrieving the experience associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateExperienceUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.experience;
     };
-    /**
-     * Url for retrieving the education associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateEducationUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.education;
     };
-    /**
-     * Url for retrieving the languages associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateLanguagesUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.languages;
     };
-    /**
-     * Url for retrieving the comments associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateCommentsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.comments;
     };
-    /**
-     * Url for retrieving the comments associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateCommentsNumberUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.commentsNumber;
     };
-    /**
-     * Url for creating a comment for the candidate with the provided candidate id
-     * @param candidateId
-     */
     RouterUtils.createCommentUrl = function (candidateId) {
         return this.candidateCommentsUrl(candidateId);
     };
-    /**
-     * Url for retrieving the number of likes associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateLikesUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.likes;
     };
-    /**
-     * Url for liking a candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.likeCandidateUrl = function (candidateId) {
         return this.candidateLikesUrl(candidateId);
     };
-    /**
-     * Url for retrieving the average rating associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateRatingUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.rating;
     };
     RouterUtils.rateCandidateUrl = function (candidateId) {
         return this.candidateRatingUrl(candidateId);
     };
-    /**
-     * Url for retrieving the chat associated with the candidate with the provided id
-     * @param candidateId
-     */
     RouterUtils.candidateChatUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.chat;
     };
-    /**
-     * Url for retrieving all the positions
-     */
+    RouterUtils.allSkillsUrl = function () {
+        return this.baseUrl + this.allSkillsUrl;
+    };
     RouterUtils.positionsUrl = function () {
         return this.baseUrl + this.positions;
     };
-    /**
-     * Url for retrieving the position with the provided id
-     * @param positionId
-     */
     RouterUtils.positionUrl = function (positionId) {
         return this.baseUrl + this.position + positionId;
     };
-    /**
-     * Url for creating a new Position entity
-     */
     RouterUtils.createPositionUrl = function () {
         return this.positionsUrl();
     };
-    /**
-     * Url for deleting a Position entity with the provided id
-     * @param positionId
-     */
     RouterUtils.deletePositionUrl = function (positionId) {
         return this.positionUrl(positionId);
     };
-    /**
-     * Url for retrieving the requirements associated with the position with the provided id
-     * @param positionId
-     */
     RouterUtils.positionRequirementsUrl = function (positionId) {
         return this.baseUrl + this.position + positionId + this.positionRequirements;
     };
-    /**
-     * Url for creating a requirement for the position with the provided id
-     * @param positionId
-     */
     RouterUtils.createPositionRequirementUrl = function (positionId) {
         return this.positionRequirementsUrl(positionId);
     };
-    /**
-     * Url for deleting a requirement with the provided id
-     */
+    RouterUtils.createPositionRequirementsBulkUrl = function (positionId) {
+        return this.createPositionRequirementsBulkUrl(positionId);
+    };
     RouterUtils.deletePositionRequirementUrl = function (positionId, skillId) {
         return this.positionRequirementsUrl(positionId) + "/" + skillId;
     };
-    /**
-     * Url for retrieving the candidates associated with the position with the provided id
-     */
     RouterUtils.positionCandidatesUrl = function (positionId) {
         return this.baseUrl + this.position + positionId + this.positionCandidates;
     };
-    /**
-     * Url for retrieving all the questions
-     */
     RouterUtils.questionsUrl = function () {
         return this.baseUrl + this.questions;
     };
-    /**
-     * Url for retrieving the question with the provided id
-     * @param questionId
-     */
     RouterUtils.questionUrl = function (questionId) {
         return this.baseUrl + this.question + questionId;
     };
-    /**
-     * Url for creating a question
-     */
     RouterUtils.createQuestionUrl = function () {
         return this.questionsUrl();
     };
-    /**
-     * Url for deleting the question with the provided id
-     * @param questionId
-     */
     RouterUtils.deleteQuestionUrl = function (questionId) {
         return this.questionUrl(questionId);
     };
-    /**
-     * Url for retrieving the replies associated with the question with the provided id
-     * @param questionId
-     */
     RouterUtils.repliesUrl = function (questionId) {
         return this.baseUrl + this.question + questionId + this.replies;
     };
-    /**
-     * Url for creating a reply for the question with the provided id
-     * @param questionId
-     */
     RouterUtils.createReplyUrl = function (questionId) {
         return this.repliesUrl(questionId);
     };
-    /**
-     * Url for deleting the reply with the provided id
-     * @param replyId
-     */
     RouterUtils.deleteReplyUrl = function (questionId, replyId) {
         return this.repliesUrl(questionId) + "/" + replyId;
     };
@@ -3035,32 +2773,6 @@ var RouterUtils = (function () {
 }());
 
 RouterUtils.baseUrl = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].herokuUrl ? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/api";
-/** URLs finishing in / need additional id parameter
-
- * URLS:
- *
- * /api/candidates
- * /api/candidates/:candidateId
- * /api/candidates/:candidateId/skills
- * /api/candidates/:candidateId/interests
- * /api/candidates/:candidateId/experience
- * /api/candidates/:candidateId/education
- * /api/candidates/:candidateId/languages
- * /api/candidates/:candidateId/comments
- * /api/chat/:candidateId
- *
- * /api/positions
- * /api/positions/:positionId
- * /api/positions/:positionId/skills
- * /api/positions/:positionId/candidates
- *
- * /api/questions
- * /api/questions/:questionId
- * /api/questions/:questionId/replies
- *
- * /api/interview/:candidateId
- *
-*/
 RouterUtils.candidates = "/candidates";
 RouterUtils.candidate = "/candidates/";
 RouterUtils.skills = "/skills/";
@@ -3076,6 +2788,7 @@ RouterUtils.chat = "/chat";
 RouterUtils.positions = "/positions";
 RouterUtils.position = "/positions/";
 RouterUtils.positionRequirements = "/skills";
+RouterUtils.savePositionRequirementsBulk = '/skillsBulk';
 RouterUtils.positionCandidates = "/candidates";
 RouterUtils.questions = "/questions";
 RouterUtils.question = "/questions/";

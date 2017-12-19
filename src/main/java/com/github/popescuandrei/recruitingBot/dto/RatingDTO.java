@@ -1,7 +1,6 @@
 package com.github.popescuandrei.recruitingBot.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import com.github.popescuandrei.recruitingBot.domain.AppUser;
 import com.github.popescuandrei.recruitingBot.domain.Candidate;

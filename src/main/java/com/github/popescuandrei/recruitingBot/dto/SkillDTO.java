@@ -70,6 +70,14 @@ public class SkillDTO implements Serializable {
 		return dto;
 	}
 	
+	public static SkillDTO mapToDTO(Skill skill) {
+		SkillDTO dto = new SkillDTO();
+		dto.setLevel(0L);
+		dto.setName(skill.getName());
+		
+		return dto;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

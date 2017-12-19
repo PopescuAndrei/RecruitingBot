@@ -9,13 +9,37 @@ import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
  */
 public interface EntityService<T extends BaseEntity>{
 	
+	/**
+	 * Generic 'find' method
+	 * @param id
+	 * @return
+	 */
 	T find(Long id);
 	
+	/**
+	 * Generic 'create' method
+	 * @param entity
+	 * @return
+	 */
 	T create(T entity);
 	
+	/**
+	 * Generic 'update' method
+	 * @param entity
+	 * @return
+	 */
 	T update(T entity);
 	
+	/**
+	 * Generic 'delete' method
+	 * @param id
+	 * @return
+	 */
 	T delete(Long id);
-	
+
+	/**
+	 * Generic 'findAll' method
+	 * @return
+	 */
 	List<T> findAll();
 }

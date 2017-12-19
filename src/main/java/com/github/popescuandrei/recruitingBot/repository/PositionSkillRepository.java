@@ -12,4 +12,6 @@ import com.github.popescuandrei.recruitingBot.domain.PositionSkill;
 public interface PositionSkillRepository extends BaseRepository<PositionSkill, Long> {
 
 	List<PositionSkill> findAllByPositionId(Long positionId);
+	
+	PositionSkill findByPositionIdAndSkillId(Long positionId, Long skillId);
 }

@@ -14,27 +14,27 @@ public class InterestDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private String interest;
+	private String name;
 
-	public String getInterest() {
-		return interest;
+	public String getName() {
+		return name;
 	}
 
-	public void setInterest(String interest) {
-		this.interest = interest;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public static CandidateInterest mapToObject(Candidate candidate, InterestDTO dto) {
 		CandidateInterest ci = new CandidateInterest();
 		ci.setCandidate(candidate);
-		ci.setName(dto.getInterest());
+		ci.setName(dto.getName());
 		
 		return ci;
 	}
 	
 	public static InterestDTO mapToDTO(CandidateInterest ci) {
 		InterestDTO dto = new InterestDTO();
-		dto.setInterest(ci.getName());
+		dto.setName(ci.getName());
 		
 		return dto;
 	}
@@ -43,7 +43,7 @@ public class InterestDTO implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((interest == null) ? 0 : interest.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -56,10 +56,10 @@ public class InterestDTO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		InterestDTO other = (InterestDTO) obj;
-		if (interest == null) {
-			if (other.interest != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!interest.equals(other.interest))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
