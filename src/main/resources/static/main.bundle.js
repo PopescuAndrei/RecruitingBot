@@ -2803,8 +2803,8 @@ RouterUtils.replies = "/replies";
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 var environment = {
-    production: false,
-    herokuUrl: false
+    production: true,
+    herokuUrl: true
 };
 //# sourceMappingURL=environment.js.map
 
