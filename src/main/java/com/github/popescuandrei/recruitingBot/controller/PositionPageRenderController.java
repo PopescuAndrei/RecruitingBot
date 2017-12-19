@@ -15,7 +15,7 @@ import com.github.popescuandrei.recruitingBot.service.PositionService;
 import com.github.popescuandrei.recruitingBot.service.PositionSkillService;
 
 @Controller
-@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"}, maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://recruitingmessbot.herokuapp.com"}, maxAge = 3600)
 @RequestMapping("/api/positionurls")
 public class PositionPageRenderController {
 

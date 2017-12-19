@@ -27,7 +27,7 @@ import com.github.popescuandrei.recruitingBot.service.SkillService;
 
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"}, maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://recruitingmessbot.herokuapp.com"}, maxAge = 3600)
 @RequestMapping("/api/positions")
 public class PositionController {
 

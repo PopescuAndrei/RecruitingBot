@@ -45,7 +45,7 @@ import com.github.popescuandrei.recruitingBot.service.UserCandidateLikeService;
 import com.github.popescuandrei.recruitingBot.service.UserCandidateRatingService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"}, maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://recruitingmessbot.herokuapp.com"}, maxAge = 3600)
 @RequestMapping("/api/candidates")
 public class CandidateController {
 
