@@ -10,4 +10,19 @@ public interface AppUserService extends EntityService<AppUser>{
 	 * @return
 	 */
 	AppUser findByName(String fullName);
+	
+	/**
+	 * Method for retrieving an {@link AppUser} by its email address
+	 * @param email
+	 * @return
+	 */
+	AppUser findByEmail(String email);
+	
+	/**
+	 * Method for retrieving an {@link AppUser} by its email address and password
+	 * @param email
+	 * @param password
+	 * @return
+	 */
+	AppUser findByEmailAndPassword(String email, String password);
 }
