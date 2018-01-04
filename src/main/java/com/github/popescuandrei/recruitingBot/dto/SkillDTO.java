@@ -72,10 +72,17 @@ public class SkillDTO implements Serializable {
 	
 	public static SkillDTO mapToDTO(Skill skill) {
 		SkillDTO dto = new SkillDTO();
-		dto.setLevel(0L);
+		dto.setLevel(1L);
 		dto.setName(skill.getName());
 		
 		return dto;
+	}
+	
+	public static Skill mapToObject(SkillDTO dto) {
+		Skill skill = new Skill();
+		skill.setName(dto.getName());
+		
+		return skill;
 	}
 	
 	@Override

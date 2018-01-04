@@ -15,8 +15,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 
@@ -42,7 +43,8 @@ public class UserCandidateRating extends BaseEntity {
 	
 	@Column(name = RATING)
 	@Digits(integer = 1, fraction = 2)
-	@Size(min = 0, max = 10)
+	@Min(0)
+	@Max(10)
 	private Double rating;
 	
 	@Override

@@ -162,9 +162,14 @@ public class PositionController {
 	 * @param positionSkill
 	 * @return
 	 */
-	@RequestMapping(value = "/{positionId}/skills/{skillId}", method = RequestMethod.DELETE)
-	public @ResponseBody PositionSkill deleteSkill(@PathVariable("positionId") Long positionId, @PathVariable("skillId") Long skillId) {
-		return positionSkillService.delete(skillId);
+	@RequestMapping(value = "/{positionId}/skills/{skillName}", method = RequestMethod.DELETE)
+	public @ResponseBody SkillDTO deleteSkill(@PathVariable("positionId") Long positionId, @PathVariable("skillName") String skillName) {
+		Skill skill = skillService.findByName(skillName);
+		PositionSkill ps = positionSkillService.findByPositionIdAndSkillId(positionId, skill.getId());
+		
+		ps = positionSkillService.delete(ps.getId());
+		
+		return SkillDTO.mapToDTOFromPosition(ps);
 	}
 
 	/**

@@ -14,8 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 
@@ -38,7 +39,8 @@ public class PositionSkill extends BaseEntity {
 	private Position position;
 	
 	@NotNull
-	@Size(min = 1, max = 100)
+	@Min(1)
+	@Max(100)
 	@Column(name = LEVEL)
 	private Long level;
 

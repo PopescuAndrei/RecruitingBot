@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,5 +36,13 @@ public class SkillController {
 		return skills.stream()
 				.map(s -> SkillDTO.mapToDTO(s))
 				.collect(Collectors.toList());
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public @ResponseBody SkillDTO create(@RequestBody SkillDTO dto) {
+		Skill skill = SkillDTO.mapToObject(dto);
+		skill = skillService.create(skill);
+		
+		return SkillDTO.mapToDTO(skill);
 	}
 }

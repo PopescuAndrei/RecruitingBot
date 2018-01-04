@@ -1,9 +1,9 @@
 package com.github.popescuandrei.recruitingBot.domain;
 
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_ID;
+import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_POSITION_SCORE;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.POSITION_ID;
 import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.SCORE;
-import static com.github.popescuandrei.recruitingBot.domain.support.DbNames.CANDIDATE_POSITION_SCORE;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.github.popescuandrei.recruitingBot.domain.support.BaseEntity;
 
@@ -40,7 +41,8 @@ public class CandidatePositionScore extends BaseEntity {
 	@JoinColumn(name = POSITION_ID, nullable = false)
 	private Position position;
 
-	@Size(min = 0, max = 100)
+	@Min(0)
+	@Max(100)
 	@Column(name = SCORE)
 	private Double score;
 	
