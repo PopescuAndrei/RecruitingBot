@@ -61,7 +61,7 @@ public class CandidateEducation extends BaseEntity {
 	
 	@Column(name = GRADE)
 	@Min(1)
-	@Max(5)
+	@Max(10)
 	private Double grade;
 
 	public Long getId() {

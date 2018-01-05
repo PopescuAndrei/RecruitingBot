@@ -451,6 +451,7 @@ public class ChatChoreographer {
 		List<QuestionReply> questionReplies = questionReplyService.findAllByQuestionId(interviewProgress.getProgress());	
 		String nextReply = questionReplies.get(new Random().nextInt(questionReplies.size())).getReplyMessage();
 		
+		// TODO (replace ALL params with actual strings)
 		if(nextReply.contains(PARAM_INSTITUTION_NAME)) {
 			nextReply = nextReply.replaceAll(PARAM_INSTITUTION_NAME, candidate.getFirstName());
 		}

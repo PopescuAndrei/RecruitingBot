@@ -1,5 +1,7 @@
 package com.github.popescuandrei.recruitingBot.service;
 
+import java.util.List;
+
 import com.github.popescuandrei.recruitingBot.domain.Question;
 
 public interface QuestionService extends EntityService<Question> {
@@ -10,4 +12,10 @@ public interface QuestionService extends EntityService<Question> {
 	 * @return
 	 */
 	Question findByPosition(Long position);
+	
+	/**
+	 * Method for deleting the old, unused questions;
+	 * @param newQuestions
+	 */
+	void deleteOldQuestions(List<Question> newQuestions);
 }

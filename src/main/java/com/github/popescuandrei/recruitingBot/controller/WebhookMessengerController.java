@@ -55,6 +55,9 @@ public class WebhookMessengerController {
     @Autowired
     private AiManager aiManager;
     
+    @Value("${app.baseUrl}")
+    private String baseUrl;
+    
     /**
      * Constructs the {@code MessengerPlatformCallbackHandler} and initializes the {@code MessengerReceiveClient}.
      *
@@ -118,7 +121,7 @@ public class WebhookMessengerController {
             String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
             if(aiResponse.equals(ACTION_SEARCH_POSITION)) {
             	try {
-					facebookMessageBuilder.sendOpenPositionsMessage(this.sendClient, senderId);
+					facebookMessageBuilder.sendOpenPositionsMessage(this.sendClient, senderId, baseUrl);
 				} catch (MessengerApiException | MessengerIOException e) {
 					e.printStackTrace();
 					facebookMessageBuilder.sendTextMessage(this.sendClient, senderId, getRandomFallbackAnswer());

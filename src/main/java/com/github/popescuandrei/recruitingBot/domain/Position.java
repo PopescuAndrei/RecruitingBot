@@ -38,8 +38,8 @@ public class Position extends BaseEntity{
 	private String name;
 	
 	@NotNull
-	@Size(max = 100)
-	@Column(name = DESCRIPTION, length = 50)
+	@Size(max = 2500)
+	@Column(name = DESCRIPTION)
 	private String description;
 	
 	@Size(max = 100)
@@ -116,8 +116,8 @@ public class Position extends BaseEntity{
 		setLastUpdate(new Date());
 	}
 	
-	public String buildUrl() {
-		return "https://recruitingmessbot.herokuapp.com/api/positionurls/" + this.getId();
+	public String buildUrl(String baseUrl) {
+		return baseUrl + "/public-positions/" + this.getId();
 	}
 
 	@Override

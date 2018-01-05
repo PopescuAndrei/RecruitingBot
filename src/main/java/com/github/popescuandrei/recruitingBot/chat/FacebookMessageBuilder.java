@@ -108,13 +108,13 @@ public class FacebookMessageBuilder {
      * @throws MessengerApiException
      * @throws MessengerIOException
      */
-    public void sendOpenPositionsMessage(MessengerSendClient sendClient, String recipientId) throws MessengerApiException, MessengerIOException {
+    public void sendOpenPositionsMessage(MessengerSendClient sendClient, String recipientId, String baseUrl) throws MessengerApiException, MessengerIOException {
         ListBuilder buttonListBuilder = Button.newListBuilder();
         List<Position> availablePositions = positionService.findAll();
         log.info(availablePositions.size() + " positions found.");
         
         for(Position p: availablePositions) {
-        	buttonListBuilder.addUrlButton(p.getName(), p.buildUrl()).toList();
+        	buttonListBuilder.addUrlButton(p.getName(), p.buildUrl(baseUrl)).toList();
         }
         
         if(availablePositions.isEmpty()) {

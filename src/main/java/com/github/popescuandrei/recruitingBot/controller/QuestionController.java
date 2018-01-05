@@ -1,5 +1,6 @@
 package com.github.popescuandrei.recruitingBot.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.popescuandrei.recruitingBot.domain.InterviewProgress;
 import com.github.popescuandrei.recruitingBot.domain.Question;
 import com.github.popescuandrei.recruitingBot.domain.QuestionReply;
+import com.github.popescuandrei.recruitingBot.service.InterviewProgressService;
 import com.github.popescuandrei.recruitingBot.service.QuestionReplyService;
 import com.github.popescuandrei.recruitingBot.service.QuestionService;
 
@@ -30,6 +33,10 @@ public class QuestionController {
 	@Qualifier("questionReplyService")
 	private QuestionReplyService questionReplyService;
 
+	@Autowired
+	@Qualifier("interviewProgressService")
+	private InterviewProgressService interviewProgressService;
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<Question> findAll() {
 		List<Question> questions = questionService.findAll();
@@ -41,16 +48,28 @@ public class QuestionController {
 		Question question = questionService.find(id);
 		return question;
 	}
-
-	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody Question create(@RequestBody Question question) {
-		question = questionService.create(question);
-		return question;
+	
+	@RequestMapping(value="/{id}", method = RequestMethod.POST)
+	public @ResponseBody Question updateOne(@PathVariable("id") Long id, @RequestBody Question question) {
+		return questionService.update(question);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public @ResponseBody Question delete(@PathVariable("id") Long id) {
-		return questionService.delete(id);
+	@RequestMapping(method = RequestMethod.POST)
+	public @ResponseBody List<Question> updateQuestions(@RequestBody List<Question> questions) {
+		List<Question> newQuestions = new ArrayList<Question>();
+		
+		questions.stream()
+			.forEach(q -> {
+				if(q.isNew()) {
+					newQuestions.add(questionService.create(q));
+				} else {
+					newQuestions.add(questionService.update(q));
+				}
+		});
+		
+		questionService.deleteOldQuestions(newQuestions);
+		
+		return newQuestions;
 	}
 
 	@RequestMapping(value = "/{id}/replies", method = RequestMethod.GET)
@@ -60,7 +79,7 @@ public class QuestionController {
 	}
 
 	@RequestMapping(value = "/{id}/replies", method = RequestMethod.POST)
-	public @ResponseBody QuestionReply createQuestionReply(@PathVariable("questionId") Long questionId, @RequestBody QuestionReply questionReply) {
+	public @ResponseBody QuestionReply createQuestionReply(@PathVariable("id") Long questionId, @RequestBody QuestionReply questionReply) {
 		questionReply = questionReplyService.create(questionReply);
 		return questionReply;
 	}
@@ -68,5 +87,19 @@ public class QuestionController {
 	@RequestMapping(value = "/{questionId}/replies/{replyId}", method = RequestMethod.DELETE)
 	public @ResponseBody QuestionReply deleteQuestionReply(@PathVariable("questionId") Long questionId, @PathVariable("replyId") Long replyId) {
 		return questionReplyService.delete(replyId);
+	}
+	
+	@RequestMapping(value = "/interviewProgress", method = RequestMethod.GET)
+	public @ResponseBody Boolean isInterviewRunning() {
+		List<InterviewProgress> progresses = interviewProgressService.findAll();
+		int noQuestions = questionService.findAll().size();
+		
+		for(InterviewProgress ip: progresses) {
+			if(ip.getProgress() < noQuestions) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }
