@@ -48,7 +48,7 @@ public class PositionController {
 	private CandidatePositionScoreService candidatePositionScoreService;
 
 	/**
-	 * Mapping for retrieving all {@link Position}s
+	 * Mapping for retrieving all {@link Position}s as a list of rows
 	 * @return
 	 */
 	@RequestMapping(method = RequestMethod.GET)
@@ -57,6 +57,15 @@ public class PositionController {
 		List<List<Position>> positions = mapListToRows(positionsList);
 		
 		return positions;
+	}
+	
+	/**
+	 * Mapping for retrieving all {@link Position}s
+	 * @return
+	 */
+	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	public @ResponseBody List<Position> findAllForComparison() {
+		return positionService.findAll();
 	}
 	
 	/**

@@ -105,6 +105,22 @@ public class CandidateController {
 	}
 	
 	/**
+	 * Method that returns a list with all the {@link Candidate}s 
+	 * except the one with the provided id
+	 * @param candidateId
+	 * @return
+	 */
+	@RequestMapping(value="/{id}/otherCandidates", method = RequestMethod.GET)
+	public @ResponseBody List<Candidate> findAll(@PathVariable("id") Long candidateId) {
+		List<Candidate> all = candidateService.findAll();
+		Candidate candidate = candidateService.find(candidateId);
+		
+		all.removeIf(c -> c.equals(candidate));
+		
+		return all;
+	}
+	
+	/**
 	 * Mapping for retrieving all candidates
 	 * @return
 	 */
