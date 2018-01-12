@@ -90,47 +90,48 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__candidates_candidate_position_comparison_candidate_position_comparison_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-position-comparison/candidate-position-comparison.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth.guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__skills_skills_component__ = __webpack_require__("../../../../../src/app/skills/skills.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_login_login_component__ = __webpack_require__("../../../../../src/app/auth/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__positions_edit_position_edit_position_component__ = __webpack_require__("../../../../../src/app/positions/edit-position/edit-position.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__interview_edit_question_edit_question_component__ = __webpack_require__("../../../../../src/app/interview/edit-question/edit-question.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__positions_create_position_create_position_component__ = __webpack_require__("../../../../../src/app/positions/create-position/create-position.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_chat_service__ = __webpack_require__("../../../../../src/app/services/chat.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_questions_service__ = __webpack_require__("../../../../../src/app/services/questions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng2_dragula_components_dragular_module__ = __webpack_require__("../../../../ng2-dragula/components/dragular.module.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng2_dragula_components_dragular_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_ng2_dragula_components_dragular_module__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__candidates_chat_view_chat_view_component__ = __webpack_require__("../../../../../src/app/candidates/chat-view/chat-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__positions_position_view_position_view_component__ = __webpack_require__("../../../../../src/app/positions/position-view/position-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__positions_position_card_position_card_component__ = __webpack_require__("../../../../../src/app/positions/position-card/position-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__candidates_experience_timeline_experience_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/experience-timeline/experience-timeline.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__candidates_comment_view_comment_view_component__ = __webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__candidates_education_timeline_education_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/education-timeline/education-timeline.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__candidates_candidate_card_candidate_card_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-card/candidate-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__interview_interview_component__ = __webpack_require__("../../../../../src/app/interview/interview.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__positions_positions_component__ = __webpack_require__("../../../../../src/app/positions/positions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__candidates_candidate_view_candidate_view_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__candidates_candidates_component__ = __webpack_require__("../../../../../src/app/candidates/candidates.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__sidebar_sidebar_module__ = __webpack_require__("../../../../../src/app/sidebar/sidebar.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__shared_footer_footer_module__ = __webpack_require__("../../../../../src/app/shared/footer/footer.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__shared_navbar_navbar_module__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__positions_public_position_view_public_position_view_component__ = __webpack_require__("../../../../../src/app/positions/public-position-view/public-position-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__candidates_candidate_candidate_comparison_candidate_candidate_comparison_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-candidate-comparison/candidate-candidate-comparison.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_language_service__ = __webpack_require__("../../../../../src/app/services/language.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__candidates_candidate_position_comparison_candidate_position_comparison_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-position-comparison/candidate-position-comparison.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth.guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__skills_skills_component__ = __webpack_require__("../../../../../src/app/skills/skills.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_login_login_component__ = __webpack_require__("../../../../../src/app/auth/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__positions_edit_position_edit_position_component__ = __webpack_require__("../../../../../src/app/positions/edit-position/edit-position.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__interview_edit_question_edit_question_component__ = __webpack_require__("../../../../../src/app/interview/edit-question/edit-question.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__positions_create_position_create_position_component__ = __webpack_require__("../../../../../src/app/positions/create-position/create-position.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_chat_service__ = __webpack_require__("../../../../../src/app/services/chat.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_questions_service__ = __webpack_require__("../../../../../src/app/services/questions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_dragula_components_dragular_module__ = __webpack_require__("../../../../ng2-dragula/components/dragular.module.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_dragula_components_dragular_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_dragula_components_dragular_module__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__candidates_chat_view_chat_view_component__ = __webpack_require__("../../../../../src/app/candidates/chat-view/chat-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__positions_position_view_position_view_component__ = __webpack_require__("../../../../../src/app/positions/position-view/position-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__positions_position_card_position_card_component__ = __webpack_require__("../../../../../src/app/positions/position-card/position-card.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__candidates_experience_timeline_experience_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/experience-timeline/experience-timeline.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__candidates_comment_view_comment_view_component__ = __webpack_require__("../../../../../src/app/candidates/comment-view/comment-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__candidates_education_timeline_education_timeline_component__ = __webpack_require__("../../../../../src/app/candidates/education-timeline/education-timeline.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__candidates_candidate_card_candidate_card_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-card/candidate-card.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__interview_interview_component__ = __webpack_require__("../../../../../src/app/interview/interview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__settings_settings_component__ = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__positions_positions_component__ = __webpack_require__("../../../../../src/app/positions/positions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__candidates_candidate_view_candidate_view_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-view/candidate-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__candidates_candidates_component__ = __webpack_require__("../../../../../src/app/candidates/candidates.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__sidebar_sidebar_module__ = __webpack_require__("../../../../../src/app/sidebar/sidebar.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__shared_footer_footer_module__ = __webpack_require__("../../../../../src/app/shared/footer/footer.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__shared_navbar_navbar_module__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__positions_public_position_view_public_position_view_component__ = __webpack_require__("../../../../../src/app/positions/public-position-view/public-position-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__candidates_candidate_candidate_comparison_candidate_candidate_comparison_component__ = __webpack_require__("../../../../../src/app/candidates/candidate-candidate-comparison/candidate-candidate-comparison.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -178,38 +179,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_30__angular_core__["NgModule"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_31__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_32__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_37__dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__auth_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__candidates_candidates_component__["a" /* CandidatesComponent */], __WEBPACK_IMPORTED_MODULE_21__candidates_candidate_card_candidate_card_component__["a" /* CandidateCardComponent */], __WEBPACK_IMPORTED_MODULE_19__candidates_comment_view_comment_view_component__["a" /* CommentViewComponent */], __WEBPACK_IMPORTED_MODULE_13__candidates_chat_view_chat_view_component__["a" /* ChatViewComponent */], __WEBPACK_IMPORTED_MODULE_18__candidates_experience_timeline_experience_timeline_component__["a" /* ExperienceTimelineComponent */], __WEBPACK_IMPORTED_MODULE_20__candidates_education_timeline_education_timeline_component__["a" /* EducationTimelineComponent */], __WEBPACK_IMPORTED_MODULE_25__candidates_candidate_view_candidate_view_component__["a" /* CandidateViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_39__candidates_candidate_candidate_comparison_candidate_candidate_comparison_component__["a" /* CandidateCandidateComparisonComponent */], __WEBPACK_IMPORTED_MODULE_0__candidates_candidate_position_comparison_candidate_position_comparison_component__["a" /* CandidatePositionComparisonComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__positions_positions_component__["a" /* PositionsComponent */], __WEBPACK_IMPORTED_MODULE_17__positions_position_card_position_card_component__["a" /* PositionCardComponent */], __WEBPACK_IMPORTED_MODULE_16__positions_position_view_position_view_component__["a" /* PositionViewComponent */], __WEBPACK_IMPORTED_MODULE_8__positions_create_position_create_position_component__["a" /* CreatePositionComponent */], __WEBPACK_IMPORTED_MODULE_6__positions_edit_position_edit_position_component__["a" /* EditPositionComponent */],
-            __WEBPACK_IMPORTED_MODULE_38__positions_public_position_view_public_position_view_component__["a" /* PublicPositionViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_2__skills_skills_component__["a" /* SkillsComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__interview_interview_component__["a" /* InterviewComponent */], __WEBPACK_IMPORTED_MODULE_7__interview_edit_question_edit_question_component__["a" /* EditQuestionComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__settings_settings_component__["a" /* SettingsComponent */]
+            __WEBPACK_IMPORTED_MODULE_33__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_38__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__auth_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__candidates_candidates_component__["a" /* CandidatesComponent */], __WEBPACK_IMPORTED_MODULE_22__candidates_candidate_card_candidate_card_component__["a" /* CandidateCardComponent */], __WEBPACK_IMPORTED_MODULE_20__candidates_comment_view_comment_view_component__["a" /* CommentViewComponent */], __WEBPACK_IMPORTED_MODULE_14__candidates_chat_view_chat_view_component__["a" /* ChatViewComponent */], __WEBPACK_IMPORTED_MODULE_19__candidates_experience_timeline_experience_timeline_component__["a" /* ExperienceTimelineComponent */], __WEBPACK_IMPORTED_MODULE_21__candidates_education_timeline_education_timeline_component__["a" /* EducationTimelineComponent */], __WEBPACK_IMPORTED_MODULE_26__candidates_candidate_view_candidate_view_component__["a" /* CandidateViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_40__candidates_candidate_candidate_comparison_candidate_candidate_comparison_component__["a" /* CandidateCandidateComparisonComponent */], __WEBPACK_IMPORTED_MODULE_1__candidates_candidate_position_comparison_candidate_position_comparison_component__["a" /* CandidatePositionComparisonComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__positions_positions_component__["a" /* PositionsComponent */], __WEBPACK_IMPORTED_MODULE_18__positions_position_card_position_card_component__["a" /* PositionCardComponent */], __WEBPACK_IMPORTED_MODULE_17__positions_position_view_position_view_component__["a" /* PositionViewComponent */], __WEBPACK_IMPORTED_MODULE_9__positions_create_position_create_position_component__["a" /* CreatePositionComponent */], __WEBPACK_IMPORTED_MODULE_7__positions_edit_position_edit_position_component__["a" /* EditPositionComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__positions_public_position_view_public_position_view_component__["a" /* PublicPositionViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__skills_skills_component__["a" /* SkillsComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__interview_interview_component__["a" /* InterviewComponent */], __WEBPACK_IMPORTED_MODULE_8__interview_edit_question_edit_question_component__["a" /* EditQuestionComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__settings_settings_component__["a" /* SettingsComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_27__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_27__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_28__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_31__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_33__app_routing__["a" /* AppRoutes */]),
-            __WEBPACK_IMPORTED_MODULE_34__sidebar_sidebar_module__["a" /* SidebarModule */],
-            __WEBPACK_IMPORTED_MODULE_36__shared_navbar_navbar_module__["a" /* NavbarModule */],
-            __WEBPACK_IMPORTED_MODULE_35__shared_footer_footer_module__["a" /* FooterModule */],
-            __WEBPACK_IMPORTED_MODULE_12_ng2_dragula_components_dragular_module__["DragulaModule"]
+            __WEBPACK_IMPORTED_MODULE_30__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_28__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_28__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_32__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_34__app_routing__["a" /* AppRoutes */]),
+            __WEBPACK_IMPORTED_MODULE_35__sidebar_sidebar_module__["a" /* SidebarModule */],
+            __WEBPACK_IMPORTED_MODULE_37__shared_navbar_navbar_module__["a" /* NavbarModule */],
+            __WEBPACK_IMPORTED_MODULE_36__shared_footer_footer_module__["a" /* FooterModule */],
+            __WEBPACK_IMPORTED_MODULE_13_ng2_dragula_components_dragular_module__["DragulaModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_15__services_candidates_service__["a" /* CandidatesService */], __WEBPACK_IMPORTED_MODULE_10__services_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_14__services_positions_service__["a" /* PositionsService */], __WEBPACK_IMPORTED_MODULE_11__services_questions_service__["a" /* QuestionsService */], __WEBPACK_IMPORTED_MODULE_5__services_skill_service__["a" /* SkillService */],
-            __WEBPACK_IMPORTED_MODULE_9__services_notification_service__["a" /* NotificationService */], __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__services_auth_guard_service__["a" /* AuthGuardService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_32__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_16__services_candidates_service__["a" /* CandidatesService */], __WEBPACK_IMPORTED_MODULE_11__services_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_15__services_positions_service__["a" /* PositionsService */], __WEBPACK_IMPORTED_MODULE_12__services_questions_service__["a" /* QuestionsService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_skill_service__["a" /* SkillService */], __WEBPACK_IMPORTED_MODULE_0__services_language_service__["a" /* LanguageService */],
+            __WEBPACK_IMPORTED_MODULE_10__services_notification_service__["a" /* NotificationService */], __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__services_auth_guard_service__["a" /* AuthGuardService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_33__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -291,7 +294,7 @@ var AppRoutes = [
         component: __WEBPACK_IMPORTED_MODULE_0__candidates_candidate_candidate_comparison_candidate_candidate_comparison_component__["a" /* CandidateCandidateComparisonComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_16__services_auth_guard_service__["a" /* AuthGuardService */]]
     }, {
-        path: 'candidates/:id/positionComparison/:positionId',
+        path: 'candidates/:candidateId/positionComparison/:positionId',
         component: __WEBPACK_IMPORTED_MODULE_17__candidates_candidate_position_comparison_candidate_position_comparison_component__["a" /* CandidatePositionComparisonComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_16__services_auth_guard_service__["a" /* AuthGuardService */]]
     }, {
@@ -615,7 +618,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/*Override panel*/\r\n.card-user {\r\n\tbox-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);\r\n  }\r\n  \r\n  .image{\r\n\t  height: 70px;\r\n  }\r\n  \r\n  strong {\r\n\tfont-weight: bold;\r\n  }\r\n  \r\n  em {\r\n\tcolor: #959595;\r\n\tfont-style: italic;\r\n  }\r\n  \r\n  .tooltip-example {\r\n\t-webkit-transform: translateY(-50%);\r\n\ttransform: translateY(-50%);\r\n\tposition: absolute;\r\n\ttext-align: center;\r\n\ttop: 50%;\r\n\twidth: 100%;\r\n  }\r\n  \r\n  .tooltip {\r\n\tdisplay: inline;\r\n\t-webkit-perspective: 500px;\r\n\tperspective: 500px;\r\n  }\r\n  .tooltip:hover {\r\n\tcursor: pointer;\r\n  }\r\n  .tooltip:hover .tooltip__content {\r\n\t-webkit-transform: translate3d(-50%, -10%, 0);\r\n\ttransform: translate3d(-50%, -10%, 0);\r\n\topacity: 1;\r\n\tpointer-events: auto;\r\n  }\r\n  .tooltip__content {\r\n\ttransition: all 200ms ease;\r\n\t-webkit-transform: translate3d(-50%, 0%, 0);\r\n\ttransform: translate3d(-50%, 0%, 0);\r\n\t-webkit-transform-origin: 0 10px;\r\n\ttransform-origin: 0 10px;\r\n\tbackground-color: #fff;\r\n\tborder-radius: 4px;\r\n\tcolor: #2f2f2f;\r\n\tdisplay: block;\r\n\tfont-size: 14px;\r\n\tfont-weight: normal;\r\n\tleft: 50%;\r\n\topacity: 0;\r\n\tpadding: 10px 20px;\r\n\tpointer-events: none;\r\n\tposition: absolute;\r\n\ttext-align: left;\r\n\tbottom: 100%;\r\n  }\r\n  .tooltip__content:before {\r\n\tborder-color: transparent;\r\n\tborder-top-color: #fff;\r\n\tborder-style: solid;\r\n\tborder-width: 10px;\r\n\tcontent: ' ';\r\n\tdisplay: block;\r\n\theight: 0;\r\n\tleft: 50%;\r\n\tmargin-left: -10px;\r\n\tposition: absolute;\r\n\tbottom: -20px;\r\n\twidth: 0;\r\n  }\r\n  .tooltip__content:after {\r\n\tcontent: ' ';\r\n\tdisplay: block;\r\n\tposition: absolute;\r\n\tbottom: -20px;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 20px;\r\n  }\r\n  .tooltip__content:hover {\r\n\t-webkit-transform: rotateX(0deg) translate3d(-50%, -10%, 0);\r\n\ttransform: rotateX(0deg) translate3d(-50%, -10%, 0);\r\n\topacity: 1;\r\n\tpointer-events: auto;\r\n  }\r\n  \r\n  /* SKILLS */\r\n  \r\n  \r\n  ul.bean-skillset {\r\n\tlist-style-type: none;\r\n\tpadding-right:0px;\r\n\tpadding-left:0px;\r\n\t  float: left;\r\n\t  width: 100%;\r\n  }\r\n  \r\n  .skill-percent { \r\n\t  float: right; \r\n  }\r\n  \r\n  li.skill-bar {\r\n\t  background-color: #7BC673;\r\n\t  color: #FFF;\r\n\tfont: bold 12px/23px \"Helvetica Neue\", Arial, Helvetica, Geneva, sans-serif;\r\n\tmargin-top:5px;\r\n\t  margin-bottom: 5px;\r\n\t  padding: 2px 8px;\r\n\t  width: 300px;\r\n\t\t\tborder-radius: 3px;\r\n\t\t\tbox-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);        \r\n  }\r\n\t\r\n  /* Interests */\r\n  dl {\r\n\tpadding: 10px 0 0 10px;\r\n  }\r\n  \r\n  dl dt { \r\n\tmargin-bottom: 20px;\r\n\tfont-weight: 600;\r\n  }\r\n  \r\n  dl dd {\r\n\tdisplay: inline-table;\r\n\twidth: auto;\r\n\tfont-size: 12px;\r\n\tpadding: 10px;\r\n\tmargin-bottom: 5px;\r\n\ttext-align: center;\r\n\tbackground-color: #c70039;\r\n\tcolor: white;\r\n\tcursor: pointer;\r\n\tborder-radius: 8px;\r\n\tmargin-left:5px;\r\n  }\r\n  \r\n  ::-webkit-scrollbar {\r\n\twidth: 10px;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-track {\r\n\tborder-radius: 0;\r\n\tbox-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);\r\n  }\r\n  \r\n  ::-webkit-scrollbar-thumb {\r\n\tbackground: rgba(0, 0, 0, 0.2);\r\n\tborder-radius: 0;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-thumb:window-inactive {\r\n\tbackground: rgba(0, 0, 0, 0.3);\r\n  }\r\n\t\r\n.ti-arrows-horizontal {\r\n\tvertical-align: middle;\r\n\tfont-size: 24px !important;\r\n}\r\n\r\n.row-eq-height {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display:         flex;\r\n}\r\n\r\n.list-item {\r\n\ttop: 0;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n  }\r\n  \r\n.required-item {\r\n\theight: 100%;\r\n\tborder: 0px solid rgba(123, 123, 123, 0.498039);\r\n\tborder-radius: 4px;\r\n\tline-height: 40px;\r\n\tpadding-left: 32px;\r\n\tfont-weight: 400;\r\n\tmargin-bottom: 10px;\r\n\tbackground-color: rgb(221, 220, 220);\r\n\tbox-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;\r\n}\r\n\r\n.required-level {\r\n\theight: 100%;\r\n\twidth: 40%;\r\n\tborder-top-right-radius: 4px;\r\n\tborder-bottom-left-radius: 4px;\r\n\tline-height: 40px;\r\n\tfont-weight: 400;\r\n\tfloat:right;\r\n}", ""]);
 
 // exports
 
@@ -628,7 +631,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/candidates/candidate-position-comparison/candidate-position-comparison.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  candidate-position-comparison works!\n</p>\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row-eq-height\"><!-- ROW -->\n      <div class=\"col-lg-12\">\n          <div class=\"card card-user\">\n              <div class=\"image blue\"></div>\n              <div class=\"content\">\n                  <div class=\"author\">\n                      <img class=\"avatar border-white\" [src]=\"candidate?.avatar || ''\" alt=\"...\"/>\n                      <h4 class=\"title\">\n                          <span class=\"blue-text\">{{candidate?.firstName}} {{candidate?.lastName}}</span>\n                          <br />\n                          <a href=\"#\"><small><span class=\"black-text\">{{candidate?.email.address}}</span></small></a>\n                      </h4>\n                  </div>\n                  <p class=\"description text-center\">{{candidate?.description}}</p>\n                  \n                  <div class=\"text-center\">\n                      <a [routerLink]=\"['/candidates', candidateId, 'chat']\"><button class=\"btn btn-round dark-primary-color\">Chat Thread</button></a>\n                  </div>\n              </div>\n              <hr>\n              <div class=\"text-center\">\n                  <div class=\"row\">\n                      <div class=\"col-md-3 col-md-offset-1\">\n                          <a [routerLink]=\"['/candidates', candidateId, 'comments']\">\n                              <h5>\n                                  <span class=\"blue-text\">{{candidateCommentsNumber}}</span>\n                                  <br /><small>Comments</small>\n                              </h5>\n                          </a>\n                      </div>\n                      <div class=\"col-md-4\">\n                          <h5>\n                          <span class=\"candidate-rating\">{{candidateLikesNumber}}</span><br />\n                          <small>Likes</small>\n                          </h5>\n                      </div>\n                      <div class=\"col-md-3\">\n                          <h5>\n                          <span class=\"candidate-rating\">{{candidateRating}}</span>\n                          <br /><small>/5</small>\n                          </h5>\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </div>\n\n      <div class=\"col-lg-2 col-md-2 text-center\" style=\"margin-top:15%;\">\n        <i class=\"ti-arrows-horizontal\" style=\"color: #235fdf;\"></i>\n      </div>\n\n      <div class=\"col-lg-12\">\n        <div class=\"card card-user\">\n            <div class=\"image yellow\">\n            </div>\n            <div class=\"content\">\n                <div class=\"author\">\n                    <img class=\"avatar border-white\" [src]=\"position?.image || ''\" alt=\"...\"/>\n                    <h4 class=\"title\">\n                        <a [routerLink]=\"['/positions', positionId]\">\n                            <span class=\"yellow-text\">{{position?.name}}</span>\n                        </a>\n                    </h4>\n                </div>\n                <p class=\"description text-center\">{{position?.description}}</p>\n            </div>\n            <hr>\n            <div class=\"text-center\">\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                        <h5>\n                            <span class=\"yellow-text text-bold\">Creation Date:</span>\n                            <br />\n                            <small>{{position?.creationDate | date: 'MMM, yyyy'}}</small>\n                        </h5>\n                    </div>\n                    <div class=\"col-md-6\">\n                        <h5>\n                            <span class=\"yellow-text text-bold\">Last Updated:</span>\n                            <br />\n                            <small *ngIf=\"position?.lastUpdate\">{{position?.lastUpdate | date: 'MMM, yyyy'}}</small>\n                            <small *ngIf=\"!position?.lastUpdate\">{{position?.creationDate | date: 'MMM, yyyy'}}</small>\n                        </h5>\n                    </div>\n                </div>\n            </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row-eq-height\">\n        <div class=\"col-lg-12\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image blue\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Skills</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <ul class=\"bean-skillset\">\n                        <li *ngFor=\"let skill of candidateSkills\" class=\"skill-bar\" style=\"background-color:#3868A6;\" [ngStyle]=\"{'width': (skill.level + '%') }\">\n                            <span>{{skill.name}}</span>\n                            <span class=\"skill-percent\">{{(skill.level/100) | percent}}</span>\n                        </li>      \n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-2 col-md-2 text-center\" style=\"margin-top:15%;\">\n            <i class=\"ti-arrows-horizontal\" style=\"color: #235fdf;\"></i>\n        </div>\n\n        <div class=\"col-lg-12\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image yellow\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Skills</h2>\n                </div>\n                <div class=\"content\" style=\"height: 261px; overflow-y: hidden\">\n                    <ul class=\"bean-skillset\">\n                        <li *ngFor=\"let skill of positionSkills\" class=\"skill-bar\" style=\"background-color:#EDB63F;\" [ngStyle]=\"{'width': (skill.level + '%') }\">\n                            <span>{{skill.name}}</span>\n                            <span class=\"skill-percent\">{{(skill.level/100) | percent}}</span>\n                        </li>      \n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row-eq-height\">\n        <div class=\"col-lg-12\">\n            <div class=\"card card-user white-background\">\n                <div class=\"image blue\">\n                    <h2 class=\"text-center\" style=\"vertical-align: middle;\">\n                        <strong class=\"white-text\">Experience</strong>\n                    </h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <experience-timeline [candidateExperience]=\"candidateExperience\"></experience-timeline>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-2 col-md-2 text-center\" style=\"margin-top:15%;\">\n            <i class=\"ti-arrows-horizontal\" style=\"color: #235fdf;\"></i>\n        </div>\n\n        <div class=\"col-lg-12\">\n            <div class=\"card card-user white-background\">\n                <div class=\"image yellow\">\n                    <h2 class=\"text-center\" style=\"vertical-align: middle;\">\n                        <strong class=\"white-text\">Required Experience</strong>\n                    </h2>\n                </div>\n                <div class=\"content\" style=\"height: 500px; overflow-x: hidden\">\n                    <div class=\"list-item\" *ngFor=\"let exp of positionExperiences\">\n                        <div class=\"required-item blue-text text-bold\">{{exp?.title}}\n                            <span class=\"required-level white-text text-bold text-center yellow\">{{exp?.years}} years</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row-eq-height\">\n        <div class=\"col-lg-12\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image blue\">\n                    <h4 class=\"text-center\">\n                        <strong class=\"white-text\">Languages</strong>\n                    </h4>\n                </div>\n                <div class=\"content table-responsive table-full-width\">\n                    <table class=\"table table-striped\">\n                        <thead>\n                            <tr>\n                                <th>Language</th>\n                                <th>Writing</th>\n                                <th>Understanding</th>\n                                <th>Speaking</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr *ngFor=\"let language of candidateLanguages\">\n                                <td>{{language.name}}</td>\n                                <td>{{language.writing}}</td>\n                                <td>{{language.understanding}}</td>\n                                <td>{{language.speaking}}</td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-lg-2 col-md-2 text-center\" style=\"margin-top:15%;\">\n            <i class=\"ti-arrows-horizontal\" style=\"color: #235fdf;\"></i>\n        </div>\n\n        <div class=\"col-lg-12\">\n            <div class=\"card card-user white-backgound\">\n                <div class=\"image yellow\">\n                    <h2 class=\"text-center white-text\" style=\"vertical-align: middle;\">Required Languages</h2>\n                </div>\n                <div class=\"content\">\n                    <div class=\"list-item\" *ngFor=\"let lang of positionLanguages\">\n                        <div class=\"required-language-item blue-text text-bold\">{{lang?.name}}\n                            <span class=\"required-language-level white-text text-bold text-center\">{{lang?.level}}\n                            </span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -636,7 +639,10 @@ module.exports = "<p>\n  candidate-position-comparison works!\n</p>\n"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__ = __webpack_require__("../../../../../src/app/services/candidates.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CandidatePositionComparisonComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -648,22 +654,64 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var CandidatePositionComparisonComponent = (function () {
-    function CandidatePositionComparisonComponent() {
+    function CandidatePositionComparisonComponent(route, candidateService, positionService) {
+        this.route = route;
+        this.candidateService = candidateService;
+        this.positionService = positionService;
     }
     CandidatePositionComparisonComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            _this.candidateId = params['candidateId'];
+            _this.positionId = params['positionId'];
+        });
+        this.initCandidate();
+        this.initPosition();
+    };
+    CandidatePositionComparisonComponent.prototype.initCandidate = function () {
+        var _this = this;
+        this.candidateService.getCandidate(this.candidateId)
+            .subscribe(function (data) { return _this.candidate = data; });
+        this.candidateService.getCandidateExperience(this.candidateId)
+            .subscribe(function (data) { return _this.candidateExperience = data; });
+        this.candidateService.getCandidateSkills(this.candidateId)
+            .subscribe(function (data) { return _this.candidateSkills = data; });
+        this.candidateService.getCandidateLanguages(this.candidateId)
+            .subscribe(function (data) { return _this.candidateLanguages = data; });
+        this.candidateService.getCandidateLikesNumber(this.candidateId)
+            .subscribe(function (data) { return _this.candidateLikesNumber = data; }, function (error) { return _this.candidateLikesNumber = 20; });
+        this.candidateService.getCandidateRating(this.candidateId)
+            .subscribe(function (data) { return _this.candidateRating = data; }, function (error) { return _this.candidateRating = 4.8; });
+        this.candidateService.getCandidateCommentsNumber(this.candidateId)
+            .subscribe(function (data) { return _this.candidateCommentsNumber = data; }, function (error) { return _this.candidateCommentsNumber = 45; });
+    };
+    CandidatePositionComparisonComponent.prototype.initPosition = function () {
+        var _this = this;
+        this.positionService.getPosition(this.positionId)
+            .subscribe(function (data) { return _this.position = data; });
+        this.positionService.getPositionRequirements(this.positionId)
+            .subscribe(function (data) { return _this.positionSkills = data; });
+        this.positionService.getPositionExperience(this.positionId)
+            .subscribe(function (data) { return _this.positionExperience = data; });
+        this.positionService.getPositionLanguages(this.positionId)
+            .subscribe(function (data) { return _this.positionLanguages = data; });
     };
     return CandidatePositionComparisonComponent;
 }());
 CandidatePositionComparisonComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
         selector: 'candidate-position-comparison',
         template: __webpack_require__("../../../../../src/app/candidates/candidate-position-comparison/candidate-position-comparison.component.html"),
         styles: [__webpack_require__("../../../../../src/app/candidates/candidate-position-comparison/candidate-position-comparison.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__["a" /* CandidatesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_candidates_service__["a" /* CandidatesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_positions_service__["a" /* PositionsService */]) === "function" && _c || Object])
 ], CandidatePositionComparisonComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=candidate-position-comparison.component.js.map
 
 /***/ }),
@@ -745,7 +793,7 @@ var CandidateViewComponent = (function () {
             this.router.navigate(['/candidates', this.candidateId, "comparison", this.candidateComparisonForm.value.otherCandidateId]);
         }
         else {
-            this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_0__util_messages__["r" /* NO_CANDIDATE_SELECTED */]);
+            this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_0__util_messages__["z" /* NO_CANDIDATE_SELECTED */]);
         }
     };
     CandidateViewComponent.prototype.compareWithPosition = function () {
@@ -753,7 +801,7 @@ var CandidateViewComponent = (function () {
             this.router.navigate(['/candidates', this.candidateId, "positionComparison", this.positionComparisonForm.value.positionId]);
         }
         else {
-            this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_0__util_messages__["s" /* NO_POSITION_SELECTED */]);
+            this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_0__util_messages__["A" /* NO_POSITION_SELECTED */]);
         }
     };
     CandidateViewComponent.prototype.initCandidate = function () {
@@ -1030,14 +1078,14 @@ var CommentViewComponent = (function () {
                 .subscribe(function (result) {
                 newComment_1 = result;
                 _this.comments.push(newComment_1);
-                _this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_0__util_messages__["t" /* COMMENT_SAVED */]);
+                _this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_0__util_messages__["B" /* COMMENT_SAVED */]);
                 _this.initCommentForm();
             }, function (error) {
-                _this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["u" /* COMMENT_NOT_SAVED */] + "." + error);
+                _this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["C" /* COMMENT_NOT_SAVED */] + "." + error);
             });
         }
         else {
-            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["u" /* COMMENT_NOT_SAVED */]);
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["C" /* COMMENT_NOT_SAVED */]);
         }
     };
     return CommentViewComponent;
@@ -1296,6 +1344,60 @@ var Comment = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/domain/position-experience.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PositionExperience; });
+var PositionExperience = (function () {
+    function PositionExperience(title, years) {
+        this.title = title;
+        this.years = years;
+    }
+    return PositionExperience;
+}());
+
+//# sourceMappingURL=position-experience.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/domain/position-language.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PositionLanguage; });
+var PositionLanguage = (function () {
+    function PositionLanguage(name, level) {
+        this.name = name;
+        this.level = level;
+        if (this.level === 'Beginner') {
+            this.levelColor = '#EDB63F';
+        }
+        else if (this.level === 'Intermediate') {
+            this.levelColor = '#A6315D';
+        }
+        else if (this.level === 'Very Good') {
+            this.levelColor = '#88B25C';
+        }
+        else {
+            this.levelColor = '#3868A6';
+        }
+    }
+    PositionLanguage.levelValues = function () {
+        return [
+            'Beginner',
+            'Intermediate',
+            'Very Good',
+            'Expert'
+        ];
+    };
+    return PositionLanguage;
+}());
+
+//# sourceMappingURL=position-language.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/domain/position.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1312,7 +1414,7 @@ var Position = (function () {
         this.lastUpdate = lastUpdate;
         this.image = image;
         if (image === null) {
-            this.image = __WEBPACK_IMPORTED_MODULE_0__util_constants__["a" /* POSITION_BACKGROUNDS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["a" /* POSITION_BACKGROUNDS */].length)];
+            this.image = __WEBPACK_IMPORTED_MODULE_0__util_constants__["e" /* POSITION_BACKGROUNDS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["e" /* POSITION_BACKGROUNDS */].length)];
         }
     }
     return Position;
@@ -1410,10 +1512,10 @@ var User = (function () {
     }
     User.prototype.setAvatar = function () {
         if (Math.random() > 0.5) {
-            this.avatar = __WEBPACK_IMPORTED_MODULE_0__util_constants__["b" /* MALE_AVATARS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["b" /* MALE_AVATARS */].length)];
+            this.avatar = __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* MALE_AVATARS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* MALE_AVATARS */].length)];
         }
         else {
-            this.avatar = __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* FEMALE_AVATARS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["c" /* FEMALE_AVATARS */].length)];
+            this.avatar = __WEBPACK_IMPORTED_MODULE_0__util_constants__["d" /* FEMALE_AVATARS */][Math.floor(Math.random() * __WEBPACK_IMPORTED_MODULE_0__util_constants__["d" /* FEMALE_AVATARS */].length)];
         }
     };
     return User;
@@ -1866,10 +1968,10 @@ var CreatePositionComponent = (function () {
             var newPosition = new __WEBPACK_IMPORTED_MODULE_6__domain_position__["a" /* Position */](null, this.positionForm.value.name, this.positionForm.value.description, new Date(), null, new Date());
             this.positionService.createPosition(newPosition)
                 .subscribe(function (position) { return _this.position = position; });
-            this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_2__util_messages__["p" /* POSITION_SAVED */]);
+            this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_2__util_messages__["x" /* POSITION_SAVED */]);
         }
         else {
-            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_2__util_messages__["q" /* POSITION_NOT_SAVED */]);
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_2__util_messages__["y" /* POSITION_NOT_SAVED */]);
         }
     };
     ;
@@ -1897,7 +1999,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\r\n  margin: 0 auto;\r\n  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);\r\n  margin-bottom: 3em;\r\n}\r\n\r\n.table-striped {\r\n  table-layout: fixed;\r\n}\r\n\r\n.card .card-content {\r\n  position: relative;\r\n  padding-left: 5%;\r\n  padding-right: 5%;\r\n  margin-top: 2%;\r\n  padding-bottom: 8%;\r\n  overflow: hidden;\r\n  min-height: 200px;\r\n}\r\n\r\n.card .card-content .card-content-name {\r\n  font-size: 25px;\r\n}\r\n\r\n.card .card-content .card-content-job {\r\n  max-height: 150px;\r\n  color: #9575CD;\r\n  font-size: 15px;\r\n}\r\n\r\n.card .card-content p {\r\n  margin: 0;\r\n  z-index: 2;\r\n}\r\n\r\n.card .card-content .card-content-button:focus {\r\n  outline: none;\r\n}\r\n\r\n.card .card-image {\r\n  width: 100%;\r\n  position: relative;\r\n  margin-bottom: -1%;\r\n  z-index: 2;\r\n  transition: z-index 0s 0.2s;\r\n  background-color: #000000;\r\n}\r\n\r\n.card .card-image img {\r\n  width: 100%;\r\n  opacity: 0.5;\r\n}\r\n\r\n.image {\r\n  position: relative;\r\n  max-height: 120px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n/* Centered text */\r\n.centered {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n\tfont-size: 24px;\r\n\tfont-weight: bold;\r\n}\r\n\r\n.requirements-list {\r\n  max-height: 145px;\r\n}\r\n\r\n.contact-card {\r\n  max-width: 100%;\r\n  background: #fff;\r\n  padding: 8px;\r\n  margin-left:4px;\r\n  border-radius: 5px;\r\n  box-shadow: 0 0 10px silver;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.contact-card-image {\r\n  width: 50px;\r\n  height: 50px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  margin-right: 15px;\r\n  overflow: hidden;\r\n  border-radius: 25px;\r\n}\r\n\r\n.contact-card-image img {\r\n  width: 100%;\r\n  height: auto;\r\n}\r\n\r\n.contact-card-name {\r\n  text-transform: capitalize;\r\n}\r\n\r\n.no-requirements {\r\n  padding-bottom: 25px;\r\n}", ""]);
+exports.push([module.i, ".card {\r\n  margin: 0 auto;\r\n  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);\r\n  margin-bottom: 3em;\r\n}\r\n\r\n.table-striped {\r\n  table-layout: fixed;\r\n}\r\n\r\n.card .card-content {\r\n  position: relative;\r\n  padding-left: 5%;\r\n  padding-right: 5%;\r\n  margin-top: 2%;\r\n  padding-bottom: 8%;\r\n  overflow: hidden;\r\n  min-height: 200px;\r\n}\r\n\r\n.card .card-content .card-content-name {\r\n  font-size: 25px;\r\n}\r\n\r\n.card .card-content .card-content-job {\r\n  max-height: 150px;\r\n  color: #9575CD;\r\n  font-size: 15px;\r\n}\r\n\r\n.card .card-content p {\r\n  margin: 0;\r\n  z-index: 2;\r\n}\r\n\r\n.card .card-content .card-content-button:focus {\r\n  outline: none;\r\n}\r\n\r\n.card .card-image {\r\n  width: 100%;\r\n  position: relative;\r\n  margin-bottom: -1%;\r\n  z-index: 2;\r\n  transition: z-index 0s 0.2s;\r\n  background-color: #000000;\r\n}\r\n\r\n.card .card-image img {\r\n  width: 100%;\r\n  opacity: 0.5;\r\n}\r\n\r\n.image {\r\n  position: relative;\r\n  max-height: 120px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n/* Centered text */\r\n.centered {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n\tfont-size: 24px;\r\n\tfont-weight: bold;\r\n}\r\n\r\n.requirements-list {\r\n  max-height: 145px;\r\n}\r\n\r\n.contact-card {\r\n  max-width: 100%;\r\n  background: #fff;\r\n  padding: 8px;\r\n  margin-left:4px;\r\n  border-radius: 5px;\r\n  box-shadow: 0 0 10px silver;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.contact-card-image {\r\n  width: 50px;\r\n  height: 50px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  margin-right: 15px;\r\n  overflow: hidden;\r\n  border-radius: 25px;\r\n}\r\n\r\n.contact-card-image img {\r\n  width: 100%;\r\n  height: auto;\r\n}\r\n\r\n.contact-card-name {\r\n  text-transform: capitalize;\r\n}\r\n\r\n.no-requirements {\r\n  padding-bottom: 25px;\r\n}\r\n\r\n.well-left {\r\n  margin-right: 5px !important;\r\n}\r\n\r\n.well-right {\r\n  margin-left: 5px !important;\r\n}\r\n\r\n.required-item {\r\n\theight: 100%;\r\n\tborder: 0px solid rgba(123, 123, 123, 0.498039);\r\n\tborder-radius: 4px;\r\n\tline-height: 40px;\r\n\tpadding-left: 32px;\r\n\tfont-weight: 400;\r\n\tmargin-bottom: 10px;\r\n\tbackground-color: rgb(221, 220, 220);\r\n\tbox-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;\r\n}\r\n\r\n.required-level {\r\n\theight: 100%;\r\n\twidth: 40%;\r\n\tborder-top-right-radius: 4px;\r\n\tborder-bottom-left-radius: 4px;\r\n\tline-height: 40px;\r\n\tfont-weight: 400;\r\n\tfloat:right;\r\n}\r\n\r\n.required-button {\r\n\tfloat:right;\r\n}", ""]);
 
 // exports
 
@@ -1910,7 +2012,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/positions/edit-position/edit-position.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n\t<div class=\"card\">\n\t\t<div class=\"card-image\">\n\t\t\t<img [src]=\"position?.image || ''\" alt=\"{{position?.name}}\" class=\"image darken\">\n\t\t\t<p class=\"centered white-text\">{{position?.name}}</p>\n\t\t</div>\n    <div class=\"card-content\">\n\t\t\t<div class=\"well\">\n\t\t\t\t<p class=\"card-content-job black-text\">{{position?.description}}</p>\n      </div>\n\n      <h4 class=\"red-text\">Requirements:</h4>\n      <div class=\"col-md-12 col-sm-12-col-md-12\">\n        <div class=\"content table-responsive\" *ngIf=\"positionRequirements?.length > 0\">\n            <table class=\"table table-striped\">\n                <thead>\n                    <tr>\n                        <th>Skill</th>\n                        <th>Level</th>\n                        <th>Actions</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let positionRequirement of positionRequirements\">\n                        <td>{{positionRequirement.name}}</td>\n                        <td>{{positionRequirement.level}}</td>\n                        <td>\n                            <button type=\"button\" class=\"btn text-center\"><i class=\"fa fa-trash\" aria-hidden=\"true\" (click)=\"removeSkill(positionRequirement)\"></i></button>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>  \n        <p *ngIf=\"positionRequirements?.length === 0\" class=\"well no-requirements\">\n          No requirements associated with the position \n          <span class=\"emoji-highlight\">:( </span> \n          You can start adding just below \n          <span class=\"emoji-highlight\">;) </span>\n        </p>\n      </div>\n\n      <div class=\"col-md-12 col-sm-12-col-xs-12\">\n        <form class=\"form-horizontal\" role=\"form\" [formGroup]=\"skillForm\">\n          <div class=\"form-group\">\n            <label class=\"control-label col-sm-2 red-text\" for=\"skillName\">Add Skill:</label>\n            <div class=\"col-sm-10\">\n              <select class=\"form-control\" formControlName=\"skillName\" placeholder=\"Choose a skill...\" required>\n                <option *ngFor=\"let skill of existingSkills\" value=\"{{skill.name}}\">{{skill.name}}</option>\n              </select>\n            </div>\n          </div>\n          <div class=\"form-group\">\n              <label class=\"control-label col-sm-2 red-text\" for=\"level\">Skill level:</label>\n              <div class=\"col-sm-10\">\n                <input type=\"number\" step=\"1\" min=\"0\" max=\"100\" class=\"form-control\" formControlName=\"level\" placeholder=\"Choose the desired skill level: 0-100\" required>\n              </div>\n          </div>\n          <div class=\"col-sm-12 text-center\">\n            <button class=\"btn btn-round red white-text\" type=\"submit\" value=\"Add Skill\" (click)=\"addSkill()\">Add Skill</button>  \n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n  "
+module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n\t<div class=\"card\">\n\t\t<div class=\"card-image\">\n\t\t\t<img [src]=\"position?.image || ''\" alt=\"{{position?.name}}\" class=\"image darken\">\n\t\t\t<p class=\"centered white-text\">{{position?.name}}</p>\n\t\t</div>\n    <div class=\"card-content\">\n\t\t\t<div class=\"well\">\n\t\t\t\t<p class=\"card-content-job black-text\">{{position?.description}}</p>\n      </div>\n\n      <div class=\"border-skills\">\n        <h4 class=\"red-text text-center text-bold\"> - Skill Requirements - </h4>\n        <hr class=\"red\" style=\"height:1px;\"/>\n        <div class=\"col-md-12 col-sm-12 col-md-12\">\n          <div class=\"content table-responsive\" *ngIf=\"positionRequirements?.length > 0\">\n              <table class=\"table table-striped\">\n                  <thead>\n                      <tr>\n                          <th>Skill</th>\n                          <th>Level</th>\n                          <th>Actions</th>\n                      </tr>\n                  </thead>\n                  <tbody>\n                      <tr *ngFor=\"let positionRequirement of positionRequirements\">\n                          <td>{{positionRequirement.name}}</td>\n                          <td>{{positionRequirement.level}}</td>\n                          <td>\n                              <button type=\"button\" class=\"btn text-center\"><i class=\"fa fa-trash\" aria-hidden=\"true\" (click)=\"removeSkill(positionRequirement)\"></i></button>\n                          </td>\n                      </tr>\n                  </tbody>\n              </table>\n          </div>  \n          <p *ngIf=\"positionRequirements?.length === 0\" class=\"well no-requirements\">\n            No requirements associated with the position \n            <span class=\"emoji-highlight\">:( </span> \n            You can start adding just below \n            <span class=\"emoji-highlight\">;) </span>\n          </p>\n        </div>\n\n        <div class=\"col-md-12 col-sm-12 col-xs-12\" style=\"margin-bottom: 20px;\">\n            <div class=\"content\">\n              <form class=\"form-horizontal\" role=\"form\" [formGroup]=\"skillForm\">\n                <div class=\"form-group\">\n                  <label class=\"control-label col-sm-2 red-text\" for=\"skillName\">Add Skill:</label>\n                  <div class=\"col-sm-10\">\n                    <select class=\"form-control\" formControlName=\"skillName\" placeholder=\"Choose a skill...\" required>\n                      <option *ngFor=\"let skill of existingSkills\" value=\"{{skill.name}}\">{{skill.name}}</option>\n                    </select>\n                  </div>\n                </div>\n                <div class=\"form-group\">\n                    <label class=\"control-label col-sm-2 red-text\" for=\"level\">Skill level:</label>\n                    <div class=\"col-sm-10\">\n                      <input type=\"number\" step=\"1\" min=\"0\" max=\"100\" class=\"form-control\" formControlName=\"level\" placeholder=\"Choose the desired skill level: 0-100\" required>\n                    </div>\n                </div>\n                <div class=\"col-sm-12 text-center\">\n                  <button class=\"btn btn-round red white-text\" type=\"submit\" value=\"Add Skill\" (click)=\"addSkill()\">Add Skill</button>  \n                </div>\n              </form>\n            </div>\n        </div>\n      </div>\n\n      <div class=\"border-languages\">\n        <h4 class=\"yellow-text text-center text-bold\"> - Language Requirements - </h4>\n        <hr class=\"yellow\" style=\"height:1px;\"/>\n        <div class=\"col-md-12 col-sm-12 col-xs-12\">\n          <div class=\"content\">\n            <div class=\"list-item\" *ngFor=\"let lang of positionLanguages\">\n              <div class=\"required-item yellow-text text-bold\">{{lang?.name}}\n                  <span class=\"required-level white-text text-bold text-center yellow\">{{lang?.level}}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-md-12 col-sm-12 col-xs-12\" style=\"margin-bottom: 20px;\">\n          <div class=\"content\">\n            <form class=\"form-horizontal\" role=\"form\" [formGroup]=\"languageForm\">\n              <div class=\"form-group\">\n                <label class=\"control-label col-sm-2 yellow-text\" for=\"\">Add Language:</label>\n                <div class=\"col-sm-10\">\n                  <select class=\"form-control\" formControlName=\"name\" placeholder=\"Choose a language...\" required>\n                    <option *ngFor=\"let lang of existingLanguages\" value=\"{{lang}}\">{{lang}}</option>\n                  </select>\n                </div>\n              </div>\n              <div class=\"form-group\">\n                <label class=\"control-label col-sm-2 yellow-text\" for=\"\">Set Level:</label>\n                <div class=\"col-sm-10\">\n                  <select class=\"form-control\" formControlName=\"level\" placeholder=\"Set the level...\" required>\n                    <option *ngFor=\"let level of languageLevels\" value=\"level\">{{level}}</option>\n                  </select>\n                </div>\n              </div>\n              <div class=\"col-sm-12 text-center\">\n                <button class=\"btn btn-round yellow white-text\" type=\"submit\" value=\"Add Language\" (click)=\"addLanguage()\">Add Language</button>  \n              </div>\n            </form>  \n          </div>\n        </div>\n      </div>\n\n      <div class=\"border-experiences\">\n        <h4 class=\"green-text text-center text-bold\"> - Experience Requirements - </h4>\n        <hr class=\"green\" style=\"height:1px;\"/>\n        <div class=\"col-md-12 col-sm-12 col-xs-12\">\n          <div class=\"content\">\n            <div class=\"list-item\" *ngFor=\"let exp of positionExperiences\">\n              <div class=\"required-item green-text text-bold\">{{exp?.title}}\n                  <span class=\"required-level white-text text-bold text-center green\">\n                    {{exp?.years}} years\n                    <button type=\"button\" class=\"btn red text-center white-text required-button\"><i class=\"fa fa-trash\" aria-hidden=\"true\" (click)=\"removeExperience(exp)\"></i></button>\n                  </span>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-md-12 col-sm-12 col-xs-12\" style=\"margin-bottom: 20px;\">\n          <div class=\"content\">\n            <form class=\"form-horizontal\" role=\"form\" [formGroup]=\"experienceForm\">\n              <div class=\"form-group\">\n                <label class=\"control-label col-sm-2 green-text\" for=\"\">Add experience as:</label>\n                <div class=\"col-sm-10\">\n                  <select class=\"form-control\" formControlName=\"title\" placeholder=\"Choose a position...\" required>\n                    <option *ngFor=\"let title of jobTitles\" value=\"{{title}}\">{{title}}</option>\n                  </select>\n                </div>\n              </div>\n              <div class=\"form-group\">\n                <label class=\"control-label col-sm-2 green-text text-bold\" for=\"\">Years of exp.:</label>\n                <div class=\"col-sm-10\">\n                    <input type=\"number\" step=\"1\" min=\"0\" max=\"100\" class=\"form-control\" formControlName=\"years\" placeholder=\"How many years?\" required>\n                </div>\n              </div>\n              <div class=\"col-sm-12 text-center\">\n                <button class=\"btn btn-round green white-text\" type=\"submit\" value=\"Add Experience\" (click)=\"addExperience()\">Add Experience</button>  \n              </div>\n            </form>  \n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n\n  "
 
 /***/ }),
 
@@ -1918,14 +2020,19 @@ module.exports = "<div class=\"col-md-12 col-sm-12 col-xs-12\">\n\t<div class=\"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_messages__ = __webpack_require__("../../../../../src/app/util/messages.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__domain_skill__ = __webpack_require__("../../../../../src/app/domain/skill.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_constants__ = __webpack_require__("../../../../../src/app/util/constants.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_language_service__ = __webpack_require__("../../../../../src/app/services/language.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__domain_position_language__ = __webpack_require__("../../../../../src/app/domain/position-language.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__domain_position_experience__ = __webpack_require__("../../../../../src/app/domain/position-experience.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_messages__ = __webpack_require__("../../../../../src/app/util/messages.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_skill_service__ = __webpack_require__("../../../../../src/app/services/skill.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__domain_skill__ = __webpack_require__("../../../../../src/app/domain/skill.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_positions_service__ = __webpack_require__("../../../../../src/app/services/positions.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_notification_service__ = __webpack_require__("../../../../../src/app/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__util_constants__ = __webpack_require__("../../../../../src/app/util/constants.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPositionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1944,12 +2051,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
+
+
 var EditPositionComponent = (function () {
-    function EditPositionComponent(route, positionsService, skillService, notificationService) {
+    function EditPositionComponent(route, positionsService, skillService, languageService, notificationService) {
         this.route = route;
         this.positionsService = positionsService;
         this.skillService = skillService;
+        this.languageService = languageService;
         this.notificationService = notificationService;
+        this.languageLevels = __WEBPACK_IMPORTED_MODULE_12__util_constants__["a" /* LANGUAGE_LEVELS */];
+        this.jobTitles = __WEBPACK_IMPORTED_MODULE_0__util_constants__["b" /* JOB_TITLES */];
     }
     EditPositionComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1958,44 +2073,64 @@ var EditPositionComponent = (function () {
             .subscribe(function (data) { return _this.position = data; });
         this.positionsService.getPositionRequirements(this.positionId)
             .subscribe(function (data) { return _this.positionRequirements = data; });
+        this.positionsService.getPositionExperience(this.positionId)
+            .subscribe(function (data) { return _this.positionExperiences = data; });
+        this.positionsService.getPositionLanguages(this.positionId)
+            .subscribe(function (data) { return _this.positionLanguages = data; });
         this.skillService.getAllSkills()
             .subscribe(function (data) { return _this.existingSkills = data; });
+        this.languageService.getAllLanguages()
+            .subscribe(function (data) { return _this.existingLanguages = data; });
         this.initSkillForm();
+        this.initExperienceForm();
+        this.initLanguageForm();
     };
     EditPositionComponent.prototype.initSkillForm = function () {
-        this.skillForm = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormGroup */]({
-            skillName: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormControl */](),
-            level: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormControl */]()
+        this.skillForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
+            skillName: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormControl */](),
+            level: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormControl */]()
         });
     };
     ;
+    EditPositionComponent.prototype.initExperienceForm = function () {
+        this.experienceForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
+            title: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormControl */](),
+            years: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormControl */]()
+        });
+    };
+    EditPositionComponent.prototype.initLanguageForm = function () {
+        this.languageForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
+            name: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormControl */](),
+            level: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormControl */]()
+        });
+    };
     EditPositionComponent.prototype.addSkill = function () {
         if (this.skillForm.value.skillName && this.skillForm.value.level > 0 && this.skillForm.value.level <= 100) {
-            var skill = new __WEBPACK_IMPORTED_MODULE_3__domain_skill__["a" /* Skill */](this.skillForm.value.skillName, this.skillForm.value.level);
+            var skill = new __WEBPACK_IMPORTED_MODULE_7__domain_skill__["a" /* Skill */](this.skillForm.value.skillName, this.skillForm.value.level);
             if (this.skillAlreadyAdded(skill) === false) {
-                this.skillService.createPositionRequirement(this.positionId, skill)
+                this.positionsService.createPositionRequirement(this.positionId, skill)
                     .subscribe(function (data) { return console.log(data); });
                 this.positionRequirements.push(skill);
-                this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_0__util_messages__["k" /* SKILL_ADDED */]);
+                this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_4__util_messages__["k" /* SKILL_ADDED */]);
                 this.initSkillForm();
             }
             else {
-                this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["m" /* SKILL_ALREADY_EXISTS */]);
+                this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_4__util_messages__["m" /* SKILL_ALREADY_EXISTS */]);
             }
         }
         else {
-            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_0__util_messages__["n" /* SKILL_NOT_ADDED */]);
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_4__util_messages__["n" /* SKILL_NOT_ADDED */]);
         }
     };
     EditPositionComponent.prototype.removeSkill = function (positionRequirement) {
         var _this = this;
         var index = this.positionRequirements.indexOf(positionRequirement);
-        this.skillService.deletePositionRequirement(this.positionId, positionRequirement.name)
+        this.positionsService.deletePositionRequirement(this.positionId, positionRequirement.name)
             .subscribe(function (data) {
             if (index >= 0) {
                 _this.positionRequirements.splice(index, 1);
             }
-            _this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_0__util_messages__["o" /* SKILL_DELETED */]);
+            _this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_4__util_messages__["o" /* SKILL_DELETED */]);
         });
     };
     EditPositionComponent.prototype.skillAlreadyAdded = function (skill) {
@@ -2007,18 +2142,94 @@ var EditPositionComponent = (function () {
         }
         return false;
     };
+    EditPositionComponent.prototype.addExperience = function () {
+        if (this.experienceForm.value.title && this.experienceForm.value.years >= 0 && this.experienceForm.value.years <= 15) {
+            var newExperience = new __WEBPACK_IMPORTED_MODULE_3__domain_position_experience__["a" /* PositionExperience */](this.experienceForm.value.title, this.experienceForm.value.years);
+            if (this.experienceAlreadyAdded(newExperience) === false) {
+                this.positionsService.createPositionExperience(this.positionId, newExperience)
+                    .subscribe(function (data) { return console.log(data); });
+                this.positionExperiences.push(newExperience);
+                this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_4__util_messages__["p" /* EXPERIENCE_ADDED */]);
+                this.initExperienceForm();
+            }
+            else {
+                this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_4__util_messages__["q" /* EXPERIENCE_ALREADY_EXISTS */]);
+            }
+        }
+        else {
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_4__util_messages__["r" /* EXPERIENCE_NOT_ADDED */]);
+        }
+    };
+    EditPositionComponent.prototype.removeExperience = function (exp) {
+        var _this = this;
+        var index = this.positionExperiences.indexOf(exp);
+        this.positionsService.deletePositionExperience(this.positionId, exp.title)
+            .subscribe(function (data) {
+            if (index >= 0) {
+                _this.positionExperiences.splice(index, 1);
+            }
+            _this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_4__util_messages__["s" /* EXPERIENCE_DELETED */]);
+        });
+    };
+    EditPositionComponent.prototype.experienceAlreadyAdded = function (exp) {
+        for (var _i = 0, _a = this.positionExperiences; _i < _a.length; _i++) {
+            var e = _a[_i];
+            if (e.title === exp.title) {
+                return true;
+            }
+        }
+        return false;
+    };
+    EditPositionComponent.prototype.addLanguage = function () {
+        if (this.languageForm.value.name && this.languageForm.value.level) {
+            var newLang = new __WEBPACK_IMPORTED_MODULE_2__domain_position_language__["a" /* PositionLanguage */](this.languageForm.value.name, this.languageForm.value.level);
+            if (this.languageAlreadyAdded(newLang) === false) {
+                this.positionsService.createPositionLanguage(this.positionId, newLang)
+                    .subscribe(function (data) { return console.log(data); });
+                this.positionLanguages.push(newLang);
+                this.notificationService.showInfo(__WEBPACK_IMPORTED_MODULE_4__util_messages__["t" /* LANGUAGE_ADDED */]);
+                this.initLanguageForm();
+            }
+            else {
+                this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_4__util_messages__["u" /* LANGUAGE_ALREADY_EXISTS */]);
+            }
+        }
+        else {
+            this.notificationService.showError(__WEBPACK_IMPORTED_MODULE_4__util_messages__["v" /* LANGUAGE_NOT_ADDED */]);
+        }
+    };
+    EditPositionComponent.prototype.removeLanguage = function (lang) {
+        var _this = this;
+        var index = this.positionLanguages.indexOf(lang);
+        this.positionsService.deletePositionLanguage(this.positionId, lang.name)
+            .subscribe(function (data) {
+            if (index >= 0) {
+                _this.positionLanguages.splice(index, 1);
+            }
+            _this.notificationService.showSuccess(__WEBPACK_IMPORTED_MODULE_4__util_messages__["w" /* LANGUAGE_DELETED */]);
+        });
+    };
+    EditPositionComponent.prototype.languageAlreadyAdded = function (lang) {
+        for (var _i = 0, _a = this.positionLanguages; _i < _a.length; _i++) {
+            var l = _a[_i];
+            if (l.name === lang.name) {
+                return true;
+            }
+        }
+        return false;
+    };
     return EditPositionComponent;
 }());
 EditPositionComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__angular_core__["Component"])({
         selector: 'edit-position',
         template: __webpack_require__("../../../../../src/app/positions/edit-position/edit-position.component.html"),
         styles: [__webpack_require__("../../../../../src/app/positions/edit-position/edit-position.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_skill_service__["a" /* SkillService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_skill_service__["a" /* SkillService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_notification_service__["a" /* NotificationService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_8__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_9__services_positions_service__["a" /* PositionsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__services_positions_service__["a" /* PositionsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services_skill_service__["a" /* SkillService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_skill_service__["a" /* SkillService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_language_service__["a" /* LanguageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_language_service__["a" /* LanguageService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_11__services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__services_notification_service__["a" /* NotificationService */]) === "function" && _e || Object])
 ], EditPositionComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=edit-position.component.js.map
 
 /***/ }),
@@ -2396,7 +2607,7 @@ var AuthService = (function () {
     AuthService.prototype.login = function (email, password) {
         var _this = this;
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].authUrl(), { email: email, password: password }, this.options)
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].authUrl(), { email: email, password: password }, this.options)
             .map(function (res) {
             localStorage.setItem('currentUser', JSON.stringify(res.json()));
             localStorage.setItem('authenticated', JSON.stringify(true));
@@ -2461,67 +2672,67 @@ var CandidatesService = (function () {
     }
     CandidatesService.prototype.getCandidate = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidates = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidatesUrl())
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidatesUrl())
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateSkills = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateSkillsUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateSkillsUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateEducation = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateEducationUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateEducationUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateInterests = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateInterestsUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateInterestsUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateExperience = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateExperienceUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateExperienceUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateLanguages = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateLanguagesUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateLanguagesUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateComments = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateCommentsUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateCommentsUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateLikesNumber = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateLikesUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateLikesUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateCommentsNumber = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateCommentsNumberUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateCommentsNumberUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getCandidateRating = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateRatingUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateRatingUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.createCandidateComment = function (candidateId, comment) {
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createCommentUrl(candidateId), JSON.stringify(comment), this.options)
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createCommentUrl(candidateId), JSON.stringify(comment), this.options)
             .map(function (res) { return res.json(); });
     };
     CandidatesService.prototype.getOtherCandidates = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateOthersUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateOthersUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     return CandidatesService;
@@ -2562,7 +2773,7 @@ var ChatService = (function () {
     }
     ChatService.prototype.getConversation = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateChatUrl(candidateId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateChatUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     return ChatService;
@@ -2574,6 +2785,49 @@ ChatService = __decorate([
 
 var _a;
 //# sourceMappingURL=chat.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/language.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_router_utils__ = __webpack_require__("../../../../../src/app/util/router.utils.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguageService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LanguageService = (function () {
+    function LanguageService(http) {
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
+    }
+    LanguageService.prototype.getAllLanguages = function () {
+        return this.http
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].allLanguagesUrl())
+            .map(function (res) { return res.json(); });
+    };
+    return LanguageService;
+}());
+LanguageService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
+], LanguageService);
+
+var _a;
+//# sourceMappingURL=language.service.js.map
 
 /***/ }),
 
@@ -2674,37 +2928,77 @@ var PositionsService = (function () {
     }
     PositionsService.prototype.getPosition = function (positionId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].positionUrl(positionId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionUrl(positionId))
             .map(function (res) { return res.json(); });
     };
     PositionsService.prototype.createPosition = function (position) {
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createPositionUrl(), JSON.stringify(position), this.options)
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createPositionUrl(), JSON.stringify(position), this.options)
             .map(function (res) { return res.json(); });
     };
     PositionsService.prototype.deletePosition = function (positionId) {
         return this.http
-            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].deletePositionUrl(positionId))
+            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].deletePositionUrl(positionId))
             .map(function (res) { return res.json(); });
     };
     PositionsService.prototype.getPositions = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].positionsUrl())
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionsUrl())
             .map(function (res) { return res.json(); });
     };
     PositionsService.prototype.getPositionsForComparison = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].positionComparisonUrl())
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionComparisonUrl())
             .map(function (res) { return res.json(); });
     };
     PositionsService.prototype.getPositionCandidates = function (positionId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].positionCandidatesUrl(positionId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionCandidatesUrl(positionId))
             .map(function (res) { return res.json(); });
     };
     PositionsService.prototype.getPositionRequirements = function (positionId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].positionRequirementsUrl(positionId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionRequirementsUrl(positionId))
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.getPositionExperience = function (positionId) {
+        return this.http
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionExperiencesUrl(positionId))
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.getPositionLanguages = function (positionId) {
+        return this.http
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].positionLanguagesUrl(positionId))
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.createPositionRequirement = function (positionId, skill) {
+        return this.http
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createPositionRequirementUrl(positionId), JSON.stringify(skill), this.options)
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.deletePositionRequirement = function (positionId, skillName) {
+        return this.http
+            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].deletePositionRequirementUrl(positionId, skillName))
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.createPositionExperience = function (positionId, exp) {
+        return this.http
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createPositionExperienceUrl(positionId), JSON.stringify(exp), this.options)
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.deletePositionExperience = function (positionId, title) {
+        return this.http
+            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].deletePositionExperienceUrl(positionId, title))
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.createPositionLanguage = function (positionId, lang) {
+        return this.http
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createPositionLanguageUrl(positionId), JSON.stringify(lang), this.options)
+            .map(function (res) { return res.json(); });
+    };
+    PositionsService.prototype.deletePositionLanguage = function (positionId, lang) {
+        return this.http
+            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].deletePositionLanguageUrl(positionId, lang))
             .map(function (res) { return res.json(); });
     };
     return PositionsService;
@@ -2750,42 +3044,42 @@ var QuestionsService = (function () {
     }
     QuestionsService.prototype.getQuestions = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].questionsUrl())
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].questionsUrl())
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.getQuestion = function (questionId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].questionUrl(questionId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].questionUrl(questionId))
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.getQuestionReplies = function (questionId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].repliesUrl(questionId))
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].repliesUrl(questionId))
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.updateQuestion = function (question) {
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].questionUrl(question.id), JSON.stringify(question), this.options)
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].questionUrl(question.id), JSON.stringify(question), this.options)
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.updateQuestions = function (questions) {
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].updateQuestionsUrl(), JSON.stringify(questions), this.options)
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].updateQuestionsUrl(), JSON.stringify(questions), this.options)
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.addReplyForQuestion = function (questionId, reply) {
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createReplyUrl(questionId), JSON.stringify(reply), this.options)
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createReplyUrl(questionId), JSON.stringify(reply), this.options)
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.removeReply = function (questionId, replyId) {
         return this.http
-            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].deleteReplyUrl(questionId, replyId))
+            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].deleteReplyUrl(questionId, replyId))
             .map(function (res) { return res.json(); });
     };
     QuestionsService.prototype.findProgress = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].findProgressUrl())
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].findProgressUrl())
             .map(function (res) { return res.json(); });
     };
     return QuestionsService;
@@ -2828,32 +3122,17 @@ var SkillService = (function () {
     }
     SkillService.prototype.getAllSkills = function () {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].allSkillsUrl())
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].allSkillsUrl())
             .map(function (res) { return res.json(); });
     };
     SkillService.prototype.getSkillsForCandidate = function (candidateId) {
         return this.http
-            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].candidateSkillsUrl(candidateId))
-            .map(function (res) { return res.json(); });
-    };
-    SkillService.prototype.createSkillsForPosition = function (positionId, skills) {
-        return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createPositionRequirementsBulkUrl(positionId), JSON.stringify(skills), this.options)
+            .get(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].candidateSkillsUrl(candidateId))
             .map(function (res) { return res.json(); });
     };
     SkillService.prototype.createSkill = function (skill) {
         return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createSkillUrl(), JSON.stringify(skill), this.options)
-            .map(function (res) { return res.json(); });
-    };
-    SkillService.prototype.createPositionRequirement = function (positionId, skill) {
-        return this.http
-            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].createPositionRequirementUrl(positionId), JSON.stringify(skill), this.options)
-            .map(function (res) { return res.json(); });
-    };
-    SkillService.prototype.deletePositionRequirement = function (positionId, skillName) {
-        return this.http
-            .delete(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RouterUtils */].deletePositionRequirementUrl(positionId, skillName))
+            .post(__WEBPACK_IMPORTED_MODULE_0__util_router_utils__["a" /* RestMappings */].createSkillUrl(), JSON.stringify(skill), this.options)
             .map(function (res) { return res.json(); });
     };
     return SkillService;
@@ -3378,10 +3657,12 @@ var _a, _b;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__domain_support_email__ = __webpack_require__("../../../../../src/app/domain/support.email.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__domain_user__ = __webpack_require__("../../../../../src/app/domain/user.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MALE_AVATARS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return FEMALE_AVATARS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return POSITION_BACKGROUNDS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return MALE_AVATARS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return FEMALE_AVATARS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return POSITION_BACKGROUNDS; });
 /* unused harmony export ANONYMOUS_USER */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LANGUAGE_LEVELS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return JOB_TITLES; });
 
 
 var MALE_AVATARS = [
@@ -3411,6 +3692,25 @@ var POSITION_BACKGROUNDS = [
     'assets/img/pos-bg/6.jpg'
 ];
 var ANONYMOUS_USER = new __WEBPACK_IMPORTED_MODULE_1__domain_user__["a" /* User */](0, "", "", new __WEBPACK_IMPORTED_MODULE_0__domain_support_email__["a" /* Email */](""), "");
+var LANGUAGE_LEVELS = [
+    'Beginner',
+    'Intermediate',
+    'Very Good',
+    'Expert'
+];
+var JOB_TITLES = [
+    'Developer',
+    'Business Analyst',
+    'Consultant',
+    'Architect',
+    'Team Leader',
+    'Project Manager',
+    'Recruiter',
+    'Financial Advisor',
+    'CFO',
+    'CTO',
+    'CEO'
+];
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
@@ -3419,17 +3719,24 @@ var ANONYMOUS_USER = new __WEBPACK_IMPORTED_MODULE_1__domain_user__["a" /* User 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return COMMENT_SAVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return COMMENT_NOT_SAVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return POSITION_SAVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return POSITION_NOT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return COMMENT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return COMMENT_NOT_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return POSITION_SAVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return POSITION_NOT_SAVED; });
 /* unused harmony export POSITION_NOT_EXISTING */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return SKILL_ADDED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return SKILL_NOT_ADDED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return SKILL_ALREADY_EXISTS; });
-/* unused harmony export SKILLS_SAVED */
 /* unused harmony export SKILLS_NOT_SAVED */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return SKILL_DELETED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return EXPERIENCE_ADDED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return EXPERIENCE_NOT_ADDED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return EXPERIENCE_ALREADY_EXISTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return EXPERIENCE_DELETED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return LANGUAGE_ADDED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return LANGUAGE_NOT_ADDED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return LANGUAGE_ALREADY_EXISTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return LANGUAGE_DELETED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return QUESTIONS_NOT_SAVED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return QUESTIONS_SAVED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QUESTION_EDITED; });
@@ -3440,9 +3747,9 @@ var ANONYMOUS_USER = new __WEBPACK_IMPORTED_MODULE_1__domain_user__["a" /* User 
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REPLY_INVALID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return REPLY_REMOVED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return REPLY_NOT_REMOVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return NO_CANDIDATE_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return NO_POSITION_SELECTED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return SERVER_ERROR; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return NO_CANDIDATE_SELECTED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return NO_POSITION_SELECTED; });
 var COMMENT_SAVED = "The comment was saved.";
 var COMMENT_NOT_SAVED = "The comment was not saved. Please try again!";
 var POSITION_SAVED = "The position was saved.";
@@ -3451,9 +3758,16 @@ var POSITION_NOT_EXISTING = "Please add the position first.";
 var SKILL_ADDED = "The skill was saved.";
 var SKILL_NOT_ADDED = "The skill was not added. Please try again!";
 var SKILL_ALREADY_EXISTS = "The skill is already added!";
-var SKILLS_SAVED = "The skills were saved.";
 var SKILLS_NOT_SAVED = "The skills were not saved. Please try again!";
 var SKILL_DELETED = "The skill was deleted succesfully.";
+var EXPERIENCE_ADDED = "The required experience was saved.";
+var EXPERIENCE_NOT_ADDED = "The required experience was not added. Please try again!";
+var EXPERIENCE_ALREADY_EXISTS = "The required experience is already added!";
+var EXPERIENCE_DELETED = "The experience was deleted succesfully.";
+var LANGUAGE_ADDED = "The required language was saved.";
+var LANGUAGE_NOT_ADDED = "The required language was not added. Please try again!";
+var LANGUAGE_ALREADY_EXISTS = "The language experience is already added!";
+var LANGUAGE_DELETED = "The language was deleted succesfully.";
 var QUESTIONS_NOT_SAVED = "Questions we're not saved. Please try again.";
 var QUESTIONS_SAVED = "The interview structure saved succesfully.";
 var QUESTION_EDITED = "The question was updated.";
@@ -3464,9 +3778,9 @@ var REPLY_NOT_ADDED = "The reply wasn't added. Please try again!";
 var REPLY_INVALID = "The reply's text may not be empty!";
 var REPLY_REMOVED = "The reply was succesfully removed.";
 var REPLY_NOT_REMOVED = "The reply was not removed. Please try again!";
-var SERVER_ERROR = "Uuups. Something went terribly wrong. Please try again or contact the administrator.";
 var NO_CANDIDATE_SELECTED = "Please select a candidate first!";
 var NO_POSITION_SELECTED = "Please select a position first!";
+var SERVER_ERROR = "Uuups. Something went terribly wrong. Please try again or contact the administrator.";
 //# sourceMappingURL=messages.js.map
 
 /***/ }),
@@ -3476,150 +3790,168 @@ var NO_POSITION_SELECTED = "Please select a position first!";
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RouterUtils; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestMappings; });
 
-var RouterUtils = (function () {
-    function RouterUtils() {
+var RestMappings = (function () {
+    function RestMappings() {
     }
-    RouterUtils.authUrl = function () {
+    RestMappings.authUrl = function () {
         return this.baseUrl + this.auth;
     };
-    RouterUtils.candidatesUrl = function () {
+    RestMappings.candidatesUrl = function () {
         return this.baseUrl + this.candidates;
     };
-    RouterUtils.candidateUrl = function (candidateId) {
+    RestMappings.candidateUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId;
     };
-    RouterUtils.candidateSkillsUrl = function (candidateId) {
+    RestMappings.candidateSkillsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.skills;
     };
-    RouterUtils.candidateInterestsUrl = function (candidateId) {
+    RestMappings.candidateInterestsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.interests;
     };
-    RouterUtils.candidateExperienceUrl = function (candidateId) {
+    RestMappings.candidateExperienceUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.experience;
     };
-    RouterUtils.candidateEducationUrl = function (candidateId) {
+    RestMappings.candidateEducationUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.education;
     };
-    RouterUtils.candidateLanguagesUrl = function (candidateId) {
+    RestMappings.candidateLanguagesUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.languages;
     };
-    RouterUtils.candidateCommentsUrl = function (candidateId) {
+    RestMappings.candidateCommentsUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.comments;
     };
-    RouterUtils.candidateCommentsNumberUrl = function (candidateId) {
+    RestMappings.candidateCommentsNumberUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.commentsNumber;
     };
-    RouterUtils.createCommentUrl = function (candidateId) {
+    RestMappings.createCommentUrl = function (candidateId) {
         return this.candidateCommentsUrl(candidateId);
     };
-    RouterUtils.candidateLikesUrl = function (candidateId) {
+    RestMappings.candidateLikesUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.likes;
     };
-    RouterUtils.likeCandidateUrl = function (candidateId) {
+    RestMappings.likeCandidateUrl = function (candidateId) {
         return this.candidateLikesUrl(candidateId);
     };
-    RouterUtils.candidateRatingUrl = function (candidateId) {
+    RestMappings.candidateRatingUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.rating;
     };
-    RouterUtils.rateCandidateUrl = function (candidateId) {
+    RestMappings.rateCandidateUrl = function (candidateId) {
         return this.candidateRatingUrl(candidateId);
     };
-    RouterUtils.candidateChatUrl = function (candidateId) {
+    RestMappings.candidateChatUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.chat;
     };
-    RouterUtils.candidateOthersUrl = function (candidateId) {
+    RestMappings.candidateOthersUrl = function (candidateId) {
         return this.baseUrl + this.candidate + candidateId + this.otherCandidates;
     };
-    RouterUtils.allSkillsUrl = function () {
+    RestMappings.allSkillsUrl = function () {
         return this.baseUrl + this.positionRequirements;
     };
-    RouterUtils.positionsUrl = function () {
+    RestMappings.allLanguagesUrl = function () {
+        return this.baseUrl + this.languages;
+    };
+    RestMappings.positionsUrl = function () {
         return this.baseUrl + this.positions;
     };
-    RouterUtils.positionComparisonUrl = function () {
+    RestMappings.positionComparisonUrl = function () {
         return this.baseUrl + this.positions + "/all";
     };
-    RouterUtils.positionUrl = function (positionId) {
+    RestMappings.positionUrl = function (positionId) {
         return this.baseUrl + this.position + positionId;
     };
-    RouterUtils.createPositionUrl = function () {
+    RestMappings.createPositionUrl = function () {
         return this.positionsUrl();
     };
-    RouterUtils.deletePositionUrl = function (positionId) {
+    RestMappings.deletePositionUrl = function (positionId) {
         return this.positionUrl(positionId);
     };
-    RouterUtils.createSkillUrl = function () {
+    RestMappings.createSkillUrl = function () {
         return this.baseUrl + this.positionRequirements;
     };
-    RouterUtils.positionRequirementsUrl = function (positionId) {
+    RestMappings.positionRequirementsUrl = function (positionId) {
         return this.baseUrl + this.position + positionId + this.positionRequirements;
     };
-    RouterUtils.createPositionRequirementUrl = function (positionId) {
+    RestMappings.createPositionRequirementUrl = function (positionId) {
         return this.positionRequirementsUrl(positionId);
     };
-    RouterUtils.createPositionRequirementsBulkUrl = function (positionId) {
-        return this.baseUrl + this.position + positionId + this.savePositionRequirementsBulk;
-    };
-    RouterUtils.deletePositionRequirementUrl = function (positionId, skillName) {
+    RestMappings.deletePositionRequirementUrl = function (positionId, skillName) {
         return this.positionRequirementsUrl(positionId) + "/" + skillName;
     };
-    RouterUtils.positionCandidatesUrl = function (positionId) {
+    RestMappings.positionExperiencesUrl = function (positionId) {
+        return this.baseUrl + this.position + positionId + this.experience;
+    };
+    RestMappings.createPositionExperienceUrl = function (positionId) {
+        return this.positionExperiencesUrl(positionId);
+    };
+    RestMappings.deletePositionExperienceUrl = function (positionId, title) {
+        return this.positionExperiencesUrl(positionId) + "/" + title;
+    };
+    RestMappings.positionLanguagesUrl = function (positionId) {
+        return this.baseUrl + this.position + positionId + this.languages;
+    };
+    RestMappings.createPositionLanguageUrl = function (positionId) {
+        return this.positionLanguagesUrl(positionId);
+    };
+    RestMappings.deletePositionLanguageUrl = function (positionId, lang) {
+        return this.positionLanguagesUrl(positionId) + "/" + lang;
+    };
+    RestMappings.positionCandidatesUrl = function (positionId) {
         return this.baseUrl + this.position + positionId + this.positionCandidates;
     };
-    RouterUtils.questionsUrl = function () {
+    RestMappings.questionsUrl = function () {
         return this.baseUrl + this.questions;
     };
-    RouterUtils.questionUrl = function (questionId) {
+    RestMappings.questionUrl = function (questionId) {
         return this.baseUrl + this.question + questionId;
     };
-    RouterUtils.updateQuestionsUrl = function () {
+    RestMappings.updateQuestionsUrl = function () {
         return this.questionsUrl();
     };
-    RouterUtils.deleteQuestionUrl = function (questionId) {
+    RestMappings.deleteQuestionUrl = function (questionId) {
         return this.questionUrl(questionId);
     };
-    RouterUtils.repliesUrl = function (questionId) {
+    RestMappings.repliesUrl = function (questionId) {
         return this.baseUrl + this.question + questionId + this.replies;
     };
-    RouterUtils.createReplyUrl = function (questionId) {
+    RestMappings.createReplyUrl = function (questionId) {
         return this.repliesUrl(questionId);
     };
-    RouterUtils.deleteReplyUrl = function (questionId, replyId) {
+    RestMappings.deleteReplyUrl = function (questionId, replyId) {
         return this.repliesUrl(questionId) + "/" + replyId;
     };
-    RouterUtils.findProgressUrl = function () {
+    RestMappings.findProgressUrl = function () {
         return this.baseUrl + this.questions + this.progress;
     };
-    return RouterUtils;
+    return RestMappings;
 }());
 
-RouterUtils.baseUrl = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].herokuUrl ? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/api";
-RouterUtils.users = "/users";
-RouterUtils.auth = "/users/auth";
-RouterUtils.candidates = "/candidates";
-RouterUtils.candidate = "/candidates/";
-RouterUtils.skills = "/skills/";
-RouterUtils.interests = "/interests";
-RouterUtils.experience = "/experience";
-RouterUtils.education = "/education";
-RouterUtils.languages = "/languages";
-RouterUtils.comments = "/comments";
-RouterUtils.commentsNumber = "/noComments";
-RouterUtils.likes = "/likes";
-RouterUtils.rating = "/rating";
-RouterUtils.chat = "/chat";
-RouterUtils.otherCandidates = "/otherCandidates";
-RouterUtils.positions = "/positions";
-RouterUtils.position = "/positions/";
-RouterUtils.positionRequirements = "/skills";
-RouterUtils.savePositionRequirementsBulk = '/skillsBulk';
-RouterUtils.positionCandidates = "/candidates";
-RouterUtils.questions = "/questions";
-RouterUtils.question = "/questions/";
-RouterUtils.replies = "/replies";
-RouterUtils.progress = "/interviewProgress";
+RestMappings.baseUrl = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].herokuUrl ? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/api";
+RestMappings.users = "/users";
+RestMappings.auth = "/users/auth";
+RestMappings.candidates = "/candidates";
+RestMappings.candidate = "/candidates/";
+RestMappings.skills = "/skills/";
+RestMappings.interests = "/interests";
+RestMappings.experience = "/experience";
+RestMappings.education = "/education";
+RestMappings.languages = "/languages";
+RestMappings.comments = "/comments";
+RestMappings.commentsNumber = "/noComments";
+RestMappings.likes = "/likes";
+RestMappings.rating = "/rating";
+RestMappings.chat = "/chat";
+RestMappings.otherCandidates = "/otherCandidates";
+RestMappings.positions = "/positions";
+RestMappings.position = "/positions/";
+RestMappings.positionRequirements = "/skills";
+RestMappings.savePositionRequirementsBulk = '/skillsBulk';
+RestMappings.positionCandidates = "/candidates";
+RestMappings.questions = "/questions";
+RestMappings.question = "/questions/";
+RestMappings.replies = "/replies";
+RestMappings.progress = "/interviewProgress";
 //# sourceMappingURL=router.utils.js.map
 
 /***/ }),
