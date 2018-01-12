@@ -10,7 +10,7 @@ import com.github.popescuandrei.recruitingBot.domain.Language;
  * {@code CandidateLanguage}'s DTO
  * @author epopean
  */
-public class LanguageDTO implements Serializable {
+public class CandidateLanguageDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -51,7 +51,7 @@ public class LanguageDTO implements Serializable {
 		this.writing = writing;
 	}
 
-	public static CandidateLanguage mapToObject(Candidate candidate, Language language, LanguageDTO dto) {
+	public static CandidateLanguage mapToObject(Candidate candidate, Language language, CandidateLanguageDTO dto) {
 		CandidateLanguage cl = new CandidateLanguage();
 		cl.setCandidate(candidate);
 		cl.setLanguage(language);
@@ -62,8 +62,8 @@ public class LanguageDTO implements Serializable {
 		return cl;
 	}
 	
-	public static LanguageDTO mapToDTO(CandidateLanguage candidateLanguage) {
-		LanguageDTO dto = new LanguageDTO();
+	public static CandidateLanguageDTO mapToDTO(CandidateLanguage candidateLanguage) {
+		CandidateLanguageDTO dto = new CandidateLanguageDTO();
 		dto.setName(candidateLanguage.getLanguage().getName());
 		dto.setSpeaking(candidateLanguage.getSpeaking());
 		dto.setWriting(candidateLanguage.getWriting());
@@ -91,7 +91,7 @@ public class LanguageDTO implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		LanguageDTO other = (LanguageDTO) obj;
+		CandidateLanguageDTO other = (CandidateLanguageDTO) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;

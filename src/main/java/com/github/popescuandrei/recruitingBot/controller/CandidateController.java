@@ -29,7 +29,7 @@ import com.github.popescuandrei.recruitingBot.dto.CommentDTO;
 import com.github.popescuandrei.recruitingBot.dto.EducationDTO;
 import com.github.popescuandrei.recruitingBot.dto.ExperienceDTO;
 import com.github.popescuandrei.recruitingBot.dto.InterestDTO;
-import com.github.popescuandrei.recruitingBot.dto.LanguageDTO;
+import com.github.popescuandrei.recruitingBot.dto.CandidateLanguageDTO;
 import com.github.popescuandrei.recruitingBot.dto.RatingDTO;
 import com.github.popescuandrei.recruitingBot.dto.SkillDTO;
 import com.github.popescuandrei.recruitingBot.repository.ChatMessageRepository;
@@ -194,11 +194,11 @@ public class CandidateController {
 	 * @return
 	 */
 	@RequestMapping(value="/{id}/languages", method = RequestMethod.GET)
-	public @ResponseBody List<LanguageDTO> findAllLanguagesForCandidate(@PathVariable("id") Long id) {
+	public @ResponseBody List<CandidateLanguageDTO> findAllLanguagesForCandidate(@PathVariable("id") Long id) {
 		List<CandidateLanguage> candidateLanguages = candidateLanguageService.findAllByCandidateId(id);
 		
 		return candidateLanguages.stream()
-				.map(cl -> LanguageDTO.mapToDTO(cl))
+				.map(cl -> CandidateLanguageDTO.mapToDTO(cl))
 				.collect(Collectors.toList());
 	}
 	

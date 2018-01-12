@@ -97,6 +97,14 @@ public final class DbNames {
 	public static final String POSITION_SKILL = "position_skill";
 	public static final String POSITION_SKILL_SEQ = POSITION_SKILL + "_" + SEQ;
 
+	// Position Experience
+	public static final String POSITION_EXPERIENCE = "position_experience";
+	public static final String YEARS = "years";
+	
+	// Position Language
+	public static final String POSITION_LANGUAGE = "position_language";
+	
+	
 	// Chat
 	public static final String CHAT_MESSAGE = "chat_message";
 	public static final String CHAT_MESSAGE_SEQ = CHAT_MESSAGE + "_" + SEQ;
