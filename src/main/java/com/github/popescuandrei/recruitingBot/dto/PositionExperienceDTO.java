@@ -69,10 +69,7 @@ public class PositionExperienceDTO implements Serializable{
 		} else if (!title.equals(other.title))
 			return false;
 		if (years == null) {
-			if (other.years != null)
-				return false;
-		} else if (!years.equals(other.years))
-			return false;
-		return true;
+			return other.years == null;
+		} else return years.equals(other.years);
 	}
 }

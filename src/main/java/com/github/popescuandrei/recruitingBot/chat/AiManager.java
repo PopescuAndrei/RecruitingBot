@@ -30,29 +30,31 @@ public class AiManager {
 	@Value("${api.ai.apikey}")
 	private String apiKey;
 
-	@Autowired
-	private ChatChoreographer chatChoreographer;
+	private final ChatChoreographer chatChoreographer;
 	
-	@Autowired
-	private CandidateService candidateService;
+	private final CandidateService candidateService;
 	
-	@Autowired
-	private ChatMessageService chatMessageService;
-	
-	private AIConfiguration config;
-	
+	private final ChatMessageService chatMessageService;
+
 	private AIDataService dataService;
+
+	@Autowired
+	public AiManager(ChatChoreographer chatChoreographer, CandidateService candidateService, ChatMessageService chatMessageService) {
+		this.chatChoreographer = chatChoreographer;
+		this.candidateService = candidateService;
+		this.chatMessageService = chatMessageService;
+	}
 
 	@PostConstruct
 	public void init() {
-		config = new AIConfiguration(apiKey);
+		AIConfiguration config = new AIConfiguration(apiKey);
 		dataService = new AIDataService(config);
 	}
 
 	/**
 	 * Calls the API.AI service using user input from the UI.
 	 */
-	public String sendRequest(String statement, String facebookUuid, Date timestamp) {
+	public String sendRequest(String statement, String facebookUuid) {
 		String responseText = "Hmm, I need to think on that. Ask again later.";
 		try {
 			AIRequest request = new AIRequest(statement);
@@ -61,7 +63,7 @@ public class AiManager {
 			
 			AIResponse response = dataService.request(request);
 			if (response.getStatus().getCode() == 200) {
-				responseText = chatChoreographer.parseAiResponse(response, facebookUuid, timestamp);
+				responseText = chatChoreographer.parseAiResponse(response, facebookUuid);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

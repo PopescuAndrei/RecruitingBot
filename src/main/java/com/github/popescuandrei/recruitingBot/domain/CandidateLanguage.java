@@ -108,6 +108,26 @@ public class CandidateLanguage extends BaseEntity {
 		this.writing = writing;
 	}
 
+	private Double getLanguageLevel() {
+		return (double) ((writing + speaking + understanding)/3);
+	}
+	
+	public String getLanguageLevelAsString() {
+		Double languageLevel = this.getLanguageLevel();
+		
+		if (languageLevel > 0 && languageLevel <= 25) {
+			return "Beginner";
+		} else if (languageLevel > 25 && languageLevel <= 50) {
+			return "Intermediate";
+		} else if (languageLevel > 50 && languageLevel <= 75) {
+			return "Very Good";
+		} else if (languageLevel > 75){
+			return "Expert";
+		}
+		
+		return "NOT RATED";
+	}
+	
 	@Override
 	public void update(BaseEntity entity) {
 		if (!(entity instanceof CandidateLanguage)) {

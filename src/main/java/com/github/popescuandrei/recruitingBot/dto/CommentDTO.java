@@ -104,10 +104,7 @@ public class CommentDTO implements Serializable {
 		} else if (!date.equals(other.date))
 			return false;
 		if (message == null) {
-			if (other.message != null)
-				return false;
-		} else if (!message.equals(other.message))
-			return false;
-		return true;
+			return other.message == null;
+		} else return message.equals(other.message);
 	}
 }

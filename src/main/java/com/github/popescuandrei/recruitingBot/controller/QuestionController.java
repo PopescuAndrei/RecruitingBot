@@ -36,19 +36,17 @@ public class QuestionController {
 	@Autowired
 	@Qualifier("interviewProgressService")
 	private InterviewProgressService interviewProgressService;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<Question> findAll() {
-		List<Question> questions = questionService.findAll();
-		return questions;
+		return questionService.findAll();
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public @ResponseBody Question findOne(@PathVariable("id") Long id) {
-		Question question = questionService.find(id);
-		return question;
+		return questionService.find(id);
 	}
-	
+
 	@RequestMapping(value="/{id}", method = RequestMethod.POST)
 	public @ResponseBody Question updateOne(@PathVariable("id") Long id, @RequestBody Question question) {
 		return questionService.update(question);
@@ -56,26 +54,24 @@ public class QuestionController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody List<Question> updateQuestions(@RequestBody List<Question> questions) {
-		List<Question> newQuestions = new ArrayList<Question>();
-		
-		questions.stream()
-			.forEach(q -> {
-				if(q.isNew()) {
-					newQuestions.add(questionService.create(q));
-				} else {
-					newQuestions.add(questionService.update(q));
-				}
+		List<Question> newQuestions = new ArrayList<>();
+
+		questions.forEach(q -> {
+			if(q.isNew()) {
+				newQuestions.add(questionService.create(q));
+			} else {
+				newQuestions.add(questionService.update(q));
+			}
 		});
-		
+
 		questionService.deleteOldQuestions(newQuestions);
-		
+
 		return newQuestions;
 	}
 
 	@RequestMapping(value = "/{id}/replies", method = RequestMethod.GET)
 	public @ResponseBody List<QuestionReply> findAllRepliesForQuestion(@PathVariable("id") Long id) {
-		List<QuestionReply> replies = questionReplyService.findAllByQuestionId(id);
-		return replies;
+		return questionReplyService.findAllByQuestionId(id);
 	}
 
 	@RequestMapping(value = "/{id}/replies", method = RequestMethod.POST)
@@ -88,18 +84,18 @@ public class QuestionController {
 	public @ResponseBody QuestionReply deleteQuestionReply(@PathVariable("questionId") Long questionId, @PathVariable("replyId") Long replyId) {
 		return questionReplyService.delete(replyId);
 	}
-	
+
 	@RequestMapping(value = "/interviewProgress", method = RequestMethod.GET)
 	public @ResponseBody Boolean isInterviewRunning() {
 		List<InterviewProgress> progresses = interviewProgressService.findAll();
 		int noQuestions = questionService.findAll().size();
-		
+
 		for(InterviewProgress ip: progresses) {
 			if(ip.getProgress() < noQuestions) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 }

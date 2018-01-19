@@ -171,7 +171,7 @@ public class Candidate extends BaseEntity{
 	
 	public static Candidate CHAT_BOT() {
 		Candidate CHAT_BOT = new Candidate();
-		CHAT_BOT.setId(0l);
+		CHAT_BOT.setId(0L);
 		CHAT_BOT.setFacebookUuid("0888888888");
 		CHAT_BOT.setFirstName("HR");
 		CHAT_BOT.setLastName("Ninja");

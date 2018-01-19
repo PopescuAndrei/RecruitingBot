@@ -54,7 +54,7 @@ public class ChatMessageDTO implements Serializable {
 		dto.setMessage(message.getMessage());
 		dto.setTime(message.getCreationDate());
 		dto.setFromRobot(message.getFromRobot());
-		if(message.getFromRobot() == true) {
+		if(message.getFromRobot()) {
 			dto.setFrom(getChatBot());
 		} else {
 			dto.setFrom(message.getCandidate());
@@ -113,10 +113,7 @@ public class ChatMessageDTO implements Serializable {
 		} else if (!message.equals(other.message))
 			return false;
 		if (time == null) {
-			if (other.time != null)
-				return false;
-		} else if (!time.equals(other.time))
-			return false;
-		return true;
+			return other.time == null;
+		} else return time.equals(other.time);
 	}
 }

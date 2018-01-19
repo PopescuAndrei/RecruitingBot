@@ -111,6 +111,7 @@ public class WebhookMessengerController {
         }
     }
 
+    @SuppressWarnings("unused")
     private TextMessageEventHandler newTextMessageEventHandler() {
         return event -> {
 
@@ -118,7 +119,7 @@ public class WebhookMessengerController {
             final String senderId = event.getSender().getId();
             final Date timestamp = event.getTimestamp();
 
-            String aiResponse = aiManager.sendRequest(messageText, senderId, timestamp);
+            String aiResponse = aiManager.sendRequest(messageText, senderId);
             if(aiResponse.equals(ACTION_SEARCH_POSITION)) {
             	try {
 					facebookMessageBuilder.sendOpenPositionsMessage(this.sendClient, senderId, baseUrl);

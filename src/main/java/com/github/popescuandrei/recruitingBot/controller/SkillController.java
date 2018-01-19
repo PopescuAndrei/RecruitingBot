@@ -34,7 +34,7 @@ public class SkillController {
 		List<Skill> skills = skillService.findAll();
 		
 		return skills.stream()
-				.map(s -> SkillDTO.mapToDTO(s))
+				.map(SkillDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	

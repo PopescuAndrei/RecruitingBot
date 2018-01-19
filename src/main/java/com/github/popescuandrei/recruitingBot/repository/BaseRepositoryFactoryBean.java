@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.EntityManager;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
@@ -12,6 +13,7 @@ import org.springframework.data.repository.core.RepositoryInformation;
 import org.springframework.data.repository.core.RepositoryMetadata;
 import org.springframework.data.repository.core.support.RepositoryFactorySupport;
 
+@SuppressWarnings("unused")
 public class BaseRepositoryFactoryBean<T extends JpaRepository<S, ID>, S, ID extends Serializable> extends JpaRepositoryFactoryBean<T, S, ID> {
 	/**
 	 * @see org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean#createRepositoryFactory(javax.persistence.EntityManager)
@@ -22,7 +24,7 @@ public class BaseRepositoryFactoryBean<T extends JpaRepository<S, ID>, S, ID ext
 	}
 
 	private static class FilterRepositoryFactory extends JpaRepositoryFactory {
-		public FilterRepositoryFactory(EntityManager entityManager) {
+		FilterRepositoryFactory(EntityManager entityManager) {
 			super(entityManager);
 		}
 

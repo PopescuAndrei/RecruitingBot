@@ -44,6 +44,8 @@ import com.github.popescuandrei.recruitingBot.service.UserCandidateCommentServic
 import com.github.popescuandrei.recruitingBot.service.UserCandidateLikeService;
 import com.github.popescuandrei.recruitingBot.service.UserCandidateRatingService;
 
+import static com.github.popescuandrei.recruitingBot.dto.RatingDTO.mapToObject;
+
 @RestController
 @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://recruitingmessbot.herokuapp.com"}, maxAge = 3600)
 @RequestMapping("/api/candidates")
@@ -100,8 +102,7 @@ public class CandidateController {
 	 */
 	@RequestMapping(value="/{id}", method = RequestMethod.GET) 
 	public @ResponseBody Candidate findOne(@PathVariable("id") Long id) {
-		Candidate candidate = candidateService.find(id);
-		return candidate;
+		return candidateService.find(id);
 	}
 	
 	/**
@@ -127,9 +128,8 @@ public class CandidateController {
 	@RequestMapping(method = RequestMethod.GET) 
 	public @ResponseBody List<List<Candidate>> findAll() {
 		List<Candidate> candidates = candidateService.findAll();
-		List<List<Candidate>> candidatesInRows = mapListToRows(candidates);
-		
-		return candidatesInRows;
+
+		return mapListToRows(candidates);
 	}
 	
 	/**
@@ -142,7 +142,7 @@ public class CandidateController {
 		List<CandidateSkill> candidateSkills = candidateSkillService.findAllByCandidateId(id);
 		
 		return candidateSkills.stream()
-				.map(cs -> SkillDTO.mapToDTOFromCandidate(cs))
+				.map(SkillDTO::mapToDTOFromCandidate)
 				.collect(Collectors.toList());
 	}
 	
@@ -156,7 +156,7 @@ public class CandidateController {
 		List<CandidateInterest> candidateInterests = candidateInterestService.findAllByCandidateId(id);
 		
 		return candidateInterests.stream()
-				.map(ci -> InterestDTO.mapToDTO(ci))
+				.map(InterestDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -170,7 +170,7 @@ public class CandidateController {
 		List<CandidateExperience> candidateExperience = candidateExperienceService.findAllByCandidateId(id);
 		
 		return candidateExperience.stream()
-				.map(ce -> ExperienceDTO.mapToDTO(ce))
+				.map(ExperienceDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -184,7 +184,7 @@ public class CandidateController {
 		List<CandidateEducation> candidateEducation = candidateEducationService.findAllByCandidateId(id);
 	
 		return candidateEducation.stream()
-				.map(ce -> EducationDTO.mapToDTO(ce))
+				.map(EducationDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -198,7 +198,7 @@ public class CandidateController {
 		List<CandidateLanguage> candidateLanguages = candidateLanguageService.findAllByCandidateId(id);
 		
 		return candidateLanguages.stream()
-				.map(cl -> CandidateLanguageDTO.mapToDTO(cl))
+				.map(CandidateLanguageDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -211,7 +211,7 @@ public class CandidateController {
 		List<UserCandidateComment> comments = userCandidateCommentService.findAllByCandidateId(id);
 		
 		return comments.stream()
-				.map(c -> CommentDTO.mapToDTO(c))
+				.map(CommentDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -245,7 +245,7 @@ public class CandidateController {
 		List<ChatMessage> messages = chatMessageRepository.findAllByCandidateId(id);
 		
 		return messages.stream()
-				.map(m -> ChatMessageDTO.mapToDTO(m))
+				.map(ChatMessageDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -270,16 +270,14 @@ public class CandidateController {
 	
 	/**
 	 * Method for creating a new rating from a user to a candidate
-	 * @param comment
 	 * @return
 	 */
 	@RequestMapping(value="/{id}/rating", method = RequestMethod.POST)
 	public @ResponseBody UserCandidateRating createRating(@PathVariable("id") Long candidateId, @RequestBody RatingDTO dto) {
 		Candidate candidate = candidateService.find(candidateId);
 		AppUser user = appUserService.findByName(dto.getAuthor());
-		UserCandidateRating rating = userCandidateRatingService.create(RatingDTO.mapToObject(user, candidate, dto));
-		
-		return rating;
+
+		return userCandidateRatingService.create(mapToObject(user, candidate, dto));
 	}
 	
 	/**
@@ -289,11 +287,11 @@ public class CandidateController {
 	 * @return
 	 */
 	private List<List<Candidate>> mapListToRows(List<Candidate> candidates) {
-		List<List<Candidate>> candidatesInRows = new ArrayList<List<Candidate>>();
+		List<List<Candidate>> candidatesInRows = new ArrayList<>();
 		int index = 0;
 		for(Candidate candidate: candidates) {
 			if(index == 0) {
-				candidatesInRows.add(new ArrayList<Candidate>());
+				candidatesInRows.add(new ArrayList<>());
 			}
 			
 			candidatesInRows.get(candidatesInRows.size() - 1).add(candidate);

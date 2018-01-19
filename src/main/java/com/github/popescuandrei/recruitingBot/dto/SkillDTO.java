@@ -36,15 +36,6 @@ public class SkillDTO implements Serializable {
 		this.level = level;
 	}
 	
-	public static CandidateSkill mapToCandidateSkill(Candidate candidate, Skill skill, SkillDTO dto) {
-		CandidateSkill cs = new CandidateSkill();
-		cs.setCandidate(candidate);
-		cs.setSkill(skill);
-		cs.setLevel(dto.getLevel());
-		
-		return cs;
-	}
-	
 	public static PositionSkill mapToPositionSkill(Position position, Skill skill, SkillDTO dto) {
 		PositionSkill ps = new PositionSkill();
 		ps.setPosition(position);
@@ -109,10 +100,7 @@ public class SkillDTO implements Serializable {
 		} else if (!level.equals(other.level))
 			return false;
 		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+			return other.name == null;
+		} else return name.equals(other.name);
 	}
 }
