@@ -1,6 +1,10 @@
 package com.github.popescuandrei.recruitingBot.chat;
 
+import static com.github.popescuandrei.recruitingBot.Utils.computeWeightedMean;
+import static com.github.popescuandrei.recruitingBot.Utils.monthsDifference;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,13 +14,23 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.github.popescuandrei.recruitingBot.domain.Candidate;
+import com.github.popescuandrei.recruitingBot.domain.CandidateExperience;
+import com.github.popescuandrei.recruitingBot.domain.CandidateLanguage;
 import com.github.popescuandrei.recruitingBot.domain.CandidatePositionScore;
 import com.github.popescuandrei.recruitingBot.domain.CandidateSkill;
+import com.github.popescuandrei.recruitingBot.domain.Language;
 import com.github.popescuandrei.recruitingBot.domain.Position;
+import com.github.popescuandrei.recruitingBot.domain.PositionExperience;
+import com.github.popescuandrei.recruitingBot.domain.PositionLanguage;
 import com.github.popescuandrei.recruitingBot.domain.PositionSkill;
 import com.github.popescuandrei.recruitingBot.domain.Skill;
+import com.github.popescuandrei.recruitingBot.domain.support.Level;
+import com.github.popescuandrei.recruitingBot.service.CandidateExperienceService;
+import com.github.popescuandrei.recruitingBot.service.CandidateLanguageService;
 import com.github.popescuandrei.recruitingBot.service.CandidatePositionScoreService;
 import com.github.popescuandrei.recruitingBot.service.CandidateSkillService;
+import com.github.popescuandrei.recruitingBot.service.PositionExperienceService;
+import com.github.popescuandrei.recruitingBot.service.PositionLanguageService;
 import com.github.popescuandrei.recruitingBot.service.PositionService;
 import com.github.popescuandrei.recruitingBot.service.PositionSkillService;
 
@@ -31,13 +45,25 @@ public class CandidateEvaluator {
 	private CandidateSkillService candidateSkillService;
 	
 	@Autowired
+	private CandidateLanguageService candidateLanguageService;
+	
+	@Autowired
+	private CandidateExperienceService candidateExperienceService;
+	
+	@Autowired
 	private PositionSkillService positionSkillService;
+	
+	@Autowired
+	private PositionLanguageService positionLanguageService;
+	
+	@Autowired
+	private PositionExperienceService positionExperienceService;
 	
 	@Autowired
 	private CandidatePositionScoreService candidatePositionScoreService;
 	
-	// {skills weight, languages weight, experience weight}
-	private final Double[] weights = {0.6, 0.2, 0.2};
+	// {skills weight, experience weight, languages weight, education weight}
+	private final Double[] weights = {0.4, 0.3, 0.2, 0.1};
 	
 	/**
 	 * Method that computes the scoring for a list of candidates
@@ -55,10 +81,18 @@ public class CandidateEvaluator {
 	 * @param candidate
 	 */
 	public void scoreCandidate(Candidate candidate) {
-		List<Position> allPositions = positionService.findAll();
 		List<CandidateSkill> candidateSkills = candidateSkillService.findAllByCandidateId(candidate.getId());
+		List<CandidateLanguage> candidateLanguages = candidateLanguageService.findAllByCandidateId(candidate.getId());
+		List<CandidateExperience> candidateExperiences = candidateExperienceService.findAllByCandidateId(candidate.getId());
+
+		List<Position> allPositions = positionService.findAll();
 		Map<Skill, Long> candidateSkillsMap = extractCandidateSkills(candidateSkills);
+		Map<String, Long> candidateExperiencesMap = extractCandidateExperiences(candidateExperiences);
+		Map<Language, String> candidateLanguagesMap = extractCandidateLanguages(candidateLanguages);
+		
 		Map<Long, Map<Skill, Long>> positionSkillsMap = extractPositionSkills(allPositions);
+		Map<Long, Map<String, Long>> positionExperiencesMap = extractPositionExperiences(allPositions);
+		Map<Long, Map<Language, String>> positionLanguagesMap = extractPositionLanguages(allPositions); 
 		
 		List<CandidatePositionScore> positionScores = new ArrayList<CandidatePositionScore>();
 		
@@ -66,6 +100,7 @@ public class CandidateEvaluator {
 			Double totalScore = 0.0;
 			Double[] scores = {0.0, 0.0, 0.0};
 			
+			// skills
 			Map<Skill, Long> requiredSkillLevelsMap = positionSkillsMap.get(position.getId());
 			int numberOfRequiredSkills = requiredSkillLevelsMap.keySet().size();
 			
@@ -80,10 +115,47 @@ public class CandidateEvaluator {
 					candidateSkillsMap.get(requiredSkill) - requiredSkillLevelsMap.get(requiredSkill) < 20) {
 					individualScore = (100.0 / numberOfRequiredSkills) * 0.8;
 				} else if (candidateSkillsMap.get(requiredSkill) - requiredSkillLevelsMap.get(requiredSkill) > 20){
-					individualScore = (100.0 / numberOfRequiredSkills);	
+					individualScore = (100.0 / numberOfRequiredSkills) * 1.0;	
 				}
 				scores[0] += individualScore;
 			}
+			
+			//experience
+			Map<String, Long> requiredExperienceYearsMap = positionExperiencesMap.get(position.getId());
+			int numberOfRequiredExperiences = requiredExperienceYearsMap.keySet().size();
+			
+			for(String reqExpTitle: requiredExperienceYearsMap.keySet()) {
+				Double individualScore = 0.0;
+				
+				if(candidateExperiencesMap.get(reqExpTitle) == null) {
+					individualScore = 0.0;
+				} else {
+					if (requiredExperienceYearsMap.get(reqExpTitle) - candidateExperiencesMap.get(reqExpTitle) <= 0) {
+						individualScore = (100.0 / numberOfRequiredExperiences) * 1.0;
+					} else if (requiredExperienceYearsMap.get(reqExpTitle) - candidateExperiencesMap.get(reqExpTitle) == 0) {
+						individualScore = (100.0 / numberOfRequiredExperiences) * 0.8;
+					} else if (requiredExperienceYearsMap.get(reqExpTitle) - candidateExperiencesMap.get(reqExpTitle) > 0) {
+						individualScore = (100.0 / numberOfRequiredExperiences) * 0.3;
+					}
+				}
+				scores[1] += individualScore;
+			}
+
+			// languages
+			Map<Language, String> requiredLanguagesLevelsMap = positionLanguagesMap.get(position.getId());
+			int numberOfRequiredLangauges = requiredLanguagesLevelsMap.keySet().size();
+			
+			for (Language requiredLang: requiredLanguagesLevelsMap.keySet()) {
+				Double individualScore = 0.0;
+				
+				if (candidateLanguagesMap.get(requiredLang) == null) {
+					individualScore = 0.0;
+				} else {
+					individualScore = (100.0 / numberOfRequiredLangauges) * Level.compareLevels(candidateLanguagesMap.get(requiredLang), requiredLanguagesLevelsMap.get(requiredLang));
+				}
+				scores[2] += individualScore;
+			}
+			
 			
 			//languages && education 
 			totalScore = computeWeightedMean(scores, weights);
@@ -127,11 +199,73 @@ public class CandidateEvaluator {
 		return skillsMap;
 	}
 	
-	private Double computeWeightedMean(Double[] values, Double[] weights) {
-		Double weightedMean = 0.0;
-		for(int index = 0; index < values.length; index++) {
-			weightedMean = values[index] * weights[index];
+	/**
+	 * 
+	 * @param candidateLanguages
+	 * @return
+	 */
+	private Map<Language, String> extractCandidateLanguages(List<CandidateLanguage> candidateLanguages) {
+		Map<Language, String> candidateLanguagesMap = new HashMap<Language, String>();
+		candidateLanguages.stream().forEach(cl -> candidateLanguagesMap.put(cl.getLanguage(), cl.getLanguageLevelAsString()));
+		
+		return candidateLanguagesMap;
+	}
+	
+	/**
+	 * 
+	 * @param allPositions
+	 * @return
+	 */
+	private Map<Long, Map<Language, String>> extractPositionLanguages(List<Position> allPositions) {
+		Map<Long, Map<Language, String>> languagesMap = new HashMap<Long, Map<Language, String>>();
+		for(Position position: allPositions) {
+			languagesMap.put(position.getId(), new HashMap<Language, String>());
+			
+			List<PositionLanguage> positionLanguages = positionLanguageService.findAllByPositionId(position.getId());
+			for (PositionLanguage pl : positionLanguages) {
+				languagesMap.get(position.getId()).put(pl.getLanguage(), pl.getLevel());
+			}
 		}
-		return weightedMean/100;
+		
+		return languagesMap;
+	}
+	
+	/**
+	 * 
+	 * @param candidateExperiences
+	 * @return
+	 */
+	private Map<String, Long> extractCandidateExperiences(List<CandidateExperience> candidateExperiences) {
+		Map<String, Long> experiencesMap = new HashMap<String, Long>();
+		
+		for(CandidateExperience ce: candidateExperiences) {
+			Long diffInMonths = monthsDifference(ce.getPeriodFrom(), ce.getPeriodTo() == null ? new Date() : ce.getPeriodTo());
+			if(experiencesMap.get(ce.getTitle()) == null) {
+				experiencesMap.put(ce.getTitle(), diffInMonths);
+			} else {
+				experiencesMap.put(ce.getTitle(), experiencesMap.get(ce.getTitle()) + diffInMonths);
+			}
+		}
+		
+		return experiencesMap;
+	}
+	
+	/**
+	 * 
+	 * @param allPositions
+	 * @return
+	 */
+	private Map<Long, Map<String, Long>> extractPositionExperiences(List<Position> allPositions) {
+		Map<Long, Map<String, Long>> experiencesMap = new HashMap<Long, Map<String, Long>>();
+		for(Position position: allPositions) {
+			experiencesMap.put(position.getId(), new HashMap<String, Long>());
+			
+			List<PositionExperience> positionExperiences = positionExperienceService.findAllByPositionId(position.getId());
+			for (PositionExperience pe : positionExperiences) {
+				experiencesMap.get(position.getId()).put(pe.getTitle(), pe.getYears());
+			}
+		}
+		
+		return experiencesMap;
 	}
 }

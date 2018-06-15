@@ -257,6 +257,7 @@ public class ChatChoreographer {
 	 * @return
 	 */
 	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
+		
 		return getNextQuestion(candidate);
 	}
 	
@@ -483,24 +484,23 @@ public class ChatChoreographer {
 	 * @return
 	 */
 	private Long resolveLevelToNumber(String level) {
-		Random randomGenerator = new Random();
 		int score = 0;
 		
 		switch (level) {
 		case LEVEL_INEXPERIENCED:
-			score = randomGenerator.nextInt(5);
+			score = 10;
 			break;
 		case LEVEL_ENTRY:
-			score = 5 + randomGenerator.nextInt(15);
+			score = 30;
 			break;
 		case LEVEL_JUNIOR:
-			score = 20 + randomGenerator.nextInt(20);
+			score = 50;
 			break;
 		case LEVEL_MIDDLE:
-			score = 40 + randomGenerator.nextInt(25);
+			score = 75;
 			break;
 		case LEVEL_SENIOR:
-			score = 65 + randomGenerator.nextInt(35);
+			score = 100;
 			break;
 		}
 		
