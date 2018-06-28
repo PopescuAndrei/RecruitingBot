@@ -48,7 +48,7 @@ public class ChatMessage extends BaseEntity {
 	private Long position;
 	
 	@Size(max = 255)
-	@Column(name = MESSAGE, length = 255)
+	@Column(name = MESSAGE)
 	private String message;
 	
 	@Column(name = CREATION_DATE)

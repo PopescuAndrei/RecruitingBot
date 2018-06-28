@@ -28,12 +28,9 @@ public class ChatMessageRepositoryImpl implements ChatMessageRepositoryCustom{
 
 	@Override
 	public Long getMaxPositionByCandidateId(Long candidateId) {
-		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT max(position)")
-			.append(" FROM chat_message")
-			.append(" WHERE chat_message.candidate_id =?0");
-		
-		Query query = em.createNativeQuery(sql.toString());
+		String sql = "SELECT max(position) FROM chat_message WHERE chat_message.candidate_id =?0";
+
+		Query query = em.createNativeQuery(sql);
 		query.setParameter(0, candidateId);
 		BigInteger position = (BigInteger) query.getSingleResult();
 		

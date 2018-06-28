@@ -80,4 +80,8 @@ public class UserCandidateLike extends BaseEntity {
 	public String toString() {
 		return "UserCandidateLike [id=" + id + ", appUser=" + appUser + ", candidate=" + candidate + ", like=" + like + "]";
 	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
 }

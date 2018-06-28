@@ -32,7 +32,7 @@ public class LanguageController {
 		List<Language> languages = languageService.findAll();
 		
 		return languages.stream()
-				.map(l -> l.getName())
+				.map(Language::getName)
 				.collect(Collectors.toList());
 	}
 }

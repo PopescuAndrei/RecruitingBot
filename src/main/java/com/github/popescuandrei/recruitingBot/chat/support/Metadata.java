@@ -11,5 +11,4 @@ public class Metadata {
 	public void setIntentName(String intentName) {
 		this.intentName = intentName;
 	}
-
 }

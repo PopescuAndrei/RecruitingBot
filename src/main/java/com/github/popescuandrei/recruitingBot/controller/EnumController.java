@@ -16,8 +16,12 @@ public class EnumController {
 
 	/**
 	 * Mapping for retrieving a list of {@link String}s representing jobTitles
+<<<<<<< HEAD
 	 * @param id
 	 * @return
+=======
+	 * @return List<String>
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 	 */
 	@RequestMapping(value="/job-titles", method = RequestMethod.GET) 
 	public @ResponseBody List<String> jobTitles() {
@@ -28,8 +32,12 @@ public class EnumController {
 	
 	/**
 	 * Mapping for retrieving a single candidate
+<<<<<<< HEAD
 	 * @param id
 	 * @return
+=======
+	 * @return List<String>
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 	 */
 	@RequestMapping(value="/language-levels", method = RequestMethod.GET) 
 	public @ResponseBody List<String> languageLevels() {

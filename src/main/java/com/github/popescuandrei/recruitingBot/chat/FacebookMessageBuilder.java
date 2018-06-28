@@ -21,6 +21,7 @@ import com.github.messenger4j.send.templates.ButtonTemplate;
 import com.github.popescuandrei.recruitingBot.domain.Position;
 import com.github.popescuandrei.recruitingBot.service.PositionService;
 
+@SuppressWarnings("unused")
 @Component
 @Qualifier("facebookMessageBuilder")
 public class FacebookMessageBuilder {
@@ -28,11 +29,14 @@ public class FacebookMessageBuilder {
     private final String RESOURCE_URL = "https://raw.githubusercontent.com/fbsamples/messenger-platform-samples/master/node/public";
 
 	private static final Logger log = LoggerFactory.getLogger(FacebookMessageBuilder.class);
-	
+
+    private final PositionService positionService;
 
     @Autowired
-    private PositionService positionService;
-    
+    public FacebookMessageBuilder(PositionService positionService) {
+        this.positionService = positionService;
+    }
+
     /**
      * Method use to send a text message in a chat identified by a {@code recipientId}
      * with the {@code text} content

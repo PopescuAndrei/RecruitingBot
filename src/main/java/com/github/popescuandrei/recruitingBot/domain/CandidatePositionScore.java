@@ -50,12 +50,12 @@ public class CandidatePositionScore extends BaseEntity {
 		this(null);
 	}
 	
-	public CandidatePositionScore(Long id) {
+	private CandidatePositionScore(Long id) {
 		super();
 		this.id = id;
 	}
 	
-	public CandidatePositionScore(Long id, Candidate candidate, Position position, Double score) {
+	private CandidatePositionScore(Long id, Candidate candidate, Position position, Double score) {
 		this(id);
 		this.candidate = candidate;
 		this.position = position;
@@ -63,10 +63,7 @@ public class CandidatePositionScore extends BaseEntity {
 	}
 
 	public CandidatePositionScore(Candidate candidate, Position position, Double score) {
-		this(null);
-		this.candidate = candidate;
-		this.position = position;
-		this.score = score;
+		this(null, candidate, position, score);
 	}
 
 	public Long getId() {

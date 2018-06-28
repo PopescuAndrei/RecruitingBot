@@ -108,10 +108,7 @@ public class CandidateLanguageDTO implements Serializable {
 		} else if (!understanding.equals(other.understanding))
 			return false;
 		if (writing == null) {
-			if (other.writing != null)
-				return false;
-		} else if (!writing.equals(other.writing))
-			return false;
-		return true;
+			return other.writing == null;
+		} else return writing.equals(other.writing);
 	}
 }

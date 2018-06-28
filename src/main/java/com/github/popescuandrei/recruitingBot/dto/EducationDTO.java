@@ -125,10 +125,7 @@ public class EducationDTO implements Serializable {
 		} else if (!periodFrom.equals(other.periodFrom))
 			return false;
 		if (periodTo == null) {
-			if (other.periodTo != null)
-				return false;
-		} else if (!periodTo.equals(other.periodTo))
-			return false;
-		return true;
+			return other.periodTo == null;
+		} else return periodTo.equals(other.periodTo);
 	}
 }

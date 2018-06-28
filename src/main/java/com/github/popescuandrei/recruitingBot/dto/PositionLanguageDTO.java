@@ -70,11 +70,8 @@ public class PositionLanguageDTO implements Serializable {
 		} else if (!level.equals(other.level))
 			return false;
 		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+			return other.name == null;
+		} else return name.equals(other.name);
 	}
 	
 	

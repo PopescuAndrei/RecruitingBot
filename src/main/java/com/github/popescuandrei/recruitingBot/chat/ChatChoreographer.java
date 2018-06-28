@@ -90,58 +90,64 @@ public class ChatChoreographer {
 	private static final String BASE_FACEBOOK_URL_START = "https://graph.facebook.com/v2.6/";
 	private static final String BASE_FACEBOOK_URL_END = "?access_token=";
 	
-	@Autowired
-	private CandidateService candidateService;
+	private final CandidateService candidateService;
 	
-	@Autowired
-	private QuestionService questionService;
+	private final QuestionService questionService;
 	
-	@Autowired
-	private QuestionReplyService questionReplyService;
+	private final QuestionReplyService questionReplyService;
 	
-	@Autowired
-	private SkillService skillService;
+	private final SkillService skillService;
 	
-	@Autowired
-	private InterviewProgressService interviewProgressService;
+	private final InterviewProgressService interviewProgressService;
 	
-	@Autowired
-	private LanguageService languageService;
+	private final LanguageService languageService;
 	
-	@Autowired
-	private CandidateLanguageService candidateLanguageService;
+	private final CandidateLanguageService candidateLanguageService;
 	
-	@Autowired
-	private CandidateInterestService interestService;
+	private final CandidateInterestService interestService;
 	
-	@Autowired
-	private CandidateEducationService educationService;
+	private final CandidateEducationService educationService;
 	
-	@Autowired
-	private CandidateExperienceService experienceService;
+	private final CandidateExperienceService experienceService;
 	
 	@Value("${recruitingBot.pageAccessToken}")
-	private String pageAcessToken;
-	
+	private String pageAccessToken;
+
+	@Autowired
+	public ChatChoreographer(CandidateService candidateService, QuestionService questionService, QuestionReplyService questionReplyService,
+							 SkillService skillService, InterviewProgressService interviewProgressService, LanguageService languageService,
+							 CandidateLanguageService candidateLanguageService, CandidateInterestService interestService,
+							 CandidateEducationService educationService, CandidateExperienceService experienceService) {
+		this.candidateService = candidateService;
+		this.questionService = questionService;
+		this.questionReplyService = questionReplyService;
+		this.skillService = skillService;
+		this.interviewProgressService = interviewProgressService;
+		this.languageService = languageService;
+		this.candidateLanguageService = candidateLanguageService;
+		this.interestService = interestService;
+		this.educationService = educationService;
+		this.experienceService = experienceService;
+	}
+
 	/**
 	 * Method that resolves the appropriate reply for 
 	 * @param aiResponse
 	 * @param candidateId
-	 * @param timestamp
 	 * @return
 	 */
-	public String parseAiResponse(AIResponse aiResponse, String candidateId, Date timestamp) {
+	public String parseAiResponse(AIResponse aiResponse, String candidateId) {
 		String response = Const.getRandomFallbackAnswer();
 		Candidate candidate = candidateService.findByFacebookUuid(candidateId);
 		
 		switch (aiResponse.getResult().getAction()) {
 		case ACTION_GREETING:
 			log.debug("## Resolved to greeting");
-			response = handleGreetingAction(aiResponse, candidateId);
+			response = handleGreetingAction(candidateId);
 			break;
 		case ACTION_ACCEPTANCE:
 			log.debug("## Resolved to acceptance");
-			response = handleYesNoAction(aiResponse, candidate);
+			response = handleYesNoAction(candidate);
 			break;
 		case ACTION_SAVE_GENDER:
 			log.debug("## Resolved to save.gender");
@@ -173,7 +179,7 @@ public class ChatChoreographer {
 			break;
 		case ACTION_SEARCH_POSITION:
 			log.debug("## Resolved to search.position");
-			response = handleSearchPositionAction(aiResponse, candidate);
+			response = handleSearchPositionAction();
 			break;
 		}
 		log.debug("## Action is :" + aiResponse.getResult().getAction());
@@ -182,12 +188,11 @@ public class ChatChoreographer {
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_GREETING} action
-	 * @param aiResponse
+	 * Method that handles the ACTION_GREETING action
 	 * @param facebookUuid
 	 * @return
 	 */
-	private String handleGreetingAction(AIResponse aiResponse, String facebookUuid) {
+	private String handleGreetingAction(String facebookUuid) {
 		Candidate candidate = new Candidate();
 		
 		HttpResponse<FacebookProfileJson> jsonResponse = null;
@@ -215,9 +220,9 @@ public class ChatChoreographer {
 				}
 			});
 			
-			jsonResponse = Unirest.get(BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken).asObject(FacebookProfileJson.class);
+			jsonResponse = Unirest.get(BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAccessToken).asObject(FacebookProfileJson.class);
 		} catch (UnirestException e) {
-			log.info("Request info at: ", BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAcessToken);
+			log.info("Request info at: ", BASE_FACEBOOK_URL_START + facebookUuid + BASE_FACEBOOK_URL_END + pageAccessToken);
 			log.info("Facebook Graph API - Failure in retrieving profile info. Message: ", e.getMessage());
 			log.info(" Caused By: ", e.getCause());
 		}
@@ -245,24 +250,27 @@ public class ChatChoreographer {
 		InterviewProgress progress = new InterviewProgress();
 		progress.setCandidate(candidate);
 		progress.setProgress(0L);
-		progress = interviewProgressService.create(progress);
+		interviewProgressService.create(progress);
 		
 		return getNextQuestion(candidate);
 	}
 
 	/**
-	 * Method that handles the {@link #ACTION_ACCEPTANCE} action
-	 * @param aiResponse
+	 * Method that handles the ACTION_ACCEPTANCE action
 	 * @param candidate
 	 * @return
 	 */
+<<<<<<< HEAD
 	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
+=======
+	private String handleYesNoAction(Candidate candidate) {
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 		
 		return getNextQuestion(candidate);
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_GENDER} action
+	 * Method that handles the ACTION_SAVE_GENDER action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -275,7 +283,7 @@ public class ChatChoreographer {
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_EMAIL} action
+	 * Method that handles the ACTION_SAVE_EMAIL action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -288,7 +296,7 @@ public class ChatChoreographer {
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_EDUCATION} action
+	 * Method that handles the ACTION_SAVE_EDUCATION action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -306,7 +314,7 @@ public class ChatChoreographer {
 			startDate = LocalDate.parse(period[0]);
 			endDate = LocalDate.parse(period[1]);
 		} catch (IndexOutOfBoundsException ex) {
-			// silently ignore the expection
+			// silently ignore the exception
 		}
 		
 		CandidateEducation education = new CandidateEducation();
@@ -317,13 +325,13 @@ public class ChatChoreographer {
 		education.setPeriodFrom(Date.from(startDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 		education.setPeriodTo(Date.from(endDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 		
-		education = educationService.create(education);
+		educationService.create(education);
 		
 		return getReply(candidate);
 	}
 
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_EXPERIENCE} action
+	 * Method that handles the ACTION_SAVE_EXPERIENCE action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -340,7 +348,7 @@ public class ChatChoreographer {
 			startDate = LocalDate.parse(period[0]);
 			endDate = LocalDate.parse(period[1]);
 		} catch (IndexOutOfBoundsException ex) {
-			// silently ignore the expection
+			// silently ignore the exception
 		}
 		
 		CandidateExperience experience = new CandidateExperience();
@@ -350,13 +358,13 @@ public class ChatChoreographer {
 		experience.setPeriodFrom(Date.from(startDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 		experience.setPeriodTo(Date.from(endDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 		
-		experience = experienceService.create(experience);
+		experienceService.create(experience);
 		
 		return getReply(candidate);
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_INTEREST} action
+	 * Method that handles the ACTION_SAVE_INTEREST action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -368,14 +376,14 @@ public class ChatChoreographer {
 			CandidateInterest interest = new CandidateInterest();
 			interest.setCandidate(candidate);
 			interest.setName(interestName);
-			interest = interestService.create(interest);
+			interestService.create(interest);
 		}
 		
 		return getReply(candidate);
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_LANGUAGE} action
+	 * Method that handles the ACTION_SAVE_LANGUAGE action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -396,13 +404,13 @@ public class ChatChoreographer {
 		candidateLanguage.setWriting(resolveLevelToNumber("senior"));
 		candidateLanguage.setUnderstanding(resolveLevelToNumber("senior"));
 		
-		candidateLanguage = candidateLanguageService.create(candidateLanguage);
+		candidateLanguageService.create(candidateLanguage);
 		
 		return getReply(candidate);
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SAVE_SKILL} action
+	 * Method that handles the ACTION_SAVE_SKILL action
 	 * @param aiResponse
 	 * @param candidate
 	 * @return
@@ -428,12 +436,10 @@ public class ChatChoreographer {
 	}
 	
 	/**
-	 * Method that handles the {@link #ACTION_SEARCH_POSITION} action
-	 * @param aiResponse
-	 * @param candidate
+	 * Method that handles the ACTION_SEARCH_POSITION action
 	 * @return
 	 */
-	private String handleSearchPositionAction(AIResponse aiResponse, Candidate candidate) {
+	private String handleSearchPositionAction() {
 		return ACTION_SEARCH_POSITION;
 	}
 	

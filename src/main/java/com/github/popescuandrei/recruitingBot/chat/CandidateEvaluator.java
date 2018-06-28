@@ -38,12 +38,11 @@ import com.github.popescuandrei.recruitingBot.service.PositionSkillService;
 @Qualifier("candidateEvaluator")
 public class CandidateEvaluator {
 
-	@Autowired
-	private PositionService positionService;
+	private final PositionService positionService;
 	
-	@Autowired
-	private CandidateSkillService candidateSkillService;
+	private final CandidateSkillService candidateSkillService;
 	
+<<<<<<< HEAD
 	@Autowired
 	private CandidateLanguageService candidateLanguageService;
 	
@@ -64,13 +63,42 @@ public class CandidateEvaluator {
 	
 	// {skills weight, experience weight, languages weight, education weight}
 	private final Double[] weights = {0.4, 0.3, 0.2, 0.1};
+=======
+	private final CandidateLanguageService candidateLanguageService;
 	
+	private final CandidateExperienceService candidateExperienceService;
+	
+	private final PositionSkillService positionSkillService;
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
+	
+	private final PositionLanguageService positionLanguageService;
+	
+	private final PositionExperienceService positionExperienceService;
+	
+	private final CandidatePositionScoreService candidatePositionScoreService;
+	
+	// {skills weight, experience weight, languages weight, education weight}
+	private final Double[] weights = {0.4, 0.3, 0.2, 0.1};
+
+	@Autowired
+	public CandidateEvaluator(PositionService positionService, CandidateSkillService candidateSkillService, CandidateLanguageService candidateLanguageService, CandidateExperienceService candidateExperienceService, PositionSkillService positionSkillService, PositionLanguageService positionLanguageService, PositionExperienceService positionExperienceService, CandidatePositionScoreService candidatePositionScoreService) {
+		this.positionService = positionService;
+		this.candidateSkillService = candidateSkillService;
+		this.candidateLanguageService = candidateLanguageService;
+		this.candidateExperienceService = candidateExperienceService;
+		this.positionSkillService = positionSkillService;
+		this.positionLanguageService = positionLanguageService;
+		this.positionExperienceService = positionExperienceService;
+		this.candidatePositionScoreService = candidatePositionScoreService;
+	}
+
 	/**
 	 * Method that computes the scoring for a list of candidates
 	 * @param candidates
 	 */
+	@SuppressWarnings("unused")
 	public void scoreMultipleCandidates(List<Candidate> candidates) {
-		candidates.stream().forEach(c -> scoreCandidate(c));
+		candidates.forEach(this::scoreCandidate);
 	}
 	
 	/**
@@ -80,6 +108,7 @@ public class CandidateEvaluator {
 	 * ! no one cares about the education and interests
 	 * @param candidate
 	 */
+	@SuppressWarnings("unused")
 	public void scoreCandidate(Candidate candidate) {
 		List<CandidateSkill> candidateSkills = candidateSkillService.findAllByCandidateId(candidate.getId());
 		List<CandidateLanguage> candidateLanguages = candidateLanguageService.findAllByCandidateId(candidate.getId());
@@ -94,10 +123,10 @@ public class CandidateEvaluator {
 		Map<Long, Map<String, Long>> positionExperiencesMap = extractPositionExperiences(allPositions);
 		Map<Long, Map<Language, String>> positionLanguagesMap = extractPositionLanguages(allPositions); 
 		
-		List<CandidatePositionScore> positionScores = new ArrayList<CandidatePositionScore>();
+		List<CandidatePositionScore> positionScores = new ArrayList<>();
 		
 		for(Position position: allPositions) {
-			Double totalScore = 0.0;
+			Double totalScore;
 			Double[] scores = {0.0, 0.0, 0.0};
 			
 			// skills
@@ -143,15 +172,26 @@ public class CandidateEvaluator {
 
 			// languages
 			Map<Language, String> requiredLanguagesLevelsMap = positionLanguagesMap.get(position.getId());
+<<<<<<< HEAD
 			int numberOfRequiredLangauges = requiredLanguagesLevelsMap.keySet().size();
 			
 			for (Language requiredLang: requiredLanguagesLevelsMap.keySet()) {
 				Double individualScore = 0.0;
+=======
+			int numberOfRequiredLanguages = requiredLanguagesLevelsMap.keySet().size();
+			
+			for (Language requiredLang: requiredLanguagesLevelsMap.keySet()) {
+				Double individualScore;
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 				
 				if (candidateLanguagesMap.get(requiredLang) == null) {
 					individualScore = 0.0;
 				} else {
+<<<<<<< HEAD
 					individualScore = (100.0 / numberOfRequiredLangauges) * Level.compareLevels(candidateLanguagesMap.get(requiredLang), requiredLanguagesLevelsMap.get(requiredLang));
+=======
+					individualScore = (100.0 / numberOfRequiredLanguages) * Level.compareLevels(candidateLanguagesMap.get(requiredLang), requiredLanguagesLevelsMap.get(requiredLang));
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 				}
 				scores[2] += individualScore;
 			}
@@ -167,15 +207,15 @@ public class CandidateEvaluator {
 			candidatePositionScoreService.saveAll(positionScores);
 		}
 	}
-	
+
 	/**
 	 * Method that extracts the candidate's skills into a skill (key) - level (value) map
 	 * @param candidateSkills
 	 * @return
 	 */
 	private Map<Skill, Long> extractCandidateSkills(List<CandidateSkill> candidateSkills) {
-		Map<Skill, Long> candidateSkillsMap = new HashMap<Skill, Long>();
-		candidateSkills.stream().forEach(cs -> candidateSkillsMap.put(cs.getSkill(), cs.getLevel()));
+		Map<Skill, Long> candidateSkillsMap = new HashMap<>();
+		candidateSkills.forEach(cs -> candidateSkillsMap.put(cs.getSkill(), cs.getLevel()));
 		
 		return candidateSkillsMap;
 	}
@@ -186,9 +226,9 @@ public class CandidateEvaluator {
 	 * @return
 	 */
 	private Map<Long, Map<Skill, Long>> extractPositionSkills(List<Position> allPositions) {
-		Map<Long, Map<Skill, Long>> skillsMap = new HashMap<Long, Map<Skill, Long>>();
+		Map<Long, Map<Skill, Long>> skillsMap = new HashMap<>();
 		for(Position position: allPositions) {
-			skillsMap.put(position.getId(), new HashMap<Skill, Long>());
+			skillsMap.put(position.getId(), new HashMap<>());
 			
 			List<PositionSkill> positionSkills = positionSkillService.findAllByPositionId(position.getId());
 			for (PositionSkill ps : positionSkills) {
@@ -205,8 +245,13 @@ public class CandidateEvaluator {
 	 * @return
 	 */
 	private Map<Language, String> extractCandidateLanguages(List<CandidateLanguage> candidateLanguages) {
+<<<<<<< HEAD
 		Map<Language, String> candidateLanguagesMap = new HashMap<Language, String>();
 		candidateLanguages.stream().forEach(cl -> candidateLanguagesMap.put(cl.getLanguage(), cl.getLanguageLevelAsString()));
+=======
+		Map<Language, String> candidateLanguagesMap = new HashMap<>();
+		candidateLanguages.forEach(cl -> candidateLanguagesMap.put(cl.getLanguage(), cl.getLanguageLevelAsString()));
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 		
 		return candidateLanguagesMap;
 	}
@@ -217,9 +262,15 @@ public class CandidateEvaluator {
 	 * @return
 	 */
 	private Map<Long, Map<Language, String>> extractPositionLanguages(List<Position> allPositions) {
+<<<<<<< HEAD
 		Map<Long, Map<Language, String>> languagesMap = new HashMap<Long, Map<Language, String>>();
 		for(Position position: allPositions) {
 			languagesMap.put(position.getId(), new HashMap<Language, String>());
+=======
+		Map<Long, Map<Language, String>> languagesMap = new HashMap<>();
+		for(Position position: allPositions) {
+			languagesMap.put(position.getId(), new HashMap<>());
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 			
 			List<PositionLanguage> positionLanguages = positionLanguageService.findAllByPositionId(position.getId());
 			for (PositionLanguage pl : positionLanguages) {
@@ -236,6 +287,7 @@ public class CandidateEvaluator {
 	 * @return
 	 */
 	private Map<String, Long> extractCandidateExperiences(List<CandidateExperience> candidateExperiences) {
+<<<<<<< HEAD
 		Map<String, Long> experiencesMap = new HashMap<String, Long>();
 		
 		for(CandidateExperience ce: candidateExperiences) {
@@ -245,6 +297,14 @@ public class CandidateEvaluator {
 			} else {
 				experiencesMap.put(ce.getTitle(), experiencesMap.get(ce.getTitle()) + diffInMonths);
 			}
+=======
+		Map<String, Long> experiencesMap = new HashMap<>();
+		
+		for(CandidateExperience ce: candidateExperiences) {
+			Long diffInMonths = monthsDifference(ce.getPeriodFrom(), ce.getPeriodTo() == null ? new Date() : ce.getPeriodTo());
+
+			experiencesMap.merge(ce.getTitle(), diffInMonths, (a, b) -> a + b);
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 		}
 		
 		return experiencesMap;
@@ -256,9 +316,15 @@ public class CandidateEvaluator {
 	 * @return
 	 */
 	private Map<Long, Map<String, Long>> extractPositionExperiences(List<Position> allPositions) {
+<<<<<<< HEAD
 		Map<Long, Map<String, Long>> experiencesMap = new HashMap<Long, Map<String, Long>>();
 		for(Position position: allPositions) {
 			experiencesMap.put(position.getId(), new HashMap<String, Long>());
+=======
+		Map<Long, Map<String, Long>> experiencesMap = new HashMap<>();
+		for(Position position: allPositions) {
+			experiencesMap.put(position.getId(), new HashMap<>());
+>>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 			
 			List<PositionExperience> positionExperiences = positionExperienceService.findAllByPositionId(position.getId());
 			for (PositionExperience pe : positionExperiences) {

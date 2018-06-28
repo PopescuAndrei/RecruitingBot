@@ -33,6 +33,12 @@ import com.github.popescuandrei.recruitingBot.service.PositionService;
 import com.github.popescuandrei.recruitingBot.service.PositionSkillService;
 import com.github.popescuandrei.recruitingBot.service.SkillService;
 
+import static com.github.popescuandrei.recruitingBot.dto.PositionExperienceDTO.mapToDTO;
+import static com.github.popescuandrei.recruitingBot.dto.PositionLanguageDTO.*;
+import static com.github.popescuandrei.recruitingBot.dto.PositionLanguageDTO.mapToDTO;
+import static com.github.popescuandrei.recruitingBot.dto.SkillDTO.mapToObject;
+import static com.github.popescuandrei.recruitingBot.dto.SkillDTO.mapToPositionSkill;
+
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200", "https://recruitingmessbot.herokuapp.com"}, maxAge = 3600)
@@ -74,9 +80,8 @@ public class PositionController {
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<List<Position>> findAll() {
 		List<Position> positionsList = positionService.findAll();
-		List<List<Position>> positions = mapListToRows(positionsList);
-		
-		return positions;
+
+		return mapListToRows(positionsList);
 	}
 	
 	/**
@@ -95,8 +100,7 @@ public class PositionController {
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public @ResponseBody Position findOne(@PathVariable("id") Long id) {
-		Position position = positionService.find(id);
-		return position;
+		return positionService.find(id);
 	}
 
 	/**
@@ -106,8 +110,7 @@ public class PositionController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody Position create(@RequestBody Position position) {
-		position = positionService.create(position);
-		return position;
+		return positionService.create(position);
 	}
 
 	/**
@@ -130,7 +133,7 @@ public class PositionController {
 		List<PositionSkill> skills = positionSkillService.findAllByPositionId(id);
 		
 		return skills.stream()
-				.map(ps -> SkillDTO.mapToDTOFromPosition(ps))
+				.map(SkillDTO::mapToDTOFromPosition)
 				.collect(Collectors.toList());
 	}
 	
@@ -144,7 +147,7 @@ public class PositionController {
 		List<PositionExperience> experience = positionExperienceService.findAllByPositionId(id);
 		
 		return experience.stream()
-				.map(pe -> PositionExperienceDTO.mapToDTO(pe))
+				.map(PositionExperienceDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
@@ -158,7 +161,7 @@ public class PositionController {
 		List<PositionLanguage> languages = positionLanguageService.findAllByPositionId(id);
 		
 		return languages.stream()
-				.map(pl -> PositionLanguageDTO.mapToDTO(pl))
+				.map(PositionLanguageDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 
@@ -166,7 +169,7 @@ public class PositionController {
 	 * 
 	 * Mapping for creating a {@link PositionSkill} for a {@link Position} identified by its corresponding id
 	 * @param positionId
-	 * @param positionSkill
+	 * @param dto
 	 * @return
 	 */
 	@RequestMapping(value = "/{id}/skills", method = RequestMethod.POST)
@@ -174,10 +177,10 @@ public class PositionController {
 		Position position = positionService.find(positionId);
 		Skill skill = skillService.findByName(dto.getName());
 		if (skill == null) {
-			skill = skillService.create(skill);
+			skill = skillService.create(mapToObject(dto));
 		}
 		
-		PositionSkill ps = positionSkillService.create(SkillDTO.mapToPositionSkill(position, skill, dto));
+		PositionSkill ps = positionSkillService.create(mapToPositionSkill(position, skill, dto));
 		
 		return SkillDTO.mapToDTOFromPosition(ps);
 	}
@@ -194,7 +197,7 @@ public class PositionController {
 		Position position = positionService.find(positionId);
 		PositionExperience exp = positionExperienceService.create(PositionExperienceDTO.mapToObject(position, dto));
 		
-		return PositionExperienceDTO.mapToDTO(exp);
+		return mapToDTO(exp);
 	}
 	
 	
@@ -211,14 +214,14 @@ public class PositionController {
 		Language language = languageService.findByName(dto.getName());
 		PositionLanguage lang = positionLanguageService.create(PositionLanguageDTO.mapToObject(position, language, dto));
 		
-		return PositionLanguageDTO.mapToDTO(lang);
+		return mapToDTO(lang);
 	}
 	
 	/**
 	 * 
 	 * Mapping for deleting a {@link PositionSkill} for a {@link Position} identified by its corresponding id
 	 * @param positionId
-	 * @param positionSkill
+	 * @param skillName
 	 * @return
 	 */
 	@RequestMapping(value = "/{positionId}/skills/{skillName}", method = RequestMethod.DELETE)
@@ -235,7 +238,7 @@ public class PositionController {
 	 * 
 	 * Mapping for deleting a {@link PositionSkill} for a {@link Position} identified by its corresponding id
 	 * @param positionId
-	 * @param positionSkill
+	 * @param title
 	 * @return
 	 */
 	@RequestMapping(value = "/{positionId}/experience/{title}", method = RequestMethod.DELETE)
@@ -244,9 +247,9 @@ public class PositionController {
 		
 		if (pe != null) {
 			positionExperienceService.delete(pe.getId());
+			return mapToDTO(pe);
 		}
-		
-		return PositionExperienceDTO.mapToDTO(pe);
+		return null;
 	}
 	
 	
@@ -254,7 +257,7 @@ public class PositionController {
 	 * 
 	 * Mapping for deleting a {@link PositionSkill} for a {@link Position} identified by its corresponding id
 	 * @param positionId
-	 * @param positionSkill
+	 * @param langName
 	 * @return
 	 */
 	@RequestMapping(value = "/{positionId}/language/{langName}", method = RequestMethod.DELETE)
@@ -263,9 +266,9 @@ public class PositionController {
 		
 		if (pl != null) {
 			positionExperienceService.delete(pl.getId());
-		};
-		
-		return PositionLanguageDTO.mapToDTO(pl);
+			return mapToDTO(pl);
+		}
+		return null;
 	}
 
 	/**
@@ -278,22 +281,21 @@ public class PositionController {
 		List<CandidatePositionScore> candidates = candidatePositionScoreService.findAllByPositionId(id);
 		
 		return candidates.stream()
-				.map(cps -> CandidateScoreDTO.mapToDTO(cps))
+				.map(CandidateScoreDTO::mapToDTO)
 				.collect(Collectors.toList());
 	}
 	
 	/**
 	 * Method that maps the list of @{link Candidate}s to a List of rows of @{link Candidate}s
-	 * 
-	 * @param candidates
+	 * @param positions
 	 * @return
 	 */
 	private List<List<Position>> mapListToRows(List<Position> positions) {
-		List<List<Position>> positionsInRows = new ArrayList<List<Position>>();
+		List<List<Position>> positionsInRows = new ArrayList<>();
 		int index = 0;
 		for(Position position: positions) {
 			if(index == 0) {
-				positionsInRows.add(new ArrayList<Position>());
+				positionsInRows.add(new ArrayList<>());
 			}
 			
 			positionsInRows.get(positionsInRows.size() - 1).add(position);

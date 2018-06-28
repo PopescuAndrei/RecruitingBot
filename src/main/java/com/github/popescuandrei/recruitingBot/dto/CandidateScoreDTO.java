@@ -71,10 +71,7 @@ public class CandidateScoreDTO implements Serializable {
 		} else if (!candidate.equals(other.candidate))
 			return false;
 		if (score == null) {
-			if (other.score != null)
-				return false;
-		} else if (!score.equals(other.score))
-			return false;
-		return true;
+			return other.score == null;
+		} else return score.equals(other.score);
 	}
 }

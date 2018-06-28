@@ -48,7 +48,7 @@ public class AppUser extends BaseEntity{
 	@Column(name = PASSWORD, nullable = false, length = 100)
 	private String password;
 	
-	@Column(name = DbNames.AVATAR, length = 255)
+	@Column(name = DbNames.AVATAR)
 	private String avatar;
 	
 	@Override

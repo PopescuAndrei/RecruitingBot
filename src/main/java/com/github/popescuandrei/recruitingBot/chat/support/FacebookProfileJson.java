@@ -13,10 +13,6 @@ public class FacebookProfileJson implements Serializable{
 	private int timezone;
 	private String gender;
 	private String id;
-	
-	public FacebookProfileJson() {
-		super();
-	}
 
 	public FacebookProfileJson(String first_name, String last_name, String profile_pic, String locale, int timezone, String gender, String id) {
 		super();

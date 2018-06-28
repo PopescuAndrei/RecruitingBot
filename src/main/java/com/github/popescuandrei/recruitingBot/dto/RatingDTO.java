@@ -70,10 +70,7 @@ public class RatingDTO implements Serializable {
 		} else if (!author.equals(other.author))
 			return false;
 		if (rating == null) {
-			if (other.rating != null)
-				return false;
-		} else if (!rating.equals(other.rating))
-			return false;
-		return true;
+			return other.rating == null;
+		} else return rating.equals(other.rating);
 	}
 }

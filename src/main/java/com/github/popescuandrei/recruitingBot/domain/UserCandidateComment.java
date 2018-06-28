@@ -45,7 +45,7 @@ public class UserCandidateComment extends BaseEntity {
 	private Candidate candidate;
 	
 	@Size(max = 255)
-	@Column(name = COMMENT, length = 255)
+	@Column(name = COMMENT)
 	private String comment;
 	
 	@Column(name = CREATION_DATE)
