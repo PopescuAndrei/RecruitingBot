@@ -260,11 +260,7 @@ public class ChatChoreographer {
 	 * @param candidate
 	 * @return
 	 */
-<<<<<<< HEAD
-	private String handleYesNoAction(AIResponse aiResponse, Candidate candidate) {
-=======
 	private String handleYesNoAction(Candidate candidate) {
->>>>>>> 36ec2aa72ff19e308bcff3333d1f858c0181c0bd
 		
 		return getNextQuestion(candidate);
 	}
